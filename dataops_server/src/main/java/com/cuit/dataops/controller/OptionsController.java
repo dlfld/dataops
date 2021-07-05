@@ -1,6 +1,7 @@
 package com.cuit.dataops.controller;
 
 import com.cuit.dataops.api.OptionsApi;
+import com.cuit.dataops.pojo.Node;
 import com.cuit.dataops.pojo.request.SubmitOptionsRequest;
 import com.cuit.dataops.pojo.response.ResponseData;
 import com.cuit.dataops.service.OptionsService;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * options相关接口
@@ -36,5 +38,16 @@ public class OptionsController implements OptionsApi {
     @PostMapping("")
     public ResponseData submitOptions(@RequestBody SubmitOptionsRequest submitOptionsRequest) {
         return optionsService.runOptions(submitOptionsRequest);
+    }
+
+    /**
+     * 拓扑排序版本
+     * @param nodes
+     * @return
+     */
+    @Override
+    @PostMapping("/topo")
+    public ResponseData submitOptions2(List<Node> nodes) {
+        return optionsService.runTopoOptions(nodes);
     }
 }

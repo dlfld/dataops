@@ -19,4 +19,7 @@ public interface OptionsApi {
     ResponseData getOptionsList();
     @ApiOperation("提交操作结果")
     ResponseData submitOptions(SubmitOptionsRequest submitOptionsRequest);
+
+    @ApiOperation("提交操作结果2")
+    ResponseData submitOptions2(List<Node> nodes);
 }

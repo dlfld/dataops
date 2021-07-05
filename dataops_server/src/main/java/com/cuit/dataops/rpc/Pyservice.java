@@ -26,6 +26,7 @@ public interface Pyservice {
      */
     @Request("${funcUrl}")
     List<Map<String,String>> callFunction(@Var("funcUrl") String funcUrl, @Body List<Map<String,String>> params);
+
     @Request("${funcUrl}")
     String callFunctionDemo(@Var("funcUrl") String funcUrl);
     /**

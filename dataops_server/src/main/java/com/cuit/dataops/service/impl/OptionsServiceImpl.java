@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 
@@ -27,8 +28,8 @@ public class OptionsServiceImpl implements OptionsService {
         return ResponseDataUtil.buildSuccess(pyservice.getOptions());
     }
 
-    @Override
-    public ResponseData runOptions(SubmitOptionsRequest submitOptionsRequest) {
+//    @Override
+    public ResponseData runOptions_old(SubmitOptionsRequest submitOptionsRequest) {
         int res = submitOptionsRequest.getBaseNumber();
         String current = "1";
         //option调用队列
@@ -65,5 +66,24 @@ public class OptionsServiceImpl implements OptionsService {
         }
         System.out.println(res);
         return ResponseDataUtil.buildSuccess(res);
+    }
+
+
+    @Override
+    public ResponseData runOptions(SubmitOptionsRequest submitOptionsRequest) {
+        
+        return null;
+    }
+
+    @Override
+    public ResponseData runTopoOptions(List<Node> nodes) {
+        Queue<Node> queue = new LinkedList<Node>();
+        nodes.forEach(queue::offer);
+        int res = 10;
+        while (!nodes.isEmpty()){
+            res = Integer.parseInt(pyservice.callFunctionDemo(queue.poll().getOptUrl()+res));
+        }
+        return ResponseDataUtil.buildSuccess(res);
+
     }
 }

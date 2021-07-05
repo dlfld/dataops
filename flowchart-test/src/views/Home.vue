@@ -12,9 +12,9 @@
     <el-button type="success" round @click="$refs.chart.remove()">
       Del
     </el-button>
-<!--    <el-button type="success" round @click="$refs.chart.editCurrent()">-->
-<!--      Edit-->
-<!--    </el-button>-->
+    <!--    <el-button type="success" round @click="$refs.chart.editCurrent()">-->
+    <!--      Edit-->
+    <!--    </el-button>-->
     <el-button type="success" round @click="$refs.chart.save()">
       Save
     </el-button>
@@ -36,7 +36,7 @@
             :value="item.optUrl"
         >
           <el-tooltip class="item" effect="dark" :content="item.optDesc" placement="right">
-            <span>{{item.optName}}</span>
+            <span>{{ item.optName }}</span>
           </el-tooltip>
         </el-option>
       </el-select>
@@ -51,13 +51,14 @@
 
 <script>
 // @ is an alias to /src
-import {getOPtionsList,submitOptions} from '@/api/Home'
+import {getOPtionsList, submitOptions} from '@/api/Home'
+import {getNodeIn} from '@/api/topoSortFuncs'
 
 export default {
   name: 'Home',
   data() {
     return {
-      baseNumber:10,//基本的操作数
+      baseNumber: 10,//基本的操作数
       options: [],//提供选择的功能节点
       option: "",//用户选择的功能节点
       //添加节点的弹出选择框
@@ -97,7 +98,7 @@ export default {
        * 添加节点设计：
        *
        */
-      let option = this.options.filter(e=>{
+      let option = this.options.filter(e => {
         return e.optUrl === this.option
       })[0]
       let optionName = option.optName
@@ -108,20 +109,59 @@ export default {
         y: 10,
         name: 'option',
         type: 'operation',
-        optUrl:option.optUrl,
-        approvers: [{id: 2, name: optionName+""}]
+        optUrl: option.optUrl,
+        approvers: [{id: 2, name: optionName + ""}]
       })
       this.addNodeDialogVisible = false
     },
+    //保存操作
     async handleChartSave(nodes, connections) {
-      console.log(nodes)
-      console.log(connections)
-      let submitOptionsRequest = {
-        nodes:nodes,
-        connections:connections,
-        baseNumber:this.baseNumber
+      // let nodes = nodes
+      // console.log(nodes)
+      // console.log(connections)
+      //保存
+      /**
+       * 思路
+       * 当 nodes列表不为空
+       *   1。 计算每个节点的入度
+       *   2。 把入度为0的点放到结果队列里面，并删除对应的nodes和connections里面的项
+       *
+       */
+          // let submitOptionsRequest = {
+          //   nodes: nodes,
+          //   connections: connections,
+          //   baseNumber: this.baseNumber
+          // }
+      let resQueue = []//结果栈
+      //这一步是查找每个节点的入度，并存到每一个节点里面
+      while (nodes.length) {
+        //查找每个节点的入度
+        nodes = getNodeIn(nodes, connections)
+        /**
+         * 这儿有一个问题没解决 但是不影响运行
+         *   用深拷贝的话就会陷入死循环  为什么？？？
+         */
+        // let tempNodes = Object.assign({}, nodes)
+        let tempNodes = nodes
+        for (let i = 0; i < tempNodes.length; i++) {
+          if (tempNodes[i].in === 0 ) {
+            //把入度为0的点放到结果队列里面
+            resQueue.push(tempNodes[i])
+            // 删除对应的nodes里面的项
+            nodes = nodes.filter(item => {
+              return item !== tempNodes[i]
+            })
+            // 删除对应的connections里面的项
+            connections = connections.filter(connection => {
+              return connection.source.id !== tempNodes[i].id
+            })
+          }
+        }
       }
-      const res = await submitOptions(submitOptionsRequest)
+      // console.log("结果来了")
+      console.log(resQueue);
+
+      const res = await submitOptions(resQueue)
       console.log(res)
       alert(res.data)
     },
@@ -132,6 +172,7 @@ export default {
     },
     handleEditConnection(connection) {
     },
+    //双击的事件处理
     handleDblClick(position) {
       // this.$refs.chart.add({
       //   id: +new Date(),
