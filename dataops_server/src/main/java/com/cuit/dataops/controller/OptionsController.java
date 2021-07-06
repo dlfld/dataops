@@ -47,7 +47,13 @@ public class OptionsController implements OptionsApi {
      */
     @Override
     @PostMapping("/topo")
-    public ResponseData submitOptions2(List<Node> nodes) {
+    public ResponseData submitOptions2(@RequestBody List<Node> nodes) {
         return optionsService.runTopoOptions(nodes);
+    }
+
+    @Override
+    @PostMapping("/topo2")
+    public ResponseData submitOptions3(@RequestBody SubmitOptionsRequest submitOptionsRequest) {
+        return null;
     }
 }

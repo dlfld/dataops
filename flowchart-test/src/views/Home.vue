@@ -127,11 +127,10 @@ export default {
        *   2。 把入度为0的点放到结果队列里面，并删除对应的nodes和connections里面的项
        *
        */
-          // let submitOptionsRequest = {
-          //   nodes: nodes,
-          //   connections: connections,
-          //   baseNumber: this.baseNumber
-          // }
+      let submitOptionsRequest = {
+        connections: connections,
+        baseNumber: this.baseNumber
+      }
       let resQueue = []//结果栈
       //这一步是查找每个节点的入度，并存到每一个节点里面
       while (nodes.length) {
@@ -141,10 +140,10 @@ export default {
          * 这儿有一个问题没解决 但是不影响运行
          *   用深拷贝的话就会陷入死循环  为什么？？？
          */
-        // let tempNodes = Object.assign({}, nodes)
+            // let tempNodes = Object.assign({}, nodes)
         let tempNodes = nodes
         for (let i = 0; i < tempNodes.length; i++) {
-          if (tempNodes[i].in === 0 ) {
+          if (tempNodes[i].in === 0) {
             //把入度为0的点放到结果队列里面
             resQueue.push(tempNodes[i])
             // 删除对应的nodes里面的项
@@ -158,10 +157,8 @@ export default {
           }
         }
       }
-      // console.log("结果来了")
-      console.log(resQueue);
-
-      const res = await submitOptions(resQueue)
+      submitOptionsRequest.nodes = resQueue
+      const res = await submitOptions(submitOptionsRequest)
       console.log(res)
       alert(res.data)
     },

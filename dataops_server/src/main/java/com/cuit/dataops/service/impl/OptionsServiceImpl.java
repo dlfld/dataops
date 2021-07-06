@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Queue;
 
 
@@ -80,8 +81,12 @@ public class OptionsServiceImpl implements OptionsService {
         Queue<Node> queue = new LinkedList<Node>();
         nodes.forEach(queue::offer);
         int res = 10;
-        while (!nodes.isEmpty()){
-            res = Integer.parseInt(pyservice.callFunctionDemo(queue.poll().getOptUrl()+res));
+        while (!queue.isEmpty()){
+            Node node = queue.poll();
+            if(StringUtils.equals(node.getId(),"1") || StringUtils.equals(node.getId(),"2")){
+                continue;
+            }
+            res = Integer.parseInt(pyservice.callFunctionDemo(node.getOptUrl()+res));
         }
         return ResponseDataUtil.buildSuccess(res);
 

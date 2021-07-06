@@ -22,4 +22,7 @@ public interface OptionsApi {
 
     @ApiOperation("提交操作结果2")
     ResponseData submitOptions2(List<Node> nodes);
+
+    @ApiOperation("提交操作结果3")
+    ResponseData submitOptions3(SubmitOptionsRequest submitOptionsRequest);
 }
