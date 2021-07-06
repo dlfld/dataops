@@ -16,7 +16,7 @@ export function getOPtionsList(){
 //进行options的提交与执行
 export function submitOptions(submitOptionsRequest){
     return request({
-        url: '/options/topo',
+        url: '/options/topo2',
         method: 'post',
         data:submitOptionsRequest
     })

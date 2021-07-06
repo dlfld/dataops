@@ -1,24 +1,33 @@
 from fastapi import APIRouter
 from loguru import logger
+from pydantic import BaseModel
 
 router = APIRouter()
 
 
-@router.get('/add/{nums}')
-async def get_options(nums: int):
-    return nums + 2
+class Params(BaseModel):
+    items: list = None
 
 
-@router.get('/min/{nums}')
-async def get_options(nums: int):
-    return nums - 2
+@router.post('/add')
+async def get_options(params: Params):
+    return "".join([item for item in params.items])+"add"
 
 
-@router.get('/rid/{nums}')
-async def get_options(nums: int):
-    return nums * 2
+@router.post('/min')
+async def get_options(params: Params):
+    return "".join([item for item in params.items])+"min"
 
 
-@router.get('/div/{nums}')
-async def get_options(nums: int):
-    return nums / 2
+@router.post('/rid ')
+async def get_options(params: Params):
+    return "".join([item for item in params.items])+"rid"
+
+
+@router.post('/div ')
+async def get_options(params: Params):
+    return "".join([item for item in params.items])+"div"
+
+@router.post('/ ')
+async def get_options(params: Params):
+    return ""

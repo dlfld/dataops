@@ -128,6 +128,7 @@ export default {
        *
        */
       let submitOptionsRequest = {
+        nodes: nodes,
         connections: connections,
         baseNumber: this.baseNumber
       }
@@ -158,6 +159,7 @@ export default {
         }
       }
       submitOptionsRequest.nodes = resQueue
+      // const res = await submitOptions(resQueue)
       const res = await submitOptions(submitOptionsRequest)
       console.log(res)
       alert(res.data)

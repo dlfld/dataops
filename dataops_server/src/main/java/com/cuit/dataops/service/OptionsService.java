@@ -18,4 +18,6 @@ public interface OptionsService {
     ResponseData runOptions(SubmitOptionsRequest submitOptionsRequest);
 
     ResponseData runTopoOptions(List<Node> nodes);
+
+    ResponseData runTopoOptions3(SubmitOptionsRequest submitOptionsRequest);
 }
