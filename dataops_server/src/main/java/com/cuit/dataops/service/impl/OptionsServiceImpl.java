@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @Component
@@ -133,8 +135,6 @@ public class OptionsServiceImpl implements OptionsService {
                 System.out.println(paramsBody);
                 res = pyservice.callFunction(node.getOptUrl(), paramsBody);
             }
-
-//            int res = 1;
             if (connectionMap.containsKey(node.getId())) {
                 List<String> childrens = connectionMap.get(node.getId());
                 //调度结果进行子节点参数封装
@@ -148,14 +148,16 @@ public class OptionsServiceImpl implements OptionsService {
                         params.put(children_id, temp);
                     }
                 }
-                if(childrens.size()==1&&StringUtils.equals(childrens.get(0),"2")){
+                if (childrens.size() == 1 && StringUtils.equals(childrens.get(0), "2")) {
                     System.out.println(childrens);
                     resultRes.add(res);
                 }
             }
-
-//            params.remove(node.getId());
+            params.remove(node.getId());
         }
-        return ResponseDataUtil.buildSuccess(resultRes);
+        List<String> collect = resultRes.stream().map(item ->
+                item.replace("\\", "").replace("\"", "")
+        ).collect(Collectors.toList());
+        return ResponseDataUtil.buildSuccess(collect);
     }
 }

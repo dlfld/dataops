@@ -11,20 +11,20 @@ class Params(BaseModel):
 
 @router.post('/add')
 async def get_options(params: Params):
-    return "".join([item for item in params.items])+"add"
+    return "".join([item for item in params.items])+"add "
 
 
 @router.post('/min')
 async def get_options(params: Params):
-    return "".join([item for item in params.items])+"min"
+    return "".join([item for item in params.items])+"min "
 
 
-@router.post('/rid ')
+@router.post('/rid')
 async def get_options(params: Params):
-    return "".join([item for item in params.items])+"rid"
+    return "".join([item for item in params.items])+"rid "
 
 
-@router.post('/div ')
+@router.post('/div')
 async def get_options(params: Params):
     return "".join([item for item in params.items])+"div"
 

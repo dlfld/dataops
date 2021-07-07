@@ -40,7 +40,7 @@
           </el-tooltip>
         </el-option>
       </el-select>
-      <el-input v-model="baseNumber" placeholder="请输入内容"></el-input>
+<!--      <el-input v-model="baseNumber" placeholder="请输入内容"></el-input>-->
       <span slot="footer" class="dialog-footer">
         <el-button @click="addNodeDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="addNode">确 定</el-button>
