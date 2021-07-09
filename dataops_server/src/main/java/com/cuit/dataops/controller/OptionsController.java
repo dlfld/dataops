@@ -4,11 +4,10 @@ import com.cuit.dataops.api.OptionsApi;
 import com.cuit.dataops.pojo.Node;
 import com.cuit.dataops.pojo.request.SubmitOptionsRequest;
 import com.cuit.dataops.pojo.response.ResponseData;
-import com.cuit.dataops.service.OptionsService;
+import com.cuit.dataops.service.intf.OptionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -33,23 +32,6 @@ public class OptionsController implements OptionsApi {
         return optionsService.getOptions();
     }
 
-
-    @Override
-    @PostMapping("")
-    public ResponseData submitOptions(@RequestBody SubmitOptionsRequest submitOptionsRequest) {
-        return optionsService.runOptions(submitOptionsRequest);
-    }
-
-    /**
-     * 拓扑排序版本
-     * @param nodes
-     * @return
-     */
-    @Override
-    @PostMapping("/topo")
-    public ResponseData submitOptions2(@RequestBody List<Node> nodes) {
-        return optionsService.runTopoOptions(nodes);
-    }
 
     @Override
     @PostMapping("/topo2")

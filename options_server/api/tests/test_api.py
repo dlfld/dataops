@@ -14,7 +14,7 @@ async def get_options(params: Params):
     return "".join([item for item in params.items])+"add "
 
 
-@router.post('/min')
+@router.post('/min',summary="实现减操作")
 async def get_options(params: Params):
     return "".join([item for item in params.items])+"min "
 

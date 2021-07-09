@@ -11,5 +11,5 @@ import java.util.List;
 @NoArgsConstructor
 @Accessors(chain = true) //链式调用开启
 public class ParamsBody {
-    List<String> items;
+    List<Object> items;
 }

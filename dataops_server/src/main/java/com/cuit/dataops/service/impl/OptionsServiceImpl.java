@@ -2,12 +2,12 @@ package com.cuit.dataops.service.impl;
 
 import com.cuit.dataops.pojo.Connection;
 import com.cuit.dataops.pojo.Node;
-import com.cuit.dataops.pojo.Option;
 import com.cuit.dataops.pojo.bo.ParamsBody;
 import com.cuit.dataops.pojo.request.SubmitOptionsRequest;
 import com.cuit.dataops.pojo.response.ResponseData;
 import com.cuit.dataops.rpc.Pyservice;
-import com.cuit.dataops.service.OptionsService;
+import com.cuit.dataops.rpc.RpcImpl;
+import com.cuit.dataops.service.intf.OptionsService;
 import com.cuit.dataops.utils.ResponseDataUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
@@ -15,149 +15,101 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 @Component
 public class OptionsServiceImpl implements OptionsService {
     @Resource
     Pyservice pyservice;
-
+    @Resource
+    RpcImpl rpc;
 
     @Override
     public ResponseData getOptions() {
         return ResponseDataUtil.buildSuccess(pyservice.getOptions());
     }
 
-    //    @Override
-    public ResponseData runOptions_old(SubmitOptionsRequest submitOptionsRequest) {
-        int res = submitOptionsRequest.getBaseNumber();
-        String current = "1";
-        //option调用队列
-        Queue<Node> queue = new LinkedList<Node>();
-        Queue<String> idQueue = new LinkedList<String>();
-        for (Node node : submitOptionsRequest.getNodes()) {
-            for (Connection connection : submitOptionsRequest.getConnections()) {
-                /**如果检索到的源头id是当前id
-                 *    再判断当前的下一个是不是尾巴节点
-                 *          不是就把当前的下一个加入队列
-                 */
-                if (StringUtils.equals(connection.getSource().getId(), current)) {
-
-                    current = connection.getDestination().getId();
-                    if (!StringUtils.equals(connection.getDestination().getId(), "2")) {
-                        idQueue.offer(connection.getDestination().getId());
-                    }
-                }
-            }
-        }
-        System.out.println(idQueue.isEmpty());
-        for (Node node : submitOptionsRequest.getNodes()) {
-            if (!idQueue.isEmpty()) {
-                String cur = idQueue.element();
-                if (StringUtils.equals(cur, node.getId())) {
-                    queue.offer(node);
-                    idQueue.poll();
-                }
-            }
-        }
-        while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            res = Integer.parseInt(pyservice.callFunctionDemo(node.getOptUrl() + res));
-        }
-        System.out.println(res);
-        return ResponseDataUtil.buildSuccess(res);
-    }
-
-
-    @Override
-    public ResponseData runOptions(SubmitOptionsRequest submitOptionsRequest) {
-
-        return null;
-    }
-
-    @Override
-    public ResponseData runTopoOptions(List<Node> nodes) {
-        Queue<Node> queue = new LinkedList<Node>();
-        nodes.forEach(queue::offer);
-        int res = 10;
-        while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            if (StringUtils.equals(node.getId(), "1") || StringUtils.equals(node.getId(), "2")) {
-                continue;
-            }
-            res = Integer.parseInt(pyservice.callFunctionDemo(node.getOptUrl() + res));
-        }
-        return ResponseDataUtil.buildSuccess(res);
-
-    }
-
 
     @Override
     public ResponseData runTopoOptions3(SubmitOptionsRequest submitOptionsRequest) {
         //参数map
-        Map<String, List<String>> params = new HashMap<String, List<String>>() {{
+        Map<String, List<Object>> params = new HashMap<String, List<Object>>() {{
             //初始化第一个节点
-            put("1", new ArrayList<String>() {{
+            put("1", new ArrayList<Object>() {{
                 add("input1");
             }});
         }};
+        //前端进行拓扑排序之后传过来的排序之后的序列
         List<Node> sortList = submitOptionsRequest.getNodes();
-        Map<String, List<String>> connectionMap = new HashMap<>();
+        //连接map
+        Map<String, List<Object>> connectionMap = new HashMap<>();
 
-        // 构建connectinoMap
+
+        /**
+         * 构建connectinoMap
+         *   这个map的key是连接发出节点的id  value是连接指向节点的id（列表->一个节点指向多个节点的情况）
+         *   构建这个map的原因是因为调度的时候会多次对连接表进行查询，用map就会减少遍历次数
+         */
         List<Connection> connections = submitOptionsRequest.getConnections();
         for (Connection connection : connections) {
             boolean hasKey = connectionMap.containsKey(connection.getSource().getId());
             if (hasKey) {
                 connectionMap.get(connection.getSource().getId()).add(connection.getDestination().getId());
             } else {
-                connectionMap.put(connection.getSource().getId(), new ArrayList<String>() {{
+                connectionMap.put(connection.getSource().getId(), new ArrayList<Object>() {{
                     add(connection.getDestination().getId());
                 }});
             }
         }
-        List<String> resultRes = new ArrayList<>();
+        //结果列表
+        List<Object> resultRes = new ArrayList<>();
         // 调度
         for (Node node : sortList) {
-//            if(StringUtils.equals(node.getId(),"1")){
-//
-//                continue;
-//            }
-
-            List<String> input_params = params.get(node.getId());
-//            System.out.println(node.getId());
-            String res = "start";
-            System.out.println(node);
+            List<Object> input_params = params.get(node.getId());
+            Object res = "";
+            //如果当前节点的url不为空  -> 为空的话表示当前节点是开始节点，开始节点不需要调用远程服务，
+            //但是需要执行后面的操作： 封装他的子节点的参数列表
             if (StringUtils.isNotEmpty(node.getOptUrl())) {
-
                 ParamsBody paramsBody = new ParamsBody(input_params);
-                System.out.println(paramsBody);
-                res = pyservice.callFunction(node.getOptUrl(), paramsBody);
+//                System.out.println(paramsBody);
+                res = (String)rpc.httpRpc(node.getOptUrl(), paramsBody);
+//                res = pyservice.callFunction(node.getOptUrl(), paramsBody);
+            }else{
+//                res = params.get(node.getId()).stream()；
             }
+            //如果连接表里面有当前节点
             if (connectionMap.containsKey(node.getId())) {
-                List<String> childrens = connectionMap.get(node.getId());
+                List<Object> childrens = connectionMap.get(node.getId());
                 //调度结果进行子节点参数封装
-                for (String children_id : childrens) {
+                for (Object children_id : childrens) {
                     // add parameters to input of children node
                     if (params.containsKey(children_id)) {
                         params.get(children_id).add(res + "");
                     } else {
-                        ArrayList<String> temp = new ArrayList<String>();
+                        ArrayList<Object> temp = new ArrayList<Object>();
                         temp.add(res);
-                        params.put(children_id, temp);
+                        params.put(String.valueOf(children_id), temp);
                     }
                 }
-                if (childrens.size() == 1 && StringUtils.equals(childrens.get(0), "2")) {
+                //如果当前节点只有一个子节点，并且这个子节点的id为2的话表示当前节点是最后一个节点，
+                // 应该把当前节点的返回值封装到结果返回类里面去
+                if (childrens.size() == 1 && StringUtils.equals(String.valueOf(childrens.get(0)), "2")) {
                     System.out.println(childrens);
                     resultRes.add(res);
                 }
             }
             params.remove(node.getId());
         }
+        //删除掉返回之后多余的/ 和"
         List<String> collect = resultRes.stream().map(item ->
-                item.replace("\\", "").replace("\"", "")
+                String.valueOf(item).replace("\\", "").replace("\"", "")
         ).collect(Collectors.toList());
         return ResponseDataUtil.buildSuccess(collect);
+    }
+
+
+    @Override
+    public ResponseData runTopoOptionsMapMode(SubmitOptionsRequest submitOptionsRequest) {
+        return null;
     }
 }

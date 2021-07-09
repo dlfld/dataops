@@ -23,7 +23,7 @@ public interface Pyservice {
      * @return  返回的是一个map数组
      */
     @Request(url = "${funcUrl}",type = "post")
-   String callFunction(@Var("funcUrl") String funcUrl, @JSONBody ParamsBody params);
+    String callFunction(@Var("funcUrl") String funcUrl, @JSONBody ParamsBody params);
 
     @Request("${funcUrl}")
     String callFunctionDemo(@Var("funcUrl") String funcUrl);
