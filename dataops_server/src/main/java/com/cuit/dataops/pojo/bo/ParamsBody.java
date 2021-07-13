@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.List;
+
+/**
+ * 参数列表的实体类
+ * 描述的是一些参数
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
