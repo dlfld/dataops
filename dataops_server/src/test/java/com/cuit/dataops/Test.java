@@ -18,14 +18,12 @@ import java.util.Map;
 class Param123 {
     private String desc; //参数的描述  计算端根据参数的描述来进行参数的检索
     private Integer version = 0;
+    public  static List<String> list = new ArrayList<>();
 }
 
 public class Test {
 
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<String, String>() {{
-            put("1", "1");
-        }};
-        System.out.println(map.get("2"));
+
     }
 }

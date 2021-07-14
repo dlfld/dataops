@@ -1,19 +1,20 @@
-package com.cuit.dataops.utils;
+package com.cuit.dataops.dispatch.utils;
 
+import com.cuit.dataops.pojo.Node;
 import com.cuit.dataops.pojo.bo.Param;
 import com.cuit.dataops.pojo.bo.ParamsBody2;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.cuit.dataops.pojo.bo.Task;
+import com.cuit.dataops.pojo.request.SubmitOptionsRequest;
+import lombok.extern.slf4j.Slf4j;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 这个工具类是用来处理数据相关的工具类
  */
+@Slf4j
 public class DataUtils {
-    static Logger logger = LoggerFactory.getLogger(DataUtils.class);
+
 
     /**
      * 更新参数的工具类
@@ -36,13 +37,13 @@ public class DataUtils {
     public static ParamsBody2 refreshParams(ParamsBody2 source, ParamsBody2 target) {
 
         //如果旧版本的参数为空的话（就表示旧版本没有参数） 那就直接返回新版本的参数
-        if (source == null || source.getParams() == null || source.getParams().isEmpty()) {
-            logger.info("传入的旧参数为空");
+        if (source == null || source.getItems() == null || source.getItems().isEmpty()) {
+            log.info("传入的旧参数为空");
             return target;
         }
         //如果传入的新参数为空的话
-        if (target == null || target.getParams() == null || target.getParams().isEmpty()) {
-            logger.info("传入的新参数为空");
+        if (target == null || target.getItems() == null || target.getItems().isEmpty()) {
+            log.info("传入的新参数为空");
             return source;
         }
         //如果都不为空的话就更新参数
@@ -50,7 +51,7 @@ public class DataUtils {
          * 下面这几步做的功能是把新传进来的参数通过遍历一遍的方式转化为hashmap
          * 因为后面要很多遍遍历检索，因此通过一次遍历转化为map来加快速度
          */
-        List<Param> params = source.getParams();
+        List<Param> params = source.getItems();
         Map<String, Param> sourceMap = new HashMap<>();
         for (Param param : params) {
             //按照设计思路来讲  这个params列表里面的每一个对象的desc是不可能重复的
@@ -58,7 +59,7 @@ public class DataUtils {
             sourceMap.put(param.getDesc(), param);
         }
         //下面尽心参数的合并
-        for (Param param : target.getParams()) {
+        for (Param param : target.getItems()) {
             Param newParam = sourceMap.get(param.getDesc());
             if (newParam == null) {
                 continue;
@@ -74,12 +75,31 @@ public class DataUtils {
         if (sourceMap.isEmpty()) {
             return target;
         }
-        logger.info("加入了新的参数");
+        log.info("加入了新的参数");
         //如果新的参数的map还没被删完  表示新增加了参数项  遍历新的参数项 添加到返回列表中
         for (Param param : sourceMap.values()) {
-            target.getParams().add(param);
+            target.getItems().add(param);
         }
         return target;
+    }
+
+
+    /**
+     * 根据传入的参数进行task的封装 封装之后进行返回
+     *
+     * @param submitOptionsRequest
+     * @return
+     */
+    public static Task buildTask(SubmitOptionsRequest submitOptionsRequest) {
+        //初始化一个task 并初始化task的参数表
+        Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
+            add(new Param().setDesc("start desc").setObject("start obj").setVersion(0));
+        }}));
+        //获取前端已经经过拓扑排序之后的排序列表
+        List<Node> sortList = submitOptionsRequest.getNodes();
+        //把排序列表添加到队列当中去
+        sortList.forEach(task.nodeQueue::offer);
+        return task;
     }
 
 }

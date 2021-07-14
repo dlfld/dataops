@@ -1,4 +1,4 @@
-package com.cuit.dataops.rpc;
+package com.cuit.dataops.dispatch.rpc;
 
 import com.cuit.dataops.pojo.Option;
 import com.cuit.dataops.pojo.bo.ParamsBody;

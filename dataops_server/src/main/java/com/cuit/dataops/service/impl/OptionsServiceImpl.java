@@ -5,30 +5,33 @@ import com.cuit.dataops.pojo.Node;
 import com.cuit.dataops.pojo.bo.Param;
 import com.cuit.dataops.pojo.bo.ParamsBody;
 import com.cuit.dataops.pojo.bo.ParamsBody2;
+import com.cuit.dataops.pojo.bo.Task;
 import com.cuit.dataops.pojo.request.SubmitOptionsRequest;
 import com.cuit.dataops.pojo.response.ResponseData;
-import com.cuit.dataops.rpc.Pyservice;
-import com.cuit.dataops.rpc.RpcImpl;
+import com.cuit.dataops.dispatch.rpc.Pyservice;
+import com.cuit.dataops.dispatch.rpc.RpcImpl;
 import com.cuit.dataops.service.intf.OptionsService;
-import com.cuit.dataops.utils.DataUtils;
+import com.cuit.dataops.dispatch.utils.DataUtils;
 import com.cuit.dataops.utils.ResponseDataUtil;
+import com.cuit.dataops.dispatch.taskFactory.TaskFactoryStaticImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+@Slf4j
 @Component
 public class OptionsServiceImpl implements OptionsService {
     @Resource
     Pyservice pyservice;
     @Resource
     RpcImpl rpc;
-    static Logger logger = LoggerFactory.getLogger(OptionsServiceImpl.class);
+    @Resource
+    TaskFactoryStaticImpl taskFactoryStaticImpl;
+//    static Logger logger = LoggerFactory.getLogger(OptionsServiceImpl.class);
 
     @Override
     public ResponseData getOptions() {
@@ -151,6 +154,7 @@ public class OptionsServiceImpl implements OptionsService {
         }
         //结果列表
         List<ParamsBody2> resList = new ArrayList<>();
+        log.info(sortList + "->sortList");
         //下面进行参数的封装和调度
         for (Node node : sortList) {
             //获取当前option的输入参数
@@ -166,6 +170,7 @@ public class OptionsServiceImpl implements OptionsService {
                 //远程调用并返回结果
                 res = rpc.httpRpcV2(node.getOptUrl(), paramsBody2);
             }
+            log.info(connectionMap + "->connectionMap");
             //如果连接表里面有当前节点
             if (connectionMap.containsKey(node.getId())) {
                 //获取当前节点的所有子节点
@@ -176,10 +181,16 @@ public class OptionsServiceImpl implements OptionsService {
                     if (params.containsKey(childrenId)) {
                         ParamsBody2 target = new ParamsBody2(params.get(childrenId));
                         //更新参数
-                        params.put(childrenId, DataUtils.refreshParams(res, target).getParams());
+                        params.put(childrenId, DataUtils.refreshParams(res, target).getItems());
                     } else {
-                        //说明之前还没有参数 现在直接加进去
-                        params.put(childrenId, res.getParams());
+                        //如果这个节点是开始节点的后一个节点，就把开始节点的参数赋值给当前节点
+                        if (StringUtils.isEmpty(node.getOptUrl())) {
+                            params.put(childrenId, params.get("1"));
+                        } else {
+                            //说明之前还没有参数 现在直接加进去
+                            params.put(childrenId, res.getItems());
+                        }
+
                     }
                 }
                 //如果当前节点只有一个子节点，并且这个子节点的id为2的话表示当前节点是最后一个节点，
@@ -194,5 +205,24 @@ public class OptionsServiceImpl implements OptionsService {
 //                String.valueOf(item).replace("\\", "").replace("\"", "")
 //        ).collect(Collectors.toList());
         return ResponseDataUtil.buildSuccess(resList);
+    }
+
+    /**
+     * 这个版本是抽取出task层
+     *
+     * @param submitOptionsRequest
+     * @return
+     */
+    @Override
+    public ResponseData runTopoOptionsTaskMode(SubmitOptionsRequest submitOptionsRequest) {
+        //获取当前请求的task
+        Task task = DataUtils.buildTask(submitOptionsRequest);
+        //将task添加到task队列
+        taskFactoryStaticImpl.offer(task);
+        //下面是遍历task的node队列进行参数更新和调度
+
+
+        //返回成功
+        return ResponseDataUtil.buildSuccess();
     }
 }

@@ -1,8 +1,8 @@
-package com.cuit.dataops.rpc;
+package com.cuit.dataops.dispatch.rpc;
 
 import com.cuit.dataops.pojo.bo.ParamsBody;
 import com.cuit.dataops.pojo.bo.ParamsBody2;
-import com.dtflys.forest.annotation.JSONBody;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -11,11 +11,12 @@ import javax.annotation.Resource;
  * 远程调度的实现
  * 目前是以http的方式调度，今后会以其他的方式调度，所以调度抽取一层出来
  */
+@Slf4j
 @Component
 public class RpcImpl {
     @Resource
     Pyservice pyservice;
-
+//    static Logger logger = LoggerFactory.getLogger(RpcImpl.class);
     /**
      * 以http的方式对python实现的算法进行调度
      *
@@ -24,6 +25,7 @@ public class RpcImpl {
      * @return
      */
     public Object httpRpc(String funcUrl, ParamsBody params) {
+        log.info(params.toString());
         return pyservice.callFunction(funcUrl, params);
     }
 
@@ -36,6 +38,7 @@ public class RpcImpl {
      * @return
      */
     public ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2) {
+        log.info(paramsBody2.toString());
         return pyservice.callFunctionV2(funcUrl, paramsBody2);
     }
 

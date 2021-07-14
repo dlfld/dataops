@@ -1,21 +1,19 @@
 package com.cuit.dataops.pojo.bo;
 
+import com.cuit.dataops.pojo.Node;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
-/**
- * 第二个版本的参数
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true) //链式调用开启
-@ToString
-public class ParamsBody2 {
-    List<Param> items;
+public class Task {
+    public ParamsBody2 paramsBody2; //参数表
+    public Queue<Node> nodeQueue = new LinkedList<>();
 }
