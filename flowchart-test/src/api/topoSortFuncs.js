@@ -17,7 +17,8 @@ export function getNodeIn(nodes, connections) {
  * @param nodes  节点表
  * @param connections 连接表
  */
-export function interpretationLayer(nodes, connections) {
+export async function interpretationLayer(nodes, connections) {
+    console.log(nodes, connections)
     let resQueue = []//结果栈
     //这一步是查找每个节点的入度，并存到每一个节点里面
     while (nodes.length) {
@@ -44,8 +45,10 @@ export function interpretationLayer(nodes, connections) {
             }
         }
     }
-    return {
+    let res = {
         connections: connections,
         nodes: resQueue
     }
+
+    return res
 }
