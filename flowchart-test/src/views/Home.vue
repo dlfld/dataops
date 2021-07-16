@@ -40,7 +40,7 @@
           </el-tooltip>
         </el-option>
       </el-select>
-<!--      <el-input v-model="baseNumber" placeholder="请输入内容"></el-input>-->
+      <!--      <el-input v-model="baseNumber" placeholder="请输入内容"></el-input>-->
       <span slot="footer" class="dialog-footer">
         <el-button @click="addNodeDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="addNode">确 定</el-button>
@@ -52,7 +52,7 @@
 <script>
 // @ is an alias to /src
 import {getOPtionsList, submitOptions} from '@/api/Home'
-import {getNodeIn} from '@/api/topoSortFuncs'
+import {getNodeIn, interpretationLayer} from '@/api/topoSortFuncs'
 
 export default {
   name: 'Home',
@@ -63,6 +63,7 @@ export default {
       option: "",//用户选择的功能节点
       //添加节点的弹出选择框
       addNodeDialogVisible: false,
+      userContact: "2441086385",
       //节点
       nodes: [
         // Basic fields
@@ -127,11 +128,7 @@ export default {
        *   2。 把入度为0的点放到结果队列里面，并删除对应的nodes和connections里面的项
        *
        */
-      let submitOptionsRequest = {
-        nodes: nodes,
-        connections: connections,
-        baseNumber: this.baseNumber
-      }
+
       let resQueue = []//结果栈
       //这一步是查找每个节点的入度，并存到每一个节点里面
       while (nodes.length) {
@@ -158,8 +155,13 @@ export default {
           }
         }
       }
-      submitOptionsRequest.nodes = resQueue
-      // const res = await submitOptions(resQueue)
+      // let submitOptionsRequest = {
+      //   connections: connections,
+      //   userContact: this.userContact,
+      //   nodes: resQueue
+      // }
+      let submitOptionsRequest = interpretationLayer(nodes, connections)
+      submitOptionsRequest.userContact = this.userContact
       const res = await submitOptions(submitOptionsRequest)
       console.log(res)
       alert(res.data)
