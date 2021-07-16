@@ -1,11 +1,15 @@
 package com.cuit.dataops;
 
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.lang.Console;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import org.springframework.beans.factory.annotation.Value;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,12 +22,12 @@ import java.util.Map;
 class Param123 {
     private String desc; //参数的描述  计算端根据参数的描述来进行参数的检索
     private Integer version = 0;
-    public  static List<String> list = new ArrayList<>();
+    public static List<String> list = new ArrayList<>();
 }
 
 public class Test {
-
     public static void main(String[] args) {
+        FileUtil.mkdir("/Users/dailinfeng/Desktop");
 
     }
 }

@@ -14,6 +14,8 @@ import java.util.Queue;
 @NoArgsConstructor
 @Accessors(chain = true) //链式调用开启
 public class Task {
+    public String taskId; //task的唯一标识符
     public ParamsBody2 paramsBody2; //参数表
     public Queue<Node> nodeQueue = new LinkedList<>();
+    public String userContact;//用户的联系方式
 }

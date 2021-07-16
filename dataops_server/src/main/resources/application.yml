@@ -1,15 +1,15 @@
 #spring:
-  #mybatis-plus的配置
+#mybatis-plus的配置
 #  datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://rm-2vc34b66ob8em02bpio.mysql.cn-chengdu.rds.aliyuncs.com:3306/intellia2?serverTimezone=Asia/Shanghai
 #    username: dlf
 #    password: 2441086385Dlf
-  #设置cache存到redis里面
+#设置cache存到redis里面
 #  cache:
 #    type: redis
-  #redis的配置
+#redis的配置
 #  redis:
 #    database: 1
 #    host: 150.158.174.169
@@ -26,8 +26,11 @@
 #  configuration:
 #    #    驼峰命名打开
 #    map-underscore-to-camel-case: true
-    #配置 打印SQL
+#配置 打印SQL
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+data:
+  save: /Users/dailinfeng/Desktop/dataops/result
+  serverBaseUrl: http://127.0.0.1:8000/task
 server:
   port: 9999
 #调用Python端服务配置
@@ -42,9 +45,8 @@ forest:
   log-response-status: true # 打开/关闭Forest响应状态日志（默认为 true）
   log-response-content: true # 打开/关闭Forest响应内容日志（默认为 false）
   variables:
-    #    baseUrl: http://150.158.174.169:8000
     baseUrl: http://127.0.0.1:8000
-
+    notifyUrl: http://10.131.18.162:5700   #qq 机器人的url
 ##签发token token认证的
 #jwtp:
 #  store-type: 0  #0-redisTokenStore 1-jdbcTokenStore 2-jwtTokenStore 默认是0

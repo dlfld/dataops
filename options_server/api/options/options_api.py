@@ -27,5 +27,10 @@ async def get_options():
             "optName": "除法",
             "optDesc": "执行除法操作"
         },
+        {
+            "optUrl": "/down",
+            "optName": "梯度下降",
+            "optDesc": "梯度下降"
+        },
     ])
     return res

@@ -13,7 +13,7 @@ import com.cuit.dataops.dispatch.rpc.RpcImpl;
 import com.cuit.dataops.service.intf.OptionsService;
 import com.cuit.dataops.dispatch.utils.DataUtils;
 import com.cuit.dataops.utils.ResponseDataUtil;
-import com.cuit.dataops.dispatch.taskFactory.TaskFactoryStaticImpl;
+import com.cuit.dataops.dispatch.taskFactory.impl.TaskFactoryStaticImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
@@ -219,10 +219,9 @@ public class OptionsServiceImpl implements OptionsService {
         Task task = DataUtils.buildTask(submitOptionsRequest);
         //将task添加到task队列
         taskFactoryStaticImpl.offer(task);
+        log.info(task + "-> 执行结果");
         //下面是遍历task的node队列进行参数更新和调度
-
-
         //返回成功
-        return ResponseDataUtil.buildSuccess();
+        return ResponseDataUtil.buildSuccess("成功加入队列");
     }
 }

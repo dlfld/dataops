@@ -1,4 +1,4 @@
-package com.cuit.dataops.dispatch.taskFactory;
+package com.cuit.dataops.dispatch.taskFactory.intf;
 
 import com.cuit.dataops.pojo.bo.Task;
 

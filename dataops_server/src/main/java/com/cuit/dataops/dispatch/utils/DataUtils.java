@@ -91,10 +91,12 @@ public class DataUtils {
      * @return
      */
     public static Task buildTask(SubmitOptionsRequest submitOptionsRequest) {
-        //初始化一个task 并初始化task的参数表
+        //初始化一个task 并初始化task的参数表  和task的id （唯一标识符）
         Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
             add(new Param().setDesc("start desc").setObject("start obj").setVersion(0));
-        }}));
+        }}))
+                .setTaskId(UUID.randomUUID().toString())
+                .setUserContact(submitOptionsRequest.getUserContact());
         //获取前端已经经过拓扑排序之后的排序列表
         List<Node> sortList = submitOptionsRequest.getNodes();
         //把排序列表添加到队列当中去

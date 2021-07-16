@@ -13,6 +13,10 @@ class Params(BaseModel):
 async def get_options(params: Params):
     for item in params.items:
         if item['desc'] == "start desc":
+            '''
+            
+            
+            '''
             temp = {
                 'desc':"after start add desc",
                 'version':0,

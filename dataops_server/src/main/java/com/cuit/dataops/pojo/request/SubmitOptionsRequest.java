@@ -16,5 +16,6 @@ import java.util.List;
 public class SubmitOptionsRequest {
     private List<Node> nodes;  //节点列表
     private List<Connection> connections; //链接列表
-    private int baseNumber;
+    //    private int baseNumber;
+    private String userContact;//用户的联系方式  目前为止是用户的QQ
 }
