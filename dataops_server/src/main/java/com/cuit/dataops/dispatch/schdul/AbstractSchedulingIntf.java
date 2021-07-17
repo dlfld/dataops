@@ -2,7 +2,10 @@ package com.cuit.dataops.dispatch.schdul;
 
 import com.cuit.dataops.pojo.bo.Task;
 
-public abstract class SchedulingIntf {
+/**
+ * @author dailinfeng
+ */
+public abstract class AbstractSchedulingIntf {
     /**
      * 开始调度
      */

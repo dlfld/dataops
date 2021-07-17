@@ -9,9 +9,15 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 
+/**
+ * @author dailinfeng
+ */
 @Component
 public interface OptionsService {
-    //获取所有的option
+    /**
+     * 获取所有的option
+     * @return
+     */
     ResponseData getOptions();
 
     //执行options

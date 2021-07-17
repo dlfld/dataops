@@ -4,6 +4,7 @@ import com.cuit.dataops.pojo.bo.Task;
 
 /**
  * task执行之后的结果队列
+ * @author dailinfeng
  */
 public interface ResultFactoryIntf {
 

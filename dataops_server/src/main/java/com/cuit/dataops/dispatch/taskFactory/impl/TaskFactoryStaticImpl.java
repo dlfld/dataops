@@ -10,6 +10,7 @@ import java.util.Queue;
 
 /**
  * 当前的task队列使用的是静态变量的方式
+ * @author dailinfeng
  */
 @Data
 @Component

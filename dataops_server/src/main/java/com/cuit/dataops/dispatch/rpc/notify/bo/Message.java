@@ -5,11 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+/**
+ * @author dailinfeng
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true) //链式调用开启
+@Accessors(chain = true)
 public class Message {
-    String user_id;  //用户的qq
-    String message;//消息体
+    /**
+     * 用户的QQ
+     */
+    String user_id;
+
+    /**
+     * 消息体
+     */
+    String message;
 }

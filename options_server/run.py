@@ -6,9 +6,9 @@ import os
 
 from utils.router_utils import get_router
 
-curPath = os.path.abspath(os.path.dirname(__file__))
-rootPath = os.path.split(curPath)[0]
-sys.path.append(rootPath)
+# curPath = os.path.abspath(os.path.dirname(__file__))
+# rootPath = os.path.split(curPath)[0]
+# sys.path.append(rootPath)
 
 # from api.options import options_api
 # from api.tests import test_api

@@ -40,12 +40,20 @@ public class Scheduling extends SchedulingIntf implements ApplicationRunner {
     @Resource
     QQBotRpc qqBotRpc;
 
+    /**
+     * 文件保存的路径
+     */
     @Value(value = "${data.save}")
-    String savePath;  //文件保存的路径
+    String savePath;
+    /**
+     * 下载结果服务器的url
+     */
     @Value(value = "${data.serverBaseUrl}")
-    String baseDownUrl;  //下载结果服务器的url
+    String baseDownUrl;
 
     //根据task队列进行调度的调度中心代码
+
+    @Override
     public void startDispatch() {
         //如果task队列不为空就运行
         while (!taskFactoryStatic.isEmpty()) {
@@ -128,7 +136,7 @@ public class Scheduling extends SchedulingIntf implements ApplicationRunner {
      * springboot启动之后 会开始运行这个方法
      * 10 秒检测一次任务队列是否为空，如果不为空的话就执行任务队列里面的任务
      *
-     * @param args
+     * @param args canshu
      * @throws Exception
      */
     @Override

@@ -4,6 +4,9 @@ import com.cuit.dataops.dispatch.taskFactory.intf.ResultFactoryIntf;
 import com.cuit.dataops.pojo.bo.Task;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author dailinfeng
+ */
 @Component
 public class ResultImpl implements ResultFactoryIntf {
 

@@ -6,6 +6,9 @@ import com.dtflys.forest.annotation.JSONBody;
 import com.dtflys.forest.annotation.Request;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author dailinfeng
+ */
 @Component
 @BaseRequest(
         baseURL = "${notifyUrl}"   // 默认域名

@@ -77,12 +77,12 @@ public class OptionsServiceImpl implements OptionsService {
          * 调度的操作步骤
          */
         for (Node node : sortList) {
-            List<Object> input_params = params.get(node.getId());
+            List<Object> inputParams = params.get(node.getId());
             Object res = "";
             //如果当前节点的url不为空  -> 为空的话表示当前节点是开始节点，开始节点不需要调用远程服务，
             //但是需要执行后面的操作： 封装他的子节点的参数列表
             if (StringUtils.isNotEmpty(node.getOptUrl())) {
-                ParamsBody paramsBody = new ParamsBody(input_params);
+                ParamsBody paramsBody = new ParamsBody(inputParams);
 //                System.out.println(paramsBody);
                 res = (String) rpc.httpRpc(node.getOptUrl(), paramsBody);
 //                res = pyservice.callFunction(node.getOptUrl(), paramsBody);
@@ -94,14 +94,14 @@ public class OptionsServiceImpl implements OptionsService {
             if (connectionMap.containsKey(node.getId())) {
                 List<Object> childrens = connectionMap.get(node.getId());
                 //调度结果进行子节点参数封装
-                for (Object children_id : childrens) {
+                for (Object childrenId : childrens) {
                     // add parameters to input of children node
-                    if (params.containsKey(children_id)) {
-                        params.get(children_id).add(res + "");
+                    if (params.containsKey(childrenId)) {
+                        params.get(childrenId).add(res + "");
                     } else {
                         ArrayList<Object> temp = new ArrayList<Object>();
                         temp.add(res);
-                        params.put(String.valueOf(children_id), temp);
+                        params.put(String.valueOf(childrenId), temp);
                     }
                 }
                 //如果当前节点只有一个子节点，并且这个子节点的id为2的话表示当前节点是最后一个节点，

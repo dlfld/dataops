@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 /**
  * 远程调度的实现
  * 目前是以http的方式调度，今后会以其他的方式调度，所以调度抽取一层出来
+ * @author dailinfeng
  */
 @Slf4j
 @Component

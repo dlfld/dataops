@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true) //链式调用开启
+@Accessors(chain = true)
 public class Connection {
     private NodeMsg source; //出发点
     private NodeMsg destination; //指向点

@@ -8,6 +8,9 @@ import io.swagger.annotations.ApiOperation;
 
 import java.util.List;
 
+/**
+ * @author dailinfeng
+ */
 @Api(tags = "Options 相关接口")
 public interface OptionsApi {
     /**
@@ -19,7 +22,11 @@ public interface OptionsApi {
     @ApiOperation("获取所有options方法")
     ResponseData getOptionsList();
 
-
+    /**
+     * 获取前端解释完成之后的数据接口
+     * @param submitOptionsRequest 请求参数
+     * @return
+     */
     @ApiOperation("提交操作结果3")
     ResponseData submitOptions3(SubmitOptionsRequest submitOptionsRequest);
 }
