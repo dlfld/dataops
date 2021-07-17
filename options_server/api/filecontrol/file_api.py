@@ -1,7 +1,7 @@
-from fastapi import APIRouter
-from starlette.responses import FileResponse
 
-router = APIRouter()
+from starlette.responses import FileResponse
+from utils.router_utils import get_router
+router = get_router()
 
 
 @router.get('/task/{filename}')

@@ -1,8 +1,8 @@
-from fastapi import APIRouter
 from loguru import logger
 from pydantic import BaseModel
+from utils.router_utils import get_router
 
-router = APIRouter()
+router = get_router()
 
 
 class Params(BaseModel):
@@ -18,9 +18,9 @@ async def get_options(params: Params):
             
             '''
             temp = {
-                'desc':"after start add desc",
-                'version':0,
-                'object':item['object'] + " add"
+                'desc': "after start add desc",
+                'version': 0,
+                'object': item['object'] + " add"
             }
             params.items.append(temp)
     return params

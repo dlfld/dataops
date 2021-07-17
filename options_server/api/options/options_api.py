@@ -1,10 +1,11 @@
-from fastapi import APIRouter
+
 from loguru import logger
 
-router = APIRouter()
+from utils.router_utils import get_router
+router = get_router()
 
 
-@router.get('/options/list')
+@router.get('/options/list', summary="获取所有的option列表")
 async def get_options():
     res = list([
         {
