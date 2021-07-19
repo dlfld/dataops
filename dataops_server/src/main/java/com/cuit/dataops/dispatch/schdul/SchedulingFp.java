@@ -18,23 +18,23 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- * 调度中心
- * 计划是springboot启动的时候 调度中心的调度算法就开始启动
- * 每隔一定的时间就扫描一遍task队列是否有任务，如果有任务就进行任务并把返回值保存到结果集当中去
- *
- * @author dailinfeng
+/** Fp  file params  文件参数形式版本
+ * 这个版本主要是参数以及数据都是使用文件的形式存储在本地，调度中心进行传参数的时候全部都是传的文件原数据的形式 （文件在本机中的地址）
+ * 计算端进行数据更新之后返回调用端计算是否成功的消息
+ * @Author dailinfeng
+ * @Description 调度中心  采用文件系统版本的
+ * @Date 2021/7/18 12:14 下午
+ * @Version 1.0
  */
-@Component
+//@Component
 @Slf4j
-@Order(value = 1)
-public class Scheduling extends AbstractSchedulingIntf implements ApplicationRunner {
+//@Order(value = 1)
+public class SchedulingFp extends AbstractSchedulingIntf implements ApplicationRunner {
     @Resource
     TaskFactoryStaticImpl taskFactoryStatic;
     @Resource
@@ -55,6 +55,11 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
 
     //根据task队列进行调度的调度中心代码
 
+    /**
+     *task中的参数部分存的是文件的位置
+     * task中的数据现在替换为元数据
+     * 实际数据的存储应该在task的封装那部分就已经进行数据格式的转换和存储了
+     */
     @Override
     public void startDispatch() {
         //如果task队列不为空就运行
@@ -71,18 +76,18 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
                 ParamsBody2 paramsBody2 = task.getParamsBody2();
                 //远程调用并返回结果
                 ParamsBody2 res = rpc.httpRpcV2(node.getOptUrl(), paramsBody2);
-                //进行参数的更新
-                task.setParamsBody2(DataUtils.refreshParams(res, task.getParamsBody2()));
+                //进行参数的更新  这个版本的参数更新就是数据计算端进行参数更新了
+//                task.setParamsBody2(DataUtils.refreshParams(res, task.getParamsBody2()));
             }
             //到这一步 一个task的调度就算完成了  下面的就是保存结果并通知用户
 
             //保存到任务队列里
-            String filename = saveTask(task);
+//            String filename = saveTask(task);
             //如果保存结果成功
-            if (StringUtils.isNotEmpty(savePath)) {
-                notifyUser(task.getUserContact(), filename);
-                taskFactoryStatic.poll();//在任务队列里删除
-            }
+//            if (StringUtils.isNotEmpty(savePath)) {
+//                notifyUser(task.getUserContact(), filename);
+//                taskFactoryStatic.poll();//在任务队列里删除
+//            }
         }
     }
 
@@ -130,7 +135,7 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
         Message message = new Message().setMessage("您的OPS已经计算完成！\n结果下载链接是：\n" + downTaskUrl).setUser_id(contact);
         //发消息
         //内网的时候  再开 不然通知失败会直接报bug
-        qqBotRpc.nodityUser(message);
+//        qqBotRpc.nodityUser(message);
         return true;
     }
 
