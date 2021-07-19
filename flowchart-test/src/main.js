@@ -5,12 +5,13 @@ import store from './store'
 import FlowChart from 'flowchart-vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+
 Vue.use(ElementUI)
 Vue.use(FlowChart);
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')

@@ -1,6 +1,10 @@
 package com.cuit.dataops.service.intf;
 
+import com.cuit.dataops.pojo.response.ResponseData;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 
 /**
  * @Author dailinfeng
@@ -10,4 +14,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface FileHandleService {
+    /**
+     * 获取数据文件夹下保存的所有文件
+     *
+     * @return
+     */
+//    ResponseData getFiles();
+
+    ResponseData uploadFile(MultipartFile file);
+
+
 }

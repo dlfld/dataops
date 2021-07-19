@@ -31,6 +31,8 @@ public class OptionsServiceImpl implements OptionsService {
     RpcImpl rpc;
     @Resource
     TaskFactoryStaticImpl taskFactoryStaticImpl;
+    @Resource
+    DataUtils dataUtils;
 //    static Logger logger = LoggerFactory.getLogger(OptionsServiceImpl.class);
 
     @Override
@@ -216,7 +218,7 @@ public class OptionsServiceImpl implements OptionsService {
     @Override
     public ResponseData runTopoOptionsTaskMode(SubmitOptionsRequest submitOptionsRequest) {
         //获取当前请求的task
-        Task task = DataUtils.buildTask(submitOptionsRequest);
+        Task task = dataUtils.buildTask(submitOptionsRequest);
         //将task添加到task队列
         taskFactoryStaticImpl.offer(task);
         log.info(task + "-> 执行结果");

@@ -1,21 +1,30 @@
 package com.cuit.dataops.dispatch.utils;
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.text.csv.CsvData;
+import cn.hutool.core.text.csv.CsvReader;
+import cn.hutool.core.text.csv.CsvUtil;
 import com.cuit.dataops.pojo.Node;
 import com.cuit.dataops.pojo.bo.Param;
 import com.cuit.dataops.pojo.bo.ParamsBody2;
 import com.cuit.dataops.pojo.bo.Task;
 import com.cuit.dataops.pojo.request.SubmitOptionsRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 /**
  * 这个工具类是用来处理数据相关的工具类
+ *
  * @author dailinfeng
  */
 @Slf4j
+@Component
 public class DataUtils {
-
+    @Value(value = "${data.dataPath}")
+    public String dataFilePath;
 
     /**
      * 更新参数的工具类
@@ -91,10 +100,15 @@ public class DataUtils {
      * @param submitOptionsRequest
      * @return
      */
-    public static Task buildTask(SubmitOptionsRequest submitOptionsRequest) {
+    public Task buildTask(SubmitOptionsRequest submitOptionsRequest) {
+        String filePath = dataFilePath + "/" + submitOptionsRequest.getDataFileName();
+        CsvReader reader = CsvUtil.getReader();
+//从文件中读取CSV数据
+        CsvData data = reader.read(FileUtil.file(filePath));
+
         //初始化一个task 并初始化task的参数表  和task的id （唯一标识符）
         Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
-            add(new Param().setDesc("start desc").setObject("start obj").setVersion(0));
+            add(new Param().setDesc("start desc").setVersion(0).setObject(data.getRows()));
         }}))
                 .setTaskId(UUID.randomUUID().toString())
                 .setUserContact(submitOptionsRequest.getUserContact());

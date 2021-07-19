@@ -7,7 +7,7 @@
     </div>
     <div class="wrap">
       <el-card class="content-container">
-        <file-upload />
+        <file-upload @uploadSuccess='uploadSuccess' listType='text'/>
       </el-card>
     </div>
   </div>
@@ -20,6 +20,17 @@ export default {
   name: "Left",
   components: {
     FileUpload
+  },
+  data: {
+    return() {
+      filename:""
+    }
+  },
+  methods: {
+    uploadSuccess(nameList) {
+      this.filename = nameList[0]
+      this.$store.state.fileName = this.filename
+    }
   }
 }
 </script>

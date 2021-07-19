@@ -19,7 +19,7 @@
                @dblclick="handleDblClick" @editconnection="handleEditConnection"
                @save="handleChartSave" ref="chart" class="pannel"
                width="99.5%" height="95.5%">
-<!--      height="57.6rem"-->
+      <!--      height="57.6rem"-->
     </flowchart>
     <el-dialog
         title="添加节点"
@@ -115,15 +115,18 @@ export default {
     },
     //保存操作
     async handleChartSave(nodes, connections) {
-      // let nodes = nodes
-      // console.log(nodes)
-      // console.log(connections)
-      //保存
-
-
       let submitOptionsRequest = await interpretationLayer(nodes, connections)
-      console.log(submitOptionsRequest)
       submitOptionsRequest.userContact = this.userContact
+      submitOptionsRequest.dataFileName = this.$store.getters.getFileName
+      if (submitOptionsRequest.dataFileName === null || submitOptionsRequest.dataFileName.length === 0) {
+        this.$notify({
+          title: '警告',
+          message: '请上传数据',
+          type: 'error',
+          duration: 2000
+        });
+        return
+      }
       const res = await submitOptions(submitOptionsRequest)
       console.log(res)
       alert(res.data)
@@ -156,6 +159,7 @@ export default {
   height: 100%;
   min-width: 330px;
   min-height: 400px;
+
   .pannel {
     //margin-top: 1rem;
 

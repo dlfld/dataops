@@ -2,10 +2,11 @@ package com.cuit.dataops.controller;
 
 import com.cuit.dataops.api.FileHandleApi;
 import com.cuit.dataops.pojo.response.ResponseData;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.cuit.dataops.service.intf.FileHandleService;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.annotation.Resource;
 
 /**
  * @Author dailinfeng
@@ -17,9 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/file")
 public class FileHandleController implements FileHandleApi {
+    @Resource
+    FileHandleService fileHandleService;
 
     @Override
-    public ResponseData fileUpload(MultipartFile file) {
-        return null;
+    @PostMapping("/upload")
+    public ResponseData fileUpload(@RequestPart("file") MultipartFile file) {
+        return fileHandleService.uploadFile(file);
     }
 }

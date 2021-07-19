@@ -9,13 +9,28 @@ import lombok.experimental.Accessors;
 
 import java.util.List;
 
+/**
+ * @author dailinfeng
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true) //链式调用开启
+@Accessors(chain = true)
 public class SubmitOptionsRequest {
-    private List<Node> nodes;  //节点列表
-    private List<Connection> connections; //链接列表
-    //    private int baseNumber;
-    private String userContact;//用户的联系方式  目前为止是用户的QQ
+    /**
+     * 节点列表
+     */
+    private List<Node> nodes;
+    /**
+     * 链接列表
+     */
+    private List<Connection> connections;
+    /**
+     * 用户的联系方式  目前为止是用户的QQ
+     */
+    private String userContact;
+    /**
+     * 数据文件的文件名
+     */
+    private String dataFileName;
 }

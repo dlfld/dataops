@@ -17,6 +17,7 @@ async def get_options(params: Params):
             
             
             '''
+            print(item)
             temp = {
                 'desc': "after start add desc",
                 'version': 0,

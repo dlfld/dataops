@@ -2,13 +2,13 @@ import request from '../utils/request'
 
 //获取操作功能列表
 export function getOPtionsList(){
-    // return request({
-    //     url: '/options',
-    //     method: 'get'
-    // })
-    return {
-        data:[{optUrl:"/add/",optName:"加法",optDesc:"执行加法操作"}]
-    }
+    return request({
+        url: '/options',
+        method: 'get'
+    })
+    // return {
+    //     data:[{optUrl:"/add/",optName:"加法",optDesc:"执行加法操作"}]
+    // }
 }
 
 

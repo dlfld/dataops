@@ -1,26 +1,26 @@
-#spring:
-#mybatis-plus的配置
-#  datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://rm-2vc34b66ob8em02bpio.mysql.cn-chengdu.rds.aliyuncs.com:3306/intellia2?serverTimezone=Asia/Shanghai
-#    username: dlf
-#    password: 2441086385Dlf
-#设置cache存到redis里面
-#  cache:
-#    type: redis
-#redis的配置
-#  redis:
-#    database: 1
-#    host: 150.158.174.169
-##    host: 127.0.0.1
-#    port: 6379
-#    password: dailinfeng_pass
-#  servlet:
-#    #上传文件大小限制  开大一点
-#    multipart:
-#      max-file-size: 99999999
-#      max-request-size: 99999999
+spring:
+  #mybatis-plus的配置
+  #  datasource:
+  #    type: com.alibaba.druid.pool.DruidDataSource
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://rm-2vc34b66ob8em02bpio.mysql.cn-chengdu.rds.aliyuncs.com:3306/intellia2?serverTimezone=Asia/Shanghai
+  #    username: dlf
+  #    password: 2441086385Dlf
+  #设置cache存到redis里面
+  #  cache:
+  #    type: redis
+  #redis的配置
+  #  redis:
+  #    database: 1
+  #    host: 150.158.174.169
+  ##    host: 127.0.0.1
+  #    port: 6379
+  #    password: dailinfeng_pass
+  servlet:
+    #上传文件大小限制  开大一点
+    multipart:
+      max-file-size: 99999999MB
+      max-request-size: 99999999MB
 
 #mybatis-plus:
 #  configuration:
@@ -30,6 +30,7 @@
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
+  dataPath: /Users/dailinfeng/Desktop/dataops/data
   serverBaseUrl: http://127.0.0.1:8000/task
 server:
   port: 9999

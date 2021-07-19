@@ -3,6 +3,9 @@ package com.cuit.dataops;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.lang.Console;
+import cn.hutool.core.text.csv.CsvData;
+import cn.hutool.core.text.csv.CsvReader;
+import cn.hutool.core.text.csv.CsvUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +30,11 @@ class Param123 {
 
 public class Test {
     public static void main(String[] args) {
-        FileUtil.mkdir("/Users/dailinfeng/Desktop");
-
+        File file = new File("/Users/dailinfeng/Desktop/dataops/result/e3904304-c78b-4f9e-b8bf-d7874d703cb8.json");
+        String filePath = "/Users/dailinfeng/Desktop/dataops/result/e3904304-c78b-4f9e-b8bf-d7874d703cb8.json";
+        CsvReader reader = CsvUtil.getReader();
+//从文件中读取CSV数据
+        CsvData data = reader.read(FileUtil.file(filePath));
+        System.out.println(data.toString());
     }
 }
