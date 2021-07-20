@@ -21,7 +21,7 @@ async def get_options(params: Params):
             temp = {
                 'desc': "after start add desc",
                 'version': 0,
-                'object': item['object'] + " add"
+                'object': item['object']
             }
             params.items.append(temp)
     return params
@@ -35,7 +35,7 @@ async def get_options(params: Params):
             temp = {
                 'desc': "after start min desc",
                 'version': 0,
-                'object': item['object'] + " min"
+                'object': item['object']
             }
             params.items.append(temp)
     return params
@@ -48,7 +48,7 @@ async def get_options(params: Params):
             temp = {
                 'desc': "after start rid  desc",
                 'version': 0,
-                'object': item['object'] + " rid"
+                'object': item['object']
             }
             params.items.append(temp)
     return params
@@ -61,7 +61,7 @@ async def get_options(params: Params):
             temp = {
                 'desc': "after start div desc",
                 'version': 0,
-                'object': item['object'] + " div"
+                'object': item['object']
             }
             params.items.append(temp)
     return params
