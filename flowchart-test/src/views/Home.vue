@@ -34,7 +34,7 @@ export default {
   grid-column-gap: 0.2rem;
   .line-border {
     //border: red solid 1px;
-    height: 60.35rem;
+    height: 60.5rem;
   }
 }
 </style>

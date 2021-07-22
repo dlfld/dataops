@@ -20,7 +20,7 @@ import java.util.Map;
 public interface Pyservice {
     /**
      * 远程调用python
-     *
+     *废弃 ⚠️
      * @param funcUrl 调用python服务的url
      * @param params  参数
      * @return 返回的是一个map数组

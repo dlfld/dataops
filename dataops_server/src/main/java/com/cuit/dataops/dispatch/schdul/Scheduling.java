@@ -6,6 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.cuit.dataops.dispatch.rpc.RpcImpl;
 import com.cuit.dataops.dispatch.rpc.notify.QQBotRpc;
 import com.cuit.dataops.dispatch.rpc.notify.bo.Message;
+import com.cuit.dataops.dispatch.taskFactory.impl.ResultImpl;
 import com.cuit.dataops.dispatch.taskFactory.impl.TaskFactoryStaticImpl;
 import com.cuit.dataops.dispatch.utils.DataUtils;
 import com.cuit.dataops.pojo.Node;
@@ -39,8 +40,6 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
     TaskFactoryStaticImpl taskFactoryStatic;
     @Resource
     RpcImpl rpc;
-    @Resource
-    QQBotRpc qqBotRpc;
 
     /**
      * 文件保存的路径
@@ -53,6 +52,8 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
     @Value(value = "${data.serverBaseUrl}")
     String baseDownUrl;
 
+    @Resource
+    ResultImpl result;
     //根据task队列进行调度的调度中心代码
 
     @Override
@@ -77,61 +78,13 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
             //到这一步 一个task的调度就算完成了  下面的就是保存结果并通知用户
 
             //保存到任务队列里
-            String filename = saveTask(task);
+            String filename = result.saveTask(task);
             //如果保存结果成功
             if (StringUtils.isNotEmpty(savePath)) {
-                notifyUser(task.getUserContact(), filename);
+                result.notifyUser(task.getUserContact(), filename);
                 taskFactoryStatic.poll();//在任务队列里删除
             }
         }
-    }
-
-
-    /**
-     * 保存计算结果
-     *
-     * @param task 计算结果
-     * @return 返回文件名
-     */
-    @Override
-    String saveTask(Task task) {
-        //把task转为json字符串
-        JSONObject taskJsonObj = JSONUtil.parseObj(task);
-        String taskJsonStr = taskJsonObj.toStringPretty();
-
-        boolean exist = FileUtil.exist(savePath);
-        //如果文件不存在则创建文件
-        if (!exist) {
-            FileUtil.mkdir(savePath);
-        }
-        String taskFilePath = savePath + "/" + task.getTaskId() + ".json";
-        FileUtil.touch(taskFilePath);
-        try {
-            FileWriter writer = new FileWriter(taskFilePath);
-            writer.write(taskJsonStr);
-            writer.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return task.getTaskId() + ".json";
-    }
-
-    /**
-     * 通知用户计算完成
-     * content是结果下载的url  传进来的content只是存的结果的文件名
-     *
-     * @param contact 用户联系方式
-     * @param content 通知内容   目前这个版本是url的方式
-     * @return 返回通知是否成功
-     */
-    @Override
-    boolean notifyUser(String contact, String content) {
-        String downTaskUrl = baseDownUrl + "/" + content;
-        Message message = new Message().setMessage("您的OPS已经计算完成！\n结果下载链接是：\n" + downTaskUrl).setUser_id(contact);
-        //发消息
-        //内网的时候  再开 不然通知失败会直接报bug
-        qqBotRpc.nodityUser(message);
-        return true;
     }
 
 

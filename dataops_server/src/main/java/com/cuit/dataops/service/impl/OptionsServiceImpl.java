@@ -26,8 +26,6 @@ import java.util.stream.Collectors;
 @Component
 public class OptionsServiceImpl implements OptionsService {
     @Resource
-    Pyservice pyservice;
-    @Resource
     RpcImpl rpc;
     @Resource
     TaskFactoryStaticImpl taskFactoryStaticImpl;
@@ -37,11 +35,17 @@ public class OptionsServiceImpl implements OptionsService {
 
     @Override
     public ResponseData getOptions() {
-        return ResponseDataUtil.buildSuccess(pyservice.getOptions());
+        return ResponseDataUtil.buildSuccess(rpc.getOptions());
     }
 
 
-    @Override
+//    @Override
+
+    /**
+     * 废弃 ⚠️
+     * @param submitOptionsRequest
+     * @return
+     */
     public ResponseData runTopoOptions3(SubmitOptionsRequest submitOptionsRequest) {
         //参数map
         Map<String, List<Object>> params = new HashMap<String, List<Object>>() {{
@@ -122,8 +126,12 @@ public class OptionsServiceImpl implements OptionsService {
         return ResponseDataUtil.buildSuccess(collect);
     }
 
-
-    @Override
+    /**
+     * 废弃 ⚠️
+     * @param submitOptionsRequest
+     * @return
+     */
+//    @Override
     public ResponseData runTopoOptionsMapMode(SubmitOptionsRequest submitOptionsRequest) {
         //参数map的封装
         Map<String, List<Param>> params = new HashMap<String, List<Param>>() {{

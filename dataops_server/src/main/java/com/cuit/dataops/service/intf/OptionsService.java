@@ -38,7 +38,7 @@ public interface OptionsService {
      * @param submitOptionsRequest
      * @return
      */
-    ResponseData runTopoOptions3(SubmitOptionsRequest submitOptionsRequest);
+//    ResponseData runTopoOptions3(SubmitOptionsRequest submitOptionsRequest);
 
     /**
      * V2废弃⚠️
@@ -76,7 +76,7 @@ public interface OptionsService {
      * @param submitOptionsRequest
      * @return
      */
-    ResponseData runTopoOptionsMapMode(SubmitOptionsRequest submitOptionsRequest);
+//    ResponseData runTopoOptionsMapMode(SubmitOptionsRequest submitOptionsRequest);
 
 
     /**

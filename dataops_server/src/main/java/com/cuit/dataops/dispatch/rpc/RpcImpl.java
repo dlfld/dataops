@@ -1,11 +1,13 @@
 package com.cuit.dataops.dispatch.rpc;
 
+import com.cuit.dataops.pojo.Option;
 import com.cuit.dataops.pojo.bo.ParamsBody;
 import com.cuit.dataops.pojo.bo.ParamsBody2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 远程调度的实现
@@ -20,7 +22,7 @@ public class RpcImpl {
 //    static Logger logger = LoggerFactory.getLogger(RpcImpl.class);
     /**
      * 以http的方式对python实现的算法进行调度
-     *
+     *  废弃 ⚠️
      * @param funcUrl
      * @param params
      * @return
@@ -43,5 +45,12 @@ public class RpcImpl {
         return pyservice.callFunctionV2(funcUrl, paramsBody2);
     }
 
+    /**
+     * 远程调用实现，获取操作列表
+     * @return
+     */
+    public List<Option> getOptions(){
+        return pyservice.getOptions();
+    }
 
 }

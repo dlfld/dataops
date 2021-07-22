@@ -1,26 +1,20 @@
 <template>
   <div id="center-chart">
-
-    <el-button type="success" round
-               @click="addNodeDialogVisible = true">
-      Add
-    </el-button>
-
-    <el-button type="success" round @click="$refs.chart.remove()">
-      Del
-    </el-button>
-    <el-button type="success" round @click="$refs.chart.editCurrent()">
-      Edit
-    </el-button>
-    <el-button type="success" round @click="$refs.chart.save()">
-      Save
-    </el-button>
-    <flowchart :nodes="nodes" :connections="connections" @editnode="handleEditNode"
-               @dblclick="handleDblClick" @editconnection="handleEditConnection"
-               @save="handleChartSave" ref="chart" class="pannel"
-               width="99.5%" height="95.5%">
-      <!--      height="57.6rem"-->
-    </flowchart>
+    <el-card class="button-wrap">
+      <el-button type="success" round @click="addNodeDialogVisible = true" class="func-btn">Add</el-button>
+      <el-button type="success" round @click="$refs.chart.remove()" class="func-btn">Del</el-button>
+      <el-button type="success" round @click="$refs.chart.editCurrent()" class="func-btn">Edit</el-button>
+      <el-button type="success" round @click="$refs.chart.save()" class="func-btn">Save</el-button>
+    </el-card>
+    <el-card class="pannel">
+      <flowchart :nodes="nodes" :connections="connections" @editnode="handleEditNode"
+                 @dblclick="handleDblClick" @editconnection="handleEditConnection"
+                 @save="handleChartSave" ref="chart"
+                 @delete="handleDelete"
+                 width="100%" height="54rem">
+        <!--      height="57.6rem"-->
+      </flowchart>
+    </el-card>
     <el-dialog
         title="添加节点"
         :visible.sync="addNodeDialogVisible"
@@ -138,6 +132,9 @@ export default {
     },
     handleEditConnection(connection) {
     },
+    //处理删除节点
+    handleDelete( ) {
+    },
     //双击的事件处理
     handleDblClick(position) {
       // this.$refs.chart.add({
@@ -153,16 +150,39 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped lang="less">
 #center-chart {
   width: 100%;
   height: 100%;
-  min-width: 330px;
+  min-width: 400px;
   min-height: 400px;
+  padding-top: 0.3rem;
+  display: grid;
+  grid-template-rows: 1fr 15fr;
+
+  .button-wrap {
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+    display: grid;
+    //align-items: center;
+    align-content: center;
+    background-color: #349ee9;
+
+    .func-btn {
+      //margin-top: -1rem;
+    }
+
+    .func-btn:hover {
+      -webkit-transform: scale(1.1);
+    }
+  }
 
   .pannel {
-    //margin-top: 1rem;
-
+    margin-top: 0.6rem;
+    border-radius: 1rem;
+    width: 100%;
   }
+
 }
 </style>
