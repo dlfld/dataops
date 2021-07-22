@@ -57,34 +57,34 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
     //根据task队列进行调度的调度中心代码
 
     @Override
-    public void startDispatch() {
+    public void startDispatch(Task task) {
         //如果task队列不为空就运行
-        while (!taskFactoryStatic.isEmpty()) {
-            //获取task  但是不删除  让他在调度运行的时候也保存在队列里
-            Task task = taskFactoryStatic.peek();
-            //对这个task里面的节点进行调度
-            while (task.nodeQueue.peek() != null) {
-                Node node = task.nodeQueue.poll();
-                if (StringUtils.isEmpty(node.getOptUrl())) {
-                    continue;
-                }
-                //获取调用的参数并封装
-                ParamsBody2 paramsBody2 = task.getParamsBody2();
-                //远程调用并返回结果
-                ParamsBody2 res = rpc.httpRpcV2(node.getOptUrl(), paramsBody2);
-                //进行参数的更新
-                task.setParamsBody2(DataUtils.refreshParams(res, task.getParamsBody2()));
+//        while (!taskFactoryStatic.isEmpty()) {
+//            //获取task  但是不删除  让他在调度运行的时候也保存在队列里
+//            Task task = taskFactoryStatic.peek();
+        //对这个task里面的节点进行调度
+        while (task.nodeQueue.peek() != null) {
+            Node node = task.nodeQueue.poll();
+            if (StringUtils.isEmpty(node.getOptUrl())) {
+                continue;
             }
-            //到这一步 一个task的调度就算完成了  下面的就是保存结果并通知用户
-
-            //保存到任务队列里
-            String filename = result.saveTask(task);
-            //如果保存结果成功
-            if (StringUtils.isNotEmpty(savePath)) {
-                result.notifyUser(task.getUserContact(), filename);
-                taskFactoryStatic.poll();//在任务队列里删除
-            }
+            //获取调用的参数并封装
+            ParamsBody2 paramsBody2 = task.getParamsBody2();
+            //远程调用并返回结果
+            ParamsBody2 res = rpc.httpRpcV2(node.getOptUrl(), paramsBody2);
+            //进行参数的更新
+            task.setParamsBody2(DataUtils.refreshParams(res, task.getParamsBody2()));
         }
+        //到这一步 一个task的调度就算完成了  下面的就是保存结果并通知用户
+
+        //保存到任务队列里
+        String filename = result.saveTask(task);
+        //如果保存结果成功
+        if (StringUtils.isNotEmpty(savePath)) {
+            result.notifyUser(task.getUserContact(), filename);
+            taskFactoryStatic.poll();//在任务队列里删除
+        }
+//        }
     }
 
 
@@ -98,8 +98,11 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
     @Override
     public void run(ApplicationArguments args) throws Exception {
         while (true) {
-            log.info("扫描");
-            startDispatch();
+            //如果task队列不为空的话
+            while (!taskFactoryStatic.isEmpty()) {
+                startDispatch(taskFactoryStatic.poll());
+            }
+//            startDispatch();
             Thread.sleep(1000 * 10);
         }
     }

@@ -107,9 +107,14 @@ export default {
       })
       this.addNodeDialogVisible = false
     },
+    convertScheme(nodes, connections){},
     //保存操作
     async handleChartSave(nodes, connections) {
+      //如果换了框架只需要在这个上面加一层格式转换层
+      // convertScheme(nodes, connections)
+      //调用解释层进行解释
       let submitOptionsRequest = await interpretationLayer(nodes, connections)
+      //解释之后再添加一些信息
       submitOptionsRequest.userContact = this.userContact
       submitOptionsRequest.dataFileName = this.$store.getters.getFileName
       if (submitOptionsRequest.dataFileName === null || submitOptionsRequest.dataFileName.length === 0) {
@@ -133,7 +138,7 @@ export default {
     handleEditConnection(connection) {
     },
     //处理删除节点
-    handleDelete( ) {
+    handleDelete() {
     },
     //双击的事件处理
     handleDblClick(position) {

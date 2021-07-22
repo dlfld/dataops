@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * options相关接口
+ * @author dailinfeng
  */
 @CrossOrigin
 @RestController
@@ -36,9 +37,7 @@ public class OptionsController implements OptionsApi {
 
     @Override
     @PostMapping("/topo2")
-    public ResponseData submitOptions3(@RequestBody SubmitOptionsRequest submitOptionsRequest) {
-//        return optionsService.runTopoOptions3(submitOptionsRequest);  //V1
-//        return optionsService.runTopoOptionsMapMode(submitOptionsRequest);  //V2
-        return optionsService.runTopoOptionsTaskMode(submitOptionsRequest);//V3
+    public ResponseData submitOptions(@RequestBody SubmitOptionsRequest submitOptionsRequest) {
+        return optionsService.runTopoOptionsTaskMode(submitOptionsRequest);
     }
 }

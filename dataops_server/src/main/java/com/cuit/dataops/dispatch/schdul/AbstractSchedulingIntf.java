@@ -10,5 +10,5 @@ public abstract class AbstractSchedulingIntf {
     /**
      * 开始调度
      */
-    abstract void startDispatch();
+    abstract void startDispatch(Task task);
 }

@@ -28,5 +28,5 @@ public interface OptionsApi {
      * @return
      */
     @ApiOperation("提交操作结果3")
-    ResponseData submitOptions3(SubmitOptionsRequest submitOptionsRequest);
+    ResponseData submitOptions(SubmitOptionsRequest submitOptionsRequest);
 }
