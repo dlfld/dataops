@@ -1,0 +1,29 @@
+
+server:
+  port: 18003
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: scheduling
+          uri: lb://scheduling
+          predicates:
+            - Path=/scheduling/**
+          filters:
+            - StripPrefix=1
+        - id: task_handle
+          uri: lb://task_handle
+          predicates:
+            - Path=/task_handle/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        #        server-addr: 39.98.249.25:8848
+        server-addr: 10.131.18.162:8848

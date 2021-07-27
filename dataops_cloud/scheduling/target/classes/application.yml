@@ -1,0 +1,38 @@
+server:
+  port: 18002
+spring:
+  application:
+    name: scheduling
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.131.18.162:8848
+##dubbo的相关配置
+#dubbo:
+#  scan:
+#    base-packages: com.cuit.scheduling.service
+#  protocol:
+#    name: dubbo #    传输协议的名称：dubbo rmi hessian webservice
+#    port: -1  #-1表示端口随机
+#  registry:
+#    address: spring-cloud://10.131.18.162  #注册中心配置，用于配置连接注册中心相关信息
+
+
+data:
+  save: /Users/dailinfeng/Desktop/dataops/result
+  dataPath: /Users/dailinfeng/Desktop/dataops/data
+  serverBaseUrl: http://127.0.0.1:8000/task
+
+forest:
+  max-connections: 1000 # 连接池最大连接数，默认值为500
+  max-route-connections: 500 # 每个路由的最大连接数，默认值为500
+  timeout: 900000 # 请求超时时间，单位为毫秒, 默认值为3000
+  connect-timeout: 3000 # 连接超时时间，单位为毫秒, 默认值为2000
+  retry-count: 1 # 请求失败后重试次数，默认为0次不重试
+  logEnabled: true # 打开或关闭日志，默认为true
+  log-request: true # 打开/关闭Forest请求日志（默认为 true）
+  log-response-status: true # 打开/关闭Forest响应状态日志（默认为 true）
+  log-response-content: true # 打开/关闭Forest响应内容日志（默认为 false）
+  variables:
+    baseUrl: http://127.0.0.1:8000
+    notifyUrl: http://10.131.18.162:5700   #qq 机器人的url

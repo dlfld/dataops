@@ -1,0 +1,19 @@
+server:
+  port: 18001
+spring:
+  application:
+    name: task_handle
+  servlet:
+    #上传文件大小限制  开大一点
+    multipart:
+      max-file-size: 99999999MB
+      max-request-size: 99999999MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.131.18.162:8848
+
+data:
+  save: /Users/dailinfeng/Desktop/dataops/result
+  dataPath: /Users/dailinfeng/Desktop/dataops/data
+  serverBaseUrl: http://127.0.0.1:8000/task
