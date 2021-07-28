@@ -5,7 +5,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.cuit.common.pojo.bo.Task;
 import com.cuit.common.pojo.notify.Message;
-import com.cuit.common.rpc.notify.QQBotRpc;
+import com.cuit.common.rpc.RpcImpl;
 import com.cuit.scheduling.dispatch.taskFactory.intf.ResultFactoryIntf;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -34,7 +34,7 @@ public class ResultImpl implements ResultFactoryIntf {
     @Value(value = "${data.serverBaseUrl}")
     String baseDownUrl;
     @Resource
-    QQBotRpc qqBotRpc;
+    RpcImpl rpc;
 
     /**
      * 保存task
@@ -80,7 +80,7 @@ public class ResultImpl implements ResultFactoryIntf {
         Message message = new Message().setMessage("您的OPS已经计算完成！\n结果下载链接是：\n" + downTaskUrl).setUser_id(contact);
         //发消息
         //内网的时候  再开 不然通知失败会直接报bug
-        qqBotRpc.nodityUser(message);
+        rpc.nodityUser(message);
         return true;
     }
 }

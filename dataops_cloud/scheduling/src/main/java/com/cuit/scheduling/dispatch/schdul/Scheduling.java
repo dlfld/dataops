@@ -1,18 +1,20 @@
 package com.cuit.scheduling.dispatch.schdul;//package cuit.scheduling.dispatch.schdul;
 
-import com.cuit.common.rpc.RpcImpl;
 import com.cuit.common.pojo.Node;
 import com.cuit.common.pojo.bo.ParamsBody2;
 import com.cuit.common.pojo.bo.Task;
 import com.cuit.scheduling.dispatch.taskFactory.impl.ResultImpl;
 import com.cuit.scheduling.dispatch.utils.ParamsUtils;
-import com.cuit.task_heandle.taskFactory.impl.TaskFactoryStaticImpl;
+import com.cuit.common.rpc.RpcImpl;
+import io.swagger.models.auth.In;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -25,11 +27,8 @@ import javax.annotation.Resource;
  * @author dailinfeng
  */
 @Component
-@Slf4j
-@Order(value = 1)
-public class Scheduling extends AbstractSchedulingIntf implements ApplicationRunner {
-    @Resource
-    TaskFactoryStaticImpl taskFactoryStatic;
+//@Slf4j
+public class Scheduling extends AbstractSchedulingIntf {
     @Resource
     RpcImpl rpc;
 
@@ -48,12 +47,12 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
     ResultImpl result;
     //根据task队列进行调度的调度中心代码
 
+    /**
+     * 对task内的模块进行调度并保存结果
+     * @param task  任务
+     */
     @Override
     public void startDispatch(Task task) {
-        //如果task队列不为空就运行
-//        while (!taskFactoryStatic.isEmpty()) {
-//            //获取task  但是不删除  让他在调度运行的时候也保存在队列里
-//            Task task = taskFactoryStatic.peek();
         //对这个task里面的节点进行调度
         while (task.nodeQueue.peek() != null) {
             Node node = task.nodeQueue.poll();
@@ -69,33 +68,35 @@ public class Scheduling extends AbstractSchedulingIntf implements ApplicationRun
         }
         //到这一步 一个task的调度就算完成了  下面的就是保存结果并通知用户
 
-        //保存到任务队列里
+        //保存到文件并返回文件名
         String filename = result.saveTask(task);
         //如果保存结果成功
-        if (StringUtils.isNotEmpty(savePath)) {
+        if (StringUtils.isNotEmpty(filename)) {
             result.notifyUser(task.getUserContact(), filename);
-            taskFactoryStatic.poll();//在任务队列里删除
         }
-//        }
     }
 
 
     /**
-     * springboot启动之后 会开始运行这个方法
-     * 10 秒检测一次任务队列是否为空，如果不为空的话就执行任务队列里面的任务
+     * 现在是整一个Kafka的客户端，收到消息之后就开始运行task
      *
-     * @param args canshu
      * @throws Exception
      */
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-        while (true) {
-            //如果task队列不为空的话
-            while (!taskFactoryStatic.isEmpty()) {
-                startDispatch(taskFactoryStatic.poll());
-            }
-//            startDispatch();
-            Thread.sleep(1000 * 10);
-        }
+    @KafkaListener(topics = "topic-task-queue")
+    public void onMessage(ConsumerRecord<Integer, Task> record) {
+        Task task = record.value();
+        startDispatch(task);
     }
+//    @Override
+//    public void run(ApplicationArguments args) throws Exception {
+//        while (true) {
+//            System.out.println("扫描");
+//            //如果task队列不为空的话
+//            while (!taskFactoryStatic.isEmpty()) {
+//                startDispatch(taskFactoryStatic.poll());
+//            }
+////            startDispatch();
+//            Thread.sleep(1000 * 10);
+//        }
+//    }
 }

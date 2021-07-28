@@ -2,7 +2,6 @@ package com.cuit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -12,7 +11,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableDiscoveryClient
 @EnableSwagger2
-//@ComponentScan(basePackages = {"com.cuit.common.rpc"})
+@ComponentScan(basePackages = {"com.cuit.common"})
+@ComponentScan(basePackages = {"com.cuit.scheduling"})
+@ComponentScan(basePackages = {"com.cuit.task_handle"})
 @SpringBootApplication
 public class SchedulingApplication {
 

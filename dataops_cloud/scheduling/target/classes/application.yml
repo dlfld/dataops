@@ -7,6 +7,21 @@ spring:
     nacos:
       discovery:
         server-addr: 10.131.18.162:8848
+  kafka:
+    bootstrap-servers: 10.131.18.162:9092
+    #consumer   配置
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: springboot-consumer01
+      #如果在Kafka中找不到当前消费者的偏移量则直接将偏移量重置为最早的
+      auto-offset-reset: earliest
+      #消费者的偏移量是自动提交还是手动提交
+      enable-auto-commit: true
+      #多长时间提交一次偏移量
+      auto-commit-interval: 1000
+    listener:
+      ack-count: 1
 ##dubbo的相关配置
 #dubbo:
 #  scan:
