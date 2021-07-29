@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/scheduling/ResultHandleApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/controller/ResultHandleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/service/impl/ResultHandleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/service/intf/ResultHandleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/hutool_http/HutoolImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/hutool_http/HutoolImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/test/java/com/cuit/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/test/java/com/cuit/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/test-classes/com/cuit/gateway/GatewayApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/test-classes/com/cuit/gateway/GatewayApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/test/java/com/cuit/scheduling/SchedulingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/test/java/com/cuit/scheduling/SchedulingApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +121,7 @@
       <updated>1627545812307</updated>
       <workItem from="1627545814445" duration="501000" />
       <workItem from="1627546329943" duration="1887000" />
-      <workItem from="1627559996907" duration="6355000" />
+      <workItem from="1627559996907" duration="6893000" />
     </task>
     <servers />
   </component>
