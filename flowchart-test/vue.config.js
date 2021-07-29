@@ -5,8 +5,8 @@ module.exports = {
   devServer: {
     proxy: {
       '/dev-api': {
-        // target: 'http://150.158.174.169:9999/',
-        target: 'http://10.131.18.162:18003/taskhandle',
+        target: 'http://127.0.0.1:18003/taskhandle',
+        // target: 'http://10.131.18.162:18003/taskhandle',
         changeOrigin: true,
         pathRewrite: {
           '^/dev-api': ''

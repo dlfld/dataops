@@ -79,7 +79,7 @@ public class HutoolImpl implements RpcIntf {
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("user_id", message.getUser_id());
         paramMap.put("message", message.getMessage());
-        HttpUtil.post(notifyUrl, paramMap);
+        HttpUtil.post(notifyUrl+"/send_private_msg", paramMap);
         return true;
     }
 }
