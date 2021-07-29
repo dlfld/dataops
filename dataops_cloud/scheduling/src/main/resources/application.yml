@@ -13,6 +13,7 @@ spring:
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: com.cuit.common.utils.Decoding
       group-id: springboot-consumer01
       #如果在Kafka中找不到当前消费者的偏移量则直接将偏移量重置为最早的
       auto-offset-reset: earliest
@@ -20,6 +21,11 @@ spring:
       enable-auto-commit: true
       #多长时间提交一次偏移量
       auto-commit-interval: 1000
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.artisan.springkafka.domain
     listener:
       ack-count: 1
 ##dubbo的相关配置
@@ -36,7 +42,7 @@ spring:
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data
-  serverBaseUrl: http://127.0.0.1:8000/task
+  serverBaseUrl: http://10.131.18.162:8000/task
 
 forest:
   max-connections: 1000 # 连接池最大连接数，默认值为500
@@ -49,5 +55,5 @@ forest:
   log-response-status: true # 打开/关闭Forest响应状态日志（默认为 true）
   log-response-content: true # 打开/关闭Forest响应内容日志（默认为 false）
   variables:
-    baseUrl: http://127.0.0.1:8000
+    baseUrl: http://10.131.18.162:8000
     notifyUrl: http://10.131.18.162:5700   #qq 机器人的url

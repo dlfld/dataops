@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -16,6 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @Accessors(chain = true) //链式调用开启
 @ToString
-public class ParamsBody2 {
+public class ParamsBody2 implements Serializable {
     List<Param> items;
 }

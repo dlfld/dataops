@@ -1,0 +1,6 @@
+com/cuit/scheduling/dispatch/schdul/AbstractSchedulingIntf.class
+com/cuit/scheduling/dispatch/schdul/Scheduling.class
+com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.class
+com/cuit/SchedulingApplication.class
+com/cuit/scheduling/dispatch/taskFactory/intf/ResultFactoryIntf.class
+com/cuit/scheduling/dispatch/utils/ParamsUtils.class

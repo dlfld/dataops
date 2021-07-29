@@ -1,5 +1,6 @@
 package com.cuit.common.rpc.hutool_http;
 
+import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONArray;
@@ -41,11 +42,11 @@ public class HutoolImpl implements RpcIntf {
      */
     @Override
     public ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2) {
-        HashMap<String, Object> paramMap = new HashMap<>();
-        paramMap.put("params", paramsBody2);
         String url = baseUrl + funcUrl;
         System.out.println(url);
-        String res = HttpUtil.post(url, paramMap);
+        String res = HttpRequest.post(url)
+                .body(JSONUtil.toJsonStr(paramsBody2))
+                .execute().body();
         ParamsBody2 paramsBody21 = JSONUtil.toBean(res, ParamsBody2.class);
         System.out.println(paramsBody21);
         return paramsBody21;
