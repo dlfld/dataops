@@ -57,13 +57,15 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.SchedulingApplicationTests.contextLoads">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,6 +124,7 @@
       <workItem from="1627545814445" duration="501000" />
       <workItem from="1627546329943" duration="1887000" />
       <workItem from="1627559996907" duration="6893000" />
+      <workItem from="1627570159468" duration="1771000" />
     </task>
     <servers />
   </component>
