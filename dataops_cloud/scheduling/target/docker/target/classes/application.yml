@@ -42,7 +42,8 @@ spring:
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data
-  serverBaseUrl: http://10.131.18.162:18002/result
+#  serverBaseUrl: http://10.131.18.162:18002/result
+  serverBaseUrl: http://10.131.18.162:18013/result
 
 forest:
   max-connections: 1000 # 连接池最大连接数，默认值为500

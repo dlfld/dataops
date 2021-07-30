@@ -5,7 +5,110 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/intf/FileHandleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/task_handle/FileHandleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/task_handle/FileHandleApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/com/cuit/api/scheduling/ResultHandleApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/com/cuit/api/task_handle/FileHandleApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/classes/com/cuit/api/task_handle/OptionsApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/RpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/RpcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/RpcIntf.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/RpcIntf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/hutool_http/HutoolImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/hutool_http/HutoolImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/enums/ResultEnums.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/Connection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/Option.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/bo/NodeMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/bo/Param.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/bo/ParamsBody.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/bo/ParamsBody2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/bo/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/notify/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/request/SubmitOptionsRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/response/ResponseData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/rpc/RpcImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/rpc/RpcIntf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/rpc/hutool_http/HutoolImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/utils/ResponseDataUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/utils/SerializableUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/common.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/schdul/Scheduling.class" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/schdul/Scheduling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/scheduling.jar" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/scheduling.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/classes/com/cuit/scheduling/dispatch/schdul/Scheduling.class" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/classes/com/cuit/scheduling/dispatch/schdul/Scheduling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/docker/scheduling.jar" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/docker/scheduling.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/scheduling.jar" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/scheduling.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/scheduling.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/scheduling.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/surefire-reports/TEST-com.cuit.scheduling.SchedulingApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/surefire-reports/TEST-com.cuit.scheduling.SchedulingApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/docker/target/surefire-reports/com.cuit.scheduling.SchedulingApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/docker/target/surefire-reports/com.cuit.scheduling.SchedulingApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/scheduling.jar" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/scheduling.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/scheduling.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/scheduling.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/surefire-reports/TEST-com.cuit.scheduling.SchedulingApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/surefire-reports/TEST-com.cuit.scheduling.SchedulingApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/surefire-reports/com.cuit.scheduling.SchedulingApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/surefire-reports/com.cuit.scheduling.SchedulingApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/test-classes/image_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/test-classes/image_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/TaskHeandleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/TaskHeandleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/configuration/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/configuration/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/configuration/Swagger3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/Swagger3Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/controller/FileHandleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/controller/FileHandleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/controller/OptionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/controller/OptionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/service/impl/FileHandleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/impl/FileHandleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/service/impl/OptionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/impl/OptionsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/service/intf/FileHandleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/service/intf/OptionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/intf/OptionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryStaticImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryStaticImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/taskFactory/intf/TaskFactoryIntf.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/intf/TaskFactoryIntf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/src/test/java/com/cuit/task_heandle/TaskHeandleApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/test/java/com/cuit/task_heandle/TaskHeandleApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/TaskHeandleApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/controller/FileHandleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/controller/OptionsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/service/impl/FileHandleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/service/impl/OptionsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/service/intf/FileHandleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/service/intf/OptionsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/taskFactory/impl/TaskFactoryStaticImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/taskFactory/intf/TaskFactoryIntf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/utils/TaskUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/classes/com/cuit/task_handle/utils/TaskUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/target/test-classes/com/cuit/task_heandle/TaskHeandleApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_heandle/task_heandle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/task_handle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dataops架构.xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../具体实现图.graffle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../具体实现图2.graffle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/Spring Boot 整合Kafka.md" beforeDir="false" afterPath="$PROJECT_DIR$/../笔记/Spring Boot 整合Kafka.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../结构图.graffle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../结构图.pptx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,15 +160,13 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.SchedulingApplicationTests.contextLoads">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,8 +201,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TaskHeandleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="TaskHeandleApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="task_heandle" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.TaskHeandleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskHeandleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="task_handle" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.TaskHeandleApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,6 +233,9 @@
       <workItem from="1627546329943" duration="1887000" />
       <workItem from="1627559996907" duration="6893000" />
       <workItem from="1627570159468" duration="1771000" />
+      <workItem from="1627611601923" duration="14493000" />
+      <workItem from="1627652756193" duration="230000" />
+      <workItem from="1627653002701" duration="3077000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="scheduling" />
+        <module name="task_handle" />
         <module name="api" />
         <module name="task_heandle" />
         <module name="common" />
@@ -20,6 +21,7 @@
       <module name="gateway" target="11" />
       <module name="parent" target="11" />
       <module name="scheduling" target="11" />
+      <module name="task_handle" target="11" />
       <module name="task_heandle" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -29,6 +31,7 @@
       <module name="common" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="scheduling" options="-parameters" />
+      <module name="task_handle" options="-parameters" />
       <module name="task_heandle" options="-parameters" />
     </option>
   </component>

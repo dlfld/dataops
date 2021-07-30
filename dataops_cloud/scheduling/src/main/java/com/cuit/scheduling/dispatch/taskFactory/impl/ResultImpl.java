@@ -80,7 +80,7 @@ public class ResultImpl implements ResultFactoryIntf {
         Message message = new Message().setMessage("您的OPS已经计算完成！\n结果下载链接是：\n" + downTaskUrl).setUser_id(contact);
         //发消息
         //内网的时候  再开 不然通知失败会直接报bug
-        rpc.nodityUser(message);
+        rpc.notifyUser(message);
         return true;
     }
 }

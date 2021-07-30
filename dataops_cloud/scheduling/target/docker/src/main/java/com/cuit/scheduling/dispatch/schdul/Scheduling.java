@@ -85,7 +85,11 @@ public class Scheduling extends AbstractSchedulingIntf {
      */
     @KafkaListener(topics = "topic-task-queue")
     public void onMessage(ConsumerRecord<Integer, String> record) {
-
+        try {
+            Thread.sleep(1000*10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Task task =(Task) SerializableUtil.stringToObject(record.value(),Task.class);
         System.out.println("收到task->"+task);
         startDispatch(task);

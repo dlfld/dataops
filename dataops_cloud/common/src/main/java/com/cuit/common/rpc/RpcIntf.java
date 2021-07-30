@@ -28,5 +28,5 @@ public interface RpcIntf {
      * @param message
      * @return
      */
-    public boolean nodityUser(Message message);
+    public boolean notifyUser(Message message);
 }

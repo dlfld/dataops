@@ -57,7 +57,7 @@ public class RpcImpl implements RpcIntf{
      * @return
      */
     @Override
-    public boolean nodityUser(Message message){
-        return hutool.nodityUser(message);
+    public boolean notifyUser(Message message){
+        return hutool.notifyUser(message);
     }
 }

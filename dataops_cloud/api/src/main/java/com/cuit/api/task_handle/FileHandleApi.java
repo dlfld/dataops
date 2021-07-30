@@ -15,5 +15,5 @@ import org.springframework.web.multipart.MultipartFile;
 @Api(tags = "文件处理相关接口")
 public interface FileHandleApi {
     @ApiOperation("文件上传")
-    ResponseData fileUpload(MultipartFile file);
+    ResponseData uploadFile(MultipartFile file);
 }

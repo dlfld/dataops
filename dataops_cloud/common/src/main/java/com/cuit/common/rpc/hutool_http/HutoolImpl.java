@@ -75,7 +75,7 @@ public class HutoolImpl implements RpcIntf {
      * @return
      */
     @Override
-    public boolean nodityUser(Message message) {
+    public boolean notifyUser(Message message) {
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("user_id", message.getUser_id());
         paramMap.put("message", message.getMessage());
