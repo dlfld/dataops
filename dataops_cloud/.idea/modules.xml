@@ -8,8 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/scheduling/scheduling.iml" filepath="$PROJECT_DIR$/scheduling/scheduling.iml" />
-      <module fileurl="file://$PROJECT_DIR$/task_heandle/task_handle.iml" filepath="$PROJECT_DIR$/task_heandle/task_handle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/task_handle/task_heandle.iml" filepath="$PROJECT_DIR$/task_handle/task_heandle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task_handle/task_handle.iml" filepath="$PROJECT_DIR$/task_handle/task_handle.iml" />
     </modules>
   </component>
 </project>

@@ -20,7 +20,7 @@
         <module>../scheduling</module>
         <module>../common</module>
         <module>../gateway</module>
-        <module>../task_heandle</module>
+        <module>../task_handle</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

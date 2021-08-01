@@ -8,10 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
-    <!--    <groupId>com.cuit</groupId>-->
-    <artifactId>task_heandle</artifactId>
+    <groupId>com.cuit</groupId>
+    <artifactId>task_handle</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>task_heandle</name>
+    <name>task_handle</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -45,11 +45,11 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.dtflys.forest</groupId>-->
-<!--            <artifactId>forest-spring-boot-starter</artifactId>-->
-<!--            <version>1.5.2-BETA</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.dtflys.forest</groupId>-->
+        <!--            <artifactId>forest-spring-boot-starter</artifactId>-->
+        <!--            <version>1.5.2-BETA</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

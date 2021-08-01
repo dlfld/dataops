@@ -58,4 +58,5 @@ forest:
   log-response-content: true # 打开/关闭Forest响应内容日志（默认为 false）
   variables:
     baseUrl: http://10.131.18.162:8000
+#    baseUrl: http://127.0.0.1:8000
     notifyUrl: http://10.131.18.162:5700   #qq 机器人的url

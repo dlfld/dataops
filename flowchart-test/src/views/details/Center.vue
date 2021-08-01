@@ -4,7 +4,7 @@
       <el-button type="success" round @click="addNodeDialogVisible = true" class="func-btn">Add</el-button>
       <el-button type="success" round @click="$refs.chart.remove()" class="func-btn">Del</el-button>
       <el-button type="success" round @click="$refs.chart.editCurrent()" class="func-btn">Edit</el-button>
-      <el-button type="success" round @click="$refs.chart.save()" class="func-btn">Save</el-button>
+      <el-button type="success" round @click="inputOptionMessageVisible = true" class="func-btn">Save</el-button>
     </el-card>
     <el-card class="pannel">
       <flowchart :nodes="nodes" :connections="connections" @editnode="handleEditNode"
@@ -38,6 +38,27 @@
         <el-button type="primary" @click="addNode">确 定</el-button>
       </span>
     </el-dialog>
+
+    <el-dialog
+        title="信息完善"
+        :visible.sync="inputOptionMessageVisible"
+        width="30%">
+      <span style="display: flex;place-items: center">
+        <span style="font-size: 1rem;width: 11rem">请输入QQ号:</span>
+        <el-input style="width: 10rem;margin-left: 3rem" v-model="userContact" placeholder="请输入QQ"></el-input>
+      </span>
+      <el-divider content-position="right"></el-divider>
+      <span style="display: flex;place-items: center">
+        <span style="font-size: 1rem;width: 11rem">请输入上传文件的desc:</span>
+        <el-input style="width: 10rem;margin-left: 3rem" v-model="paramsDesc" placeholder="请输入上传文件的desc"></el-input>
+      </span>
+
+
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="inputOptionMessageVisible = false">取 消</el-button>
+        <el-button type="primary" @click="nodeSavePre">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -50,6 +71,8 @@ export default {
   name: 'Center',
   data() {
     return {
+      inputOptionMessageVisible: false,//节点信息完善
+      paramsDesc:"",//上传数据文件的desc
       baseNumber: 10,//基本的操作数
       options: [],//提供选择的功能节点
       option: "",//用户选择的功能节点
@@ -107,7 +130,13 @@ export default {
       })
       this.addNodeDialogVisible = false
     },
-    convertScheme(nodes, connections){},
+    convertScheme(nodes, connections) {
+    },
+    //用户点击保存
+    nodeSavePre(){
+      this.inputOptionMessageVisible = false
+      this.$refs.chart.save()
+    },
     //保存操作
     async handleChartSave(nodes, connections) {
       //如果换了框架只需要在这个上面加一层格式转换层
@@ -117,6 +146,7 @@ export default {
       //解释之后再添加一些信息
       submitOptionsRequest.userContact = this.userContact
       submitOptionsRequest.dataFileName = this.$store.getters.getFileName
+      submitOptionsRequest.paramsDesc = this.paramsDesc
       if (submitOptionsRequest.dataFileName === null || submitOptionsRequest.dataFileName.length === 0) {
         this.$notify({
           title: '警告',

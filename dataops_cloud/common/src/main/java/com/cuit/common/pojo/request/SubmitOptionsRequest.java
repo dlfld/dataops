@@ -33,4 +33,8 @@ public class SubmitOptionsRequest {
      * 数据文件的文件名
      */
     public String dataFileName;
+    /**
+     * 数据的描述
+     */
+    public String paramsDesc;
 }

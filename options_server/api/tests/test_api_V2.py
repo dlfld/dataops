@@ -15,7 +15,7 @@ class Params(BaseModel):
 @router.post('/add')
 async def get_options(params: Params):
     for item in params.items:
-        if item['desc'] == "start desc":
+        if item['desc'] == "add params":
             print(item)
             temp = {
                 'desc': "after start add desc",

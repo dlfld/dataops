@@ -41,8 +41,16 @@ public class TaskUtils {
         CsvData data = reader.read(FileUtil.file(filePath));
 
         //初始化一个task 并初始化task的参数表  和task的id （唯一标识符）
+//        Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
+//            add(new Param().setDesc("start desc").setVersion(0).setObject(data.getRows()));
+//        }}))
+//                .setTaskId(UUID.randomUUID().toString())
+//                .setUserContact(submitOptionsRequest.getUserContact());
         Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
-            add(new Param().setDesc("start desc").setVersion(0).setObject(data.getRows()));
+            add(new Param()
+                    .setDesc(submitOptionsRequest.paramsDesc)
+                    .setVersion(0)
+                    .setObject(data.getRows()));
         }}))
                 .setTaskId(UUID.randomUUID().toString())
                 .setUserContact(submitOptionsRequest.getUserContact());

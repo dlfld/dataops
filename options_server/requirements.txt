@@ -3,3 +3,5 @@ loguru==0.5.3
 uvicorn==0.14.0
 pydantic==1.8.2
 fastapi==0.67.0
+pandas==1.1.5
+fastai==2.4.1

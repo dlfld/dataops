@@ -10,7 +10,6 @@
         <module name="scheduling" />
         <module name="task_handle" />
         <module name="api" />
-        <module name="task_heandle" />
         <module name="common" />
         <module name="gateway" />
       </profile>
@@ -22,7 +21,6 @@
       <module name="parent" target="11" />
       <module name="scheduling" target="11" />
       <module name="task_handle" target="11" />
-      <module name="task_heandle" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -32,7 +30,6 @@
       <module name="gateway" options="-parameters" />
       <module name="scheduling" options="-parameters" />
       <module name="task_handle" options="-parameters" />
-      <module name="task_heandle" options="-parameters" />
     </option>
   </component>
 </project>
