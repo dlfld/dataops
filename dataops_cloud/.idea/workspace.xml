@@ -16,14 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/Swagger3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/Swagger3Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../想法/Untitled.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +164,7 @@
       <workItem from="1627827956382" duration="6000" />
       <workItem from="1627909339433" duration="3761000" />
       <workItem from="1627914695583" duration="1200000" />
+      <workItem from="1627957037260" duration="611000" />
     </task>
     <servers />
   </component>
