@@ -16,45 +16,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/common_Web_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/TaskHeandleApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/controller/FileHandleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/controller/OptionsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/impl/FileHandleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/impl/OptionsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/intf/FileHandleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/intf/OptionsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/taskFactory/impl/TaskFactoryStaticImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/taskFactory/intf/TaskFactoryIntf.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_handle/target/test-classes/com/cuit/task_heandle/TaskHeandleApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/request/SubmitOptionsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/request/SubmitOptionsRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parent/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/Swagger3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/configuration/Swagger3Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/task_handle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/task_handle.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/task_heandle.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowchart-test/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../想法/Untitled.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/Untitled.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../想法/存在的问题.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/存在的问题.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../想法/改进的想法.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/改进的想法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +40,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1vyskxm7xTHIiNniV9g0WSHuTie" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -96,7 +68,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
-    <property name="settings.editor.selected.configurable" value="build.tools" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -115,17 +87,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -201,6 +162,14 @@
       <workItem from="1627710494627" duration="5051000" />
       <workItem from="1627720013899" duration="2929000" />
       <workItem from="1627801322144" duration="1258000" />
+      <workItem from="1627824590848" duration="74000" />
+      <workItem from="1627824696232" duration="261000" />
+      <workItem from="1627824975106" duration="802000" />
+      <workItem from="1627826149110" duration="823000" />
+      <workItem from="1627826994201" duration="64000" />
+      <workItem from="1627827956382" duration="6000" />
+      <workItem from="1627909339433" duration="3761000" />
+      <workItem from="1627914695583" duration="1200000" />
     </task>
     <servers />
   </component>
@@ -221,5 +190,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
