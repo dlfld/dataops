@@ -119,7 +119,7 @@
                 </executions>
                 <configuration>
                     <!--指定生成的镜像名-->
-                    <imageName>dlftest02/${project.artifactId}</imageName>
+                    <imageName>dlf/${project.artifactId}</imageName>
                     <!--指定标签-->
                     <imageTags>
                         <imageTag>latest</imageTag>

@@ -22,6 +22,13 @@ spring:
       #多长时间提交一次偏移量
       auto-commit-interval: 1000
       properties:
+        request:
+          timeout:
+            ms: 30000000
+        fetch:
+          max:
+            wait:
+              ms: 3000000
         spring:
           json:
             trusted:

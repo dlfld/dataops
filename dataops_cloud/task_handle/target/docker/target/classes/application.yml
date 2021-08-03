@@ -26,16 +26,19 @@ spring:
       properties:
         max:
           request:
-            size: 999999999
-      buffer-memory: 999999999
+            size: 2147483647
+        request:
+          timeout:
+            ms: 30000000
+      buffer-memory: 2147483647
 
     #      properties: max.request.size = 5242880
     #      buffer-memory: 1GB
     listener:
-
       ack-count: 1
 
 taskKafkaTopic: topic-task-queue
+
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data

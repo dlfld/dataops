@@ -85,25 +85,14 @@ public class Scheduling extends AbstractSchedulingIntf {
      */
     @KafkaListener(topics = "topic-task-queue")
     public void onMessage(ConsumerRecord<Integer, String> record) {
-        try {
-            Thread.sleep(1000*10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1000*10);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         Task task =(Task) SerializableUtil.stringToObject(record.value(),Task.class);
         System.out.println("收到task->"+task);
         startDispatch(task);
     }
-//    @Override
-//    public void run(ApplicationArguments args) throws Exception {
-//        while (true) {
-//            System.out.println("扫描");
-//            //如果task队列不为空的话
-//            while (!taskFactoryStatic.isEmpty()) {
-//                startDispatch(taskFactoryStatic.poll());
-//            }
-////            startDispatch();
-//            Thread.sleep(1000 * 10);
-//        }
-//    }
+
 }

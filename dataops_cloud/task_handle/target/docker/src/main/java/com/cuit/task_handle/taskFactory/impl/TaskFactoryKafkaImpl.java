@@ -61,7 +61,7 @@ public class TaskFactoryKafkaImpl implements TaskFactoryIntf {
          */
         try {
             SendResult<Integer, String> result = future.get();
-            log.info("消息发送成功->" + task);
+            log.info("消息发送成功->");
         } catch (Exception e) {
             e.printStackTrace();
             return false;
