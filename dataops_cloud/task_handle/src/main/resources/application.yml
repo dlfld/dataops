@@ -30,7 +30,7 @@ spring:
         request:
           timeout:
             ms: 30000000
-      buffer-memory: 2147483647
+      buffer-memory: 2147483647 #生产者缓冲区大小
 
     #      properties: max.request.size = 5242880
     #      buffer-memory: 1GB
