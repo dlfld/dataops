@@ -22,9 +22,6 @@ from fastai.tabular.all import *
 import json
 
 
-# from pandas.io.json import json_normalize
-
-
 @func_config(dict({"optUrl": "/train", "optDesc": "模型训练", "optName": "训练demo"}))
 @router.post('/train')
 async def get_options(params: Params):
@@ -55,6 +52,7 @@ async def get_options(params: Params):
                 learn.fit_one_cycle(20)
                 learn.export('static/models/test.pkl')
                 print("111111111111111111111111111")
+
             train_all('肺部并发症', df)
             ''''
             在此处写自己的计算代码
