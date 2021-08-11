@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {uploadpic} from '@/api/singleImage'
+import {uploadpic, uploadpicToPyserver} from '@/api/singleImage'
 // import { getToken } from "@/utils/auth";
 
 export default {
@@ -67,9 +67,9 @@ export default {
       // 文件对象
       form.append(this.pathname, fileObj);
       let _this = this;
-      uploadpic(form).then(res => {
-        // console.log(res);
-        if (res.msg === "请求成功") {
+      uploadpicToPyserver(form).then(res => {
+        console.log(res);
+        if (res.code === 200) {
           let url = {
             uid: fileObj.uid,
             url: res.data

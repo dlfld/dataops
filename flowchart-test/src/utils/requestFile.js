@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { MessageBox, Message } from 'element-ui'
+import {MessageBox, Message} from 'element-ui'
 import store from '@/store'
+
 const service = axios.create({
-    baseURL: "/dev-api", // url = base url + request url
+    baseURL: "/data-api", // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
     timeout: 500000 // request timeout
 })
@@ -41,7 +42,7 @@ service.interceptors.response.use(
 
         const res = response.data
         return res
-            // if the custom code is not 20000, it is judged as an error.
+        // if the custom code is not 20000, it is judged as an error.
         if (res.code !== 20000) {
             Message({
                 message: res.message || 'Error',

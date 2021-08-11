@@ -1,12 +1,10 @@
-import pandas.io.json
-from pandas.io.json import json_normalize
+
 from pydantic import BaseModel
 
 from aop.data_func import func_config
 from utils.router_utils import get_router
 
 router = get_router()
-import pickle
 
 
 class Params(BaseModel):
@@ -19,7 +17,6 @@ class Params(BaseModel):
 '''
 import pandas as pd
 from fastai.tabular.all import *
-import json
 
 
 @func_config(dict({"optUrl": "/processing", "optDesc": "数据处理", "optName": "处理demo"}))

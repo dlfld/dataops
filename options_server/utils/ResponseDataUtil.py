@@ -11,27 +11,33 @@ class RestfulModel(GenericModel, Generic[T]):
     data: T
 
 
-class Result():
+class Result:
     # 返回成功的 返回类  自定义消息
-    def buildSuccess_md(self, msg, data):
+    @staticmethod
+    def buildSuccess_md(msg, data):
         return RestfulModel(code=200, msg=msg, data=data)
 
     # 返回成功的返回类
-    def buildSuccess(self):
+    @staticmethod
+    def buildSuccess():
         return RestfulModel(code=200, msg="成功", data=None)
 
     # 返回类只有信息
-    def buildSuccess_m(self, msg):
+    @staticmethod
+    def buildSuccess_m(msg):
         return RestfulModel(code=200, msg=msg, data=None)
 
     # 返回成功，只有数据
-    def buildSuccess_d(self, data):
+    @staticmethod
+    def buildSuccess_d(data):
         return RestfulModel(code=200, msg="成功", data=data)
 
     # 返回失败的返回类 自定义消息
-    def buildError_d(self, data):
+    @staticmethod
+    def buildError_d(data):
         return RestfulModel(code=500, msg="失败", data=data)
 
     # 返回失败的返回类
-    def buildError_m(self, msg):
+    @staticmethod
+    def buildError_m(msg):
         return RestfulModel(code=500, msg=msg)
