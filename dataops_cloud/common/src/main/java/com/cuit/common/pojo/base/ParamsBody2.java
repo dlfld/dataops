@@ -1,25 +1,23 @@
-package com.cuit.common.pojo;
+package com.cuit.common.pojo.base;
 
-import com.cuit.common.pojo.bo.NodeMsg;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
+ * 第二个版本的参数
  * @author dailinfeng
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Connection {
-    /**
-     * 出发点
-     */
-    private NodeMsg source;
-    /**
-     * 指向点
-     */
-    private NodeMsg destination;
+@ToString
+public class ParamsBody2 implements Serializable {
+    List<Param> items;
 }

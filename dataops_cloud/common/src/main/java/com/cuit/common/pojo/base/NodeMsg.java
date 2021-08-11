@@ -1,20 +1,18 @@
-package com.cuit.common.pojo.bo;
+package com.cuit.common.pojo.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.util.List;
-
 /**
- * 参数列表的实体类
- * 描述的是一些参数
+ * node 节点的 信息
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true) //链式调用开启
-public class ParamsBody {
-    List<Object> items;
+public class NodeMsg {
+    private String id;//node的id
+    private String posiion;//node的位置
 }

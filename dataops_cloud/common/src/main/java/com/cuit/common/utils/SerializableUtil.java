@@ -2,8 +2,6 @@ package com.cuit.common.utils;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.cuit.common.pojo.bo.Task;
-import org.springframework.stereotype.Component;
 
 /**
  * @Author dailinfeng

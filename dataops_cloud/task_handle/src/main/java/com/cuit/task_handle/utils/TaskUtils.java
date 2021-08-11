@@ -1,13 +1,9 @@
 package com.cuit.task_handle.utils;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.text.csv.CsvData;
-import cn.hutool.core.text.csv.CsvReader;
-import cn.hutool.core.text.csv.CsvUtil;
-import com.cuit.common.pojo.Node;
-import com.cuit.common.pojo.bo.Param;
-import com.cuit.common.pojo.bo.ParamsBody2;
-import com.cuit.common.pojo.bo.Task;
+import com.cuit.common.pojo.base.Node;
+import com.cuit.common.pojo.base.Param;
+import com.cuit.common.pojo.base.ParamsBody2;
+import com.cuit.common.pojo.base.Task;
 import com.cuit.common.pojo.request.SubmitOptionsRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -35,23 +31,17 @@ public class TaskUtils {
      * @return
      */
     public Task buildTask(SubmitOptionsRequest submitOptionsRequest) {
-        String filePath = dataFilePath + "/" + submitOptionsRequest.dataFileName;
-        CsvReader reader = CsvUtil.getReader();
-        //从文件中读取CSV数据
-        CsvData data = reader.read(FileUtil.file(filePath));
 
-        //初始化一个task 并初始化task的参数表  和task的id （唯一标识符）
-//        Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
-//            add(new Param().setDesc("start desc").setVersion(0).setObject(data.getRows()));
-//        }}))
-//                .setTaskId(UUID.randomUUID().toString())
-//                .setUserContact(submitOptionsRequest.getUserContact());
+        /**
+         * 前一个版本是直接读取csv的数据进行传输，当前版本只需要传数据的元数据，不需要读取出来了
+         * dataFileName 里面存的就是上传文件之后文件在硬盘上的实际位置
+         */
         Task task = new Task().setParamsBody2(new ParamsBody2(new ArrayList<Param>() {{
-            add(new Param()
-                    .setDesc(submitOptionsRequest.paramsDesc)
-                    .setVersion(0)
-                    .setObject(data.getRows()));
-        }}))
+                    add(new Param()
+                            .setDesc(submitOptionsRequest.paramsDesc)
+                            .setVersion(0)
+                            .setLocation(submitOptionsRequest.getDataFileName()));
+                }}))
                 .setTaskId(UUID.randomUUID().toString())
                 .setUserContact(submitOptionsRequest.getUserContact());
         //获取前端已经经过拓扑排序之后的排序列表

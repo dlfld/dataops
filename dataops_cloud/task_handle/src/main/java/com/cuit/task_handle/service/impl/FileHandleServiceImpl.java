@@ -16,6 +16,8 @@ import java.util.UUID;
  * @Description TODO
  * @Date 2021/7/19 5:07 下午
  * @Version 1.0
+ *
+ * 当前不使用这个接口了，现在的文件上传方式变了，不再上传到Java端
  */
 @Service
 public class FileHandleServiceImpl implements FileHandleService {

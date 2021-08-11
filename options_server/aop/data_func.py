@@ -1,3 +1,15 @@
+from pydantic import BaseModel
+
+
+class Params(BaseModel):
+    items: list = None
+
+
+from utils.router_utils import get_router
+
+router = get_router()
+
+
 class Options:
     options = []
 
@@ -17,14 +29,17 @@ def func_config(data: dict):
     Options.options.append(data)
 
     def parser_data(func):
-        def wrapper(*args, **kwargs):
-            return func(*args)
+        @router.post(data['optUrl'])
+        async def wrapper(params: Params):
+            print(params)
+            # params = args[0]
+            desc = data['desc']
+            for item in params.items:
+                if item['desc'] == desc:
+                    handle_res = func(item)
+                    params.items.append(handle_res)
+            return params
 
         return wrapper
 
     return parser_data
-
-
-
-# def run():
-#     print("i'm run")

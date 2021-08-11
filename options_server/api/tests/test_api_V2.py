@@ -11,20 +11,34 @@ class Params(BaseModel):
     items: list = None
 
 
-@func_config(dict({"optUrl": "/add", "optDesc": "执行加法操作", "optName": "加法"}))
-@router.post('/add')
-async def get_options(params: Params):
-    for item in params.items:
-        if item['desc'] == "add params":
-            print(item)
-            temp = {
-                'desc': "after start add desc",
-                'version': 0,
-                'object': item['object']
-            }
-            params.items.append(temp)
-    return params
-    # return "".join([item for item in params.items])+"add "
+@func_config(dict({"optUrl": "/add", "optDesc": "执行加法操作", "optName": "加法", "desc": "start desc"}))
+def handle_add(item):
+    print("进来了handle_add")
+    print(item)
+    temp = {
+        'desc': "after start add desc",
+        'version': 0,
+        'location': "asdasdasd",
+        'host': []
+    }
+    return temp
+
+
+# @router.post('/add')
+# @func_config(dict({"optUrl": "/add", "optDesc": "执行加法操作", "optName": "加法", "desc": "start desc"}))
+async def get_options(params):
+    # return handle_add(params)
+    print(params)
+    # for item in params.items:
+    #     if item['desc'] == "start desc":
+    #         file_location = item['location']
+    #         temp = {
+    #             'desc': "after start add desc",
+    #             'version': 0,
+    #             'location': item['object']
+    #         }
+    #         params.items.append(temp)
+    # return params
 
 
 @func_config(dict({"optUrl": "/min", "optDesc": "实现减操作", "optName": "减法"}))

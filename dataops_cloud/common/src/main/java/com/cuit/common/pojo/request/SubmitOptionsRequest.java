@@ -1,7 +1,7 @@
 package com.cuit.common.pojo.request;
 
-import com.cuit.common.pojo.Connection;
-import com.cuit.common.pojo.Node;
+import com.cuit.common.pojo.base.Connection;
+import com.cuit.common.pojo.base.Node;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

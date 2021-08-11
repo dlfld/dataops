@@ -1,18 +1,16 @@
-package com.cuit.common.pojo.bo;
+package com.cuit.common.pojo.base;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-/**
- * node 节点的 信息
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true) //链式调用开启
-public class NodeMsg {
-    private String id;//node的id
-    private String posiion;//node的位置
+public class Option {
+    private String optUrl; //python服务的请求路径
+    private String optName;//python服务的名字
+    private String optDesc;//python服务的简介
 }

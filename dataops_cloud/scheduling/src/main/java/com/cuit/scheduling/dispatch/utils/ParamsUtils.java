@@ -1,8 +1,8 @@
 package com.cuit.scheduling.dispatch.utils;
 
 
-import com.cuit.common.pojo.bo.Param;
-import com.cuit.common.pojo.bo.ParamsBody2;
+import com.cuit.common.pojo.base.Param;
+import com.cuit.common.pojo.base.ParamsBody2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -70,7 +70,7 @@ public class ParamsUtils {
             //如果当前参数的版本号小于新传入的参数的版本号就更新参数
             //更新参数之后在map中删除更新的参数
             if (param.getVersion() < newParam.getVersion()) {
-                param.setObject(newParam.getObject());
+                param.setLocation(newParam.getLocation());
             }
             sourceMap.remove(newParam.getDesc());
         }
@@ -85,7 +85,4 @@ public class ParamsUtils {
         }
         return target;
     }
-
-
-
 }

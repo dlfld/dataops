@@ -1,6 +1,5 @@
-package com.cuit.common.pojo.bo;
+package com.cuit.common.pojo.base;
 
-import com.cuit.common.pojo.Node;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,13 +9,28 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * @author dailinfeng
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true) //链式调用开启
+@Accessors(chain = true)
 public class Task implements Serializable {
-    public String taskId; //task的唯一标识符
-    public ParamsBody2 paramsBody2; //参数表
+    /**
+     * task的唯一标识符
+     */
+    public String taskId;
+    /**
+     * 参数表
+     */
+    public ParamsBody2 paramsBody2;
+    /**
+     * 节点表
+     */
     public Queue<Node> nodeQueue = new LinkedList<>();
-    public String userContact;//用户的联系方式
+    /**
+     * 用户的联系方式
+     */
+    public String userContact;
 }

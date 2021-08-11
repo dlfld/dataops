@@ -2,12 +2,11 @@ package com.cuit.common.rpc.hutool_http;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
-import cn.hutool.json.JSON;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.cuit.common.pojo.Option;
-import com.cuit.common.pojo.bo.ParamsBody2;
+import com.cuit.common.pojo.base.Option;
+import com.cuit.common.pojo.base.ParamsBody2;
 import com.cuit.common.pojo.notify.Message;
 import com.cuit.common.rpc.RpcIntf;
 import org.springframework.beans.factory.annotation.Value;
