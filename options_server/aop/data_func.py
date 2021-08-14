@@ -29,7 +29,7 @@ def func_config(data: dict):
     Options.options.append(data)
 
     def parser_data(func):
-        @router.post(data['optUrl'])
+        @router.post(data['optUrl'],summary=data['optName'])
         async def wrapper(params: Params):
             print(params)
             # params = args[0]
