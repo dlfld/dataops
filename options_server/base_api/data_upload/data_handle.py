@@ -1,6 +1,6 @@
 from fastapi import UploadFile, File
 
-from utils.ResponseDataUtil import Result
+from utils.response_data_util import Result
 from utils.config_parse_util import get_config
 from utils.file_utils import judge_file_path
 from utils.router_utils import get_router

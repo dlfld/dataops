@@ -24,19 +24,25 @@ class Options:
 '''
 
 
-def func_config(data: dict):
-    print(data)
+def func_config(data: dict,read_file_func):
+    print("进来了func_config，他的参数有：", data)
     Options.options.append(data)
 
     def parser_data(func):
-        @router.post(data['optUrl'],summary=data['optName'])
+        print("进来了parser_data")
+
+        @router.post(data['optUrl'], summary=data['optName'])
         async def wrapper(params: Params):
             print(params)
             # params = args[0]
             desc = data['desc']
             for item in params.items:
                 if item['desc'] == desc:
-                    handle_res = func(item)
+                    # 动态调用adapter
+
+                    # handle_res = func(item)
+                    handle_res = func(read_file_func(item['location']))
+
                     params.items.append(handle_res)
             return params
 

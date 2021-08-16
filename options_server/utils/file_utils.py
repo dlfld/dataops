@@ -10,8 +10,3 @@ def judge_file_path(path):
         return
     os.makedirs(path)
 
-
-def get_item_location(params, desc: str):
-    for item in params.items():
-        if item['desc'] == desc:
-            return item, item['location']

@@ -1,7 +1,7 @@
 from loguru import logger
 
 from aop.data_func import Options
-from utils.ResponseDataUtil import Result
+from utils.response_data_util import Result
 from utils.router_utils import get_router
 
 router = get_router()

@@ -10,7 +10,9 @@ class RestfulModel(GenericModel, Generic[T]):
     msg: str
     data: T
 
-
+'''
+向前端返回数据时候的返回类
+'''
 class Result:
     # 返回成功的 返回类  自定义消息
     @staticmethod
