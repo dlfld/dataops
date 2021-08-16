@@ -1,9 +1,8 @@
-import pandas as pd
 from loguru import logger
 from pydantic import BaseModel
 
 from aop.data_func import func_config
-from utils.file_readers import FileReaders
+from utils.file_utils import FileReaders, FileWriters
 from utils.router_utils import get_router
 
 router = get_router()
@@ -22,57 +21,14 @@ class Params(BaseModel):
         "changeVersion": False,  # 是否修改版本号
         "return_desc": "after start desc"  # 经过处理之后的desc
     }),
-    read_file_func=FileReaders.read_csv  # 读取文件的方法
-
+    read_file_func=FileReaders.read_csv,  # 读取文件的方法
+    save_file_func=FileWriters.write_data_frame_csv  # 写入文件的方法
 )
 def handle_add(data_frame):
     print("进来了handle_add")
     print(data_frame)
-    temp = {
-        'desc': "after start add desc",
-        'version': 0,
-        'location': "asdasdasd",
-        'host': []
-    }
-    return temp
-
-# @func_config(dict({"optUrl": "/min", "optDesc": "实现减操作", "optName": "减法", "desc": "start desc"}))
-# async def get_options(item):
-#     return item
+    # 在这个地方操作dataframe对象
+    return data_frame
 
 
-# @func_config(dict({"optUrl": "/rid", "optDesc": "执行乘法操作", "optName": "乘法"}))
-# @router.post('/rid')
-# async def get_options(params: Params):
-#     for item in params.items:
-#         if item['desc'] == "start desc":
-#             temp = {
-#                 'desc': "after start rid  desc",
-#                 'version': 0,
-#                 'object': item['object']
-#             }
-#             params.items.append(temp)
-#     return params
-#
-#
-# @func_config(dict({"optUrl": "/div", "optDesc": "执行除法操作", "optName": "除法"}))
-# @router.post('/div')
-# async def get_options(params: Params):
-#     for item in params.items:
-#         if item['desc'] == "start desc":
-#             temp = {
-#                 'desc': "after start div desc",
-#                 'version': 0,
-#                 'object': item['object']
-#             }
-#             params.items.append(temp)
-#     return params
-#
-#
-# @router.post('/ ')
-# async def get_options(params: Params):
-#     for item in params.items:
-#         if item['desc'] == "start desc":
-#             item['object'] = item['object'] + " add"
-#             item['version'] = item['version'] + 1
-#     return params
+
