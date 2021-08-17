@@ -32,4 +32,12 @@ public class Param implements Serializable {
      * 物理机地址
      */
     private List<String> hosts;
+    /**
+     * 文件名
+     */
+    private String fileName;
+    /**
+     * 文件下载链接
+     */
+    private String downloadUrl;
 }

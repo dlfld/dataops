@@ -3,7 +3,7 @@ package com.cuit.scheduling.dispatch.taskFactory.impl;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.cuit.common.pojo.bo.Task;
+import com.cuit.common.pojo.base.Task;
 import com.cuit.common.pojo.notify.Message;
 import com.cuit.common.rpc.RpcImpl;
 import com.cuit.scheduling.dispatch.taskFactory.intf.ResultFactoryIntf;

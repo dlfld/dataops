@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.cuit.task_heandle.TaskHeandleApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.162 s - in com.cuit.task_heandle.TaskHeandleApplicationTests

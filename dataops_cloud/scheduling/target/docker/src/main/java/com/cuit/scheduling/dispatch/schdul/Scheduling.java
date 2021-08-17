@@ -1,20 +1,15 @@
 package com.cuit.scheduling.dispatch.schdul;//package cuit.scheduling.dispatch.schdul;
 
-import com.cuit.common.pojo.Node;
-import com.cuit.common.pojo.bo.ParamsBody2;
-import com.cuit.common.pojo.bo.Task;
+import com.cuit.common.pojo.base.Node;
+import com.cuit.common.pojo.base.ParamsBody2;
+import com.cuit.common.pojo.base.Task;
 import com.cuit.common.utils.SerializableUtil;
 import com.cuit.scheduling.dispatch.taskFactory.impl.ResultImpl;
 import com.cuit.scheduling.dispatch.utils.ParamsUtils;
 import com.cuit.common.rpc.RpcImpl;
-import io.swagger.models.auth.In;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.core.annotation.Order;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
@@ -85,12 +80,8 @@ public class Scheduling extends AbstractSchedulingIntf {
      */
     @KafkaListener(topics = "topic-task-queue")
     public void onMessage(ConsumerRecord<Integer, String> record) {
-//        try {
-//            Thread.sleep(1000*10);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         Task task =(Task) SerializableUtil.stringToObject(record.value(),Task.class);
+
         System.out.println("收到task->"+task);
         startDispatch(task);
     }

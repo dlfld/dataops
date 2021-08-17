@@ -1,3 +1,5 @@
+import numpy as np
+import pandas as pd
 from loguru import logger
 from pydantic import BaseModel
 
@@ -22,13 +24,12 @@ class Params(BaseModel):
         "return_desc": "after start desc"  # 经过处理之后的desc
     }),
     read_file_func=FileReaders.read_csv,  # 读取文件的方法
-    save_file_func=FileWriters.write_data_frame_csv  # 写入文件的方法
+    save_file_func=FileWriters.write_data_frame_csv,  # 写入文件的方法
+    pre_handle_adapter=lambda x: np.array(x),  # 在进入计算之前需要执行的数据格式转换操作
+    after_handle_adapter=lambda x: pd.DataFrame(x)  # 在计算完成之后需要进行的数据格式转换操作
 )
 def handle_add(data_frame):
     print("进来了handle_add")
     print(data_frame)
     # 在这个地方操作dataframe对象
     return data_frame
-
-
-

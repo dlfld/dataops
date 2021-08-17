@@ -40,7 +40,9 @@ public class TaskUtils {
                     add(new Param()
                             .setDesc(submitOptionsRequest.paramsDesc)
                             .setVersion(0)
-                            .setLocation(submitOptionsRequest.getDataFileName()));
+                            .setLocation(submitOptionsRequest.getDataFileFullPath())
+                            .setFileName(submitOptionsRequest.getDataFileName())
+                    );
                 }}))
                 .setTaskId(UUID.randomUUID().toString())
                 .setUserContact(submitOptionsRequest.getUserContact());

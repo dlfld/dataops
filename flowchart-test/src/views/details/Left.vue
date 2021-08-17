@@ -24,13 +24,15 @@ export default {
   },
   data: {
     return() {
-      filename:""
+      fileMsg:""
     }
   },
   methods: {
     uploadSuccess(nameList) {
-      this.filename = nameList[0]
-      this.$store.state.fileName = this.filename
+      console.log(nameList);
+      this.fileMsg = nameList[0]
+
+      this.$store.state.fileMsg = this.fileMsg
     }
   }
 }

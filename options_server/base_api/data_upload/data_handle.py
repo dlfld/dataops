@@ -26,7 +26,8 @@ async def data_upload(file: UploadFile = File(...)):
         file_full_path = f"{file_path}/{file_name}"
         with open(file_full_path, "wb") as f:
             f.write(res)
+        downloadUrl = f'{get_config("data_upload", "host")}/data_download/{file_name}'
     except Exception as e:
         Result.buildError_d(e)
         logger.info(e)
-    return Result.buildSuccess_d(file_full_path)
+    return Result.buildSuccess_d({"filePath": file_full_path, "fileName": file_name, "downloadUrl":downloadUrl})

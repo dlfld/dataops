@@ -5,22 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        fileName: ""
+        fileMsg: ""
     },
     mutations: {
         setFile(state, name) {
-            state.fileName = name
+            state.fileMsg = name
         }
     },
     actions: {
-        setFileName({commit, state}, fileName) {
-            commit("setFileName", fileName)
+        setFileMsg({commit, state}, fileMsg) {
+            commit("setFileMsg", fileMsg)
         }
     },
     modules: {},
     getters: {
-        getFileName(state) {
-            return state.fileName
+        getFileMsg(state) {
+            return state.fileMsg
         }
     }
 })

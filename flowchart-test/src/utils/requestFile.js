@@ -3,7 +3,7 @@ import {MessageBox, Message} from 'element-ui'
 import store from '@/store'
 
 const service = axios.create({
-    baseURL: "/data-api", // url = base url + request url
+    baseURL: "/dataapi", // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
     timeout: 500000 // request timeout
 })

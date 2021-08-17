@@ -72,7 +72,7 @@ export default {
   data() {
     return {
       inputOptionMessageVisible: false,//节点信息完善
-      paramsDesc:"",//上传数据文件的desc
+      paramsDesc: "",//上传数据文件的desc
       baseNumber: 10,//基本的操作数
       options: [],//提供选择的功能节点
       option: "",//用户选择的功能节点
@@ -133,7 +133,7 @@ export default {
     convertScheme(nodes, connections) {
     },
     //用户点击保存
-    nodeSavePre(){
+    nodeSavePre() {
       this.inputOptionMessageVisible = false
       this.$refs.chart.save()
     },
@@ -145,7 +145,10 @@ export default {
       let submitOptionsRequest = await interpretationLayer(nodes, connections)
       //解释之后再添加一些信息
       submitOptionsRequest.userContact = this.userContact
-      submitOptionsRequest.dataFileName = this.$store.getters.getFileName
+      console.log(this.$store.getters.getFileMsg)
+      submitOptionsRequest.dataFileName = this.$store.getters.getFileMsg.fileName
+      submitOptionsRequest.dataFileFullPath = this.$store.getters.getFileMsg.filePath
+      submitOptionsRequest.downloadUrl = this.$store.getters.getFileMsg.downloadUrl
       submitOptionsRequest.paramsDesc = this.paramsDesc
       if (submitOptionsRequest.dataFileName === null || submitOptionsRequest.dataFileName.length === 0) {
         this.$notify({

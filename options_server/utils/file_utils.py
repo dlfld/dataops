@@ -25,11 +25,15 @@ class FileWriters:
         """
         把DataFrame写入csv文件
         :param data_frame:
-        :return: 保存文件的路径
+        :return:file_full_path  保存文件的路径 file_name 文件名 , 顺序不能乱
         """
-        file_full_path = f'{get_config("data_upload", "data_save_path")}/{uuid.uuid1()}.csv'
+        file_name = f'{uuid.uuid1()}.csv'
+        file_full_path = f'{get_config("data_upload", "data_save_path")}/{file_name}'
         data_frame.to_csv(file_full_path)
-        return file_full_path
+        return {
+            "file_full_path": file_full_path,
+            "file_name": file_name
+        }
 
 
 class FileReaders:
