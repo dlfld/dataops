@@ -41,4 +41,8 @@ public class SubmitOptionsRequest {
      * 数据的描述
      */
     public String paramsDesc;
+    /**
+     * 文件下载链接
+     */
+    private String downloadUrl;
 }

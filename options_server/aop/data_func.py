@@ -1,3 +1,4 @@
+from icecream import ic
 from pydantic import BaseModel
 
 from utils.config_parse_util import get_config
@@ -46,10 +47,11 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
         # fast api的构建
         @router.post(data['optUrl'], summary=data['optName'])
         async def wrapper(params: Params):
-            print(params)
+            ic(params)
             desc = data['desc']
             for item in params.items:
                 if item['desc'] == desc:
+                    ic(item)
                     # 根据文件的路径对文件内容进行读取（使用传入的方法）
                     file_content = read_file_func(item['location'])
                     # 后面如果要添加数据格式转换的adapter就在下一步进行调用

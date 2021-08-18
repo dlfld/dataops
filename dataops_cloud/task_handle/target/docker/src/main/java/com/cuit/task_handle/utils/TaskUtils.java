@@ -42,6 +42,7 @@ public class TaskUtils {
                             .setVersion(0)
                             .setLocation(submitOptionsRequest.getDataFileFullPath())
                             .setFileName(submitOptionsRequest.getDataFileName())
+                            .setDownloadUrl(submitOptionsRequest.getDownloadUrl())
                     );
                 }}))
                 .setTaskId(UUID.randomUUID().toString())
