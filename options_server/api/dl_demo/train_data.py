@@ -1,13 +1,10 @@
 import numpy as np
-import pandas as pd
 import torch
-from icecream import ic
 from pydantic import BaseModel
 
 from aop.data_func import func_config
 from api.dl_demo.train import train
 from utils.config_parse_util import get_config
-from utils.file_utils import FileReaders, FileWriters
 from utils.router_utils import get_router
 
 router = get_router()
@@ -18,6 +15,11 @@ class Params(BaseModel):
 
 
 def save_model(model):
+    """
+    保存模型的方法
+    :param model:
+    :return:
+    """
     file_path = f'{get_config("data_upload", "data_save_path")}/train_diabetes.pkl'
     torch.save(model, file_path)
     return {
