@@ -1,8 +1,7 @@
 from fastapi import UploadFile, File
 
 from utils.response_data_util import Result
-from utils.config_parse_util import get_config
-from utils.file_utils import judge_file_path
+from utils.config_parse_util import get_config, ConfigGet
 from utils.router_utils import get_router
 
 import uuid
@@ -19,14 +18,12 @@ from loguru import logger
 async def data_upload(file: UploadFile = File(...)):
     try:
         res = await file.read()
-        file_path = get_config("data_upload", "data_save_path")
-        # 判断当前路径是否存在，如果不存在就创建
-        judge_file_path(file_path)
+        file_path = ConfigGet.get_data_file_path()
         file_name = f"{uuid.uuid1()}.{file.filename.split('.')[1]}"
         file_full_path = f"{file_path}/{file_name}"
         with open(file_full_path, "wb") as f:
             f.write(res)
-        downloadUrl = f'{get_config("data_upload", "host")}/data_download/{file_name}'
+        downloadUrl = f'{ConfigGet.get_server_host()}/data_download/{file_name}'
     except Exception as e:
         Result.buildError_d(e)
         logger.info(e)

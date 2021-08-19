@@ -1,6 +1,5 @@
-
 from starlette.responses import FileResponse
-from utils.config_parse_util import get_config
+from utils.config_parse_util import ConfigGet
 from utils.router_utils import get_router
 
 router = get_router()
@@ -13,5 +12,5 @@ async def data_download(file_name):
     :param file_name: 文件名
     :return:
     """
-    file_path = get_config("data_upload", "data_save_path")
+    file_path = ConfigGet.get_data_file_path()
     return FileResponse(f'{file_path}/{file_name}', filename=file_name)

@@ -1,1 +1,0 @@
-from api.model_predict import model_predict

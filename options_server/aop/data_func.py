@@ -1,22 +1,19 @@
 from icecream import ic
 from pydantic import BaseModel
 
-from utils.config_parse_util import get_config
-from utils.file_utils import judge_file_path
+from utils.config_parse_util import ConfigGet
+from utils.router_utils import get_router
 
 
 class Params(BaseModel):
     items: list = None
 
 
-from utils.router_utils import get_router
-
-router = get_router()
-
-
 class Options:
     options = []
 
+
+router = get_router()
 
 '''
 
@@ -43,7 +40,6 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
     Options.options.append(data)
 
     def parser_data(func):
-
         # fast api的构建
         @router.post(data['optUrl'], summary=data['optName'])
         async def wrapper(params: Params):
@@ -60,9 +56,7 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
                     out_func_data = func(in_func_data)
                     # 对返回的数据进行格式化的处理
                     handle_res = after_handle_adapter(out_func_data)
-                    # 判断要存的路径是否存在，如果不存在就创建  这一行代码可以不要因为在设计逻辑上存的数据文件的路径和读取的数据文件在一个文件夹下，不存在的话在文件上传的时候就已经创建了
-                    # 但是这种存储逻辑可能后期会变，先把它加上
-                    judge_file_path(f'{get_config("data_upload", "data_save_path")}/')
+
                     # 调用传进来的方法保存结果的方法 返回值是保存文件的全路径
                     file_save_res = save_file_func(handle_res)
                     # 如果返回的desc和取参数的desc相同，表示没有产生新的数据，只是对原来的数据进行操作
@@ -71,8 +65,11 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
                         # 如果需要修改版本号，那么就版本号加一
                         if data['changeVersion']:
                             return_version = int(item['version']) + 1
+                    # 获取保存文件的文件名
                     save_file_name = file_save_res['file_name']
-                    downloadUrl = f'{get_config("data_upload", "host")}/data_download/{save_file_name}'
+                    # 获取文件的下载链接
+                    downloadUrl = f'{ConfigGet.get_server_host()}/data_download/{save_file_name}'
+                    # 封装返回对象
                     res_dict = {
                         "desc": data['return_desc'],  # 配置的desc取出来作为返回值的desc
                         "version": return_version,  # 版本号
@@ -81,6 +78,7 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
                         "downloadUrl": downloadUrl,  # 下载文件的链接
                         "hosts": []
                     }
+                    # 把返回对象添加到返回列表中
                     params.items.append(res_dict)
             return params
 

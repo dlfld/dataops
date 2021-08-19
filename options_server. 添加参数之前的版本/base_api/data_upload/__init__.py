@@ -1,1 +1,0 @@
-from base_api.data_upload import data_handle

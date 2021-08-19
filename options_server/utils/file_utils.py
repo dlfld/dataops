@@ -1,18 +1,7 @@
 import uuid
 import pandas as pd
 from pandas import DataFrame
-from utils.config_parse_util import get_config
-import os
-
-
-def judge_file_path(path):
-    """
-    判断路径是否存在，如果不存在就创建
-    :param path: 文件路径
-    """
-    if os.path.exists(path):
-        return
-    os.makedirs(path)
+from utils.config_parse_util import ConfigGet
 
 
 class FileWriters:
@@ -28,7 +17,7 @@ class FileWriters:
         :return:file_full_path  保存文件的路径 file_name 文件名 , 顺序不能乱
         """
         file_name = f'{uuid.uuid1()}.csv'
-        file_full_path = f'{get_config("data_upload", "data_save_path")}/{file_name}'
+        file_full_path = f'{ConfigGet.get_data_file_path()}/{file_name}'
         data_frame.to_csv(file_full_path)
         return {
             "file_full_path": file_full_path,
