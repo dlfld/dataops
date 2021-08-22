@@ -1,3 +1,5 @@
+import uuid
+
 from icecream import ic
 from pydantic import BaseModel
 
@@ -36,6 +38,7 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
     :param after_handle_adapter: 数据处理完成之后需要执行的方法，用来转换处理之后的数据
     :return:
     """
+    data['optUrl'] = uuid.uuid1()  # 通过uuid的方式随机出请求的url
     print("进来了func_config，他的参数有：", data)
     Options.options.append(data)
 
@@ -56,7 +59,6 @@ def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=l
                     out_func_data = func(in_func_data)
                     # 对返回的数据进行格式化的处理
                     handle_res = after_handle_adapter(out_func_data)
-
                     # 调用传进来的方法保存结果的方法 返回值是保存文件的全路径
                     file_save_res = save_file_func(handle_res)
                     # 如果返回的desc和取参数的desc相同，表示没有产生新的数据，只是对原来的数据进行操作

@@ -15,7 +15,21 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="" />
+    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/impl/OptionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/impl/OptionsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/aop/data_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/aop/data_func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/dl_demo/train_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/dl_demo/train_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/np_dot/test_np_dot.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/np_dot/test_np_dot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../想法/展示版本.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../想法/部分操作文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/部分操作文档.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,6 +199,8 @@
       <workItem from="1629203574222" duration="3619000" />
       <workItem from="1629267878965" duration="839000" />
       <workItem from="1629278394385" duration="18000" />
+      <workItem from="1629617775221" duration="142000" />
+      <workItem from="1629617937162" duration="1002000" />
     </task>
     <servers />
   </component>

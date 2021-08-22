@@ -16,7 +16,6 @@ class Params(BaseModel):
 
 @func_config(
     data=dict({
-        "optUrl": "/add",  # 功能模块的调用url  有个想法：这个url现在是人工配置的，实际上根本不需要人工配置，这个url对使用是无感的，只是为了调用，因此能否自动生成（前提是永远不会重复）
         "optDesc": "执行加法操作",  # 模块功能简介
         "optName": "加法",  # 展示在前端的模块名
         "desc": "start desc",  # 需要的数据的desc

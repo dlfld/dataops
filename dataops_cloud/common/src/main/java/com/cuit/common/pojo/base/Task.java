@@ -29,6 +29,7 @@ public class Task implements Serializable {
      * 节点表
      */
     public Queue<Node> nodeQueue = new LinkedList<>();
+
     /**
      * 用户的联系方式
      */

@@ -18,8 +18,6 @@ import javax.annotation.Resource;
 public class OptionsServiceImpl implements OptionsService {
     @Resource
     RpcImpl rpc;
-//    @Resource
-//    TaskFactoryStaticImpl taskFactoryStaticImpl;
     @Resource
     TaskFactoryKafkaImpl taskFactoryKafka;
     @Resource
