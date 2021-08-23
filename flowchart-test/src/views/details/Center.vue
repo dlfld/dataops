@@ -123,7 +123,7 @@ export default {
         id: +new Date(),
         x: 10,
         y: 10,
-        name: 'option',
+        name: 'Option',
         type: 'operation',
         optUrl: option.optUrl,
         approvers: [{id: 2, name: optionName + ""}]

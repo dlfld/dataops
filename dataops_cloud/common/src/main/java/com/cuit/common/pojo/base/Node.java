@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author dailinfeng
@@ -23,4 +25,8 @@ public class Node implements Serializable {
      * 请求python端的url
      */
     private String optUrl;
+    /**
+     * 当前节点的前置节点id列表
+     */
+    private List<String> preNodeIds = new ArrayList<>();
 }

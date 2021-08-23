@@ -7,6 +7,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,5 +20,8 @@ import java.util.List;
 @Accessors(chain = true)
 @ToString
 public class ParamsBody2 implements Serializable {
-    List<Param> items;
+    /**
+     * 参数列表
+     */
+    List<Param> items = new ArrayList<>();
 }

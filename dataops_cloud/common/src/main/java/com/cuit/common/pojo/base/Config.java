@@ -16,4 +16,10 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Config {
+    /**
+     * 是否删除这一步的结果保存
+     * 如果不保存的话最后一步的时候会直接删除这一步中间结果
+     * 莫认是不保存
+     */
+    private boolean saveResult = false;
 }

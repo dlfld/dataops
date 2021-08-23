@@ -21,7 +21,7 @@ public class Param implements Serializable {
      */
     private String desc;
     /**
-     * //参数当前的版本号，后期根据版本号进行参数的更新
+     * 参数当前的版本号，后期根据版本号进行参数的更新
      */
     private Integer version = 0;
     /**
@@ -40,4 +40,8 @@ public class Param implements Serializable {
      * 文件下载链接
      */
     private String downloadUrl;
+    /**
+     * 输出数据节点id
+     */
+    private String nodeId;
 }

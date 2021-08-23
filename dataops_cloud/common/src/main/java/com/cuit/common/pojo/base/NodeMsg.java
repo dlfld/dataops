@@ -7,12 +7,24 @@ import lombok.experimental.Accessors;
 
 /**
  * node 节点的 信息
+ *
+ * @author dailinfeng
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Accessors(chain = true) //链式调用开启
+@Accessors(chain = true)
 public class NodeMsg {
-    private String id;//node的id
-    private String posiion;//node的位置
+    /**
+     * node的id
+     */
+    private String id;
+    /**
+     * node的位置
+     */
+    private String posiion;
+    /**
+     * 节点的名字
+     */
+    private String name;
 }
