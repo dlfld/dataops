@@ -3,6 +3,7 @@ import uuid
 from icecream import ic
 from pydantic import BaseModel
 
+from pojo.FileMessage import FileMessage
 from utils.config_parse_util import ConfigGet
 from utils.router_utils import get_router
 
@@ -27,8 +28,51 @@ router = get_router()
 '''
 
 
-def func_config(data: dict, read_file_func, save_file_func, pre_handle_adapter=lambda x: x,
-                after_handle_adapter=lambda x: x):
+def func_config(data: dict, pre_handle_adapter=lambda x: x,
+                after_handle_adapter=lambda x: FileMessage()):
+    """
+    模块方法上的装饰器方法
+    :param data: 配置
+    :param pre_handle_adapter: 在进入计算节点之前进行数据处理（读取数据文件+格式转换） 返回值应该是数据
+    :param after_handle_adapter: 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换） 返回值是对象FileMessage
+    :return:
+    """
+    data['optUrl'] = uuid.uuid1()  # 通过uuid的方式随机出请求的url
+    print("进来了func_config，他的参数有：", data)
+    Options.options.append(data)
+
+    def parser_data(func):
+        # fast api的构建
+        @router.post(data['optUrl'], summary=data['optName'])
+        async def wrapper(params: Params):
+            ic(params)
+            # 调用方法处理之前的数据预处理
+            in_func_data = pre_handle_adapter(params.items)
+            # 调用方法
+            out_func_data = func(in_func_data)
+            # 处理方法输出
+            file_message = after_handle_adapter(out_func_data)
+            # 封装返回对象
+            downloadUrl = f'{ConfigGet.get_server_host()}/data_download/{file_message.file_name}'
+            res_dict = {
+                "desc": data['return_desc'],  # 配置的desc取出来作为返回值的desc
+                "version": 0,  # 版本号
+                "location": file_message.file_full_path,  # 文件全路径（加上文件名的）
+                "fileName": file_message.file_name,  # 文件名
+                "downloadUrl": downloadUrl,  # 下载文件的链接
+                "hosts": []
+            }
+            # 把返回对象添加到返回列表中
+            params.items.append(res_dict)
+            return params
+
+        return wrapper
+
+    return parser_data
+
+
+def func_config_(data: dict, read_file_func, save_file_func, pre_handle_adapter=lambda x: x,
+                 after_handle_adapter=lambda x: x):
     """
 
     :param data: 回传前端以及判断的参数

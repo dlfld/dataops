@@ -26,7 +26,12 @@ public class Node implements Serializable {
      */
     private String optUrl;
     /**
+     * 单个节点的配置
+     */
+    private NodeConfig nodeConfig;
+    /**
      * 当前节点的前置节点id列表
+     * 前端不传
      */
     private List<String> preNodeIds = new ArrayList<>();
 }

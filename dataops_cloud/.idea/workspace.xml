@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -16,20 +19,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/SysEnums.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/NodeConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/NodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/NodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Param.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/ParamsBody2.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/ParamsBody2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/request/SubmitOptionsRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/rpc/RpcImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/rpc/RpcIntf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/rpc/hutool_http/HutoolImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/utils/SerializableUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/aop/data_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/aop/data_func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../想法/20210821关于可配置的思考.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/20210821关于可配置的思考.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +54,7 @@
     </file-type-list>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
+    <option name="selectedIndex" value="2" />
   </component>
   <component name="ProjectId" id="1vyskxm7xTHIiNniV9g0WSHuTie" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -210,7 +207,7 @@
       <workItem from="1629267878965" duration="839000" />
       <workItem from="1629278394385" duration="18000" />
       <workItem from="1629617775221" duration="142000" />
-      <workItem from="1629617937162" duration="12365000" />
+      <workItem from="1629617937162" duration="20058000" />
     </task>
     <servers />
   </component>

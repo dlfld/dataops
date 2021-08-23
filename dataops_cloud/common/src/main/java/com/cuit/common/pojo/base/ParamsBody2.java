@@ -24,4 +24,5 @@ public class ParamsBody2 implements Serializable {
      * 参数列表
      */
     List<Param> items = new ArrayList<>();
+
 }
