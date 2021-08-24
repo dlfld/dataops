@@ -1,4 +1,4 @@
-package com.cuit.scheduling.dispatch.schdul;
+package com.cuit.scheduling.dispatch.schedul;
 
 import com.cuit.common.pojo.base.Task;
 

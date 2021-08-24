@@ -18,7 +18,7 @@ spring:
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
-      value-serializer:  org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
       #生产者每个批次最多放多少条记录
       batch-size: 16384
       #https://blog.csdn.net/u010711495/article/details/113250402
@@ -43,9 +43,10 @@ data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data
   serverBaseUrl: http://10.131.18.162:8000/task
+#  serverBaseUrl: http://127.0.0.1:8000/task
 
 forest:
   variables:
-    baseUrl: http://10.131.18.162:8000
-#    baseUrl: http://127.0.0.1:8000
+#    baseUrl: http://10.131.18.62:8000
+    baseUrl: http://127.0.0.1:8000
     notifyUrl: http://10.131.18.162:5700   #qq 机器人的url

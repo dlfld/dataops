@@ -49,9 +49,9 @@ public class TaskUtils {
                             //设置文件名
                             .setFileName(submitOptionsRequest.dataFileName)
                             //设置输出数据节点ID 第一个输出节点定义为start节点
-                            .setNodeId(SysEnums.NODE_START_ID.getValue())
+                            .setCurNodeId(SysEnums.NODE_START_ID.getValue())
                     );
-        }});
+                }});
 
         Task task = new Task()
                 //初始化taskid
@@ -69,21 +69,19 @@ public class TaskUtils {
          */
         List<Connection> connections = submitOptionsRequest.getConnections();
         //给node节点添加前置节点信息
-        sortList
-                .parallelStream()
-                .forEach(node -> {
-                    //前置节点的添加
-                    node.getPreNodeIds().addAll(
-                            //前置节点的检索
-                            connections
-                                    .parallelStream()
-                                    .filter(connection -> StringUtils.equals(connection.getDestination().getId(), node.getId()))
-                                    .map(connection -> connection.getSource().getId())
-                                    .collect(Collectors.toList())
-                    );
-                });
+        List<Node> nodes = sortList.parallelStream().map(node -> {
+            //前置节点的检索
+            List<String> preNodes = connections
+                    .parallelStream()
+                    .filter(connection -> StringUtils.equals(connection.getDestination().getId(), node.getId()))
+                    .map(connection -> connection.getSource().getId())
+                    .collect(Collectors.toList());
+            //前置节点的添加
+            node.getPreNodeIds().addAll(preNodes);
+            return node;
+        }).collect(Collectors.toList());
         //把排序列表添加到队列当中去
-        sortList.forEach(task.nodeQueue::offer);
+        nodes.forEach(task.nodeQueue::offer);
         return task;
     }
 

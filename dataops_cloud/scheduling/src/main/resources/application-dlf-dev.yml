@@ -13,7 +13,7 @@ spring:
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.IntegerDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: com.cuit.common.utils.Decoding
+      #      value-deserializer: com.cuit.common.utils.Decoding
       group-id: springboot-consumer01
       #如果在Kafka中找不到当前消费者的偏移量则直接将偏移量重置为最早的
       auto-offset-reset: earliest
@@ -50,8 +50,8 @@ spring:
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data
-  serverBaseUrl: http://10.131.18.162:18002/result
-#  serverBaseUrl: http://10.131.18.162:18013/result
+  #  serverBaseUrl: http://10.131.18.162:18002/result #结果元数据文件下载连接
+  serverBaseUrl: http://127.0.0.1:18002/result
 
 forest:
   max-connections: 1000 # 连接池最大连接数，默认值为500
@@ -64,6 +64,6 @@ forest:
   log-response-status: true # 打开/关闭Forest响应状态日志（默认为 true）
   log-response-content: true # 打开/关闭Forest响应内容日志（默认为 false）
   variables:
-    baseUrl: http://10.131.18.162:8000
-#    baseUrl: http://127.0.0.1:8000
+    #    baseUrl: http://10.131.18.162:8000 #文件下载和远程调用的url
+    baseUrl: http://127.0.0.1:8000
     notifyUrl: http://10.131.18.162:5700   #qq 机器人的url

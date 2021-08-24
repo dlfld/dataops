@@ -19,20 +19,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/NodeConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Param.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/Param.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/ParamsBody2.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/ParamsBody2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/RpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/RpcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/NodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/NodeMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Option.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Option.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Param.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Param.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/ParamsBody2.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/ParamsBody2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/pojo/base/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/AbstractSchedulingIntf.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schedul/AbstractSchedulingIntf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schdul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schedul/Scheduling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/utils/ParamsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/utils/ParamsUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/schdul/AbstractSchedulingIntf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/schdul/Scheduling.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/utils/ParamsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/utils/ParamsUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/impl/OptionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/service/impl/OptionsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/utils/TaskUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/impl/OptionsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/impl/OptionsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/api/topoSortFuncs.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/api/topoSortFuncs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowchart-test/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../options_server/aop/data_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/aop/data_func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/dl_demo/train_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/dl_demo/train_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/np_dot/test_np_dot.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/np_dot/test_np_dot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../想法/20210821关于可配置的思考.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/20210821关于可配置的思考.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/utils/file_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/utils/file_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,7 +117,8 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -97,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SchedulingApplication">
+  <component name="RunManager" selected="Spring Boot.TaskHeandleApplication">
     <configuration name="TaskHeandleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cuit.TaskHeandleApplication" />
       <module name="task_handle" />
@@ -137,6 +173,10 @@
     <configuration name="SchedulingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="scheduling" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.SchedulingApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,10 +191,22 @@
     <configuration name="TaskHeandleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="task_handle" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.TaskHeandleApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.TaskHeandleApplication" />
+      <item itemvalue="JUnit.SchedulingApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.SchedulingApplication" />
+      <item itemvalue="Spring Boot.TaskHeandleApplication" />
+      <item itemvalue="Spring Boot.TaskHeandleApplication (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TaskHeandleApplication" />
@@ -207,7 +259,8 @@
       <workItem from="1629267878965" duration="839000" />
       <workItem from="1629278394385" duration="18000" />
       <workItem from="1629617775221" duration="142000" />
-      <workItem from="1629617937162" duration="20058000" />
+      <workItem from="1629617937162" duration="33161000" />
+      <workItem from="1629769415799" duration="3838000" />
     </task>
     <servers />
   </component>

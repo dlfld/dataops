@@ -1,4 +1,5 @@
 package com.cuit.task_handle.service.impl;
+
 import com.cuit.common.rpc.RpcImpl;
 
 import com.cuit.common.pojo.base.Task;
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
+/**
+ * @author dailinfeng
+ */
 @Slf4j
 @Component
 public class OptionsServiceImpl implements OptionsService {
@@ -41,7 +45,8 @@ public class OptionsServiceImpl implements OptionsService {
         Task task = dataUtils.buildTask(submitOptionsRequest);
         //将task添加到task队列
         taskFactoryKafka.offer(task);
-        log.info( "-> 执行结果");
+        log.info("-> 执行结果");
+        log.info(task+"");
         //下面是遍历task的node队列进行参数更新和调度
         //返回成功
         return ResponseDataUtil.buildSuccess("成功加入队列");

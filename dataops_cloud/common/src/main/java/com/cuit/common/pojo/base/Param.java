@@ -41,7 +41,8 @@ public class Param implements Serializable {
      */
     private String downloadUrl;
     /**
-     * 输出数据节点id
+     * 输出数据节点id -> 做参数匹配用
      */
-    private String nodeId;
+    private String curNodeId;
+
 }

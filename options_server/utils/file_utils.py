@@ -1,6 +1,8 @@
 import uuid
 import pandas as pd
 from pandas import DataFrame
+
+from pojo.FileMessage import FileMessage
 from utils.config_parse_util import ConfigGet
 
 
@@ -19,10 +21,11 @@ class FileWriters:
         file_name = f'{uuid.uuid1()}.csv'
         file_full_path = f'{ConfigGet.get_data_file_path()}/{file_name}'
         data_frame.to_csv(file_full_path)
-        return {
-            "file_full_path": file_full_path,
-            "file_name": file_name
-        }
+        return FileMessage(file_full_path,file_name)
+        # return {
+        #     "file_full_path": file_full_path,
+        #     "file_name": file_name
+        # }
 
 
 class FileReaders:

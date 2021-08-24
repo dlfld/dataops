@@ -10,6 +10,7 @@ from utils.router_utils import get_router
 
 class Params(BaseModel):
     items: list = None
+    curNodeId: str = ""
 
 
 class Options:
@@ -33,11 +34,14 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
     """
     模块方法上的装饰器方法
     :param data: 配置
-    :param pre_handle_adapter: 在进入计算节点之前进行数据处理（读取数据文件+格式转换） 返回值应该是数据
-    :param after_handle_adapter: 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换） 返回值是对象FileMessage
+    :param pre_handle_adapter: 在进入计算节点之前进行数据处理（读取数据文件+格式转换） 返回值应该是数据  参数是item对象列表
+    :param after_handle_adapter: 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换） 返回值是对象FileMessage  输入是方法返回的数据
     :return:
     """
-    data['optUrl'] = uuid.uuid1()  # 通过uuid的方式随机出请求的url
+    # data['optUrl'] = f'/{str(uuid.uuid1())}'  # 通过uuid的方式随机出请求的url
+    # data['optUrl'] = "/40054eca-040f-11ec-9669-1e00d10ae89a"  # 通过uuid的方式随机出请求的url
+    data['optUrl'] = f"{data['optUrl']}"
+    ic(data['optUrl'])
     print("进来了func_config，他的参数有：", data)
     Options.options.append(data)
 
@@ -60,10 +64,12 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
                 "location": file_message.file_full_path,  # 文件全路径（加上文件名的）
                 "fileName": file_message.file_name,  # 文件名
                 "downloadUrl": downloadUrl,  # 下载文件的链接
-                "hosts": []
+                "hosts": [],
+                "curNodeId": params.curNodeId  # 设置当前节点的ID
             }
-            # 把返回对象添加到返回列表中
-            params.items.append(res_dict)
+            # 如果返回的文件不为空。把返回对象添加到返回列表中
+            if file_message.file_name != "" and file_message.file_name is not None:
+                params.items.append(res_dict)
             return params
 
         return wrapper

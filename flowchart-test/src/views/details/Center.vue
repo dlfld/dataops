@@ -123,7 +123,7 @@ export default {
         id: +new Date(),
         x: 10,
         y: 10,
-        name: 'Option',
+        name: 'option',
         type: 'operation',
         optUrl: option.optUrl,
         approvers: [{id: 2, name: optionName + ""}]
@@ -143,6 +143,8 @@ export default {
       // convertScheme(nodes, connections)
       //调用解释层进行解释
       let submitOptionsRequest = await interpretationLayer(nodes, connections)
+
+      // submitOptionsRequest.connections = this.connections
       //解释之后再添加一些信息
       submitOptionsRequest.userContact = this.userContact
       console.log(this.$store.getters.getFileMsg)
@@ -159,6 +161,7 @@ export default {
         });
         return
       }
+      console.log(submitOptionsRequest)
       const res = await submitOptions(submitOptionsRequest)
       console.log(res)
       alert(res.data)

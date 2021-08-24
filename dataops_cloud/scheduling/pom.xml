@@ -143,6 +143,14 @@
                     <!--<registryUrl>https://index.docker.io/v1</registryUrl>-->
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

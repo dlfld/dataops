@@ -1,4 +1,4 @@
-package com.cuit.scheduling.dispatch.schdul;//package cuit.scheduling.dispatch.schdul;
+package com.cuit.scheduling.dispatch.schedul;//package cuit.scheduling.dispatch.schdul;
 
 import com.cuit.common.pojo.base.Node;
 import com.cuit.common.pojo.base.Param;
@@ -8,6 +8,7 @@ import com.cuit.common.utils.SerializableUtil;
 import com.cuit.scheduling.dispatch.taskFactory.impl.ResultImpl;
 import com.cuit.common.rpc.RpcImpl;
 import com.cuit.scheduling.dispatch.utils.ParamsUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
  * @author dailinfeng
  */
 @Component
-//@Slf4j
+@Slf4j
 public class Scheduling extends AbstractSchedulingIntf {
     @Resource
     RpcImpl rpc;
@@ -73,19 +74,37 @@ public class Scheduling extends AbstractSchedulingIntf {
              * 此处说到的前置应该理解为直接前置，也就是前置节点有直接的线连接到当前节点
              * 如果两个节点直接有线直接连接，那么就表示前一个节点的数据会流向后一个节点
              */
+            log.info("当前调用节点：" + node);
+            log.info("当前节点的前置节点列表为：" + node.getPreNodeIds());
             List<Param> paramsList = allParams.getItems()
                     .parallelStream()
                     .filter(
                             param ->
                                     node.getPreNodeIds()
-                                            .stream()
-                                            .anyMatch(e -> StringUtils.equals(param.getNodeId(), e))
+                                            .parallelStream()
+                                            .anyMatch(e -> StringUtils.equals(param.getCurNodeId(), e))
                     )
                     .collect(Collectors.toList());
             //封装数据传输类
-            ParamsBody2 paramsBody2 = new ParamsBody2().setItems(paramsList);
-            //远程调用并获取返回值
-            ParamsBody2 resparam = rpc.httpRpcV2(node.getOptUrl(), paramsBody2);
+            ParamsBody2 paramsBody2 = new ParamsBody2()
+                    .setItems(paramsList)
+                    //向计算端传输当前计算端的id，计算端封装到返回参数里面传回来
+                    .setCurNodeId(node.getId());
+            log.info("发送过去的参数列表为：" + paramsBody2);
+            ParamsBody2 resparam;
+            try {
+                //远程调用并获取返回值
+                resparam = rpc.httpRpcV2(node.getOptUrl(), paramsBody2);
+                log.info("计算完成之后的节点信息：" + resparam);
+            } catch (Exception e) {
+                /**
+                 *  目前先用trycatch包裹着，后面改
+                 * 主要原因是因为在开发调试期间如果有错，rpc调用失败，这条消息就算消费失败
+                 * kafka的这条消息就会一直存在在系统当中，导致后续的失败和报错
+                 */
+                e.printStackTrace();
+                continue;
+            }
             //更新参数表中的参数
             ParamsUtils.refreshParams(resparam, allParams);
         }
@@ -109,7 +128,7 @@ public class Scheduling extends AbstractSchedulingIntf {
     public void onMessage(ConsumerRecord<Integer, String> record) {
         Task task = (Task) SerializableUtil.stringToObject(record.value(), Task.class);
 
-        System.out.println("收到task->" + task);
+        log.info("收到task->" + task);
         startDispatch(task);
     }
 

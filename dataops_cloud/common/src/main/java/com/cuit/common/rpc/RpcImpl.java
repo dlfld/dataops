@@ -4,6 +4,7 @@ import com.cuit.common.pojo.base.Option;
 import com.cuit.common.pojo.base.ParamsBody2;
 import com.cuit.common.pojo.notify.Message;
 import com.cuit.common.rpc.hutool_http.HutoolImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -14,12 +15,14 @@ import java.util.List;
  * 转为springcloud之后原来的forest出问题了  具体原因未知
  * 因此引入hutool的http工具进行http的远程调用 后面可能会换，为了换http调用框架的时候不改动上层代码
  * 因此引入RpcImpl  上层代码调用RpcImpl  RpcImpl来决定调用那个框架
- *RpcIntf 定义有那些方法
+ * RpcIntf 定义有那些方法
+ *
  * @author dailinfeng
  */
 @Component
-public class RpcImpl implements RpcIntf{
-//    @Resource
+@Slf4j
+public class RpcImpl implements RpcIntf {
+    //    @Resource
 //    ForestImpl forest;
     @Resource
     HutoolImpl hutool;
@@ -37,7 +40,13 @@ public class RpcImpl implements RpcIntf{
     @Override
     public ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2) {
 //        return forest.httpRpcV2(funcUrl, paramsBody2);
-        return hutool.httpRpcV2(funcUrl, paramsBody2);
+        try {
+            return hutool.httpRpcV2(funcUrl, paramsBody2);
+        } catch (Exception e) {
+            log.info("远程调用出错"+e);
+            return new ParamsBody2();
+        }
+
     }
 
     /**
@@ -53,11 +62,12 @@ public class RpcImpl implements RpcIntf{
 
     /**
      * 远程调用，QQ机器人进行通知
+     *
      * @param message
      * @return
      */
     @Override
-    public boolean notifyUser(Message message){
+    public boolean notifyUser(Message message) {
         return hutool.notifyUser(message);
     }
 }

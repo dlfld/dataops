@@ -24,5 +24,8 @@ public class ParamsBody2 implements Serializable {
      * 参数列表
      */
     List<Param> items = new ArrayList<>();
-
+    /**
+     * 当前节点的id，在模块调用的时候需要传递给计算端的
+     */
+    private String curNodeId;
 }

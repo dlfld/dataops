@@ -1,5 +1,5 @@
 //计算每个节点的入度
- function getNodeIn(nodes, connections) {
+function getNodeIn(nodes, connections) {
     return nodes.map(node => {
         node.in = 0;
         for (let index = 0; index < connections.length; index++) {
@@ -10,7 +10,6 @@
         return node
     })
 }
-
 
 
 /**
@@ -24,8 +23,11 @@
  *   2。 把入度为0的点放到结果队列里面，并删除对应的nodes和connections里面的项
  *
  */
-export  function interpretationLayer(nodes, connections) {
+export async function interpretationLayer(nodes, connections) {
     console.log(nodes, connections)
+    let res = {
+        connections
+    }
     let resQueue = []//结果栈
     //这一步是查找每个节点的入度，并存到每一个节点里面
     while (nodes.length) {
@@ -52,10 +54,7 @@ export  function interpretationLayer(nodes, connections) {
             }
         }
     }
-    let res = {
-        connections: connections,
-        nodes: resQueue
-    }
+    res.nodes = resQueue
 
     return res
 }
