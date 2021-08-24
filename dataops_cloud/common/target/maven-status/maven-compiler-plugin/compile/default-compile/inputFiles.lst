@@ -6,8 +6,10 @@
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/rpc/RpcImpl.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/pojo/request/SubmitOptionsRequest.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/rpc/forest_http/notify/QQBotRpc.java
+/Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/pojo/base/NodeConfig.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/rpc/forest_http/Pyservice.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/enums/ResultEnums.java
+/Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/enums/SysEnums.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/pojo/base/Param.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/pojo/base/NodeMsg.java
 /Users/dailinfeng/Desktop/实验室项目/dataops_system/dataops_cloud/common/src/main/java/com/cuit/common/utils/ResponseDataUtil.java
