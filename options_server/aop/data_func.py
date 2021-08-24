@@ -35,7 +35,7 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
     模块方法上的装饰器方法
     :param data: 配置
     :param pre_handle_adapter: 在进入计算节点之前进行数据处理（读取数据文件+格式转换） 返回值应该是数据  参数是item对象列表
-    :param after_handle_adapter: 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换） 返回值是对象FileMessage  输入是方法返回的数据
+    :param after_handle_adapter: 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换） 返回值是对象FileMessage  输入是方法返回的数据，和文件保存路径
     :return:
     """
     # data['optUrl'] = f'/{str(uuid.uuid1())}'  # 通过uuid的方式随机出请求的url
@@ -70,6 +70,7 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
             # 如果返回的文件不为空。把返回对象添加到返回列表中
             if file_message.file_name != "" and file_message.file_name is not None:
                 params.items.append(res_dict)
+            # ic(params)
             return params
 
         return wrapper

@@ -60,11 +60,11 @@ public class ParamsUtils {
         for (Param param : params) {
             //按照设计思路来讲  这个params列表里面的每一个对象的desc是不可能重复的
             //重复了就是有bug
-            sourceMap.put(param.getDesc(), param);
+            sourceMap.put(param.getCurNodeId(), param);
         }
         //下面尽心参数的合并
         for (Param param : target.getItems()) {
-            Param newParam = sourceMap.get(param.getDesc());
+            Param newParam = sourceMap.get(param.getCurNodeId());
             if (newParam == null) {
                 continue;
             }
@@ -73,7 +73,7 @@ public class ParamsUtils {
             if (param.getVersion() < newParam.getVersion()) {
                 param.setLocation(newParam.getLocation());
             }
-            sourceMap.remove(newParam.getDesc());
+            sourceMap.remove(newParam.getCurNodeId());
         }
         //如果新的参数的map已经为空（被删完了）
         if (sourceMap.isEmpty()) {

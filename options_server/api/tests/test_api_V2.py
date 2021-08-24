@@ -1,8 +1,12 @@
+import uuid
+
 import numpy as np
 import pandas as pd
 from icecream import ic
 
 from aop.data_func import func_config
+from pojo.FileMessage import FileMessage
+from utils.config_parse_util import ConfigGet
 from utils.file_utils import FileReaders, FileWriters
 
 
@@ -15,14 +19,23 @@ def handle_items(items):
     data = []
     for item in items:
         ic(item)
-        res_data = FileReaders.read_csv(item['location'])
-        data.append(np.array(res_data))
+        res_data = FileReaders.read_csv_by_csv(item['location'])
+        data.append(res_data)
     return data
 
 
 def save_file_func(data):
-    data_frame = pd.DataFrame(data)
-    return FileWriters.write_data_frame_csv(data_frame)
+    # ic(data)
+    import csv
+    file_name = f'{uuid.uuid1()}.csv'
+    file_full_path = f'{ConfigGet.get_data_file_path()}/{file_name}'
+    with open(file_full_path, 'w') as f:
+        writer = csv.writer(f)
+        for row in data:
+            row2 = list(row)
+            writer.writerow(row2)
+    file_message = FileMessage(file_full_path=file_full_path, file_name=file_name)
+    return file_message
 
 
 @func_config(
@@ -38,12 +51,14 @@ def save_file_func(data):
 )
 def handle_add(data):
     ic("进来了handle_add")
+    data = np.array(data)
     ic(data)
     res = ""
+    ic(len(data))
     if len(data) == 1:
         res = np.dot(data[0], data[0])
     elif len(data) == 2:
-        res = np.dot(data[1], data[0])
+        res = np.dot(data[0], data[1])
     ic(res)
     return res
 
