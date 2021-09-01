@@ -44,8 +44,8 @@ data:
   dataPath: /Users/dailinfeng/Desktop/dataops/data
 #  serverBaseUrl: http://10.131.18.162:8000/task
 #
-#forest:
-#  variables:
-#    baseUrl: http://10.131.18.162:8000
-##    baseUrl: http://127.0.0.1:8000
-#    notifyUrl: http://10.131.18.162:5700   #qq 机器人的url
+forest:
+  variables:
+    baseUrl: http://10.131.18.162:8000
+#    baseUrl: http://127.0.0.1:8000
+    notifyUrl: http://10.131.18.162:5700   #qq 机器人的url

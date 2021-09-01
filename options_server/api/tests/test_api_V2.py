@@ -50,9 +50,9 @@ def save_file_func(data):
     after_handle_adapter=save_file_func  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
 )
 def handle_mul(data):
-    ic("进来了handle_add")
+    ic("乘法")
     data = np.array(data)
-    ic(data)
+    # ic(data)
     res = ""
     ic(len(data))
     if len(data) == 1:
@@ -67,16 +67,17 @@ def handle_mul(data):
     data=dict({
         "optUrl": "/handle_add_single",
         "optDesc": "执行加法操作",  # 模块功能简介
-        "optName": "加法",  # 展示在前端的模块名
+        "optName": "单元_双目_加法",  # 展示在前端的模块名
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
         "return_desc": "after start desc"  # 经过处理之后的desc
     }),
     pre_handle_adapter=handle_items,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=save_file_func  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
 )
-def handle_add(data):
+def handle_add_single(data):
+    ic("单元_双目_加法")
     data = np.array(data)
-    ic(data)
+    # ic(data)
     res = np.add(data[0], data[0])
     ic(res)
     return res
@@ -86,16 +87,38 @@ def handle_add(data):
     data=dict({
         "optUrl": "/handle_add_double",
         "optDesc": "执行加法操作",  # 模块功能简介
-        "optName": "加法",  # 展示在前端的模块名
+        "optName": "双元_双目_加法",  # 展示在前端的模块名
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
         "return_desc": "after start desc"  # 经过处理之后的desc
     }),
     pre_handle_adapter=handle_items,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=save_file_func  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
 )
-def handle_add(data):
+def handle_add_double(data):
+    ic("双元_双目_加法")
     data = np.array(data)
-    ic(data)
+    # ic(data)
     res = np.add(data[0], data[1])
+    ic(res)
+    return res
+
+
+@func_config(
+    data=dict({
+        "optUrl": "/handle_add_triple",
+        "optDesc": "执行加法操作",  # 模块功能简介
+        "optName": "三元_双目_加法",  # 展示在前端的模块名
+        "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
+        "return_desc": "after start desc"  # 经过处理之后的desc
+    }),
+    pre_handle_adapter=handle_items,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
+    after_handle_adapter=save_file_func  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
+)
+def handle_add_triple(data):
+    ic("三元_双目_加法")
+    data = np.array(data)
+    # ic(data)
+    res = np.add(data[0], data[1])
+    res = np.add(res, data[2])
     ic(res)
     return res

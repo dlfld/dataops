@@ -18,7 +18,6 @@ class Options:
 
 
 router = get_router()
-
 '''
 
 这是方法上面的注解，接收的是data的字典

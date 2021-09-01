@@ -11,10 +11,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.131.18.162:8848
+#        server-addr: 10.131.18.162:8848
+        server-addr: 127.0.0.1:8848
   kafka:
 
-    bootstrap-servers: 10.131.18.162:9092
+#    bootstrap-servers: 10.131.18.162:9092
+    bootstrap-servers: 127.0.0.1:9092
 
     producer:
       key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
@@ -42,8 +44,8 @@ taskKafkaTopic: topic-task-queue
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data
-  serverBaseUrl: http://10.131.18.162:8000/task
-#  serverBaseUrl: http://127.0.0.1:8000/task
+#  serverBaseUrl: http://10.131.18.162:8000/task
+  serverBaseUrl: http://127.0.0.1:8000/task
 
 forest:
   variables:
