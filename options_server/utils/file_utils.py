@@ -1,4 +1,6 @@
 import uuid
+
+import joblib
 import pandas as pd
 from icecream import ic
 from pandas import DataFrame
@@ -23,6 +25,23 @@ class FileWriters:
         file_full_path = f'{ConfigGet.get_data_file_path()}/{file_name}'
         data_frame.to_csv(file_full_path)
         return FileMessage(file_full_path, file_name)
+
+    @staticmethod
+    def save_params(out_func_data):
+        """
+        获取预处理方法的返回数据并保存到txt文件
+        :param out_func_data: 预处理的返回值
+        :return: FileMessage对象
+        """
+        file_name = f'{uuid.uuid1()}.params'
+        file_full_path = f'{ConfigGet.get_data_file_path()}/{file_name}'
+        # f = open(file_full_path, "a", encoding="utf-8")
+        # for line in out_func_data:
+        #     f.write(line)
+        # f.close()
+        joblib.dump(out_func_data, file_full_path)
+        file_message = FileMessage(file_full_path=file_full_path, file_name=file_name)
+        return file_message
 
 
 class FileReaders:
@@ -50,6 +69,10 @@ class FileReaders:
                 res.append(row2)
         ic(res)
         return res
+
+    @staticmethod
+    def read_params(file_full_path):
+        return joblib.load(file_full_path)
 
 # data = FileReaders.read_csv("/Users/dailinfeng/Desktop/test_data.csv")
 # print(data)

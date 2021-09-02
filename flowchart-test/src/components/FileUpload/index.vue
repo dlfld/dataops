@@ -8,7 +8,7 @@
         :show-file-list="showFileList"
         :before-upload="beforeAvatarUpload"
         class="image-uploader image-upload-border"
-        accept=".csv"
+
         :on-remove="rmImage"
         :on-exceed="outLimit"
         :file-list="fileList"
@@ -16,6 +16,7 @@
         :http-request="uploadSectionFile"
         action="123"
     >
+<!--      accept=".csv"-->
       <i class="el-icon-upload"/>
       <div class="el-upload__text">将csv文件拖到此处，或<em>点击上传</em>csv文件</div>
     </el-upload>
