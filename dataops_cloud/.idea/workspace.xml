@@ -20,18 +20,9 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/add_module_mode/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/add_module_mode/demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/dl_demo/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/dl_demo/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/dl_demo/train_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/np_dot/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/np_dot/test_np_dot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/utils/file_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/utils/file_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/sklearn_func/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/sklearn_func/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/sklearn_func/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/sklearn_func/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/sklearn_func/pre_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/sklearn_func/pre_processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +235,8 @@
       <workItem from="1630119685891" duration="2735000" />
       <workItem from="1630291810274" duration="797000" />
       <workItem from="1630554085725" duration="3228000" />
+      <workItem from="1630652541493" duration="727000" />
+      <workItem from="1630723758351" duration="617000" />
     </task>
     <servers />
   </component>
