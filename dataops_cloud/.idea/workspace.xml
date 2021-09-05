@@ -20,9 +20,10 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/sklearn_func/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/sklearn_func/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/sklearn_func/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/sklearn_func/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/api/sklearn_func/pre_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/sklearn_func/pre_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schedul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schedul/Scheduling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dev-doc/docs/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dev-doc/docs/_sidebar.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dev-doc/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../dev-doc/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dev-doc/docs/python_service/计算端模块集成.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dev-doc/docs/python_service/计算端模块集成.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +238,8 @@
       <workItem from="1630554085725" duration="3228000" />
       <workItem from="1630652541493" duration="727000" />
       <workItem from="1630723758351" duration="617000" />
+      <workItem from="1630814875862" duration="832000" />
+      <workItem from="1630831269957" duration="871000" />
     </task>
     <servers />
   </component>

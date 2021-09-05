@@ -1,4 +1,10 @@
 <!-- * [项目简介](introduction/introduction.md) -->
-* Python Service(python计算端)
+* 项目简介
+    * [项目背景](introduction/background.md)
+* Java Service(Java调度端)
+    * [Java调度端架构](java_service/架构.md)
+* Python Service(Python计算端)
     * [模块集成](python_service/计算端模块集成.md)
     * [内置API](python_service/api.md)
+    * [计算端架构](python_service/架构.md)
+
