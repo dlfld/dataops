@@ -20,10 +20,15 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schedul/Scheduling.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/schedul/Scheduling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dev-doc/docs/_sidebar.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dev-doc/docs/_sidebar.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dev-doc/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../dev-doc/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dev-doc/docs/python_service/计算端模块集成.md" beforeDir="false" afterPath="$PROJECT_DIR$/../dev-doc/docs/python_service/计算端模块集成.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/test/java/com/cuit/scheduling/SchedulingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/test/java/com/cuit/scheduling/SchedulingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-prod.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +91,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="AtomConfig" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -240,6 +245,7 @@
       <workItem from="1630723758351" duration="617000" />
       <workItem from="1630814875862" duration="832000" />
       <workItem from="1630831269957" duration="871000" />
+      <workItem from="1630897035360" duration="1155000" />
     </task>
     <servers />
   </component>

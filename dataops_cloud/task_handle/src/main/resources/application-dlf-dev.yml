@@ -11,11 +11,11 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.131.18.162:8848
+        server-addr: 10.23.71.70:8848
 #        server-addr: 127.0.0.1:8848
   kafka:
 
-    bootstrap-servers: 10.131.18.162:9092
+    bootstrap-servers: 10.23.71.70:9092
 #    bootstrap-servers: 127.0.0.1:9092
 
     producer:
@@ -44,11 +44,11 @@ taskKafkaTopic: topic-task-queue
 data:
   save: /Users/dailinfeng/Desktop/dataops/result
   dataPath: /Users/dailinfeng/Desktop/dataops/data
-#  serverBaseUrl: http://10.131.18.162:8000/task
+#  serverBaseUrl: http://10.23.71.70:8000/task
   serverBaseUrl: http://127.0.0.1:8000/task
 
 forest:
   variables:
 #    baseUrl: http://10.131.18.62:8000
     baseUrl: http://127.0.0.1:8000
-    notifyUrl: http://10.131.18.162:5700   #qq 机器人的url
+    notifyUrl: http://10.23.71.70:5700   #qq 机器人的url
