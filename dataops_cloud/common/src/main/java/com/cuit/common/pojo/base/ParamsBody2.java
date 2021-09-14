@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * 第二个版本的参数
+ *
  * @author dailinfeng
  */
 @Data
@@ -28,4 +29,8 @@ public class ParamsBody2 implements Serializable {
      * 当前节点的id，在模块调用的时候需要传递给计算端的
      */
     private String curNodeId;
+    /**
+     * 单个节点的配置信息
+     */
+    private NodeConfig nodeConfig;
 }

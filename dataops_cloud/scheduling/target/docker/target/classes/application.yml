@@ -1,5 +1,5 @@
 spring:
   profiles:
-    active: dlf-dev
+    active: dlf-prod
 server:
   port: 18002
