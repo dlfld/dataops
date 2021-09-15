@@ -53,15 +53,6 @@ data:
   serverBaseUrl: http://10.23.71.70:18002/result #结果元数据文件下载连接
 
 forest:
-  max-connections: 1000 # 连接池最大连接数，默认值为500
-  max-route-connections: 500 # 每个路由的最大连接数，默认值为500
-  timeout: 900000 # 请求超时时间，单位为毫秒, 默认值为3000
-  connect-timeout: 3000 # 连接超时时间，单位为毫秒, 默认值为2000
-  retry-count: 1 # 请求失败后重试次数，默认为0次不重试
-  logEnabled: true # 打开或关闭日志，默认为true
-  log-request: true # 打开/关闭Forest请求日志（默认为 true）
-  log-response-status: true # 打开/关闭Forest响应状态日志（默认为 true）
-  log-response-content: true # 打开/关闭Forest响应内容日志（默认为 false）
   variables:
     baseUrl: http://10.23.71.70:8000 #文件下载和远程调用的url
 #    baseUrl: http://127.0.0.1:8000
