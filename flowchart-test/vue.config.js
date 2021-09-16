@@ -3,6 +3,7 @@ module.exports = {
     publicPath: './',
     devServer: {
         proxy: {
+            //一般接口启动
             '/dev-api': {
                 // target: 'http://127.0.0.1:18001', //本地不启动gateway的开发方式
                 target: 'http://10.23.71.70:18003/taskhandle',  //服务器
@@ -11,6 +12,7 @@ module.exports = {
                     '^/dev-api': ''
                 }
             },
+            //数据上传
             '/dataapi': {
                 // target: 'http://127.0.0.1:8000',
                 target: 'http://10.23.71.70:8000',

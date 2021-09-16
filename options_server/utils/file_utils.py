@@ -3,7 +3,6 @@ import uuid
 import joblib
 import pandas as pd
 from icecream import ic
-from pandas import DataFrame
 
 from pojo.FileMessage import FileMessage
 from utils.config_parse_util import ConfigGet
