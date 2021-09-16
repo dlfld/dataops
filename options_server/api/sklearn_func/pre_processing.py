@@ -33,7 +33,7 @@ def load_txt_data(items):
         "optDesc": "预处理新闻数据",  # 模块功能简介
         "optName": "预处理新闻数据",  # 展示在前端的模块名
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
-        "returnDesc": "after pre_processing_news_data"  # 经过处理之后的desc
+        "return_desc": "after pre_processing_news_data"  # 经过处理之后的desc
     }),
     pre_handle_adapter=load_txt_data,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=FileWriters.save_params  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
