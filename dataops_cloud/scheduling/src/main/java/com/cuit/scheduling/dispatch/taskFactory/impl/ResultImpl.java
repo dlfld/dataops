@@ -1,6 +1,7 @@
 package com.cuit.scheduling.dispatch.taskFactory.impl;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.extra.mail.MailUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.cuit.common.pojo.base.Task;
@@ -80,7 +81,8 @@ public class ResultImpl implements ResultFactoryIntf {
         Message message = new Message().setMessage("您的OPS已经计算完成！\n结果下载链接是：\n" + downTaskUrl).setUser_id(contact);
         //发消息
         //内网的时候  再开 不然通知失败会直接报bug
-        rpc.notifyUser(message);
+//        rpc.notifyUser(message);
+        MailUtil.send(contact, "OpsPlus", "<h1>"+message.getMessage()+"</h1>", true);
         return true;
     }
 }

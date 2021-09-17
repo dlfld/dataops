@@ -44,8 +44,8 @@
         :visible.sync="inputOptionMessageVisible"
         width="30%">
       <span style="display: flex;place-items: center">
-        <span style="font-size: 1rem;width: 11rem">请输入QQ号:</span>
-        <el-input style="width: 10rem;margin-left: 3rem" v-model="userContact" placeholder="请输入QQ"></el-input>
+        <span style="font-size: 1rem;width: 11rem">请输入邮箱号:</span>
+        <el-input style="width: 10rem;margin-left: 3rem" v-model="userContact" placeholder="请输入邮箱"></el-input>
       </span>
       <el-divider content-position="right"></el-divider>
       <span style="display: flex;place-items: center">
@@ -78,7 +78,7 @@ export default {
       option: "",//用户选择的功能节点
       //添加节点的弹出选择框
       addNodeDialogVisible: false,
-      userContact: "2441086385",
+      userContact: "2441086385@qq.com",
       //节点
       nodes: [
         // Basic fields
