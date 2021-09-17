@@ -17,7 +17,7 @@ module.exports = {
             '/dataapi': {
                 // target: 'http://127.0.0.1:8000',
                 // target: 'http://10.23.71.70:8000',
-                target: 'http://172.18.130.107:8000',
+                target: 'http://172.18.130.107:18010',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/dataapi': ''

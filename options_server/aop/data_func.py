@@ -58,7 +58,7 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
             # 封装返回对象
             downloadUrl = f'{ConfigGet.get_server_host()}/data_download/{file_message.file_name}'
             res_dict = {
-                "desc": data['returnDesc'],  # 配置的desc取出来作为返回值的desc
+                "desc": data['return_desc'],  # 配置的desc取出来作为返回值的desc
                 "version": 0,  # 版本号
                 "location": file_message.file_full_path,  # 文件全路径（加上文件名的）
                 "fileName": file_message.file_name,  # 文件名

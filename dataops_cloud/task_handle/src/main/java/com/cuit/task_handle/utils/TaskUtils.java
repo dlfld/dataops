@@ -5,12 +5,12 @@ import com.cuit.common.pojo.base.*;
 import com.cuit.common.pojo.request.SubmitOptionsRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.kafka.common.protocol.types.Field;
-import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -84,6 +84,4 @@ public class TaskUtils {
         nodes.forEach(task.nodeQueue::offer);
         return task;
     }
-
-
 }

@@ -29,4 +29,4 @@ spring:
     nacos:
       discovery:
         #server-addr: 39.98.249.25:8848
-        server-addr: 10.23.71.70:8848
+        server-addr: 172.18.130.107:8848

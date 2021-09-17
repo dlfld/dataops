@@ -1,0 +1,26 @@
+{
+    //连接
+    "connections":[ 
+        {   //连接线发出节点的id
+            "source":{
+                "id":"xxx" 
+            },
+            //连接线指向的节点
+            "destination":{
+                "id":"xxx"
+            }
+        }
+    ],
+    //节点列表
+    "nodes":[
+        {
+            "id":"xxx"//节点的id  开始节点的id必须是1 结束节点的id必须是2
+        }
+    ],
+    //上传文件之后返回的filepath
+    "dataFileFullPath":"",
+    //上传文件之后返回的文件下载链接
+    "downloadUrl":"",
+    "userContact":"QQ"//用户联系方式
+
+}
