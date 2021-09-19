@@ -19,22 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scheduling/src/main/resources/mail.setting" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/scheduling.iml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/scheduling.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/scheduling.jar" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/scheduling.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/scheduling.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/scheduling.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/surefire-reports/TEST-com.cuit.scheduling.SchedulingApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/surefire-reports/TEST-com.cuit.scheduling.SchedulingApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/surefire-reports/com.cuit.scheduling.SchedulingApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/surefire-reports/com.cuit.scheduling.SchedulingApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/views/details/Center.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flowchart-test/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../options_server/static/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/static/config.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -271,6 +256,8 @@
       <workItem from="1631844272642" duration="2667000" />
       <workItem from="1631868708148" duration="942000" />
       <workItem from="1631869954851" duration="4853000" />
+      <workItem from="1631886287981" duration="9000" />
+      <workItem from="1632050435937" duration="1203000" />
     </task>
     <servers />
   </component>
