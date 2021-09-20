@@ -2,9 +2,9 @@ package com.cuit.service_center.clients;
 
 import com.cuit.common.pojo.base.PyClient;
 
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @Author dailinfeng
@@ -30,9 +30,26 @@ public class ClientDataSet {
 
     /**
      * 删除一个客户端
+     *
      * @param client 客户端
      */
     public static void removeClient(PyClient client) {
-        
+        //如果IP和端口相同则删除
+        clients.removeIf(next -> Objects.equals(next.getIp(), client.getIp()) && (Objects.equals(next.getPort(), client.getPort())));
+    }
+
+    /**
+     * 更新一个客户端的模块信息
+     *
+     * @param client 客户端
+     */
+    public static void updateClient(PyClient client) {
+//        removeClient(client);
+//        addClient(client);
+        clients.parallelStream().forEach(item -> {
+            if (Objects.equals(item.getIp(), client.getIp()) && (Objects.equals(item.getPort(), client.getPort()))) {
+                item.setOptions(client.getOptions());
+            }
+        });
     }
 }

@@ -15,7 +15,7 @@ public class ServiceHandleService {
     /**
      * 客户端注册
      *
-     * @param pyClient
+     * @param pyClient 客户端注册提交过来的信息
      * @return
      */
     public ResponseData registerClient(PyClient pyClient) {
