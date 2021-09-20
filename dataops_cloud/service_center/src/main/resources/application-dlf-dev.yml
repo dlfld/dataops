@@ -1,0 +1,9 @@
+server:
+  port: 18004
+spring:
+  application:
+    name: service_center
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.18.130.107:8848

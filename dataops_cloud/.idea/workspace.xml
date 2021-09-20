@@ -19,8 +19,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/service_center/ServiceHandleApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/pojo/base/PyClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/ServiceCenterApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/controller/ServiceHandleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/service/ServiceHandleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service_center/src/test/java/com/cuit/service_center/ServiceCenterApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/static/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/static/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../想法/20210919思考.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/20210919思考.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +101,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scheduling/src/main/resources" />
+    <property name="jdk.selected.JAVA_MODULE" value="azul-15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service_center/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -85,12 +111,17 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service_center/src/main/resources" />
+      <recent name="$PROJECT_DIR$/service_center" />
       <recent name="$PROJECT_DIR$/scheduling/src/main/resources" />
       <recent name="$PROJECT_DIR$/task_handle/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.cuit" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -148,6 +179,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServiceCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="service_center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.ServiceCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TaskHeandleApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="task_handle" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.TaskHeandleApplication" />
@@ -173,6 +211,7 @@
       <item itemvalue="Spring Boot.SchedulingApplication" />
       <item itemvalue="Spring Boot.TaskHeandleApplication (1)" />
       <item itemvalue="Spring Boot.TaskHeandleApplication" />
+      <item itemvalue="Spring Boot.ServiceCenterApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -258,6 +297,10 @@
       <workItem from="1631869954851" duration="4853000" />
       <workItem from="1631886287981" duration="9000" />
       <workItem from="1632050435937" duration="1203000" />
+      <workItem from="1632055078186" duration="2167000" />
+      <workItem from="1632108407609" duration="235000" />
+      <workItem from="1632108660901" duration="677000" />
+      <workItem from="1632118841142" duration="1629000" />
     </task>
     <servers />
   </component>
