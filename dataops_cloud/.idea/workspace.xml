@@ -19,14 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/HeartBeat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/ServiceCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/ServiceCenterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/service/ServiceHandleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/service/ServiceHandleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_center/target/classes/com/cuit/ServiceCenterApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/target/classes/com/cuit/ServiceCenterApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_center/target/classes/com/cuit/service_center/clients/ClientDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/target/classes/com/cuit/service_center/clients/ClientDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../想法/20210919思考.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/20210919思考.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,6 +275,10 @@
       <workItem from="1632108407609" duration="235000" />
       <workItem from="1632108660901" duration="677000" />
       <workItem from="1632118841142" duration="6352000" />
+      <workItem from="1632208720315" duration="32000" />
+      <workItem from="1632214857723" duration="8000" />
+      <workItem from="1632225855561" duration="609000" />
+      <workItem from="1632231183320" duration="37000" />
     </task>
     <servers />
   </component>
