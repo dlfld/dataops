@@ -58,7 +58,10 @@ public class HutoolImpl implements RpcIntf {
      */
     @Override
     public List<Option> getOptions() {
-        String res = HttpUtil.get(baseUrl + "/options/list");
+        String res = HttpRequest.get(baseUrl + "/options/list")
+                .timeout(2000)
+                .execute()
+                .body();
         JSONArray jsonArray = JSONUtil.parseArray(res);
         List<Option> options = new ArrayList<>();
         for (JSONObject o : jsonArray.jsonIter()) {
@@ -70,6 +73,7 @@ public class HutoolImpl implements RpcIntf {
 
     /**
      * 通知用户
+     *
      * @param message
      * @return
      */
@@ -78,7 +82,7 @@ public class HutoolImpl implements RpcIntf {
         HashMap<String, Object> paramMap = new HashMap<>();
         paramMap.put("user_id", message.getUser_id());
         paramMap.put("message", message.getMessage());
-        HttpUtil.post(notifyUrl+"/send_private_msg", paramMap);
+        HttpUtil.post(notifyUrl + "/send_private_msg", paramMap);
         return true;
     }
 }

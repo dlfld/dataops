@@ -22,8 +22,6 @@ import java.util.List;
 @Component
 @Slf4j
 public class RpcImpl implements RpcIntf {
-    //    @Resource
-//    ForestImpl forest;
     @Resource
     HutoolImpl hutool;
 
@@ -39,7 +37,6 @@ public class RpcImpl implements RpcIntf {
 
     @Override
     public ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2) {
-//        return forest.httpRpcV2(funcUrl, paramsBody2);
         try {
             return hutool.httpRpcV2(funcUrl, paramsBody2);
         } catch (Exception e) {
@@ -56,7 +53,6 @@ public class RpcImpl implements RpcIntf {
      */
     @Override
     public List<Option> getOptions() {
-//        return forest.getOptions();
         return hutool.getOptions();
     }
 
@@ -70,4 +66,6 @@ public class RpcImpl implements RpcIntf {
     public boolean notifyUser(Message message) {
         return hutool.notifyUser(message);
     }
+
+
 }

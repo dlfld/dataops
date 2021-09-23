@@ -14,19 +14,22 @@ import java.util.List;
  */
 public interface RpcIntf {
 
-    public ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2);
+    ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2);
 
     /**
      * 远程调用实现，获取操作列表
      *
      * @return
      */
-    public List<Option> getOptions();
+    List<Option> getOptions();
 
     /**
      * 远程调用，QQ机器人进行通知
+     *
      * @param message
      * @return
      */
-    public boolean notifyUser(Message message);
+    boolean notifyUser(Message message);
+
+
 }

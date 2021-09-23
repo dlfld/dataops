@@ -32,4 +32,17 @@ public class ServiceHandleController implements ServiceHandleApi {
     public ResponseData registerService(@RequestBody PyClient pyClient) {
         return serviceHandleService.registerClient(pyClient);
     }
+
+    /**
+     * 获取计算端模块列表
+     *
+     * @return
+     */
+    @Override
+    @GetMapping("/options")
+    public ResponseData getOptions() {
+        return serviceHandleService.getOptions();
+    }
+
+
 }

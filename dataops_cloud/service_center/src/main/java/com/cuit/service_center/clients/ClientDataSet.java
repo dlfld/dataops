@@ -1,5 +1,6 @@
 package com.cuit.service_center.clients;
 
+import com.cuit.common.pojo.base.Option;
 import com.cuit.common.pojo.base.PyClient;
 
 import java.util.ArrayList;
@@ -44,12 +45,23 @@ public class ClientDataSet {
      * @param client 客户端
      */
     public static void updateClient(PyClient client) {
-//        removeClient(client);
-//        addClient(client);
         clients.parallelStream().forEach(item -> {
             if (Objects.equals(item.getIp(), client.getIp()) && (Objects.equals(item.getPort(), client.getPort()))) {
                 item.setOptions(client.getOptions());
             }
         });
+    }
+
+    /**
+     * 获取客户端列表
+     *
+     * @return 模块信息列表
+     */
+    public static List<Option> getOptions() {
+        List<Option> options = new ArrayList<>();
+        clients.parallelStream().forEach(pyClient -> {
+            options.addAll(pyClient.getOptions());
+        });
+        return options;
     }
 }
