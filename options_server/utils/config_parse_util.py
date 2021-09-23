@@ -43,3 +43,11 @@ class ConfigGet:
         :return: 本机ip：端口
         """
         return get_config("data_upload", "host")
+
+    @staticmethod
+    def get_server_center_host():
+        """
+        获取注册中心ip和端口
+        :return: 注册中心ip和端口
+        """
+        return get_config("server_center", "host")

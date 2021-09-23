@@ -1,4 +1,3 @@
-
 server:
   port: 18003
 spring:
@@ -17,10 +16,18 @@ spring:
             - Path=/scheduling/**
           filters:
             - StripPrefix=1
-        - id: taskhandle
-          uri: lb://taskhandle
+
+        - id: scheduling
+            uri: lb://scheduling
+            predicates:
+              - Path=/scheduling/**
+            filters:
+              - StripPrefix=1
+
+        - id: service_center
+          uri: lb://service_center
           predicates:
-            - Path=/taskhandle/**
+            - Path=/service_center/**
           filters:
             - StripPrefix=1
           metadata:
@@ -29,4 +36,4 @@ spring:
     nacos:
       discovery:
         #server-addr: 39.98.249.25:8848
-        server-addr: 172.18.130.107:8848
+        server-addr: 10.23.71.70:8848

@@ -9,9 +9,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableDiscoveryClient
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.cuit.common"})
-@SpringBootApplication
 @EnableAsync
+@ComponentScan(basePackages = {"com.cuit.common"})
+@ComponentScan(basePackages = {"com.cuit.api"})
+@SpringBootApplication
 public class ServiceCenterApplication {
 
     public static void main(String[] args) {

@@ -16,6 +16,9 @@ public interface ServiceHandleApi {
     @ApiOperation("服务主动上报到注册中心进行注册")
     ResponseData registerService(PyClient pyClient);
 
+    @ApiOperation("注册中心掉线重连")
+    ResponseData reConnectService(PyClient pyClient);
+
     @ApiOperation("获取所有的option")
     ResponseData getOptions();
 }

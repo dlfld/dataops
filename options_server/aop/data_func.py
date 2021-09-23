@@ -39,7 +39,8 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
     """
     # data['optUrl'] = f'/{str(uuid.uuid1())}'  # 通过uuid的方式随机出请求的url
     # data['optUrl'] = "/40054eca-040f-11ec-9669-1e00d10ae89a"  # 通过uuid的方式随机出请求的url
-    data['optUrl'] = f"{data['optUrl']}"
+
+    data['optUrl'] = f"{ConfigGet.get_server_host()}{data['optUrl']}"
     ic(data['optUrl'])
     print("进来了func_config，他的参数有：", data)
     Options.options.append(data)
@@ -75,5 +76,3 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
         return wrapper
 
     return parser_data
-
-

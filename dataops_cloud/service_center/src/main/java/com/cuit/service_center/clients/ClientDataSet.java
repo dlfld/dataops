@@ -59,7 +59,7 @@ public class ClientDataSet {
      */
     public static List<Option> getOptions() {
         List<Option> options = new ArrayList<>();
-        clients.parallelStream().forEach(pyClient -> {
+        clients.stream().forEach(pyClient -> {
             options.addAll(pyClient.getOptions());
         });
         return options;
