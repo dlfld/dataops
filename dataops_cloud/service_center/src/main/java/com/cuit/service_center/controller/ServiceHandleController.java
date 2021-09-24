@@ -33,17 +33,7 @@ public class ServiceHandleController implements ServiceHandleApi {
         return serviceHandleService.registerClient(pyClient);
     }
 
-    /**
-     * 客户端检测注册中心是否掉线
-     *   客户端也会对注册中心轮训，
-     * @param pyClient
-     * @return
-     */
-    @Override
-    @PostMapping("/reconnect")
-    public ResponseData reConnectService(@RequestBody PyClient pyClient) {
-        return null;
-    }
+
 
     /**
      * 获取计算端模块列表

@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @Author dailinfeng
@@ -35,4 +36,25 @@ public class PyClient {
      * 这个客户端所包含的模块信息
      */
     private List<Option> options = new ArrayList<>();
+
+    /**
+     * 当前客户端上一次心跳的时间戳
+     */
+    private Long lastHeartbeat = 0L;
+
+    /**
+     * 重写这个方法主要是判断注册中心维护的客户端表里面判断是否存在某个客户端
+     * 要根据ip和port等相等进行判断因此重新equals方法
+     *
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof PyClient)) {
+            return false;
+        }
+        PyClient pyClient = (PyClient) o;
+        return (Objects.equals(this.getIp(), pyClient.getIp()) && Objects.equals(this.getPort(), pyClient.getPort()));
+    }
 }

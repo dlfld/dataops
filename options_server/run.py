@@ -1,3 +1,5 @@
+import threading
+
 import requests
 import uvicorn
 from fastapi import FastAPI, APIRouter
@@ -10,6 +12,8 @@ from utils.router_utils import get_router
 
 import sys
 import os
+
+from utils.server_center import connect_server_center
 
 curPath = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(curPath)[0]
@@ -27,28 +31,20 @@ def config():
     app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-def connect_server_center():
+def start_connect():
     """
     在注册中心进行注册
     :return:
     """
-    host_split = ConfigGet.get_server_host().split(':')
-    ip = host_split[0] + host_split[1]
-    port = host_split[2]
-    data = {
-        "ip": ip,
-        "port": port,
-        "serviceName": "客户端名"
-    }
-    res = requests.post(url=ConfigGet.get_server_center_host() + "/service_center/register", json=data).json()
-    ic(res)
+    threading.Thread(target=connect_server_center).start()
+    ic("开始心跳连接注册中心")
 
 
 if __name__ == '__main__':
     # 配置
     config()
     # 连接注册中心
-    connect_server_center()
+    start_connect()
     # 检测文件路径是否存在，如果不存在就创建
     file_path_detect()
     # 获取路由

@@ -13,12 +13,20 @@ import io.swagger.annotations.ApiOperation;
  */
 @Api(tags = "python服务中心-注册与发现接口")
 public interface ServiceHandleApi {
+    /**
+     * 服务主动上报到注册中心进行注册
+     *
+     * @param pyClient
+     * @return
+     */
     @ApiOperation("服务主动上报到注册中心进行注册")
     ResponseData registerService(PyClient pyClient);
 
-    @ApiOperation("注册中心掉线重连")
-    ResponseData reConnectService(PyClient pyClient);
-
+    /**
+     * 获取所有的options
+     *
+     * @return
+     */
     @ApiOperation("获取所有的option")
     ResponseData getOptions();
 }

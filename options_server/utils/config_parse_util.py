@@ -51,3 +51,23 @@ class ConfigGet:
         :return: 注册中心ip和端口
         """
         return get_config("server_center", "host")
+
+    @staticmethod
+    def get_local_ip():
+        """
+        获取当前服务器的IP
+        :return: 当前服务器的IP
+        """
+        host_split = ConfigGet.get_server_host().split(':')
+        ip = host_split[0] + host_split[1]
+        return ip
+
+    @staticmethod
+    def get_local_port():
+        """
+        获取当前服务器的端口
+        :return: 当前服务器的端口
+        """
+        host_split = ConfigGet.get_server_host().split(':')
+        port = host_split[2]
+        return port
