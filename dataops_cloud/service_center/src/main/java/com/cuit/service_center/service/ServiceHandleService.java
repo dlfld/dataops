@@ -42,18 +42,20 @@ public class ServiceHandleService {
      */
     public ResponseData registerClient(PyClient pyClient) {
         Boolean exists = ClientDataSet.exists(pyClient);
-        log.info("原来的客户端表中是否存在当前客户端：{}", exists);
+//        log.info("原来的客户端表中是否存在当前客户端：{}", exists);
         //更新时间戳
         pyClient.setLastHeartbeat(System.currentTimeMillis());
-        
+
         //如果当前客户端已经在维护的表当中
         if (exists) {
             //更新客户端信息
             ClientDataSet.updateIfChangeed(pyClient);
+        } else {
+            //如果不在的话就添加到里面
+            ClientDataSet.addClient(pyClient);
         }
-        //如果不在的话就添加到里面
-        log.info("收到了心跳连接{}", pyClient);
-        ClientDataSet.addClient(pyClient);
+
+//        log.info("收到了心跳连接{}", pyClient);
         int nextHeartBeat = 5;
         return ResponseDataUtil.buildSuccess(nextHeartBeat);
     }

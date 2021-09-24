@@ -70,7 +70,7 @@ public class ClientDataSet {
      */
     public static List<Option> getOptions() {
         List<Option> options = new ArrayList<>();
-        clients.stream().forEach(pyClient -> {
+        clients.parallelStream().forEach(pyClient -> {
             options.addAll(pyClient.getOptions());
         });
         return options;
@@ -93,21 +93,19 @@ public class ClientDataSet {
      * @return
      */
     public static void updateIfChangeed(PyClient pyClient) {
-        //问题 这样写需要加锁不？
-        clients.forEach(item -> {
+        clients.parallelStream().forEach(item -> {
             //在表中找到当前的客户端
             if (Objects.equals(item.getIp(), pyClient.getIp()) && Objects.equals(pyClient.getPort(), item.getPort())) {
                 boolean listEqual = isListEqual(item.getOptions(), pyClient.getOptions());
                 //如果维护的模块表变了 就更新进去，没变就不管他 只是单纯的更新时间戳
                 if (!listEqual) {
                     item.setOptions(pyClient.getOptions());
-                    item.setLastHeartbeat(System.currentTimeMillis());
                 }
-                log.info("{}", item.getLastHeartbeat());
+                Long currentTimeMillis = System.currentTimeMillis();
+                item.setLastHeartbeat(currentTimeMillis);
+//                log.info("当前心跳时间{}", new Date(item.getLastHeartbeat()));
             }
         });
-//        System.out.println(clients.size());
-        log.info(clients.get(0).getLastHeartbeat() + "");
     }
 
     /**

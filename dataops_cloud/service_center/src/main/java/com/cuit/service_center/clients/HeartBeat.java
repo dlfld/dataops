@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,6 @@ import java.util.List;
 @Slf4j
 @Order(value = 1)
 public class HeartBeat implements ApplicationRunner {
-
     /**
      * 每隔15s检测有没有十秒钟以上没有更新的客户端，如果有的话就删掉
      *
@@ -37,12 +37,11 @@ public class HeartBeat implements ApplicationRunner {
             @Override
             public void execute() {
                 log.info("开始扫描全部客户端的健康性");
-                List<PyClient> clients = ClientDataSet.getClients();
+                List<PyClient> clients = new ArrayList<>(ClientDataSet.getClients());
                 if (clients.size() == 0) {
                     return;
                 }
-                System.out.println(clients.size());
-                clients.forEach(item -> {
+                clients.parallelStream().forEach(item -> {
                     Long currentTimeMillis = System.currentTimeMillis();
                     //如果心跳已经有10s没有更新了
                     log.info("断线时间：{}", currentTimeMillis - item.getLastHeartbeat());
@@ -53,7 +52,6 @@ public class HeartBeat implements ApplicationRunner {
                         ClientDataSet.removeClient(item);
                     }
                 });
-
             }
         });
         // 支持秒级别定时任务
