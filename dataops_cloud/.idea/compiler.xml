@@ -21,6 +21,7 @@
       <module name="gateway" target="11" />
       <module name="parent" target="11" />
       <module name="scheduling" target="11" />
+      <module name="service-center" target="11" />
       <module name="service_center" target="11" />
       <module name="task_handle" target="11" />
     </bytecodeTargetLevel>
@@ -31,6 +32,7 @@
       <module name="common" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="scheduling" options="-parameters" />
+      <module name="service-center" options="-parameters" />
       <module name="service_center" options="-parameters" />
       <module name="task_handle" options="-parameters" />
     </option>

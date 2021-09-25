@@ -44,7 +44,7 @@ def save_file_func(data):
         "optDesc": "执行矩阵乘法",  # 模块功能简介
         "optName": "乘法",  # 展示在前端的模块名
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
-        "return_desc": "after start desc"  # 经过处理之后的desc
+        "return_desc": "after start desc" # 经过处理之后的desc
     }),
     pre_handle_adapter=handle_items,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=save_file_func  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）

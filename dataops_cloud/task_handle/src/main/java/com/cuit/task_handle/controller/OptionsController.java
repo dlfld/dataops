@@ -19,19 +19,6 @@ public class OptionsController implements OptionsApi {
     @Resource
     OptionsService optionsService;
 
-    /**
-     * 获取options列表
-     * （获取所有方法列表）
-     *
-     * @return
-     */
-//    @Override
-//    @GetMapping("")
-//    public ResponseData getOptionsList() {
-//        return optionsService.getOptions();
-//    }
-
-
     @Override
     @PostMapping("/topo2")
     public ResponseData submitOptions(@RequestBody SubmitOptionsRequest submitOptionsRequest) {

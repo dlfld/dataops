@@ -19,10 +19,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/service_center/service-center.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/task_handle/OptionsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/task_handle/OptionsApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/hutool_http/HutoolImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/rpc/hutool_http/HutoolImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/parent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/service_center.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/service_center.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/ServiceCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/ServiceCenterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/service/ServiceHandleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/service/ServiceHandleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/resources/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/target/classes/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/target/classes/com/cuit/ServiceCenterApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/target/classes/com/cuit/ServiceCenterApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/target/classes/com/cuit/service_center/service/ServiceHandleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/target/classes/com/cuit/service_center/service/ServiceHandleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/controller/OptionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/java/com/cuit/task_handle/controller/OptionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application-dlf-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application-dlf-prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/TaskHeandleApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/configuration/Swagger3Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/controller/FileHandleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/controller/OptionsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/impl/FileHandleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/impl/OptionsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/intf/FileHandleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/service/intf/OptionsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/taskFactory/impl/TaskFactoryKafkaImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/taskFactory/impl/TaskFactoryStaticImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/taskFactory/intf/TaskFactoryIntf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/classes/com/cuit/task_handle/utils/TaskUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_handle/target/test-classes/com/cuit/task_heandle/TaskHeandleApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/api/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/api/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowchart-test/src/api/singleImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/src/api/singleImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flowchart-test/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../flowchart-test/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/api/tests/test_api_V2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../options_server/static/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/static/config.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +93,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="2" />
   </component>
@@ -85,7 +126,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
     <property name="service.view.auto.scroll.to.source" value="true" />
@@ -109,7 +150,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServiceCenterApplication">
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
     <configuration name="TaskHeandleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cuit.TaskHeandleApplication" />
       <module name="task_handle" />
@@ -125,7 +166,7 @@
     </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cuit.service_center.test.Test" />
-      <module name="service_center" />
+      <module name="service-center" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.cuit.service_center.test.*" />
@@ -173,7 +214,7 @@
       </method>
     </configuration>
     <configuration name="ServiceCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="service_center" />
+      <module name="service-center" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cuit.ServiceCenterApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SHORTEN_COMMAND_LINE" value="NONE" />
@@ -313,6 +354,10 @@
       <workItem from="1632465602691" duration="5975000" />
       <workItem from="1632492226615" duration="2156000" />
       <workItem from="1632534645196" duration="1219000" />
+      <workItem from="1632545383861" duration="7287000" />
+      <workItem from="1632571465090" duration="1854000" />
+      <workItem from="1632573331250" duration="77000" />
+      <workItem from="1632573430508" duration="956000" />
     </task>
     <servers />
   </component>

@@ -3,7 +3,7 @@ import requestFile from "@/utils/requestFile";
 
 export function uploadpic(param) {
     return request({
-        url: '/file/upload',
+        url: '/taskhandle/file/upload',
         method: 'post',
         data: param
     });

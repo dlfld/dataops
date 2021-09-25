@@ -21,6 +21,7 @@
         <module>../common</module>
         <module>../gateway</module>
         <module>../task_handle</module>
+        <module>../service_center</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -79,23 +80,23 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-<!--    <build>-->
-<!--        <finalName>${project.artifactId}</finalName>-->
-<!--        <plugins>-->
-<!--&lt;!&ndash;            <plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;                <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;                <artifactId>maven-compiler-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <source>11</source>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <target>11</target>&ndash;&gt;-->
-<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;            </plugin>&ndash;&gt;-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
+    <!--    <build>-->
+    <!--        <finalName>${project.artifactId}</finalName>-->
+    <!--        <plugins>-->
+    <!--&lt;!&ndash;            <plugin>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <artifactId>maven-compiler-plugin</artifactId>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <source>11</source>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <target>11</target>&ndash;&gt;-->
+    <!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
+    <!--&lt;!&ndash;            </plugin>&ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
     <build>
         <finalName>${project.artifactId}</finalName>
         <pluginManagement>

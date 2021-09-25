@@ -55,7 +55,7 @@ public class ServiceHandleService {
             ClientDataSet.addClient(pyClient);
         }
 
-//        log.info("收到了心跳连接{}", pyClient);
+        log.info("收到了心跳连接IP:{},端口:{}", pyClient.getIp(),pyClient.getPort());
         int nextHeartBeat = 5;
         return ResponseDataUtil.buildSuccess(nextHeartBeat);
     }

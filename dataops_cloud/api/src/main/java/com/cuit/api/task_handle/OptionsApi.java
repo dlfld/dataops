@@ -11,17 +11,11 @@ import io.swagger.annotations.ApiOperation;
  */
 @Api(tags = "Options 相关接口")
 public interface OptionsApi {
-    /**
-     * 获取options列表
-     * （获取所有方法列表）
-     *
-     * @return
-     */
-//    @ApiOperation("获取所有options方法")
-//    ResponseData getOptionsList();
+
 
     /**
      * 获取前端解释完成之后的数据接口
+     *
      * @param submitOptionsRequest 请求参数
      * @return
      */

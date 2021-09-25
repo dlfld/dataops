@@ -16,18 +16,24 @@ spring:
             - Path=/scheduling/**
           filters:
             - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
 
-        - id: scheduling
-            uri: lb://scheduling
-            predicates:
-              - Path=/scheduling/**
-            filters:
-              - StripPrefix=1
-
-        - id: service_center
-          uri: lb://service_center
+        - id: taskhandle
+          uri: lb://taskhandle
           predicates:
-            - Path=/service_center/**
+            - Path=/taskhandle/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
+
+        - id: servicecenter
+          uri: lb://servicecenter
+          predicates:
+            - Path=/servicecenter/**
           filters:
             - StripPrefix=1
           metadata:

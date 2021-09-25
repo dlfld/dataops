@@ -2,7 +2,7 @@ server:
   port: 18004
 spring:
   application:
-    name: service_center
+    name: servicecenter
   cloud:
     nacos:
       discovery:
@@ -10,7 +10,8 @@ spring:
 
 forest:
   variables:
-    baseUrl: http://127.0.0.1:8000 #文件下载和远程调用的url
+    baseUrl: http://10.23.71.70:8000 #文件下载和远程调用的url
+#    baseUrl: http://127.0.0.1:8000 #文件下载和远程调用的url
     #    baseUrl: http://127.0.0.1:8000
 
     notifyUrl: http://172.18.130.107:5700   #qq 机器人的url
