@@ -41,8 +41,10 @@ public class HutoolImpl implements RpcIntf {
      */
     @Override
     public ParamsBody2 httpRpcV2(String funcUrl, ParamsBody2 paramsBody2) {
-        String url = baseUrl + funcUrl;
-        System.out.println(url);
+        //不用注册中心的情况
+//        String url = baseUrl + funcUrl;
+//        使用注册中心的时候就不需要用baseurl了，而是直接传的全路径
+        String url = funcUrl;
         String res = HttpRequest.post(url)
                 .body(JSONUtil.toJsonStr(paramsBody2))
                 .execute().body();
@@ -53,6 +55,7 @@ public class HutoolImpl implements RpcIntf {
 
     /**
      * 远程调用实现，获取操作列表
+     *  这个方法暂时废弃了，因为现在如果使用nacos的方式的话这种方式是不可以的
      *
      * @return
      */

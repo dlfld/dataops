@@ -25,11 +25,11 @@ public class OptionsController implements OptionsApi {
      *
      * @return
      */
-    @Override
-    @GetMapping("")
-    public ResponseData getOptionsList() {
-        return optionsService.getOptions();
-    }
+//    @Override
+//    @GetMapping("")
+//    public ResponseData getOptionsList() {
+//        return optionsService.getOptions();
+//    }
 
 
     @Override

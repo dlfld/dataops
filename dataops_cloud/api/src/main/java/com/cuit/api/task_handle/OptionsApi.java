@@ -17,8 +17,8 @@ public interface OptionsApi {
      *
      * @return
      */
-    @ApiOperation("获取所有options方法")
-    ResponseData getOptionsList();
+//    @ApiOperation("获取所有options方法")
+//    ResponseData getOptionsList();
 
     /**
      * 获取前端解释完成之后的数据接口
