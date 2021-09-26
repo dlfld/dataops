@@ -91,3 +91,4 @@ def GPC(data):
     model_func = GaussianProcessClassifier(kernel=kernel, random_state=0)
     model_func.fit(X_train.toarray(), Y_train)
     return model_func
+

@@ -18,14 +18,7 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_center/service-center.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/task_handle/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../options_server/static/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../options_server/static/config.ini" afterDir="false" />
-    </list>
+    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -323,6 +316,7 @@
       <workItem from="1632573331250" duration="77000" />
       <workItem from="1632573430508" duration="956000" />
       <workItem from="1632624546455" duration="1800000" />
+      <workItem from="1632659420896" duration="105000" />
     </task>
     <servers />
   </component>
