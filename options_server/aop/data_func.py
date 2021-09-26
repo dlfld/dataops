@@ -39,15 +39,16 @@ def func_config(data: dict, pre_handle_adapter=lambda x: x,
     """
     # data['optUrl'] = f'/{str(uuid.uuid1())}'  # 通过uuid的方式随机出请求的url
     # data['optUrl'] = "/40054eca-040f-11ec-9669-1e00d10ae89a"  # 通过uuid的方式随机出请求的url
-
+    fastapi_url = data['optUrl']
     data['optUrl'] = f"{ConfigGet.get_server_host()}{data['optUrl']}"
+
     ic(data['optUrl'])
     print("进来了func_config，他的参数有：", data)
     Options.options.append(data)
 
     def parser_data(func):
         # fast api的构建
-        @router.post(data['optUrl'], summary=data['optName'])
+        @router.post(fastapi_url, summary=data['optName'])
         async def wrapper(params: Params):
             ic(params)
             # 调用方法处理之前的数据预处理
