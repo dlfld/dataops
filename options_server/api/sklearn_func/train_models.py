@@ -10,15 +10,6 @@ from aop.data_func import func_config
 from utils.file_utils import FileReaders, FileWriters
 
 
-def pre_handle_train(items):
-    data = []
-    for item in items:
-        file_full_path = item['location']
-        item_data = FileReaders.read_params(file_full_path)
-        data.append(item_data)
-    return data[0]
-
-
 @func_config(
     data=dict({
         "optUrl": "/linner_svc",
@@ -27,7 +18,7 @@ def pre_handle_train(items):
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
         "return_desc": "after LinnerSVC"  # 经过处理之后的desc
     }),
-    pre_handle_adapter=pre_handle_train,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
+    pre_handle_adapter=FileReaders.read_paramss,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=FileWriters.save_params)  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
 def LinnerSVC(data):
     ic("进入LinnerSVC")
@@ -43,6 +34,7 @@ def LinnerSVC(data):
     model_func.fit(X_train.toarray(), Y_train)
     return model_func
 
+
 @func_config(
     data=dict({
         "optUrl": "/SVC",
@@ -51,13 +43,14 @@ def LinnerSVC(data):
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
         "return_desc": "after SVC"  # 经过处理之后的desc
     }),
-    pre_handle_adapter=pre_handle_train,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
+    pre_handle_adapter=FileReaders.read_params,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=FileWriters.save_params)  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
 def SVC(data):
     X_train, Y_train = data['X_train_tfidf'], data['Y_train']
     model_func = svm.SVC()
     model_func.fit(X_train.toarray(), Y_train)
     return model_func
+
 
 @func_config(
     data=dict({
@@ -67,13 +60,14 @@ def SVC(data):
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
         "return_desc": "after Bagging"  # 经过处理之后的desc
     }),
-    pre_handle_adapter=pre_handle_train,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
+    pre_handle_adapter=FileReaders.read_params,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=FileWriters.save_params)  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
 def Bagging(data):
     X_train, Y_train = data['X_train_tfidf'], data['Y_train']
     model_func = BaggingClassifier(KNeighborsClassifier(), max_samples=0.5, max_features=0.5)
     model_func.fit(X_train.toarray(), Y_train)
     return model_func
+
 
 @func_config(
     data=dict({
@@ -83,12 +77,11 @@ def Bagging(data):
         "desc": "start desc",  # 需要的数据的desc  这个desc不能够删除的，并且不能够相同因为这是调度端进行数据更新的东西  但是并不是寻找数据的标志符了，后面可能用来当作模块数据接口规范
         "return_desc": "after GPC"  # 经过处理之后的desc
     }),
-    pre_handle_adapter=pre_handle_train,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
+    pre_handle_adapter=FileReaders.read_params,  # 在进入计算节点之前进行数据处理（读取数据文件+格式转换）
     after_handle_adapter=FileWriters.save_params)  # 在计算节点计算完成之后进行数据处理（写入数据文件+格式转换）
-def GPC(data):
+def GPC(data: list):
     X_train, Y_train = data['X_train_tfidf'], data['Y_train']
     kernel = 1.0 * RBF(1.0)
     model_func = GaussianProcessClassifier(kernel=kernel, random_state=0)
     model_func.fit(X_train.toarray(), Y_train)
     return model_func
-

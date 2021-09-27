@@ -70,8 +70,13 @@ class FileReaders:
         return res
 
     @staticmethod
-    def read_params(file_full_path):
-        return joblib.load(file_full_path)
+    def read_params(items):
+        data = []
+        for item in items:
+            file_full_path = item['location']
+            item_data = FileReaders.read_params(file_full_path)
+            data.append(item_data)
+        return data
 
 # data = FileReaders.read_csv("/Users/dailinfeng/Desktop/test_data.csv")
 # print(data)
