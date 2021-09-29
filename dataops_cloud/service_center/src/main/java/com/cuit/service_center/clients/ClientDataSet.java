@@ -70,7 +70,8 @@ public class ClientDataSet {
      */
     public static List<Option> getOptions() {
         List<Option> options = new ArrayList<>();
-        clients.parallelStream().forEach(pyClient -> {
+//        array list 是线程不安全的 如果用多线程对arraylist进行使用的话会出现问题
+        clients.forEach(pyClient -> {
             options.addAll(pyClient.getOptions());
         });
         return options;

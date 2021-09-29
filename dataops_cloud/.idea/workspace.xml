@@ -18,7 +18,10 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="" />
+    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/service_center/src/main/java/com/cuit/service_center/clients/ClientDataSet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -317,6 +320,7 @@
       <workItem from="1632573430508" duration="956000" />
       <workItem from="1632624546455" duration="1800000" />
       <workItem from="1632659420896" duration="105000" />
+      <workItem from="1632923126580" duration="302000" />
     </task>
     <servers />
   </component>
