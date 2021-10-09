@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 from pojo.FileMessage import FileMessage
 from utils.config_parse_util import ConfigGet
+from utils.file_utils import FileReaders, FileWriters
 from utils.router_utils import get_router
 
 
@@ -28,8 +29,8 @@ router = get_router()
 '''
 
 
-def func_config(data: dict, pre_handle_adapter=lambda x: x,
-                after_handle_adapter=lambda x: FileMessage()):
+def func_config(data: dict, pre_handle_adapter=FileReaders.read_params,
+                after_handle_adapter=FileWriters.save_params):
     """
     模块方法上的装饰器方法
     :param data: 配置

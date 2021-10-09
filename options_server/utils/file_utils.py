@@ -34,10 +34,6 @@ class FileWriters:
         """
         file_name = f'{uuid.uuid1()}.params'
         file_full_path = f'{ConfigGet.get_data_file_path()}/{file_name}'
-        # f = open(file_full_path, "a", encoding="utf-8")
-        # for line in out_func_data:
-        #     f.write(line)
-        # f.close()
         joblib.dump(out_func_data, file_full_path)
         file_message = FileMessage(file_full_path=file_full_path, file_name=file_name)
         return file_message
@@ -78,5 +74,3 @@ class FileReaders:
             data.append(item_data)
         return data
 
-# data = FileReaders.read_csv("/Users/dailinfeng/Desktop/test_data.csv")
-# print(data)
