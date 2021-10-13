@@ -1,5 +1,6 @@
 import uuid
 
+import joblib
 from icecream import ic
 from pydantic import BaseModel
 
@@ -29,7 +30,7 @@ router = get_router()
 '''
 
 
-def func_config(data: dict, pre_handle_adapter=FileReaders.read_params,
+def func_config(data: dict, pre_handle_adapter=joblib.load,
                 after_handle_adapter=FileWriters.save_params):
     """
     模块方法上的装饰器方法
@@ -53,7 +54,7 @@ def func_config(data: dict, pre_handle_adapter=FileReaders.read_params,
         async def wrapper(params: Params):
             ic(params)
             # 调用方法处理之前的数据预处理
-            in_func_data = pre_handle_adapter(params.items)
+            in_func_data = FileReaders.read_params(params.items,pre_handle_adapter)
             # 调用方法
             out_func_data = func(in_func_data)
             # 处理方法输出

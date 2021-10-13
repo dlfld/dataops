@@ -66,11 +66,16 @@ class FileReaders:
         return res
 
     @staticmethod
-    def read_params(items):
+    def read_params(items, read_params_func=joblib.load):
+        """
+        读取数据文件的方法
+        :param items: 元数据对象列表
+        :param read_params_func: 读取数据文件的方法 用户自己传进来默认就是直接按照变量的形式读取
+        :return:
+        """
         data = []
         for item in items:
             file_full_path = item['location']
-            item_data = FileReaders.read_params(file_full_path)
+            item_data = read_params_func(file_full_path)
             data.append(item_data)
         return data
-
