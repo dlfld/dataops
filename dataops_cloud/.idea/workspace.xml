@@ -20,10 +20,8 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/target/classes/application-dlf-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling/src/main/java/com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../想法/集成cnn过程中发现的不足.md" beforeDir="false" afterPath="$PROJECT_DIR$/../想法/集成cnn过程中发现的不足.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +208,6 @@
     <list>
       <item itemvalue="Application.TaskHeandleApplication" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.SchedulingApplicationTests.contextLoads" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.SchedulingApplication" />
       <item itemvalue="Spring Boot.TaskHeandleApplication (1)" />
@@ -220,7 +217,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Test" />
-        <item itemvalue="JUnit.SchedulingApplicationTests.contextLoads" />
         <item itemvalue="Application.TaskHeandleApplication" />
       </list>
     </recent_temporary>
@@ -328,6 +324,7 @@
       <workItem from="1633915212383" duration="824000" />
       <workItem from="1633919542283" duration="480000" />
       <workItem from="1633928731798" duration="891000" />
+      <workItem from="1634176888992" duration="553000" />
     </task>
     <servers />
   </component>
