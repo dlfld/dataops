@@ -54,7 +54,7 @@ def func_config(data: dict, pre_handle_adapter=joblib.load,
         async def wrapper(params: Params):
             ic(params)
             # 调用方法处理之前的数据预处理
-            in_func_data = FileReaders.read_params(params.items,pre_handle_adapter)
+            in_func_data = FileReaders.read_params(params.items, pre_handle_adapter)
             # 调用方法
             out_func_data = func(in_func_data)
             # 处理方法输出

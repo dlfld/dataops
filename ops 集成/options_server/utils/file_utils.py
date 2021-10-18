@@ -1,7 +1,9 @@
+import os
 import uuid
 
 import joblib
 import pandas as pd
+import requests
 from icecream import ic
 
 from pojo.FileMessage import FileMessage
@@ -76,6 +78,26 @@ class FileReaders:
         data = []
         for item in items:
             file_full_path = item['location']
+            file_download_path = item['downloadUrl']
+            # 判断文件是否存在
+            exists = os.path.exists(file_full_path)
+            # 获取文件名
+            file_name = str(file_download_path).split("data_download/")[1]
+            # 如果文件不存在的话
+            if not exists:
+                """
+                    如果文件不存在的话就下载文件到本地然后再读取文件
+                """
+                ic("文件不存在，开始下载")
+                down_res = requests.get(file_download_path)
+                ic(f"文件：{file_name},下载成功")
+                # 拼接文件保存的路径
+                data_save_path = ConfigGet.get_data_file_path() + "/" + file_name
+                with open(data_save_path, 'wb') as file:
+                    file.write(down_res.content)
+                # 重新赋值文件的路径
+                file_full_path = data_save_path
+
             item_data = read_params_func(file_full_path)
             data.append(item_data)
         return data
