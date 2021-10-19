@@ -21,6 +21,13 @@
     "dataFileFullPath":"",
     //上传文件之后返回的文件下载链接
     "downloadUrl":"",
-    "userContact":"QQ"//用户联系方式
+    "userContact":"QQ",//用户联系方式
 
+    //多样性属性
+    "config":[
+        {
+            "id":"xxx" ,//节点的id
+            "xxx":"xxx"
+        }
+    ]
 }
