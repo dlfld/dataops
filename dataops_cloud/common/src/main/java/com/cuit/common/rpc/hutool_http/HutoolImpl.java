@@ -55,7 +55,7 @@ public class HutoolImpl implements RpcIntf {
 
     /**
      * 远程调用实现，获取操作列表
-     *  这个方法暂时废弃了，因为现在如果使用nacos的方式的话这种方式是不可以的
+     * 这个方法暂时废弃了，因为现在如果使用nacos的方式的话这种方式是不可以的
      *
      * @return
      */

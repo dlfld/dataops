@@ -7,17 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="scheduling" />
         <module name="task_handle" />
-        <module name="api" />
         <module name="common" />
-        <module name="gateway" />
+        <module name="file_manage" />
         <module name="service_center" />
+        <module name="scheduling" />
+        <module name="api" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api" target="11" />
       <module name="common" target="11" />
+      <module name="file_manage" target="11" />
       <module name="gateway" target="11" />
       <module name="parent" target="11" />
       <module name="scheduling" target="11" />
@@ -30,6 +32,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="file_manage" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="scheduling" options="-parameters" />
       <module name="service-center" options="-parameters" />
