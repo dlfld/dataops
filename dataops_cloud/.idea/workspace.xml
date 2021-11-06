@@ -20,6 +20,8 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../文件管理部分实现思路/功能需求点文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/../文件管理部分实现思路/功能需求点文档.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../文件管理部分实现思路/总体架构.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,6 +256,7 @@
       <item itemvalue="Application.TaskHeandleApplication" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.ReadDirectory" />
+      <item itemvalue="JUnit.SchedulingApplicationTests.contextLoads" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.SchedulingApplication" />
       <item itemvalue="Spring Boot.TaskHeandleApplication (1)" />
@@ -386,6 +389,7 @@
       <workItem from="1635731399811" duration="5903000" />
       <workItem from="1635747287872" duration="817000" />
       <workItem from="1635921323418" duration="3574000" />
+      <workItem from="1636176718062" duration="543000" />
     </task>
     <servers />
   </component>
