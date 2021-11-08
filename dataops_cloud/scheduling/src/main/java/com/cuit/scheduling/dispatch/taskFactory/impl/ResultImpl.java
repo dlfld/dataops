@@ -5,7 +5,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.cuit.common.pojo.base.Task;
 import com.cuit.common.pojo.notify.Message;
-import com.cuit.common.rpc.RpcImpl;
+import com.cuit.rpc.RpcImpl;
 import com.cuit.scheduling.dispatch.taskFactory.intf.ResultFactoryIntf;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -64,7 +64,7 @@ public class ResultImpl implements ResultFactoryIntf {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return task.getTaskId()+"-result"+ ".json";
+        return task.getTaskId() + "-result" + ".json";
     }
 
     /**

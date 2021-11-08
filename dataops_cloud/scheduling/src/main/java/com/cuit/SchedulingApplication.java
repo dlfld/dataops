@@ -14,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = {"com.cuit.common"})
 @ComponentScan(basePackages = {"com.cuit.scheduling"})
 @ComponentScan(basePackages = {"com.cuit.task_handle"})
+@ComponentScan(basePackages = {"com.cuit.rpc"})
 @SpringBootApplication
 public class SchedulingApplication {
 

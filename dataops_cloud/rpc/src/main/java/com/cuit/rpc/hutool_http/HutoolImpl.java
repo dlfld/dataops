@@ -1,4 +1,4 @@
-package com.cuit.common.rpc.hutool_http;
+package com.cuit.rpc.hutool_http;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
@@ -8,7 +8,7 @@ import cn.hutool.json.JSONUtil;
 import com.cuit.common.pojo.base.Option;
 import com.cuit.common.pojo.base.ParamsBody2;
 import com.cuit.common.pojo.notify.Message;
-import com.cuit.common.rpc.RpcIntf;
+import com.cuit.rpc.RpcIntf;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

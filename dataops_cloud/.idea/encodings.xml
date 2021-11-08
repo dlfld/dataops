@@ -5,9 +5,11 @@
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/file_manage/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rpc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scheduling/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service_center/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/task_handle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/task_handle/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user_manage/src/main/java" charset="UTF-8" />
   </component>
 </project>

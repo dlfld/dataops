@@ -1,4 +1,4 @@
-package com.cuit.common.rpc;
+package com.cuit.rpc;
 
 import com.cuit.common.pojo.base.Option;
 import com.cuit.common.pojo.base.ParamsBody2;

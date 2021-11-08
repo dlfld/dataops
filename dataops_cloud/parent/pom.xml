@@ -23,6 +23,8 @@
         <module>../task_handle</module>
         <module>../service_center</module>
         <module>../file_manage</module>
+        <module>../user_manage</module>
+        <module>../rpc</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

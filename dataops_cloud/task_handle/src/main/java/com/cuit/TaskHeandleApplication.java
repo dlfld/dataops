@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 @ComponentScan(basePackages = {"com.cuit.common"})
-@ComponentScan(basePackages = {"com.cuit.task_handle"})
+@ComponentScan(basePackages = {"com.cuit.rpc"})
 public class TaskHeandleApplication {
 
     public static void main(String[] args) {
