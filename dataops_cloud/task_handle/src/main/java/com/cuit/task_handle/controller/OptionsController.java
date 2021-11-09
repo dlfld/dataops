@@ -1,8 +1,8 @@
 package com.cuit.task_handle.controller;
 
 import com.cuit.api.task_handle.OptionsApi;
-import com.cuit.common.pojo.request.SubmitOptionsRequest;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.request.SubmitOptionsRequest;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.task_handle.service.intf.OptionsService;
 import org.springframework.web.bind.annotation.*;
 

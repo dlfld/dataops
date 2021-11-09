@@ -1,8 +1,8 @@
 package com.cuit.scheduling.dispatch.utils;
 
 
-import com.cuit.common.pojo.base.Param;
-import com.cuit.common.pojo.base.ParamsBody2;
+import com.cuit.common.model.base.Param;
+import com.cuit.common.model.base.ParamsBody2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

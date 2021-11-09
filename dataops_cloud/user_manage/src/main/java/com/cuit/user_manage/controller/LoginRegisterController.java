@@ -1,8 +1,8 @@
 package com.cuit.user_manage.controller;
 
 import com.cuit.api.user_manage.LoginRegisterApi;
-import com.cuit.common.pojo.base.User;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.base.user_manage.User;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.user_manage.service.intf.LoginRegisterService;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 package com.cuit.api.task_handle;
 
 
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.multipart.MultipartFile;

@@ -1,8 +1,8 @@
 package com.cuit.api.task_handle;
 
 
-import com.cuit.common.pojo.request.SubmitOptionsRequest;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.request.SubmitOptionsRequest;
+import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

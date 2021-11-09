@@ -1,8 +1,8 @@
 package com.cuit.rpc;
 
-import com.cuit.common.pojo.base.Option;
-import com.cuit.common.pojo.base.ParamsBody2;
-import com.cuit.common.pojo.notify.Message;
+import com.cuit.common.model.base.Option;
+import com.cuit.common.model.base.ParamsBody2;
+import com.cuit.common.model.notify.Message;
 
 import java.util.List;
 

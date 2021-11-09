@@ -1,6 +1,6 @@
 package com.cuit.file_manage.utils;
 
-import com.cuit.common.pojo.base.file_manage.FileItem;
+import com.cuit.common.model.base.file_manage.FileItem;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -32,14 +32,16 @@ public class ReadDirectory {
      * @param level 输出的文件名或者目录名所在的层次
      * @return 输出的字符串
      */
-    private String getKey(int level,int num) {
+    private String getKey(int level, int num) {
         // 输出的前缀
-        String key = "0-0";
+        StringBuilder key = new StringBuilder("0-0");
+//        String key = "0-0";
         // 按层次进行缩进
         for (int i = 0; i < level; i++) {
-            key += "-0";
+            key.append("-0");
         }
-        return key+"-"+num;
+        key.append("-").append(num);
+        return key.toString();
     }
 
     /**
@@ -73,7 +75,7 @@ public class ReadDirectory {
                 FileItem fileItem = new FileItem()
                         .setTitle(list[i].getName())
                         .setExtra(null)
-                        .setKey(getKey(fileLevel,i));
+                        .setKey(getKey(fileLevel, i));
                 topFile.addItem(fileItem);
                 fileLevel++;
                 // 递归子目录 传当前的文件对象进去，因为在这儿递归的是当前文件夹的子文件夹
@@ -84,7 +86,7 @@ public class ReadDirectory {
                 FileItem fileItem = new FileItem()
                         .setTitle(list[i].getName())
                         .setExtra(null)
-                        .setKey(getKey(fileLevel,i));
+                        .setKey(getKey(fileLevel, i));
                 topFile.addItem(fileItem);
             }
         }

@@ -1,6 +1,6 @@
 package com.cuit.scheduling.dispatch.taskFactory.intf;
 
-import com.cuit.common.pojo.base.Task;
+import com.cuit.common.model.base.Task;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,6 +1,6 @@
 package com.cuit.task_handle.taskFactory.impl;
 
-import com.cuit.common.pojo.base.Task;
+import com.cuit.common.model.base.Task;
 import com.cuit.task_handle.taskFactory.intf.TaskFactoryIntf;
 import lombok.Data;
 import org.springframework.stereotype.Component;

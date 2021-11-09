@@ -1,7 +1,7 @@
 package com.cuit.task_handle.service.impl;
 
 import cn.hutool.core.io.FileUtil;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.ResponseDataUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

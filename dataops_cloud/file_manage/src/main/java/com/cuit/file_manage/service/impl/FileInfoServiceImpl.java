@@ -1,7 +1,7 @@
 package com.cuit.file_manage.service.impl;
 
-import com.cuit.common.pojo.base.file_manage.FileItem;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.base.file_manage.FileItem;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.file_manage.service.intf.FileInfoService;
 import com.cuit.file_manage.utils.ReadDirectory;

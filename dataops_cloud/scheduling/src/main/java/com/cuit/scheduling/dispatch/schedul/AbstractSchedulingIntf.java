@@ -1,6 +1,6 @@
 package com.cuit.scheduling.dispatch.schedul;
 
-import com.cuit.common.pojo.base.Task;
+import com.cuit.common.model.base.Task;
 
 /**
  * 调度中心的方法接口

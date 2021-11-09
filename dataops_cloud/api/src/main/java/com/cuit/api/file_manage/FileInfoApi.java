@@ -1,6 +1,6 @@
 package com.cuit.api.file_manage;
 
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

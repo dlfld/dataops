@@ -1,8 +1,8 @@
 package com.cuit.service_center.service;
 
-import com.cuit.common.pojo.base.Option;
-import com.cuit.common.pojo.base.PyClient;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.base.Option;
+import com.cuit.common.model.base.PyClient;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.service_center.clients.ClientDataSet;
 import com.cuit.service_center.clients.HeartBeat;

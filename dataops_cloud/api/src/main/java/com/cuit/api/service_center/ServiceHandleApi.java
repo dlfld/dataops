@@ -1,7 +1,7 @@
 package com.cuit.api.service_center;
 
-import com.cuit.common.pojo.base.PyClient;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.base.PyClient;
+import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

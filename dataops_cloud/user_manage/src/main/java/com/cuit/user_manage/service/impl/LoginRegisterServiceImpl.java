@@ -1,7 +1,8 @@
 package com.cuit.user_manage.service.impl;
 
-import com.cuit.common.pojo.base.User;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.model.base.user_manage.User;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.user_manage.service.intf.LoginRegisterService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,9 +34,12 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
     public ResponseData userLogin(User user) {
         File file = new File(fileHomePath + "/" + user.getUserName());
         //判断用户文件夹是否存在，如果存在的话就执行登录，不存在表示用户没有注册
-        if (file.exists()) {
-            log.info("file is exist");
+        if (!file.exists()) {
+            //如果用户不存在,返回用户不存在
+            ResponseDataUtil.buildError(ResultEnums.USER_NOT_FOUND);
         }
+        //用户存在
+        //检查用户密码 签发token
         return ResponseDataUtil.buildSuccess(file.exists());
     }
 }

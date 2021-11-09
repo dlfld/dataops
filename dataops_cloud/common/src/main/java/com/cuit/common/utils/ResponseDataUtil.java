@@ -3,7 +3,7 @@ package com.cuit.common.utils;
 
 
 import com.cuit.common.enums.ResultEnums;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.response.ResponseData;
 
 public class ResponseDataUtil {
     /**

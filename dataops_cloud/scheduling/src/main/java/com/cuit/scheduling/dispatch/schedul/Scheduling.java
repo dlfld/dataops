@@ -1,9 +1,9 @@
 package com.cuit.scheduling.dispatch.schedul;//package cuit.scheduling.dispatch.schdul;
 
-import com.cuit.common.pojo.base.Node;
-import com.cuit.common.pojo.base.Param;
-import com.cuit.common.pojo.base.ParamsBody2;
-import com.cuit.common.pojo.base.Task;
+import com.cuit.common.model.base.Node;
+import com.cuit.common.model.base.Param;
+import com.cuit.common.model.base.ParamsBody2;
+import com.cuit.common.model.base.Task;
 import com.cuit.common.utils.SerializableUtil;
 import com.cuit.rpc.RpcImpl;
 import com.cuit.scheduling.dispatch.taskFactory.impl.ResultImpl;

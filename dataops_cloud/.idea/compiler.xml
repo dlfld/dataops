@@ -14,6 +14,7 @@
         <module name="service_center" />
         <module name="scheduling" />
         <module name="user_manage" />
+        <module name="model" />
         <module name="api" />
         <module name="gateway" />
       </profile>
@@ -23,6 +24,7 @@
       <module name="common" target="11" />
       <module name="file_manage" target="11" />
       <module name="gateway" target="11" />
+      <module name="model" target="11" />
       <module name="parent" target="11" />
       <module name="rpc" target="11" />
       <module name="scheduling" target="11" />
@@ -38,6 +40,7 @@
       <module name="common" options="-parameters" />
       <module name="file_manage" options="-parameters" />
       <module name="gateway" options="-parameters" />
+      <module name="model" options="-parameters" />
       <module name="rpc" options="-parameters" />
       <module name="scheduling" options="-parameters" />
       <module name="service-center" options="-parameters" />

@@ -1,7 +1,7 @@
 package com.cuit.api.user_manage;
 
-import com.cuit.common.pojo.base.User;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.base.user_manage.User;
+import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 

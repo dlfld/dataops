@@ -1,8 +1,8 @@
 package com.cuit.service_center.controller;
 
 import com.cuit.api.service_center.ServiceHandleApi;
-import com.cuit.common.pojo.base.PyClient;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.base.PyClient;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.service_center.service.ServiceHandleService;
 import org.springframework.web.bind.annotation.*;
 

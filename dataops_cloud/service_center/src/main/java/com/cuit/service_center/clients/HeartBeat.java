@@ -2,7 +2,7 @@ package com.cuit.service_center.clients;
 
 import cn.hutool.cron.CronUtil;
 import cn.hutool.cron.task.Task;
-import com.cuit.common.pojo.base.PyClient;
+import com.cuit.common.model.base.PyClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

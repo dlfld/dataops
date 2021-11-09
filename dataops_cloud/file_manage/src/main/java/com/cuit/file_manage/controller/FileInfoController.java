@@ -1,7 +1,7 @@
 package com.cuit.file_manage.controller;
 
 import com.cuit.api.file_manage.FileInfoApi;
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.response.ResponseData;
 import com.cuit.file_manage.service.intf.FileInfoService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

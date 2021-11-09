@@ -1,6 +1,6 @@
 package com.cuit.task_handle.service.intf;
 
-import com.cuit.common.pojo.response.ResponseData;
+import com.cuit.common.model.response.ResponseData;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
