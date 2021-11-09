@@ -25,7 +25,7 @@ public class FileAttribute {
      */
     private String attributeName;
     /**
-     * 文件属性含义
+     * 文件属性含义  <可选填>
      */
     private String attributeMean;
 }

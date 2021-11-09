@@ -17,11 +17,15 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class User {
     /**
-     * 用户名
+     * 用户名   唯一标识 尽量为实际名字简称
      */
     private String userName;
     /**
      * 密码
      */
     private String password;
+    /**
+     * 实际名字
+     */
+    private String realName;
 }

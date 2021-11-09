@@ -38,21 +38,20 @@ public class DataFile {
      */
     private FileAttribute fileAttribute;
     /**
-     * 文件分享者
-     */
-    private String fileSharer;
-    /**
      * 文件分享截止时间
      */
     private Date fileShareDeadline;
     /**
      * 文件分享行数
      */
-    private BigDecimal fileSharelength;
+    private Long fileSharelength;
     /**
-     *文件分享属性列表
+     * 文件分享属性列表
      */
     private List<FileAttribute> fileShareAttributeList = new ArrayList<>();
-
+    /**
+     * 文件是否可下载
+     */
+    private boolean downloadable;
 
 }
