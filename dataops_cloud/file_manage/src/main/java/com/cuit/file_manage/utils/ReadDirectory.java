@@ -99,10 +99,4 @@ public class ReadDirectory {
         return topFile;
     }
 
-    public static void main(String[] args) {
-        String dirPath = "/Users/dailinfeng/Desktop/实验室项目/sec";
-        ReadDirectory rd = new ReadDirectory(dirPath);
-        FileItem fileItem = rd.getFileItem();
-        System.out.println(fileItem);
-    }
 }

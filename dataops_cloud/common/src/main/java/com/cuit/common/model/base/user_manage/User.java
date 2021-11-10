@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @Author dailinfeng
  * @Description TODO
@@ -15,7 +17,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class User {
+public class User implements Serializable {
     /**
      * 用户名   唯一标识 尽量为实际名字简称
      */

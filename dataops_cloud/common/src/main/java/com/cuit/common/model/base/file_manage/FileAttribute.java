@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * 文件属性对象
  *
@@ -17,7 +19,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class FileAttribute {
+public class FileAttribute implements Serializable {
     /**
      * 文件属性名
      * csv:列

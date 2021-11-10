@@ -2,7 +2,7 @@ server:
   port: 18006
 
 path:
-  home: /Users/dailinfeng/Desktop/filemanage
+  home: /Users/dailinfeng/Desktop/filemanage/
 
 spring:
   application:

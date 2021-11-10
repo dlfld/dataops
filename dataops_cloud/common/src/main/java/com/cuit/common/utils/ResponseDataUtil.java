@@ -5,6 +5,9 @@ package com.cuit.common.utils;
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.model.response.ResponseData;
 
+/**
+ * @author dailinfeng
+ */
 public class ResponseDataUtil {
     /**
      * 带实体的统一返回
