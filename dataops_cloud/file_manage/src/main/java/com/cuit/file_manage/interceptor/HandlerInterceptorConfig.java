@@ -1,4 +1,4 @@
-package com.cuit.user_manage.interceptor;
+package com.cuit.file_manage.interceptor;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;

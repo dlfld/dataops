@@ -1,4 +1,4 @@
-package com.cuit.user_manage.interceptor;
+package com.cuit.file_manage.interceptor;
 
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
