@@ -6,7 +6,7 @@ path:
 
 spring:
   application:
-    name: user_manage
+    name: usermanage
   cloud:
     nacos:
       discovery:

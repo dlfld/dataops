@@ -52,7 +52,6 @@ public class ClientDataSet {
 
     /**
      * 更新一个客户端的模块信息
-     *
      * @param client 客户端
      */
     public static void updateClient(PyClient client) {

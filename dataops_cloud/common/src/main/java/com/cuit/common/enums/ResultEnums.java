@@ -16,8 +16,12 @@ public enum ResultEnums {
     USER_NOT_FOUND("00001", "无此用户"),
     //没有登陆
     HAVE_NO_TOKEN("00002", "没有登陆"),
-
-
+    //密码错误
+    PASSWORD_ERROR("00003", "密码错误"),
+    //用户已经注册
+    USER_EXIST("00004", "用户已存在"),
+    //用户未登录
+    USER_NO_LOGIN("00005", "用户未登录"),
     ;
     private String code;
     private String msg;

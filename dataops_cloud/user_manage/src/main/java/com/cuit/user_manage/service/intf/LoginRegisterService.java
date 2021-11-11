@@ -1,6 +1,7 @@
 package com.cuit.user_manage.service.intf;
 
 import com.cuit.common.model.base.user_manage.User;
+import com.cuit.common.model.base.user_manage.vo.UserLoginVo;
 import com.cuit.common.model.response.ResponseData;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,13 @@ public interface LoginRegisterService {
      * @param user 用户实体类
      * @return
      */
-    ResponseData userLogin(User user);
+    ResponseData userLogin(UserLoginVo user);
+
+
+    /**
+     * 用户注册逻辑
+     * @param user 用户实体类
+     * @return 注册成功标注
+     */
+    ResponseData userRegister(User user);
 }
