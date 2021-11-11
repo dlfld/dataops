@@ -2,6 +2,7 @@ package com.cuit.file_manage.interceptor;
 
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.utils.ResponseDataUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -28,8 +29,8 @@ public class OpsInterceptor implements HandlerInterceptor {
         if (userName.hasNext()) {
             return true;
         }
-        //如果没有的话就表示是直接对该微服务进行访问的。直接报出异常
-        ExceptionCast.cast(ResultEnums.USER_NO_LOGIN);
+        //如果没有的话就表示是直接对该微服务进行访问的。直接报出异常   ResultEnums.USER_NO_LOGIN
+        ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.USER_NO_LOGIN));
         return false;
     }
 

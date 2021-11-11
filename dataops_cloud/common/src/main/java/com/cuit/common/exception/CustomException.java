@@ -1,6 +1,6 @@
 package com.cuit.common.exception;
 
-import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.model.response.ResponseData;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomException extends RuntimeException {
-    ResultEnums responseData;
+    /**
+     * 返回具体值
+     */
+    ResponseData responseData;
+
 }

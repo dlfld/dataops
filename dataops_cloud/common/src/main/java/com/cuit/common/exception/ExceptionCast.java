@@ -1,6 +1,6 @@
 package com.cuit.common.exception;
 
-import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.model.response.ResponseData;
 
 /**
  * @Author dailinfeng
@@ -9,7 +9,7 @@ import com.cuit.common.enums.ResultEnums;
  * @Version 1.0
  */
 public class ExceptionCast {
-    public static void cast(ResultEnums responseData) {
+    public static void cast(ResponseData responseData) {
         throw new CustomException(responseData);
     }
 }
