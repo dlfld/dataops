@@ -1,9 +1,0 @@
-com/cuit/scheduling/service/intf/ResultHandleService.class
-com/cuit/SchedulingApplication.class
-com/cuit/scheduling/dispatch/taskFactory/intf/ResultFactoryIntf.class
-com/cuit/scheduling/dispatch/utils/ParamsUtils.class
-com/cuit/scheduling/service/impl/ResultHandleServiceImpl.class
-com/cuit/scheduling/controller/ResultHandleController.class
-com/cuit/scheduling/dispatch/schedul/AbstractSchedulingIntf.class
-com/cuit/scheduling/dispatch/schedul/Scheduling.class
-com/cuit/scheduling/dispatch/taskFactory/impl/ResultImpl.class

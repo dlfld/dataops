@@ -30,4 +30,7 @@ public interface LoginRegisterApi {
      */
     @ApiOperation("用户注册")
     ResponseData userRegister(User user);
+
+    @ApiOperation("获取所有用户信息")
+    ResponseData getUserList();
 }

@@ -11,8 +11,6 @@ import io.swagger.annotations.ApiOperation;
  */
 @Api(tags = "Options 相关接口")
 public interface OptionsApi {
-
-
     /**
      * 获取前端解释完成之后的数据接口
      *
