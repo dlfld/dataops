@@ -36,7 +36,7 @@ public class ExceptionCatch {
      * @param exception
      * @return
      */
-    @ExceptionHandler(Exception.class)      
+    @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseData exception(Exception exception) {
         return ResponseDataUtil.buildError(ResultEnums.SYSTEM_ERROR);
