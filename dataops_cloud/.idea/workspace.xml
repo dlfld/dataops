@@ -18,7 +18,18 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="fix bug" />
+    <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/UserInfoApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/UserInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/UserInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/UserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/SysEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/SysEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

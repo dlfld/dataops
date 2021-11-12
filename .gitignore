@@ -3,5 +3,5 @@
 target/*
 *.jar
 *.xml
+*.classworkspace.xml
 *.class
-workspace.xml

@@ -29,9 +29,5 @@ public interface LoginRegisterService {
      */
     ResponseData userRegister(User user);
 
-    /**
-     * 暂定为获取主目录下面的所有用户信息
-     * @return HashMap, key为用户的实际名称，value为账号
-     */
-    ResponseData getUserList();
+
 }

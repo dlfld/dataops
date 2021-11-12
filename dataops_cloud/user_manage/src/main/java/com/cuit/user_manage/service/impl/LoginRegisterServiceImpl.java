@@ -17,11 +17,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-
-import static com.cuit.common.utils.MetaFileUtil.isMateFile;
 
 /**
  * @Author dailinfeng
@@ -101,34 +97,5 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         log.info(MetaFileUtil.metaRead(fileHomePath + user.getUserName() + fileSuffix, User.class).toString());
         return ResponseDataUtil.buildSuccess();
     }
-
-
-
-    /**
-     * 获取指定目录下的用户信息。
-     * @return 用户信息
-     */
-    @Override
-    public ResponseData getUserList(){
-        Map<String, String> userMap = new HashMap<String, String>();
-        // 建立当前目录中文件的File对象
-        File file = new File(fileHomePath);
-        // 取得代表目录中所有文件的File对象数组
-        File[] list = file.listFiles();
-        // 遍历当前目录的用户
-        for (int i = 0; i < list.length; i++) {
-            //
-            if (isMateFile(list[i].getName())){
-                //获取用户对应mate文件中的信息
-                User user = MetaFileUtil.metaRead(list[i].getPath(),User.class);
-                if (Objects.isNull(user)){
-                    //抛出异常
-                    System.out.println("该文件用户信息不存在");
-                }else {
-                    userMap.put(user.getRealName(),user.getUserName());
-                }
-            }
-        }
-        return ResponseDataUtil.buildSuccess(userMap);
-    }
+    
 }
