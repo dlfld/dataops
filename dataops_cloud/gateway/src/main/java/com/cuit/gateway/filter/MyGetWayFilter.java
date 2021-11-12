@@ -5,11 +5,15 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.utils.ResponseDataUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.server.RequestPath;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
@@ -47,6 +51,7 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         }
         HttpHeaders headers = exchange.getRequest().getHeaders();
         try {
+            log.info("进来了过滤器");
             List<String> list = headers.get("Authorization");
             String token = list.get(0);
             /**
@@ -70,11 +75,11 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
             }
         } catch (Exception e) {
             System.out.println("非法用户");
-//            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
+            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.USER_NO_LOGIN));
+            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
             return exchange.getResponse().setComplete();
         }
-
-//        return chain.filter(exchange);
+        //return chain.filter(exchange);
     }
 
     @Override
