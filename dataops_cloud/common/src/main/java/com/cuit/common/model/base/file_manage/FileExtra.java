@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @Author dailinfeng
@@ -18,6 +19,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class FileExtra implements Serializable {
-    //占位符
-    private String name;
+
+    private String fileName;
+
+    private Date deadline;
 }

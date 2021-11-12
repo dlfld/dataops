@@ -45,4 +45,10 @@ public class LoginRegisterController implements LoginRegisterApi {
     public ResponseData userRegister(@RequestBody User user) {
         return loginRegisterService.userRegister(user);
     }
+
+    @Override
+    @GetMapping("/userList")
+    public ResponseData getUserList() {
+        return loginRegisterService.getUserList();
+    }
 }

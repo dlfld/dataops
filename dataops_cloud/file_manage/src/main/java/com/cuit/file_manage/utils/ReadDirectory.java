@@ -1,10 +1,13 @@
 package com.cuit.file_manage.utils;
 
 import com.cuit.common.model.base.file_manage.FileItem;
+import com.cuit.common.utils.MetaFileUtil;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.File;
+
+import static com.cuit.common.utils.MetaFileUtil.mate;
 
 /**
  * @author dailinfeng
@@ -71,10 +74,12 @@ public class ReadDirectory {
         for (int i = 0; i < list.length; i++) {
             //如果当前文件对象是文件夹
             if (list[i].isDirectory()) {
+                //当前文件的mate文件路径
+                String mateFilePath = list[i].getPath().substring(0, list[i].getPath().lastIndexOf("."))+mate;
                 //生成当前文件的文件对象
                 FileItem fileItem = new FileItem()
                         .setTitle(list[i].getName())
-                        .setExtra(null)
+                        .setExtra(MetaFileUtil.getDataSetInformation(mateFilePath))
                         .setKey(getKey(fileLevel, i));
                 topFile.addItem(fileItem);
                 fileLevel++;
@@ -82,12 +87,17 @@ public class ReadDirectory {
                 readFile(list[i].getPath(), fileItem);
                 fileLevel--;
             } else {
-                //当前文件对象是一个文件 不是文件夹
-                FileItem fileItem = new FileItem()
-                        .setTitle(list[i].getName())
-                        .setExtra(null)
-                        .setKey(getKey(fileLevel, i));
-                topFile.addItem(fileItem);
+                 //当前文件对象是一个文件 不是文件夹
+                // 判断该文件是否为mate文件,当该文件不为mate文件的时候加入到文件树中
+                if (!MetaFileUtil.isMateFile(list[i].getName())){
+                    //当前文件的mate文件路径
+                    String mateFilePath = list[i].getPath().substring(0, list[i].getPath().lastIndexOf("."))+mate;
+                    FileItem fileItem = new FileItem()
+                            .setTitle(list[i].getName())
+                            .setExtra(MetaFileUtil.getDataFileInformation(mateFilePath))
+                            .setKey(getKey(fileLevel, i));
+                    topFile.addItem(fileItem);
+                }
             }
         }
     }
@@ -98,5 +108,7 @@ public class ReadDirectory {
         // 返回结果
         return topFile;
     }
+
+
 
 }

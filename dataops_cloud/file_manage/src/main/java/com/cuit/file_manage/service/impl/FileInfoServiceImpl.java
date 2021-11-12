@@ -19,6 +19,8 @@ public class FileInfoServiceImpl implements FileInfoService {
     @Value(value = "${fileSystem.filePath}")
     String filePath;
 
+
+
     /**
      * 获取指定文件夹下的文件树
      *
@@ -30,4 +32,5 @@ public class FileInfoServiceImpl implements FileInfoService {
         FileItem fileItem = rd.getFileItem();
         return ResponseDataUtil.buildSuccess(fileItem);
     }
+
 }
