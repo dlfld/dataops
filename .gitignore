@@ -2,3 +2,5 @@
 .idea/*
 target/*
 *.jar
+*.xml
+*.class
