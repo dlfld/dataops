@@ -1,5 +1,6 @@
 package com.cuit.user_manage.service.impl;
 
+import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.model.base.user_manage.User;
 import com.cuit.common.model.response.ResponseData;
@@ -47,7 +48,7 @@ public class UserInfoServiceImpl implements UserInfoService {
                 //获取用户对应mate文件中的信息
                 User user = MetaFileUtil.metaRead(list[i].getPath(),User.class);
                 if (Objects.isNull(user)){
-                    ExceptionCast.cast(ResponseDataUtil.buildError("文件中的用户为空"));
+                    ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NULL_META_MESSAGE));
                 }else {
                     userMap.put(user.getRealName(),user.getUserName());
                 }
