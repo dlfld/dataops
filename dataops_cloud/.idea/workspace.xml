@@ -19,16 +19,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/UserInfoApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/UserInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/UserInfoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/SysEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/SysEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Connection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/NodeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/NodeMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Option.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Param.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/ParamsBody2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/PyClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/DataFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/DataSet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/FileAttribute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/dto/UserLoginDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/vo/UserLoginVo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/notify/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/request/SubmitOptionsRequest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +68,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar:///Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/StringBuilder.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
