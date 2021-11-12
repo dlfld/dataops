@@ -30,14 +30,14 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        System.out.println("************进来了过滤器*******************");
+        log.info("************进来了过滤器*******************");
         RequestPath path = exchange.getRequest().getPath();
         List<String> allowPath = new ArrayList<String>();
         allowPath.add("/sso/login");
         allowPath.add("/sso/register");
-        if (String.valueOf(path).contains("swagger") || String.valueOf(path).contains("v2")) {
+        if (String.valueOf(path).contains("swagger") || String.valueOf(path).contains("v3")) {
             log.info("通过 swagger");
-//           放行
+            //放行
             return chain.filter(exchange);
         }
         for (String e : allowPath) {

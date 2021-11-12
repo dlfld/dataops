@@ -22,6 +22,9 @@ public enum ResultEnums {
     USER_EXIST("00004", "用户已存在"),
     //用户未登录
     USER_NO_LOGIN("00005", "用户未登录"),
+    //元文件信息为空
+    NULL_META_MESSAGE("00006", "元文件信息为空"),
+
     ;
     private String code;
     private String msg;
