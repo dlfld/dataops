@@ -390,6 +390,7 @@
       <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/task_handle/FileHandleApi.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/task_handle/OptionsApi.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/UserInfoApi.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/api/target/classes/com/cuit/api/user_manage/LoginRegisterApi.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
@@ -550,10 +551,13 @@
       <change afterPath="$PROJECT_DIR$/user_manage/pom.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/UserManageApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/UserInfoController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/UserInfoServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/UserInfoService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/resources/application-dlf-dev.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/user_manage/src/test/java/com/cuit/user_manage/UserManageApplicationTests.java" afterDir="false" />
@@ -637,10 +641,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
     <property name="service.view.auto.scroll.to.source" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="ReaderModeSettings">
-    <option name="showLigatures" value="true" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -993,6 +994,7 @@
       <workItem from="1636592031651" duration="11670000" />
       <workItem from="1636639083320" duration="175000" />
       <workItem from="1636639509713" duration="680000" />
+      <workItem from="1636692217833" duration="4384000" />
     </task>
     <servers />
   </component>

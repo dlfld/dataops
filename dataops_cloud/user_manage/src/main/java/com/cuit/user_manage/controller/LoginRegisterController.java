@@ -46,9 +46,5 @@ public class LoginRegisterController implements LoginRegisterApi {
         return loginRegisterService.userRegister(user);
     }
 
-    @Override
-    @GetMapping("/userList")
-    public ResponseData getUserList() {
-        return loginRegisterService.getUserList();
-    }
+
 }
