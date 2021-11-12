@@ -1,0 +1,14 @@
+server:
+  port: 18005
+spring:
+  application:
+    name: file_manage
+  cloud:
+    nacos:
+      discovery:
+        #        server-addr: 127.0.0.1:8848
+        #        server-addr: 10.23.71.70:8848
+        server-addr: 10.23.71.70:8848
+fileSystem:
+  filePath: /Users/dailinfeng/Desktop/实验室项目/sec
+  userPath: /Users
