@@ -34,9 +34,7 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         RequestPath path = exchange.getRequest().getPath();
         List<String> allowPath = new ArrayList<String>();
 
-        /**
-         *         allowPath.add("/sso/login");
-         */
+//        allowPath.add("/sso/login");
         allowPath.add("/sso/register");
         if (String.valueOf(path).contains("swagger") || String.valueOf(path).contains("v3")) {
             log.info("通过 swagger");
@@ -84,6 +82,6 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
     @Override
     public int getOrder() {
         //表示加载过滤器的顺序,值越小优先级越高
-        return -10000;
+        return 0;
     }
 }
