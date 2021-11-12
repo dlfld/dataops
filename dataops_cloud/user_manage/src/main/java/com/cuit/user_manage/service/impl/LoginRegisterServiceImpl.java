@@ -63,7 +63,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         String userPass = DigestUtil.md5Hex(user.getPassword());
         //如果密码不匹配的话 返回密码错误
         if (!Objects.equals(userPass, userInfo.getPassword())) {
-            ResponseDataUtil.buildError(ResultEnums.PASSWORD_ERROR);
+            return ResponseDataUtil.buildError(ResultEnums.PASSWORD_ERROR);
         }
         //密码匹配
         //检查用户密码 签发token

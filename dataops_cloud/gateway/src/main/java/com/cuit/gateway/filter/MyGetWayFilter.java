@@ -5,9 +5,6 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.cuit.common.enums.ResultEnums;
-import com.cuit.common.exception.ExceptionCast;
-import com.cuit.common.utils.ResponseDataUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -36,7 +33,10 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         log.info("************进来了过滤器*******************");
         RequestPath path = exchange.getRequest().getPath();
         List<String> allowPath = new ArrayList<String>();
-//        allowPath.add("/sso/login");
+
+        /**
+         *         allowPath.add("/sso/login");
+         */
         allowPath.add("/sso/register");
         if (String.valueOf(path).contains("swagger") || String.valueOf(path).contains("v3")) {
             log.info("通过 swagger");
@@ -75,7 +75,6 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
             }
         } catch (Exception e) {
             System.out.println("非法用户");
-            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.USER_NO_LOGIN));
             exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
             return exchange.getResponse().setComplete();
         }
@@ -85,6 +84,6 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
     @Override
     public int getOrder() {
         //表示加载过滤器的顺序,值越小优先级越高
-        return 0;
+        return -10000;
     }
 }

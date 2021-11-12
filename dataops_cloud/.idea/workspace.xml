@@ -20,11 +20,13 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/MetaFileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/MetaFileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/GatewayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/gateway/filter/MyGetWayFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/gateway/filter/MyGetWayFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/OpsInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/OpsInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
