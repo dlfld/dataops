@@ -1,7 +1,7 @@
 .DS_store
-.idea/*
-target/*
+.idea/
+target/
 *.jar
 *.xml
-*.classworkspace.xml
 *.class
+*.iml
