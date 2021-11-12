@@ -20,12 +20,6 @@
   <component name="ChangeListManager">
     <list default="true" id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/CustomException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/CustomException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/ExceptionCast.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/ExceptionCast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/response/ResponseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/response/ResponseData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/ResponseDataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/ResponseDataUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/interceptor/OpsInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/interceptor/OpsInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +448,7 @@
       <workItem from="1636552697546" duration="2076000" />
       <workItem from="1636592031651" duration="11670000" />
       <workItem from="1636639083320" duration="175000" />
-      <workItem from="1636639509713" duration="680000" />
+      <workItem from="1636639509713" duration="1341000" />
     </task>
     <servers />
   </component>
