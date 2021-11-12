@@ -117,6 +117,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         File[] list = file.listFiles();
         // 遍历当前目录的用户
         for (int i = 0; i < list.length; i++) {
+            //
             if (isMateFile(list[i].getName())){
                 //获取用户对应mate文件中的信息
                 User user = MetaFileUtil.metaRead(list[i].getPath(),User.class);

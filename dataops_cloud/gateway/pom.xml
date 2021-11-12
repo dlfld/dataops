@@ -21,7 +21,12 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
         <!--gateway网关-->
-
+<!--        <dependency>-->
+<!--            <groupId>com.cuit</groupId>-->
+<!--            <artifactId>common</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>

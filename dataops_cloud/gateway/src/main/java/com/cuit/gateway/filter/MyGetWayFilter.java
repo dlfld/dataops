@@ -10,7 +10,6 @@ import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.server.RequestPath;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
@@ -33,7 +32,7 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         log.info("************进来了过滤器*******************");
         RequestPath path = exchange.getRequest().getPath();
         List<String> allowPath = new ArrayList<String>();
-        allowPath.add("/sso/login");
+//        allowPath.add("/sso/login");
         allowPath.add("/sso/register");
         if (String.valueOf(path).contains("swagger") || String.valueOf(path).contains("v3")) {
             log.info("通过 swagger");
@@ -71,7 +70,7 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
             }
         } catch (Exception e) {
             System.out.println("非法用户");
-            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
+//            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
             return exchange.getResponse().setComplete();
         }
 
