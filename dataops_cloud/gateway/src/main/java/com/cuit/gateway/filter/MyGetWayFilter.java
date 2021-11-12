@@ -82,6 +82,6 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
     @Override
     public int getOrder() {
         //表示加载过滤器的顺序,值越小优先级越高
-        return -10000;
+        return 0;
     }
 }
