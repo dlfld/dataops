@@ -91,11 +91,13 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         //用户不存在的话，就执行注册逻辑
         //创建文件夹
         file.mkdir();
+        //创建用户的分享文件夹
+        new File(fileHomePath + user.getUserName() + "/share").mkdir();
         //用户密码加密
         user.setPassword(DigestUtil.md5Hex(user.getPassword()));
         MetaFileUtil.metaWrite(fileHomePath + user.getUserName() + fileSuffix, user);
         log.info(MetaFileUtil.metaRead(fileHomePath + user.getUserName() + fileSuffix, User.class).toString());
         return ResponseDataUtil.buildSuccess();
     }
-    
+
 }

@@ -1,11 +1,14 @@
 package com.cuit.common.model.base.user_manage;
 
+import com.cuit.common.model.base.file_manage.ShareDataMsg;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author dailinfeng
@@ -30,4 +33,9 @@ public class User implements Serializable {
      * 实际名字
      */
     private String realName;
+    /**
+     * 分享出去的文件
+     */
+    private List<ShareDataMsg> shareDataMsgs = new ArrayList<>();
+
 }

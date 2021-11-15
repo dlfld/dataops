@@ -5,28 +5,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
-import java.util.Date;
-
 /**
  * @Author dailinfeng
- * @Description TODO
- * @Date 2021/11/1 10:26 上午
+ * @Description 我分享出去的文件 文件信息
+ * @Date 2021/11/15 4:21 下午
  * @Version 1.0
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class FileExtra implements Serializable {
-
+public class ShareDataMsg {
+    /**
+     * 被分享者   --- 我分享给了谁
+     */
+    public String userName;
     /**
      * 文件名
      */
-    private String fileName;
+    public String fileName;
 
-    /**
-     * 分享的截止时间
-     */
-    private Date deadline;
 }

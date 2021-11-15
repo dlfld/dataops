@@ -18,25 +18,14 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="">
+    <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="fix bug">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/ShareDataMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/NodeConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/NodeMsg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Option.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Param.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/ParamsBody2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/PyClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/Task.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/DataFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/DataSet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/FileAttribute.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/dto/UserLoginDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/vo/UserLoginVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/notify/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/request/SubmitOptionsRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/FileExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/FileExtra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +323,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="26b39afe-0dda-47e3-8239-bddc56da2b5a" name="Default Changelist" comment="" />
+      <changelist id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="" />
       <created>1627545812307</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -463,6 +452,8 @@
       <workItem from="1636592031651" duration="11670000" />
       <workItem from="1636639083320" duration="175000" />
       <workItem from="1636639509713" duration="1341000" />
+      <workItem from="1636958731685" duration="2452000" />
+      <workItem from="1636966018546" duration="61000" />
     </task>
     <servers />
   </component>
