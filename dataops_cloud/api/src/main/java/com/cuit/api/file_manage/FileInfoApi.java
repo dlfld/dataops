@@ -1,5 +1,6 @@
 package com.cuit.api.file_manage;
 
+import com.cuit.common.model.base.file_manage.vo.FileShareInfoVo;
 import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,6 +15,12 @@ import io.swagger.annotations.ApiOperation;
 public interface FileInfoApi {
     @ApiOperation("获取文件树信息")
     ResponseData getFileTreeInfo();
+
+    @ApiOperation("上传文件")
+    ResponseData uploadFile();
+
+    @ApiOperation("分享文件")
+    ResponseData shareFile(FileShareInfoVo fileLoadInfoVo);
 
 
 }

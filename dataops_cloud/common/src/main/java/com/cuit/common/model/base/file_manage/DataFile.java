@@ -42,10 +42,12 @@ public class DataFile implements Serializable {
      * 文件分享截止时间
      */
     private Date fileShareDeadline;
+
     /**
-     * 文件分享行数
+     * 文件分享行数区间
      */
-    private Long fileSharelength;
+    private Integer start;
+    private Integer end;
     /**
      * 文件分享属性列表
      */

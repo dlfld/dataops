@@ -1,5 +1,6 @@
 package com.cuit.file_manage.service.intf;
 
+import com.cuit.common.model.base.file_manage.vo.FileShareInfoVo;
 import com.cuit.common.model.response.ResponseData;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,11 @@ public interface FileInfoService {
      */
     ResponseData getFileTreeInfo();
 
+    /**
+     *
+     * 用户分享文件
+     */
+    ResponseData shareFile(FileShareInfoVo fileShareInfoVo);
 
 
 }

@@ -19,13 +19,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="fix bug">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/ShareDataMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/vo/FileShareInfoVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/FileExtra.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/FileExtra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/file_manage/FileInfoApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/file_manage/FileInfoApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/ResultEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/ResultEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/DataFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/DataFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/MetaFileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils/MetaFileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/DataFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/file_manage/DataFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/intf/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/intf/FileInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/utils/ReadDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/utils/ReadDirectory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/target/test-classes/com/cuit/gateway/GatewayApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/test-classes/com/cuit/gateway/GatewayApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/UserManageApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/UserManageApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/controller/LoginRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/controller/LoginRegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/OpsInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/OpsInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/intf/LoginRegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/intf/LoginRegisterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_manage/target/test-classes/com/cuit/user_manage/UserManageApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/test-classes/com/cuit/user_manage/UserManageApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +101,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="azul-15" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35994765" />
     <property name="service.view.auto.scroll.to.source" value="true" />
@@ -102,6 +117,9 @@
     <option name="showLigatures" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.cuit.common.model.base.file_manage.vo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage" />
       <recent name="$PROJECT_DIR$/common/src/main/java/com/cuit/common/utils" />
@@ -126,7 +144,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+  <component name="RunManager" selected="Spring Boot.FileManageApplication (1)">
     <configuration name="MetaFileUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cuit.common.utils.MetaFileUtil" />
       <module name="common" />
@@ -454,6 +472,8 @@
       <workItem from="1636639509713" duration="1341000" />
       <workItem from="1636958731685" duration="2452000" />
       <workItem from="1636966018546" duration="61000" />
+      <workItem from="1636972571989" duration="3451000" />
+      <workItem from="1636976171549" duration="9096000" />
     </task>
     <servers />
   </component>

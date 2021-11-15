@@ -126,5 +126,13 @@ public class MetaFileUtil {
         }
     }
 
+    /**
+     * 获取当前文件的Mate文件路径
+     * @param path
+     * @return
+     */
+    public static String getMateFilePath(String path){
+        return path.substring(0, path.lastIndexOf("."))+mate;
+    }
 
 }

@@ -75,7 +75,7 @@ public class ReadDirectory {
             //如果当前文件对象是文件夹
             if (list[i].isDirectory()) {
                 //当前文件的mate文件路径
-                String mateFilePath = list[i].getPath().substring(0, list[i].getPath().lastIndexOf("."))+mate;
+                String mateFilePath = MetaFileUtil.getMateFilePath(list[i].getPath());
                 //生成当前文件的文件对象
                 FileItem fileItem = new FileItem()
                         .setTitle(list[i].getName())

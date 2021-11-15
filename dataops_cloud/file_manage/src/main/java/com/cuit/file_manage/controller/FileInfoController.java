@@ -1,12 +1,10 @@
 package com.cuit.file_manage.controller;
 
 import com.cuit.api.file_manage.FileInfoApi;
+import com.cuit.common.model.base.file_manage.vo.FileShareInfoVo;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.file_manage.service.intf.FileInfoService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -36,6 +34,28 @@ public class FileInfoController implements FileInfoApi {
     }
 
 
+    /**
+     * 上传文件 todo
+     * @return 成功或者失败
+     */
+    @Override
+    @PostMapping("/uploadFile")
+    public ResponseData uploadFile() {
+        return null;
+    }
+
+
+    /**
+     * 分享文件
+     * @return 成功或者失败
+     * @param param 接收文件分享信息实体类的参数
+     */
+    @Override
+    @PostMapping("/shareFile")
+    public ResponseData shareFile(FileShareInfoVo param) {
+
+        return fileInfoService.shareFile(param);
+    }
 
 
 }

@@ -24,7 +24,16 @@ public enum ResultEnums {
     USER_NO_LOGIN("00005", "用户未登录"),
     //元文件信息为空
     NULL_META_MESSAGE("00006", "元文件信息为空"),
-
+    //文件已经分享
+    FILE_LOST("00007", "当前文件丢失"),
+    //文件分享错误
+    FILE_SHARE_ERROR("00008", "文件拷贝出错请联系管理员"),
+    //删除失败,文件不存在！
+    FILE_NOT_EXIST("00009", "删除失败,文件不存在"),
+    //删除文件失败
+    FAILED_TO_DELETE_FILE("00010", "删除文件失败"),
+    //当前删除的路径不是一个文件
+    NOT_A_FILE("00011", "当前删除的路径并不是一个文件")
     ;
     private String code;
     private String msg;
