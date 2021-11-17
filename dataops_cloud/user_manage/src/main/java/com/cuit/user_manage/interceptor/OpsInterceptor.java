@@ -4,6 +4,7 @@ import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.utils.ResponseDataUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +19,7 @@ import java.util.Iterator;
  * @Version 1.0
  */
 @Slf4j
-//@Component
+@Component
 public class OpsInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

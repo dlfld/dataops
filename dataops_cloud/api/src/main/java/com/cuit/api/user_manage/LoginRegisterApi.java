@@ -1,7 +1,7 @@
 package com.cuit.api.user_manage;
 
-import com.cuit.common.model.base.user_manage.User;
 import com.cuit.common.model.base.user_manage.vo.UserLoginVo;
+import com.cuit.common.model.base.user_manage.vo.UserRegisterVo;
 import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -29,6 +29,6 @@ public interface LoginRegisterApi {
      * @return 注册成功标注
      */
     @ApiOperation("用户注册")
-    ResponseData userRegister(User user);
+    ResponseData userRegister(UserRegisterVo user);
 
 }

@@ -5,6 +5,8 @@ import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @Author dailinfeng
  * @Description TODO
@@ -13,12 +15,22 @@ import io.swagger.annotations.ApiOperation;
  */
 @Api(tags = "文件信息")
 public interface FileInfoApi {
+    /**
+     * 获取文件树信息
+     *
+     * @param request request 对象
+     * @return 文件树信息
+     */
     @ApiOperation("获取文件树信息")
-    ResponseData getFileTreeInfo();
+    ResponseData getFileTreeInfo(HttpServletRequest request);
 
-    @ApiOperation("上传文件")
-    ResponseData uploadFile();
 
+    /**
+     * 分享文件
+     *
+     * @param fileLoadInfoVo 分享的文件信息
+     * @return 分享结果
+     */
     @ApiOperation("分享文件")
     ResponseData shareFile(FileShareInfoVo fileLoadInfoVo);
 

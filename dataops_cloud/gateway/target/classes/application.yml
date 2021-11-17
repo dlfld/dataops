@@ -49,6 +49,16 @@ spring:
           metadata:
             response-timeout: 3000
             connect-timeout: 2000
+
+        - id: filemanage
+          uri: lb://filemanage
+          predicates:
+            - Path=/filemanage/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
     nacos:
       discovery:
         #        server-addr: 10.131.18.162:8848

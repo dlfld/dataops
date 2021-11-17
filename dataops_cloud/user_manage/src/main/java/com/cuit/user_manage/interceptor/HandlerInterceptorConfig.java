@@ -1,5 +1,6 @@
 package com.cuit.user_manage.interceptor;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -11,7 +12,7 @@ import javax.annotation.Resource;
  * @Date 2021/11/11 9:59 上午
  * @Version 1.0
  */
-//@Configuration
+@Configuration
 public class HandlerInterceptorConfig implements WebMvcConfigurer {
     @Resource
     OpsInterceptor opsInterceptor;
@@ -27,6 +28,8 @@ public class HandlerInterceptorConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/swagger-resources/**")
                 .excludePathPatterns("/swagger-ui/**")
                 .excludePathPatterns("/error/**")
+                .excludePathPatterns("/sso/login")
+                .excludePathPatterns("/sso/register")
         ;
     }
 }

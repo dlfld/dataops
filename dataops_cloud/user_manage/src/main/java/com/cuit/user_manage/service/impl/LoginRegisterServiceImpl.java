@@ -7,6 +7,7 @@ import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.model.base.user_manage.User;
 import com.cuit.common.model.base.user_manage.dto.UserLoginDto;
 import com.cuit.common.model.base.user_manage.vo.UserLoginVo;
+import com.cuit.common.model.base.user_manage.vo.UserRegisterVo;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.MetaFileUtil;
 import com.cuit.common.utils.ResponseDataUtil;
@@ -47,6 +48,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
      */
     @Override
     public ResponseData userLogin(UserLoginVo user) {
+
         File file = new File(fileHomePath + user.getUserName());
         //判断用户文件夹是否存在，如果存在的话就执行登录，不存在表示用户没有注册
         if (!file.exists()) {
@@ -81,7 +83,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
      * @return 注册成功标注
      */
     @Override
-    public ResponseData userRegister(User user) {
+    public ResponseData userRegister(UserRegisterVo user) {
         File file = new File(fileHomePath + user.getUserName());
         //判断用户文件夹是否存在,如果存在的话表示用户已经注册
         if (file.exists()) {
@@ -95,7 +97,9 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         new File(fileHomePath + user.getUserName() + "/share").mkdir();
         //用户密码加密
         user.setPassword(DigestUtil.md5Hex(user.getPassword()));
-        MetaFileUtil.metaWrite(fileHomePath + user.getUserName() + fileSuffix, user);
+        User registerUser = new User();
+        BeanUtils.copyProperties(user,registerUser);
+        MetaFileUtil.metaWrite(fileHomePath + user.getUserName() + fileSuffix, registerUser);
         log.info(MetaFileUtil.metaRead(fileHomePath + user.getUserName() + fileSuffix, User.class).toString());
         return ResponseDataUtil.buildSuccess();
     }

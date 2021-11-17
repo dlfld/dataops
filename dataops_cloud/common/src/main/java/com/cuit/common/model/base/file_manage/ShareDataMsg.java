@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @Author dailinfeng
  * @Description 我分享出去的文件 文件信息
@@ -15,7 +17,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class ShareDataMsg {
+public class ShareDataMsg implements Serializable {
     /**
      * 被分享者   --- 我分享给了谁
      */

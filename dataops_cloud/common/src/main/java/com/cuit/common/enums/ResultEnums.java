@@ -33,7 +33,9 @@ public enum ResultEnums {
     //删除文件失败
     FAILED_TO_DELETE_FILE("00010", "删除文件失败"),
     //当前删除的路径不是一个文件
-    NOT_A_FILE("00011", "当前删除的路径并不是一个文件")
+    NOT_A_FILE("00011", "当前删除的路径并不是一个文件"),
+    //文件夹不存在
+    PATH_NOT_EXIST("00012", "文件夹不存在"),
     ;
     private String code;
     private String msg;

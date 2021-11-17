@@ -7,6 +7,8 @@ import com.cuit.file_manage.service.intf.FileInfoService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 
 /**
  * @Author dailinfeng
@@ -29,20 +31,10 @@ public class FileInfoController implements FileInfoApi {
      */
     @Override
     @GetMapping("/tree")
-    public ResponseData getFileTreeInfo() {
-        return fileInfoService.getFileTreeInfo();
-    }
-
-
-    /**
-     * 上传文件 todo
-     *
-     * @return 成功或者失败
-     */
-    @Override
-    @PostMapping("/uploadFile")
-    public ResponseData uploadFile() {
-        return null;
+    public ResponseData getFileTreeInfo(HttpServletRequest request) {
+        Enumeration<String> userNames = request.getHeaders("userName");
+        String userName = userNames.nextElement();
+        return fileInfoService.getFileTreeInfo(userName);
     }
 
 

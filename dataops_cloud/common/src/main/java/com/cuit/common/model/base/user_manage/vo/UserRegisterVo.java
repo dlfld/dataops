@@ -10,14 +10,14 @@ import java.io.Serializable;
 /**
  * @Author dailinfeng
  * @Description TODO
- * @Date 2021/11/10 9:39 下午
+ * @Date 2021/11/17 5:01 下午
  * @Version 1.0
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserLoginVo implements Serializable {
+public class UserRegisterVo implements Serializable {
     /**
      * 用户名   唯一标识 尽量为实际名字简称
      */
@@ -26,4 +26,8 @@ public class UserLoginVo implements Serializable {
      * 密码
      */
     private String password;
+    /**
+     * 实际名字
+     */
+    private String realName;
 }

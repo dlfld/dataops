@@ -17,7 +17,7 @@ public interface FileInfoService {
      *获取指定文件夹下的文件树
      * @return 文件树
      */
-    ResponseData getFileTreeInfo();
+    ResponseData getFileTreeInfo(String userName);
 
     /**
      *

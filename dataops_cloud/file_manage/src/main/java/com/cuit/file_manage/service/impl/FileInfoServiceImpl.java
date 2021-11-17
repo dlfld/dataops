@@ -25,13 +25,11 @@ import java.util.Objects;
 @Service
 public class FileInfoServiceImpl implements FileInfoService {
 
-    @Value(value = "${fileSystem.filePath}")
-    String filePath;
 
     /**
      * 用户的默认根目录
      */
-    @Value(value = "${fileSystem.userPath}")
+    @Value(value = "${fileSystem.filePath}")
     String userPath;
 
     /**
@@ -46,13 +44,15 @@ public class FileInfoServiceImpl implements FileInfoService {
      * @return 文件树
      */
     @Override
-    public ResponseData getFileTreeInfo() {
-        ReadDirectory rd = new ReadDirectory(filePath);
+    public ResponseData getFileTreeInfo(String userName) {
+        ReadDirectory rd = new ReadDirectory(userPath + "/" + userName);
         FileItem fileItem = rd.getFileItem();
         return ResponseDataUtil.buildSuccess(fileItem);
     }
+
     /**
      * 用户分享文件
+     *
      * @param fileShareInfoVo
      * @return
      */
@@ -61,7 +61,7 @@ public class FileInfoServiceImpl implements FileInfoService {
         //判断对象中的参数是否为空 todo
 
         // 被分享者的默认地址
-        String path = userPath+"/"+fileShareInfoVo.getShareName()+"/share/";
+        String path = userPath + "/" + fileShareInfoVo.getShareName() + "/share/";
         //获取分享者分享当前文件的地址 FileFullPath分享者分享文件的全路径
         File file = new File(fileShareInfoVo.getFileFullPath());
         //获取分享者分享当前文件的元文件
@@ -72,7 +72,7 @@ public class FileInfoServiceImpl implements FileInfoService {
             ResponseDataUtil.buildError(ResultEnums.FILE_LOST);
         }
         //分享文件
-        FileUtil.copyFileByStream(file.getPath(),path.concat(file.getName()));
+        FileUtil.copyFileByStream(file.getPath(), path.concat(file.getName()));
         //被分享者的当前文件的mate路径
         String matePath = MetaFileUtil.getMateFilePath(path.concat(file.getName()));
         //分享元文件
@@ -80,7 +80,7 @@ public class FileInfoServiceImpl implements FileInfoService {
         //获取当前元文件对象
         DataFile df = MetaFileUtil.metaRead(matePath, DataFile.class);
         //如果当前元文件对象不等于空
-        if (!Objects.isNull(df)){
+        if (!Objects.isNull(df)) {
             df.setDownloadable(fileShareInfoVo.getDownloadable())
                     .setStart(fileShareInfoVo.getStart())
                     .setEnd(fileShareInfoVo.getEnd())
