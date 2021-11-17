@@ -36,6 +36,7 @@ public class FileInfoController implements FileInfoApi {
 
     /**
      * 上传文件 todo
+     *
      * @return 成功或者失败
      */
     @Override
@@ -47,13 +48,13 @@ public class FileInfoController implements FileInfoApi {
 
     /**
      * 分享文件
-     * @return 成功或者失败
+     *
      * @param param 接收文件分享信息实体类的参数
+     * @return 成功或者失败
      */
     @Override
     @PostMapping("/shareFile")
     public ResponseData shareFile(FileShareInfoVo param) {
-
         return fileInfoService.shareFile(param);
     }
 
