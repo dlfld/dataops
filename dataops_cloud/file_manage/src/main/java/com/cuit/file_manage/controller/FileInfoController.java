@@ -32,8 +32,7 @@ public class FileInfoController implements FileInfoApi {
     @Override
     @GetMapping("/tree")
     public ResponseData getFileTreeInfo(HttpServletRequest request) {
-        Enumeration<String> userNames = request.getHeaders("userName");
-        String userName = userNames.nextElement();
+        String userName = request.getHeader("userName");
         return fileInfoService.getFileTreeInfo(userName);
     }
 

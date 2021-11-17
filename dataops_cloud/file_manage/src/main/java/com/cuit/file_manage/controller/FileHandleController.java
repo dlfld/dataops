@@ -3,7 +3,10 @@ package com.cuit.file_manage.controller;
 import com.cuit.api.file_manage.FilehandleApi;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.file_manage.service.intf.FileHandleService;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -14,6 +17,9 @@ import javax.annotation.Resource;
  * @Date 2021/11/17 3:42 下午
  * @Version 1.0
  */
+@RestController
+@CrossOrigin
+@RequestMapping("/file_handle")
 public class FileHandleController implements FilehandleApi {
 
     @Resource

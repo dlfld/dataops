@@ -39,6 +39,7 @@ public class ExceptionCatch {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseData exception(Exception exception) {
+        exception.printStackTrace();
         return ResponseDataUtil.buildError(ResultEnums.SYSTEM_ERROR);
     }
 

@@ -5,6 +5,7 @@ import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.model.base.file_manage.DataFile;
 import com.cuit.common.model.base.file_manage.DataSet;
 import com.cuit.common.model.base.file_manage.FileExtra;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 
@@ -12,7 +13,7 @@ import java.io.*;
  * @author wangchangwu
  * 元数据读写的工具类
  */
-
+@Slf4j
 public class MetaFileUtil {
 
     /**

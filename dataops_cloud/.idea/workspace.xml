@@ -19,38 +19,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="fix bug">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/file_manage/FilehandleApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/vo/UserRegisterVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileHandleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileHandleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/intf/FileHandleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/file_manage/FileInfoApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/file_manage/FileInfoApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/cuit/api/user_manage/LoginRegisterApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/com/cuit/api/user_manage/LoginRegisterApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/com/cuit/api/user_manage/LoginRegisterApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/ResultEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/enums/ResultEnums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/ShareDataMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/file_manage/ShareDataMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/vo/UserLoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/model/base/user_manage/vo/UserLoginVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/vo/UserLoginVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/common/target/classes/com/cuit/common/model/base/user_manage/vo/UserLoginVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/ExceptionCatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/ExceptionCatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileHandleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileHandleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/intf/FileInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/intf/FileInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/utils/ReadDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/utils/ReadDirectory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/resources/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/resources/application-dlf-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/target/classes/application-dlf-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/target/classes/application-dlf-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/gateway/filter/MyGetWayFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/gateway/filter/MyGetWayFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/controller/LoginRegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/interceptor/OpsInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/src/main/java/com/cuit/user_manage/service/intf/LoginRegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/controller/LoginRegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/controller/LoginRegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/HandlerInterceptorConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/OpsInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/interceptor/OpsInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/impl/LoginRegisterServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/intf/LoginRegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/user_manage/target/classes/com/cuit/user_manage/service/intf/LoginRegisterService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -487,7 +460,7 @@
       <workItem from="1636985778706" duration="598000" />
       <workItem from="1637026457687" duration="648000" />
       <workItem from="1637128025582" duration="477000" />
-      <workItem from="1637134315544" duration="6235000" />
+      <workItem from="1637134315544" duration="8471000" />
     </task>
     <servers />
   </component>
