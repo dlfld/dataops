@@ -68,6 +68,7 @@ public class ReadDirectory {
     private void readFile(String dirPath, FileItem topFile) {
         // 建立当前目录中文件的File对象
         File file = new File(dirPath);
+        System.out.println(dirPath);
         // 取得代表目录中所有文件的File对象数组
         File[] list = file.listFiles();
         // 遍历file数组
@@ -75,7 +76,7 @@ public class ReadDirectory {
             //如果当前文件对象是文件夹
             if (list[i].isDirectory()) {
                 //当前文件的mate文件路径
-                String mateFilePath = MetaFileUtil.getMateFilePath(list[i].getPath());
+                String mateFilePath = MetaFileUtil.getMateDirectoryPath(list[i].getPath());
                 //生成当前文件的文件对象
                 FileItem fileItem = new FileItem()
                         .setTitle(list[i].getName())
@@ -106,6 +107,7 @@ public class ReadDirectory {
         //读文件
         readFile(dirPath, topFile);
         // 返回结果
+
         return topFile;
     }
 
