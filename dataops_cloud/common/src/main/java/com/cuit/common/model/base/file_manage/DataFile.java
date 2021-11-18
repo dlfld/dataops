@@ -37,7 +37,7 @@ public class DataFile implements Serializable {
     /**
      * 文件属性对象列表
      */
-    private FileAttribute fileAttribute;
+    private List<FileAttribute> fileAttributeList=new ArrayList<>();
     /**
      * 文件分享截止时间
      */
@@ -55,6 +55,6 @@ public class DataFile implements Serializable {
     /**
      * 文件是否可下载
      */
-    private boolean downloadable;
+    private boolean downloadable = false;
 
 }

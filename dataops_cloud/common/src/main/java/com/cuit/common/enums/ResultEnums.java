@@ -36,6 +36,8 @@ public enum ResultEnums {
     NOT_A_FILE("00011", "当前删除的路径并不是一个文件"),
     //文件夹不存在
     PATH_NOT_EXIST("00012", "文件夹不存在"),
+    //系统异常，元文件写入失败
+    META_WRITE_FAIL("00013", "系统异常，元文件写入失败"),
     ;
     private String code;
     private String msg;

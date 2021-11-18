@@ -29,6 +29,7 @@ public class FileItem implements Serializable {
      */
     private String key;
     /**
+     * 这个是否为obj
      * 额外信息
      */
     private FileExtra extra;

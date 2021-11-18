@@ -3,13 +3,12 @@ package com.cuit.file_manage.controller;
 import com.cuit.api.file_manage.FilehandleApi;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.file_manage.service.intf.FileHandleService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Author dailinfeng
@@ -20,6 +19,7 @@ import javax.annotation.Resource;
 @RestController
 @CrossOrigin
 @RequestMapping("/file_handle")
+@Slf4j
 public class FileHandleController implements FilehandleApi {
 
     @Resource
@@ -31,8 +31,12 @@ public class FileHandleController implements FilehandleApi {
      * @return 文件信息
      */
     @Override
-    public ResponseData uploadFile(@RequestPart("file") MultipartFile file, String filePath) {
-        return filehandleService.uploadFile(file,filePath);
+    @PostMapping("/upload_file")
+    public ResponseData uploadFile(@RequestPart("file") MultipartFile file, String filePath,HttpServletRequest request) {
+        String userName = request.getHeader("userName");
+        log.info(userName);
+        userName = "dlf";
+        return filehandleService.uploadFile(file,filePath,userName);
     }
 
     /**

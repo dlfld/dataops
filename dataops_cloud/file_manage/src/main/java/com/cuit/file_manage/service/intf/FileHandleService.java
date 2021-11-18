@@ -16,7 +16,8 @@ public interface FileHandleService {
      * 上传文件 指定文件夹
      * @param file 文件对象
      * @param filePath 文件夹
+     * @param userName 用户名，也就是上传文件的人
      * @return
      */
-    ResponseData uploadFile(MultipartFile file, String filePath);
+    ResponseData uploadFile(MultipartFile file, String filePath,String userName);
 }

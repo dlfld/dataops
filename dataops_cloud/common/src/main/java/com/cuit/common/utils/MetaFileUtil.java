@@ -66,7 +66,8 @@ public class MetaFileUtil {
             // 把对象写入到文件中
             objwt.writeObject(obj);
         } catch (IOException e) {
-            System.out.println(e.getMessage() + "错误！");
+            //抛出元文件写入失败的异常
+            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.META_WRITE_FAIL));
         } finally {
             try {
                 objwt.close();//关闭输出流
