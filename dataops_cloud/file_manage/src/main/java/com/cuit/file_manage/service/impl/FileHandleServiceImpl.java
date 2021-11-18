@@ -29,6 +29,7 @@ public class FileHandleServiceImpl implements FileHandleService {
 
     /**
      * 上传文件 指定文件夹
+     * 上传文件还要包括自动生成部分的元数据文件
      *
      * @param file     文件对象
      * @param filePath 文件夹
@@ -43,6 +44,7 @@ public class FileHandleServiceImpl implements FileHandleService {
         if (!exist) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
+        //文件夹存在的情况下
         String oldName = file.getOriginalFilename();
         try {
             file.transferTo(new File(filePath, oldName));

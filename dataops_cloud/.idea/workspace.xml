@@ -20,10 +20,7 @@
   <component name="ChangeListManager">
     <list default="true" id="71d108b3-c6a1-4db3-ae4d-7085d43aa5ff" name="Changes" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/ExceptionCatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/cuit/common/exception/ExceptionCatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileHandleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileHandleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/controller/FileInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/gateway/filter/MyGetWayFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/cuit/gateway/filter/MyGetWayFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileHandleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/file_manage/src/main/java/com/cuit/file_manage/service/impl/FileHandleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -460,7 +457,8 @@
       <workItem from="1636985778706" duration="598000" />
       <workItem from="1637026457687" duration="648000" />
       <workItem from="1637128025582" duration="477000" />
-      <workItem from="1637134315544" duration="8471000" />
+      <workItem from="1637134315544" duration="9668000" />
+      <workItem from="1637196613833" duration="479000" />
     </task>
     <servers />
   </component>
