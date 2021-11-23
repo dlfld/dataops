@@ -1,7 +1,5 @@
 package com.cuit.common.utils;
 
-import com.cuit.common.enums.ResultEnums;
-import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.model.base.file_manage.DataFile;
 import com.cuit.common.model.base.file_manage.DataSet;
 import com.cuit.common.model.base.file_manage.FileExtra;
@@ -29,6 +27,7 @@ public class MetaFileUtil {
      */
     public static <T> T metaRead(String filePath, Class<T> beanClass) {
         File file = new File(filePath);
+        System.out.println("读取文件中"+filePath);
         //如果文件不存在的话直接返回null
         if (!file.exists()) {
             return null;
@@ -123,7 +122,8 @@ public class MetaFileUtil {
                     .setDeadline(df.getDataSetShareDeadline());
         } else {
             //抛出异常，当文件为空
-            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NULL_META_MESSAGE));
+            System.out.println("元文件信息为空:"+filePath);
+//            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NULL_META_MESSAGE));
             return null;
         }
     }
@@ -135,6 +135,10 @@ public class MetaFileUtil {
      */
     public static String getMateFilePath(String path){
         return path.substring(0, path.lastIndexOf("."))+mate;
+    }
+
+    public static String getMateDirectoryPath(String path){
+        return path.concat(mate);
     }
 
 }
