@@ -1,6 +1,6 @@
 package com.cuit.api.service_center;
 
-import com.cuit.common.model.base.PyClient;
+import com.cuit.common.model.base.ops.PyClient;
 import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

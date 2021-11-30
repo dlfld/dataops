@@ -1,7 +1,7 @@
 package com.cuit.rpc;
 
-import com.cuit.common.model.base.Option;
-import com.cuit.common.model.base.ParamsBody2;
+import com.cuit.common.model.base.ops.Option;
+import com.cuit.common.model.base.ops.ParamsBody2;
 import com.cuit.common.model.notify.Message;
 import com.cuit.rpc.hutool_http.HutoolImpl;
 import lombok.extern.slf4j.Slf4j;

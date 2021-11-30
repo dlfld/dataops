@@ -1,30 +1,25 @@
-package com.cuit.common.model.base;
+package com.cuit.common.model.base.ops;
 
+import com.cuit.common.model.base.ops.NodeMsg;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
- * node 节点的 信息
- *
  * @author dailinfeng
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class NodeMsg {
+public class Connection {
     /**
-     * node的id
+     * 出发点
      */
-    private String id;
+    private NodeMsg source;
     /**
-     * node的位置
+     * 指向点
      */
-    private String posiion;
-    /**
-     * 节点的名字
-     */
-    private String name;
+    private NodeMsg destination;
 }

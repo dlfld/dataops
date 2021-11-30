@@ -46,8 +46,8 @@ public class DataFile implements Serializable {
     /**
      * 文件分享行数区间
      */
-    private Integer start;
-    private Integer end;
+    private Integer rowsStart;
+    private Integer rowsEnd;
     /**
      * 文件分享属性列表
      */

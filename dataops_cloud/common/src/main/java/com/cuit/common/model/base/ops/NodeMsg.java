@@ -1,4 +1,4 @@
-package com.cuit.common.model.base;
+package com.cuit.common.model.base.ops;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,23 +6,25 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
+ * node 节点的 信息
+ *
  * @author dailinfeng
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Option {
+public class NodeMsg {
     /**
-     * python服务的请求路径
+     * node的id
      */
-    private String optUrl;
+    private String id;
     /**
-     * python服务的名字
+     * node的位置
      */
-    private String optName;
+    private String posiion;
     /**
-     * python服务的简介
+     * 节点的名字
      */
-    private String optDesc;
+    private String name;
 }

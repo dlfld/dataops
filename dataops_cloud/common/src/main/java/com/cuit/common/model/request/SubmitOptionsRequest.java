@@ -1,7 +1,7 @@
 package com.cuit.common.model.request;
 
-import com.cuit.common.model.base.Connection;
-import com.cuit.common.model.base.Node;
+import com.cuit.common.model.base.ops.Connection;
+import com.cuit.common.model.base.ops.Node;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

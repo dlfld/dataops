@@ -1,9 +1,8 @@
-package com.cuit.common.model.base;
+package com.cuit.common.model.base.ops;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -11,26 +10,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 第二个版本的参数
- *
  * @author dailinfeng
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@ToString
-public class ParamsBody2 implements Serializable {
+public class Node implements Serializable {
     /**
-     * 参数列表
+     * 前端组件的id
      */
-    List<Param> items = new ArrayList<>();
+    private String id;
     /**
-     * 当前节点的id，在模块调用的时候需要传递给计算端的
+     * 请求python端的url
      */
-    private String curNodeId;
+    private String optUrl;
     /**
-     * 单个节点的配置信息
+     * 单个节点的配置
      */
     private NodeConfig nodeConfig;
+    /**
+     * 当前节点的前置节点id列表
+     * 前端不传
+     */
+    private List<String> preNodeIds = new ArrayList<>();
 }

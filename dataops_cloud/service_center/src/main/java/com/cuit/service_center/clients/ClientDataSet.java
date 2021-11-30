@@ -1,7 +1,7 @@
 package com.cuit.service_center.clients;
 
-import com.cuit.common.model.base.Option;
-import com.cuit.common.model.base.PyClient;
+import com.cuit.common.model.base.ops.Option;
+import com.cuit.common.model.base.ops.PyClient;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package com.cuit.task_handle.taskFactory.intf;
 
-import com.cuit.common.model.base.Task;
+import com.cuit.common.model.base.ops.Task;
 
 /**
  * 操作task队列的规范

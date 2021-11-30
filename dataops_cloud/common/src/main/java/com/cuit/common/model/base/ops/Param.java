@@ -1,4 +1,4 @@
-package com.cuit.common.model.base;
+package com.cuit.common.model.base.ops;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

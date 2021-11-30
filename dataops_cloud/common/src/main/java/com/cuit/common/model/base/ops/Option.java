@@ -1,4 +1,4 @@
-package com.cuit.common.model.base;
+package com.cuit.common.model.base.ops;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,13 +12,17 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Connection {
+public class Option {
     /**
-     * 出发点
+     * python服务的请求路径
      */
-    private NodeMsg source;
+    private String optUrl;
     /**
-     * 指向点
+     * python服务的名字
      */
-    private NodeMsg destination;
+    private String optName;
+    /**
+     * python服务的简介
+     */
+    private String optDesc;
 }

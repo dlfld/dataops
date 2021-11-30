@@ -1,6 +1,6 @@
 package com.cuit.task_handle.taskFactory.impl;
 
-import com.cuit.common.model.base.Task;
+import com.cuit.common.model.base.ops.Task;
 import com.cuit.common.utils.SerializableUtil;
 import com.cuit.task_handle.taskFactory.intf.TaskFactoryIntf;
 import lombok.extern.slf4j.Slf4j;
