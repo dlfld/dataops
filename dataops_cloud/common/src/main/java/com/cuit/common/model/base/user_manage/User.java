@@ -12,7 +12,6 @@ import java.util.List;
 
 /**
  * @Author dailinfeng
- * @Description TODO
  * @Date 2021/11/8 5:05 下午
  * @Version 1.0
  */
@@ -37,5 +36,6 @@ public class User implements Serializable {
      * 分享出去的文件
      */
     private List<ShareDataMsg> shareDataMsgs = new ArrayList<>();
-
 }
+
+

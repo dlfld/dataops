@@ -33,7 +33,7 @@ public class DataFile implements Serializable {
     /**
      * 文件长度
      */
-    private BigDecimal fileLength;
+    private Long fileLength;
     /**
      * 文件属性对象列表
      */
