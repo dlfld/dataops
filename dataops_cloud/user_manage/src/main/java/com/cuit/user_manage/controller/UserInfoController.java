@@ -17,8 +17,8 @@ public class UserInfoController implements UserInfoApi {
 
     @Resource
     UserInfoService userInfoService;
+
     /**
-     *
      * @return 用户信息列表
      */
     @Override

@@ -21,6 +21,10 @@ import java.util.List;
 @Accessors(chain = true)
 public class User implements Serializable {
     /**
+     * 非版本变更，不要随意修改
+     */
+    private static final long serialVersionUID = -1781703810529530792L;
+    /**
      * 用户名   唯一标识 尽量为实际名字简称
      */
     private String userName;
