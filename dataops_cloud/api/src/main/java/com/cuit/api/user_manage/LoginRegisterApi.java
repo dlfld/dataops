@@ -17,14 +17,19 @@ public interface LoginRegisterApi {
     /**
      * 执行用户登录逻辑
      *
-     * @param user 用户实体类
+     * @param userLoginVo 用户实体类
      * @return
      */
     @ApiOperation("用户登录")
-    ResponseData userLogin(UserLoginVo user);
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "userName", value = "用户名", required = true, paramType = "form"),
+//            @ApiImplicitParam(name = "password", value = "密码", required = true, paramType = "form"),
+//    })
+    ResponseData userLogin(UserLoginVo userLoginVo);
 
     /**
      * 用户注册逻辑
+     *
      * @param user 用户实体类
      * @return 注册成功标注
      */

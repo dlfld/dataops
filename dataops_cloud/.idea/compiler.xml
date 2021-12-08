@@ -13,8 +13,8 @@
         <module name="file_manage" />
         <module name="service_center" />
         <module name="scheduling" />
-        <module name="user_manage" />
         <module name="model" />
+        <module name="user_manage" />
         <module name="api" />
         <module name="gateway" />
       </profile>

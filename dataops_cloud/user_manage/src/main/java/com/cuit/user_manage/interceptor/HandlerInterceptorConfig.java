@@ -24,12 +24,14 @@ public class HandlerInterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(opsInterceptor).addPathPatterns("/**")
+                .excludePathPatterns("/doc/**")
                 .excludePathPatterns("/v3/**")
                 .excludePathPatterns("/swagger-resources/**")
                 .excludePathPatterns("/swagger-ui/**")
                 .excludePathPatterns("/error/**")
                 .excludePathPatterns("/sso/login")
                 .excludePathPatterns("/sso/register")
+
         ;
     }
 }

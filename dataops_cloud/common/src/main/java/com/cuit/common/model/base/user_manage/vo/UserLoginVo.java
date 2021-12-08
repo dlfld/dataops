@@ -1,5 +1,8 @@
 package com.cuit.common.model.base.user_manage.vo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,8 +21,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class UserLoginVo implements Serializable {
+    private static final long serialVersionUID = -8514637483360990772L;
     /**
-     * 用户名   唯一标识 尽量为实际名字简称
+     * 用户名唯一标识尽量为实际名字简称
      */
     private String userName;
     /**

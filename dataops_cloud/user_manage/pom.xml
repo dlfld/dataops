@@ -20,9 +20,10 @@
         <dependency>
             <groupId>com.cuit</groupId>
             <artifactId>common</artifactId>
-            <!--            <version>0.0.1-SNAPSHOT</version>-->
             <version>${project.version}</version>
+            <classifier>sources</classifier>
             <scope>compile</scope>
+
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -37,8 +38,8 @@
         <dependency>
             <groupId>com.cuit</groupId>
             <artifactId>api</artifactId>
-            <!--            <version>0.0.1-SNAPSHOT</version>-->
-            <version>${project.version}</version>
+                        <version>0.0.1-SNAPSHOT</version>
+<!--            <version>${project.version}</version>-->
             <scope>compile</scope>
         </dependency>
 
@@ -71,6 +72,12 @@
             <artifactId>java-jwt</artifactId>
             <version>${jwt.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.shalousun</groupId>
+            <artifactId>smart-doc</artifactId>
+            <version>2.3.4 </version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -81,6 +88,15 @@
                 <configuration>
                     <fork>true</fork>
                     <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.shalousun</groupId>
+                <artifactId>smart-doc-maven-plugin</artifactId>
+                <version>2.3.4</version>
+                <configuration>
+                    <configFile>./src/main/resources/smart-doc.json</configFile>
+                    <projectName>Smart-Doc初体验</projectName>
                 </configuration>
             </plugin>
         </plugins>

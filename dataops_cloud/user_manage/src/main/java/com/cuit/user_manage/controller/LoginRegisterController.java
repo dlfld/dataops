@@ -24,21 +24,19 @@ public class LoginRegisterController implements LoginRegisterApi {
 
     /**
      * 用户登录
-     *
-     * @param user 用户实体类
+     * @param userLoginVo
      * @return
      */
     @Override
     @PostMapping("/login")
-    public ResponseData userLogin(@RequestBody UserLoginVo user) {
-        return loginRegisterService.userLogin(user);
+    public ResponseData userLogin(@RequestBody UserLoginVo userLoginVo) {
+        return loginRegisterService.userLogin(userLoginVo);
     }
 
 
     /**
      * 用户注册逻辑
-     *
-     * @param user 用户实体类
+     * @param user
      * @return 注册成功标注
      */
     @Override
