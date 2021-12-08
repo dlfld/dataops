@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.cuit</groupId>
             <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
-            <version>3.4.0</version>
+            <version>${jwt.version}</version>
         </dependency>
     </dependencies>
 

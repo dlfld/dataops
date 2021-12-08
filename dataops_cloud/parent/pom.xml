@@ -31,6 +31,9 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <jwt.version>3.4.0</jwt.version>
+        <javax.mail.version>1.6.2</javax.mail.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
     <dependencyManagement>
         <dependencies>

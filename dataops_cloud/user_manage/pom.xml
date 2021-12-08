@@ -20,7 +20,8 @@
         <dependency>
             <groupId>com.cuit</groupId>
             <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <!--            <version>0.0.1-SNAPSHOT</version>-->
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -28,15 +29,16 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <!--            <version>2021.1</version>-->
         </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>io.springfox</groupId>-->
+        <!--            <artifactId>springfox-boot-starter</artifactId>-->
+        <!--&lt;!&ndash;            <version>3.0.0</version>&ndash;&gt;-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>com.cuit</groupId>
             <artifactId>api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <!--            <version>0.0.1-SNAPSHOT</version>-->
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -67,7 +69,7 @@
         <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
-            <version>3.4.0</version>
+            <version>${jwt.version}</version>
         </dependency>
     </dependencies>
 
