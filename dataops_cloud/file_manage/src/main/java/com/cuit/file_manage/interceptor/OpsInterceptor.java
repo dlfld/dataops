@@ -2,6 +2,7 @@ package com.cuit.file_manage.interceptor;
 
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.utils.RequestUtils;
 import com.cuit.common.utils.ResponseDataUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -24,9 +25,9 @@ public class OpsInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //获取请求头
-        Iterator<String> userName = request.getHeaders("userName").asIterator();
+        String userName = RequestUtils.getUserName(request);
         //如果获取的请求头可以遍历的话说明请求头不为空，也就表示经过了网关，经过了网关说明token是经过校验的
-        if (userName.hasNext()) {
+        if (userName!=null) {
             return true;
         }
         //如果没有的话就表示是直接对该微服务进行访问的。直接报出异常   ResultEnums.USER_NO_LOGIN

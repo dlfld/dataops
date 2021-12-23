@@ -1,3 +1,3 @@
 spring:
   profiles:
-    active: wcw-dev
+    active: dlf-dev
