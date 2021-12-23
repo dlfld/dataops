@@ -15,21 +15,22 @@ public class FileUtil {
 
     /**
      * 通过字节流实现文件的拷贝
+     *
      * @param sourcePath 源文件路径
      * @param targetPath 目标文件路径
      */
-    public static void copyFileByStream(String sourcePath,String targetPath){
+    public static void copyFileByStream(String sourcePath, String targetPath) {
         //源文件路径
         File source = new File(sourcePath);
         //目标文件路径
         File target = new File(targetPath);
 
         //如果源文件不存在则不能拷贝
-        if(!source.exists()){
+        if (!source.exists()) {
             return;
         }
         //如果目标文件目录不存在则创建
-        if(!target.getParentFile().exists()){
+        if (!target.getParentFile().exists()) {
             target.getParentFile().mkdirs();
         }
 
@@ -41,9 +42,9 @@ public class FileUtil {
             //每次读取1024个字节
             byte[] data = new byte[1024];
             //将每次读取的数据保存到字节数组里面，并且返回读取的个数
-            while ((temp = inputStream.read(data)) != -1){
+            while ((temp = inputStream.read(data)) != -1) {
                 //输出数组
-                outputStream.write(data,0,temp);
+                outputStream.write(data, 0, temp);
             }
             inputStream.close();
             outputStream.close();
@@ -55,8 +56,9 @@ public class FileUtil {
 
 
     /**
-     *  删除指定path的文件
-      * @param path 删除文件的path
+     * 删除指定path的文件
+     *
+     * @param path 删除文件的path
      * @return
      */
     public static boolean deleteLocalFile(String path) {
@@ -74,5 +76,22 @@ public class FileUtil {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NOT_A_FILE));
         }
         return true;
+    }
+
+
+    /**
+     * 返回文件的分隔符
+     * 操作系统不同，文件的分隔符不同
+     *
+     * @return 文件分隔符
+     */
+    public static String getPathSeparator() {
+        String systemName = System.getProperty("os.name");
+        switch (systemName) {
+            case "Windows 10":
+                return "\\";
+            default:
+                return "/";
+        }
     }
 }

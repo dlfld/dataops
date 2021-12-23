@@ -4,8 +4,10 @@ import com.cuit.api.file_manage.ProjectContentApi;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.RequestUtils;
 import com.cuit.common.utils.ResponseDataUtil;
+import com.cuit.file_manage.service.intf.ProjectContentService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -19,6 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 @CrossOrigin
 public class ProjectContentController implements ProjectContentApi {
 
+    @Resource
+    ProjectContentService projectContentService;
     /**
      * 获取项目的内容
      *
@@ -30,7 +34,6 @@ public class ProjectContentController implements ProjectContentApi {
     @GetMapping("/{projectName}")
     public ResponseData getProjectContent(@PathVariable String projectName, HttpServletRequest request) {
         String userName = RequestUtils.getUserName(request);
-        System.out.println(userName);
-        return ResponseDataUtil.buildSuccess();
+        return  projectContentService.getProjectContent(projectName,userName);
     }
 }

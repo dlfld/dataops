@@ -37,7 +37,27 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
     /**
      * 文件后缀
      */
-    protected final String fileSuffix = ".meta";
+    protected static final String fileSuffix = ".meta";
+    /**
+     * Issuer
+     */
+    protected static final String issuer = "auth0";
+    /**
+     * 用户名
+     */
+    protected static final String userName = "userName";
+    /**
+     * 加密 密钥
+     */
+    protected static final String key = "idse2021";
+    /**
+     * 用户分享目录
+     */
+    protected static final String sharePath = "/share";
+    /**
+     * 用户项目目录
+     */
+    protected static final String projectPath = "/project";
 
     /**
      * 用户登录接口
@@ -66,9 +86,9 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         //密码匹配
         //检查用户密码 签发token
         String token = JWT.create()
-                .withIssuer("auth0")
-                .withClaim("userName", user.getUserName())
-                .sign(Algorithm.HMAC256("idse2020"));
+                .withIssuer(issuer)
+                .withClaim(userName, user.getUserName())
+                .sign(Algorithm.HMAC256(key));
         //回传前端数据类
         UserLoginDto userLoginDto = new UserLoginDto();
         BeanUtils.copyProperties(userInfo, userLoginDto);
@@ -94,11 +114,13 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         //创建文件夹
         file.mkdir();
         //创建用户的分享文件夹
-        new File(fileHomePath + user.getUserName() + "/share").mkdir();
+        new File(fileHomePath + user.getUserName() + sharePath).mkdir();
+//        创建用户项目文件夹
+        new File(fileHomePath + user.getUserName() + projectPath).mkdir();
         //用户密码加密
         user.setPassword(DigestUtil.md5Hex(user.getPassword()));
         User registerUser = new User();
-        BeanUtils.copyProperties(user,registerUser);
+        BeanUtils.copyProperties(user, registerUser);
         MetaFileUtil.metaWrite(fileHomePath + user.getUserName() + fileSuffix, registerUser);
         log.info(MetaFileUtil.metaRead(fileHomePath + user.getUserName() + fileSuffix, User.class).toString());
         return ResponseDataUtil.buildSuccess();
