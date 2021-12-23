@@ -5,6 +5,7 @@ import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.model.base.file_manage.DataFile;
 import com.cuit.common.model.base.file_manage.DataSet;
 import com.cuit.common.model.base.file_manage.FileExtra;
+import com.cuit.common.model.base.file_manage.FileFinalValue;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
@@ -16,10 +17,6 @@ import java.io.*;
 @Slf4j
 public class MetaFileUtil {
 
-    /**
-     * mate文件的后缀
-     */
-    public final static String mate = ".mate";
 
     /**
      * 读取元数据文件
@@ -29,7 +26,7 @@ public class MetaFileUtil {
      */
     public static <T> T metaRead(String filePath, Class<T> beanClass) {
         File file = new File(filePath);
-        System.out.println("读取文件中"+filePath);
+        log.info("读取文件中"+filePath);
         //如果文件不存在的话直接返回null
         if (!file.exists()) {
             return null;
@@ -85,7 +82,7 @@ public class MetaFileUtil {
      * @return 判断结果
      */
     public static boolean isMateFile(String fileName) {
-        return fileName.contains(mate);
+        return fileName.contains(FileFinalValue.fileSuffix);
     }
 
     /**
@@ -136,11 +133,11 @@ public class MetaFileUtil {
      * @return
      */
     public static String getMateFilePath(String path){
-        return path.substring(0, path.lastIndexOf("."))+mate;
+        return path.substring(0, path.lastIndexOf("."))+FileFinalValue.fileSuffix;
     }
 
     public static String getMateDirectoryPath(String path){
-        return path.concat(mate);
+        return path.concat(FileFinalValue.fileSuffix);
     }
 
 }

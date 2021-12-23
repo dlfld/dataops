@@ -1,10 +1,17 @@
 package com.cuit.file_manage.service.impl;
 
+import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.model.base.file_manage.FileFinalValue;
 import com.cuit.common.model.base.file_manage.FileItem;
 import com.cuit.common.model.response.ResponseData;
+import com.cuit.common.utils.FileUtil;
+import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.file_manage.service.intf.ProjectContentService;
 import com.cuit.file_manage.utils.ReadDirectory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.io.File;
 
 /**
  * @Author dailinfeng
@@ -12,6 +19,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @Date 2021/12/23 8:08 PM
  * @Version 1.0
  */
+@Service
 public class ProjectContentServiceImpl implements ProjectContentService {
 
     /**
@@ -29,7 +37,17 @@ public class ProjectContentServiceImpl implements ProjectContentService {
      */
     @Override
     public ResponseData getProjectContent(String projectName, String userName) {
-        ReadDirectory rd = new ReadDirectory(userPath + "/" + userName);
+        //获取文件路径分隔符
+        String pathSeparator = FileUtil.getPathSeparator();
+        String projectPath = userPath + pathSeparator + userName+pathSeparator+ FileFinalValue.projectPath;
+        File file = new File(projectPath);
+        //如果文件不存在的话就表示当前项目不存在
+        if (!file.exists()){
+            return ResponseDataUtil.buildError(ResultEnums.PROJECT_NOT_FOUND);
+        }
+        //获取项目目录树
+        ReadDirectory rd = new ReadDirectory(projectPath);
         FileItem fileItem = rd.getFileItem();
+        return ResponseDataUtil.buildSuccess(fileItem);
     }
 }

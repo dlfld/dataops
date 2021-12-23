@@ -38,6 +38,8 @@ public enum ResultEnums {
     PATH_NOT_EXIST("00012", "文件夹不存在"),
     //系统异常，元文件写入失败
     META_WRITE_FAIL("00013", "系统异常，元文件写入失败"),
+    //项目不存在
+    PROJECT_NOT_FOUND("00014","项目不存在")
     ;
     private String code;
     private String msg;

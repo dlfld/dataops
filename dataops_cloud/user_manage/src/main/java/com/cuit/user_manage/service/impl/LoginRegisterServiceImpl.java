@@ -4,11 +4,13 @@ import cn.hutool.crypto.digest.DigestUtil;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.model.base.file_manage.FileFinalValue;
 import com.cuit.common.model.base.user_manage.User;
 import com.cuit.common.model.base.user_manage.dto.UserLoginDto;
 import com.cuit.common.model.base.user_manage.vo.UserLoginVo;
 import com.cuit.common.model.base.user_manage.vo.UserRegisterVo;
 import com.cuit.common.model.response.ResponseData;
+import com.cuit.common.utils.FileUtil;
 import com.cuit.common.utils.MetaFileUtil;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.user_manage.service.intf.LoginRegisterService;
@@ -34,10 +36,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
      */
     @Value(value = "${path.home}")
     protected String fileHomePath;
-    /**
-     * 文件后缀
-     */
-    protected static final String fileSuffix = ".meta";
+
     /**
      * Issuer
      */
@@ -50,14 +49,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
      * 加密 密钥
      */
     protected static final String key = "idse2021";
-    /**
-     * 用户分享目录
-     */
-    protected static final String sharePath = "/share";
-    /**
-     * 用户项目目录
-     */
-    protected static final String projectPath = "/project";
+
 
     /**
      * 用户登录接口
@@ -76,7 +68,7 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
             return ResponseDataUtil.buildError(ResultEnums.USER_NOT_FOUND);
         }
         //用户存在
-        User userInfo = MetaFileUtil.metaRead(fileHomePath + user.getUserName() + fileSuffix, User.class);
+        User userInfo = MetaFileUtil.metaRead(fileHomePath + user.getUserName() + FileFinalValue.fileSuffix, User.class);
         //对密码进行加密
         String userPass = DigestUtil.md5Hex(user.getPassword());
         //如果密码不匹配的话 返回密码错误
@@ -114,15 +106,15 @@ public class LoginRegisterServiceImpl implements LoginRegisterService {
         //创建文件夹
         file.mkdir();
         //创建用户的分享文件夹
-        new File(fileHomePath + user.getUserName() + sharePath).mkdir();
+        new File(fileHomePath + user.getUserName() + FileUtil.getPathSeparator() + FileFinalValue.sharePath).mkdir();
 //        创建用户项目文件夹
-        new File(fileHomePath + user.getUserName() + projectPath).mkdir();
+        new File(fileHomePath + user.getUserName() + FileUtil.getPathSeparator() + FileFinalValue.projectPath).mkdir();
         //用户密码加密
         user.setPassword(DigestUtil.md5Hex(user.getPassword()));
         User registerUser = new User();
         BeanUtils.copyProperties(user, registerUser);
-        MetaFileUtil.metaWrite(fileHomePath + user.getUserName() + fileSuffix, registerUser);
-        log.info(MetaFileUtil.metaRead(fileHomePath + user.getUserName() + fileSuffix, User.class).toString());
+        MetaFileUtil.metaWrite(fileHomePath + user.getUserName() + FileFinalValue.fileSuffix, registerUser);
+        log.info(MetaFileUtil.metaRead(fileHomePath + user.getUserName() + FileFinalValue.fileSuffix, User.class).toString());
         return ResponseDataUtil.buildSuccess();
     }
 
