@@ -17,14 +17,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class ShareDataMsg implements Serializable {
+public class ShareProjectMsg implements Serializable {
     /**
      * 被分享者   --- 我分享给了谁
      */
     public String userName;
     /**
-     * 文件名
+     * 项目名
      */
-    public String fileName;
+    public String projectName;
 
 }

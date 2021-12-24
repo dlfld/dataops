@@ -48,4 +48,8 @@ public class Project implements Serializable {
      */
     private Date createDate;
 
+    /**
+     * 项目分享的截止时间
+     */
+    private Date fileShareDeadline;
 }

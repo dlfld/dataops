@@ -1,6 +1,6 @@
 package com.cuit.common.model.base.user_manage;
 
-import com.cuit.common.model.base.file_manage.ShareDataMsg;
+import com.cuit.common.model.base.file_manage.ShareProjectMsg;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,9 +37,9 @@ public class User implements Serializable {
      */
     private String realName;
     /**
-     * 分享出去的文件
+     * 分享出去的项目
      */
-    private List<ShareDataMsg> shareDataMsgs = new ArrayList<>();
+    private List<ShareProjectMsg> shareProjectMsgs = new ArrayList<>();
 }
 
 
