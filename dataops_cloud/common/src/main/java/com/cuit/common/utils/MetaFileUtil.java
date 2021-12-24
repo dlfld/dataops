@@ -121,7 +121,7 @@ public class MetaFileUtil {
                     .setDeadline(df.getDataSetShareDeadline());
         } else {
             //抛出异常，当文件为空
-            System.out.println("元文件信息为空:"+filePath);
+            log.info("元文件信息为空:"+filePath);
 //            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NULL_META_MESSAGE));
             return null;
         }

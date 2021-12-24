@@ -30,6 +30,8 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        //开始记录请求进来的时间
+        Long startTime = System.currentTimeMillis();
         log.info("************进来了过滤器*******************");
         RequestPath path = exchange.getRequest().getPath();
         List<String> allowPath = new ArrayList<String>();
@@ -48,6 +50,7 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
             }
         }
         HttpHeaders headers = exchange.getRequest().getHeaders();
+
         try {
             log.info("进来了过滤器");
             List<String> list = headers.get("Authorization");
@@ -67,7 +70,12 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
                 ServerHttpRequest host = exchange.getRequest().mutate().header("userName", userName).build();
                 //将现在的request 变成 change对象
                 ServerWebExchange build = exchange.mutate().request(host).build();
-                return chain.filter(build);
+                return chain.filter(build).then(Mono.fromRunnable(()->{
+                        if(startTime!=null){
+                            Long executeTime = System.currentTimeMillis()-startTime;
+
+                        }
+                }));
             } catch (Exception e) {
                 return exchange.getResponse().setComplete();
             }
