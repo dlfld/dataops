@@ -81,11 +81,11 @@ public class FileInfoServiceImpl implements FileInfoService {
         DataFile df = MetaFileUtil.metaRead(matePath, DataFile.class);
         //如果当前元文件对象不等于空
         if (!Objects.isNull(df)) {
-//            df.setDownloadable(fileShareInfoVo.getDownloadable())
-////                    .setStart(fileShareInfoVo.getStart())
-//                    .setEnd(fileShareInfoVo.getEnd())
-//                    .setFileShareDeadline(fileShareInfoVo.getFileShareDeadLine())
-//                    .setFileShareAttributeList(fileShareInfoVo.getFileShareAttributeList());
+            df.setDownloadable(fileShareInfoVo.getDownloadable())
+                    .setRowsStart(fileShareInfoVo.getStart())
+                    .setRowsEnd(fileShareInfoVo.getEnd())
+                    .setFileShareDeadline(fileShareInfoVo.getFileShareDeadLine())
+                    .setFileShareAttributeList(fileShareInfoVo.getFileShareAttributeList());
         }
         //写入mate文件
         MetaFileUtil.metaWrite(matePath, DataFile.class);

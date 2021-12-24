@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2021/12/23 7:23 PM
  * @Version 1.0
  */
-@Component
 public class RequestUtils {
     /**
      * header里面用户名的key

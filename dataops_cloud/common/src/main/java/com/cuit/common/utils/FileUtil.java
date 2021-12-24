@@ -54,7 +54,6 @@ public class FileUtil {
         }
     }
 
-
     /**
      * 删除指定path的文件
      *
@@ -94,4 +93,17 @@ public class FileUtil {
                 return "/";
         }
     }
+
+    /**
+     * 获取路径下的所有文件
+     * @param path
+     * @return
+     */
+    public static File[] getFilesFromPath(String path){
+        File file = new File(path);
+        // 获取当前文件路径下的所有文件
+        File[] files = file.listFiles();
+        return files;
+    }
+
 }

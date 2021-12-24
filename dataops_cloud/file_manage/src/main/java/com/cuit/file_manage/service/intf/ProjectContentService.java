@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
  * @Date 2021/12/23 8:03 PM
  * @Version 1.0
  */
-@Component
 public interface ProjectContentService {
 
     /**

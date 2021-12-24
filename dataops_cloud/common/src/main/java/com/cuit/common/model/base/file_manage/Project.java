@@ -22,7 +22,9 @@ import java.util.List;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Project implements Serializable {
+
     private static final long serialVersionUID = -6881704242325315231L;
+
     /**
      * 项目名
      */
