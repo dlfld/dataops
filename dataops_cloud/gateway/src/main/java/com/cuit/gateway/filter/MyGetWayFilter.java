@@ -70,11 +70,12 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
                 ServerHttpRequest host = exchange.getRequest().mutate().header("userName", userName).build();
                 //将现在的request 变成 change对象
                 ServerWebExchange build = exchange.mutate().request(host).build();
-                return chain.filter(build).then(Mono.fromRunnable(()->{
-                        if(startTime!=null){
-                            Long executeTime = System.currentTimeMillis()-startTime;
 
-                        }
+                return chain.filter(build).then(Mono.fromRunnable(() -> {
+                    if (startTime != null) {
+                        Long executeTime = System.currentTimeMillis() - startTime;
+
+                    }
                 }));
             } catch (Exception e) {
                 return exchange.getResponse().setComplete();
@@ -86,6 +87,8 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         }
         //return chain.filter(exchange);
     }
+
+
 
     @Override
     public int getOrder() {
