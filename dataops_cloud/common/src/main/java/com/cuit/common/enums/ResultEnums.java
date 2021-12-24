@@ -39,7 +39,9 @@ public enum ResultEnums {
     //系统异常，元文件写入失败
     META_WRITE_FAIL("00013", "系统异常，元文件写入失败"),
     //项目不存在
-    PROJECT_NOT_FOUND("00014","项目不存在")
+    PROJECT_NOT_FOUND("00014","项目不存在"),
+    //
+    PROJECT_EXIST("00015","项目已存在")
     ;
     private String code;
     private String msg;

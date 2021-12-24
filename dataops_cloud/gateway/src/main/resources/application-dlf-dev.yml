@@ -1,0 +1,65 @@
+server:
+  port: 18003
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true  #开启小写的话必须使用小写
+      routes:
+        - id: scheduling
+          uri: lb://scheduling
+          predicates:
+            - Path=/scheduling/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
+
+        - id: taskhandle
+          uri: lb://taskhandle
+          predicates:
+            - Path=/taskhandle/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
+
+        - id: servicecenter
+          uri: lb://servicecenter
+          predicates:
+            - Path=/servicecenter/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
+
+        - id: usermanage
+          uri: lb://usermanage
+          predicates:
+            - Path=/usermanage/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
+
+        - id: filemanage
+          uri: lb://filemanage
+          predicates:
+            - Path=/filemanage/**
+          filters:
+            - StripPrefix=1
+          metadata:
+            response-timeout: 3000
+            connect-timeout: 2000
+    nacos:
+      discovery:
+        #        server-addr: 10.131.18.162:8848
+        server-addr: 10.23.71.70:8848

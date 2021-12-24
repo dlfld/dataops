@@ -39,7 +39,6 @@ public class ParamsUtils {
      * @return 更新之后的参数对象 ParamsBody2
      */
     public static ParamsBody2 refreshParams(ParamsBody2 source, ParamsBody2 target) {
-
         //如果旧版本的参数为空的话（就表示旧版本没有参数） 那就直接返回新版本的参数
         if (source == null || source.getItems() == null || source.getItems().isEmpty()) {
             log.info("传入的旧参数为空");

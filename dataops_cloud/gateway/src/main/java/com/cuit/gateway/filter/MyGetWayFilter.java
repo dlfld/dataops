@@ -35,7 +35,6 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         log.info("************进来了过滤器*******************");
         RequestPath path = exchange.getRequest().getPath();
         List<String> allowPath = new ArrayList<String>();
-
         allowPath.add("/usermanage/sso/login");
         allowPath.add("/usermanage/sso/register");
         if (String.valueOf(path).contains("swagger") || String.valueOf(path).contains("v3")) {
