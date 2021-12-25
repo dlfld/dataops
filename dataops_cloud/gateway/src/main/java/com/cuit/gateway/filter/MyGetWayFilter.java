@@ -5,6 +5,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.cuit.common.model.base.gateway.GateWayValues;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -74,16 +75,14 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
                 DecodedJWT jwt1 = JWT.decode(token);
                 String userName = jwt1.getClaim("userName").asString();
                 //向headers中放文件，记得build
-                ServerHttpRequest host = exchange.getRequest().mutate().header("userName", userName).build();
+                ServerHttpRequest host = exchange.getRequest().mutate()
+                        .header("userName", userName)
+                        .header(GateWayValues.startTime, startTime + "")
+                        .build();
                 //将现在的request 变成 change对象
                 ServerWebExchange build = exchange.mutate().request(host).build();
 
-                return chain.filter(build).then(Mono.fromRunnable(() -> {
-                    if (startTime != null) {
-                        Long executeTime = System.currentTimeMillis() - startTime;
-
-                    }
-                }));
+                return chain.filter(build);
             } catch (Exception e) {
                 return exchange.getResponse().setComplete();
             }
@@ -94,9 +93,6 @@ public class MyGetWayFilter implements GlobalFilter, Ordered {
         }
         //return chain.filter(exchange);
     }
-
-
-
 
 
     @Override

@@ -29,4 +29,10 @@ public interface ProjectContentService {
      * @return
      */
     ResponseData uploadFile(MultipartFile file, String filePath, String userName);
+
+    /**
+     * 创建文件夹  根据前端传过来的文件名
+     * @param filePath 创建文件夹的绝对路径
+     */
+    ResponseData createFile(String filePath);
 }

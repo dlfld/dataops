@@ -103,4 +103,20 @@ public class ProjectContentServiceImpl implements ProjectContentService {
         MetaFileUtil.metaWrite(fileSavaPath + "/" + oldName, dataFile);
         return ResponseDataUtil.buildSuccess();
     }
+
+    /**
+     * 创建文件夹  根据前端传过来的文件名
+     *
+     * @param filePath 创建文件夹的绝对路径
+     */
+    @Override
+    public ResponseData createFile(String filePath) {
+        File file = new File(filePath);
+        //如果文件存在的话直接结束
+        if(file.exists()){
+            return ResponseDataUtil.buildError(ResultEnums.FOLDER_EXIST);
+        }
+        file.mkdirs();
+        return ResponseDataUtil.buildSuccess();
+    }
 }

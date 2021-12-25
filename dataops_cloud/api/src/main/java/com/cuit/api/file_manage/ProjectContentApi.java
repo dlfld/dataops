@@ -46,5 +46,5 @@ public interface ProjectContentApi {
      * @return 创建文件信息
      */
     @ApiOperation("创建文件夹")
-    ResponseData createFile(String filePath, HttpServletRequest request);
+    ResponseData createFile(String filePath);
 }

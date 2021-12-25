@@ -19,7 +19,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class ShareProjectMsg implements Serializable {
     /**
-     * 被分享者   --- 我分享给了谁
+     * 被分享者   --- 我分享给了谁-
      */
     public String userName;
     /**

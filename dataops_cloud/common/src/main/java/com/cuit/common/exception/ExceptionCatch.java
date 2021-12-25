@@ -1,11 +1,20 @@
 package com.cuit.common.exception;
 
 import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.model.base.gateway.GateWayValues;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.ResponseDataUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.MethodParameter;
+import org.springframework.http.MediaType;
+import org.springframework.http.server.ServerHttpRequest;
+import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+
+import java.util.List;
 
 /**
  * @Author dailinfeng
@@ -15,7 +24,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * //控制器增强
  */
 @ControllerAdvice
-public class ExceptionCatch {
+@Slf4j
+public class ExceptionCatch  {
+
 
     /**
      * 捕获CustomException此类异常
@@ -42,5 +53,6 @@ public class ExceptionCatch {
         exception.printStackTrace();
         return ResponseDataUtil.buildError(ResultEnums.SYSTEM_ERROR);
     }
+
 
 }

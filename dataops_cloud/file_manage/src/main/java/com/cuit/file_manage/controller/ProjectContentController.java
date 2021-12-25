@@ -60,8 +60,8 @@ public class ProjectContentController implements ProjectContentApi {
      * @return 创建文件信息
      */
     @Override
-
-    public ResponseData createFile(String filePath, HttpServletRequest request) {
-        return null;
+    @PostMapping("/create_file")
+    public ResponseData createFile(String filePath) {
+        return projectContentService.createFile(filePath);
     }
 }
