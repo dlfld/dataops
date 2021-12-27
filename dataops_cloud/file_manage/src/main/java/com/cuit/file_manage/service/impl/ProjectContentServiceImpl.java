@@ -13,11 +13,13 @@ import com.cuit.file_manage.service.intf.ProjectContentService;
 import com.cuit.file_manage.utils.ReadDirectory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * @Author dailinfeng
@@ -25,7 +27,7 @@ import java.io.IOException;
  * @Date 2021/12/23 8:08 PM
  * @Version 1.0
  */
-@Service
+@Component
 @Slf4j
 public class ProjectContentServiceImpl implements ProjectContentService {
 
@@ -111,12 +113,19 @@ public class ProjectContentServiceImpl implements ProjectContentService {
      */
     @Override
     public ResponseData createFile(String filePath) {
+        log.info(filePath);
         File file = new File(filePath);
         //如果文件存在的话直接结束
-        if(file.exists()){
+        if (file.exists()) {
             return ResponseDataUtil.buildError(ResultEnums.FOLDER_EXIST);
         }
-        file.mkdirs();
+        boolean mkdirs = file.mkdirs();
+
+//        File resFile = new File("/Users/dailinfeng/Desktop/filemanage/dlf/projects/");
+//        String[] list = resFile.list();
+//        Arrays.stream(list).forEach(System.out::println);
+
+        log.info(mkdirs + "创建文件结果");
         return ResponseDataUtil.buildSuccess();
     }
 }

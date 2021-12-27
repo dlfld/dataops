@@ -20,6 +20,7 @@ import java.util.Date;
 @Accessors(chain = true)
 public class FileExtra implements Serializable {
 
+    private static final long serialVersionUID = -1591645344230775847L;
     /**
      * 文件名
      */

@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 数据集就是对应的一个文件夹，文件夹内有很多数据文件组成的集合
+ * 文件夹 
  * @Author dailinfeng
  * @Description TODO
  * @Date 2021/11/9 7:22 下午
@@ -19,7 +19,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class DataSet implements Serializable {
+public class Folder implements Serializable {
+    private static final long serialVersionUID = -1974023055805742280L;
     /**
      * 数据集名字
      */

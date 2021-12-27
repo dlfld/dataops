@@ -20,6 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class FileItem implements Serializable {
+    private static final long serialVersionUID = -4620649196473888390L;
     /**
      * 文件名
      */

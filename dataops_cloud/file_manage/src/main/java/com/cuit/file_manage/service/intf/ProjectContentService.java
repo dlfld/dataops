@@ -3,6 +3,7 @@ package com.cuit.file_manage.service.intf;
 
 import com.cuit.common.model.response.ResponseData;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @Date 2021/12/23 8:03 PM
  * @Version 1.0
  */
+@Service
 public interface ProjectContentService {
 
     /**

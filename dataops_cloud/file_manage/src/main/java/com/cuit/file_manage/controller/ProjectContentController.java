@@ -48,7 +48,7 @@ public class ProjectContentController implements ProjectContentApi {
      */
     @Override
     @PostMapping("/upload_file")
-    public ResponseData uploadFile(@RequestPart("file") MultipartFile file, String filePath, HttpServletRequest request) {
+    public ResponseData uploadFile(@RequestPart("file") MultipartFile file, @RequestBody String filePath, HttpServletRequest request) {
         String userName = RequestUtils.getUserName(request);
         return projectContentService.uploadFile(file, filePath, userName);
     }

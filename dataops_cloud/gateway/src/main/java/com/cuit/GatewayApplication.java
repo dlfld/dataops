@@ -11,12 +11,12 @@ import org.springframework.context.annotation.FilterType;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-//@ComponentScan(basePackages = {"com.cuit.common"})
+@ComponentScan(basePackages = {"com.cuit.common"})
 
-@ComponentScan(excludeFilters =
-        {
-                @ComponentScan.Filter(type = FilterType.REGEX,pattern = "com.cuit.common.advice.*")
-        })
+//@ComponentScan(excludeFilters =
+//        {
+//                @ComponentScan.Filter(type = FilterType.REGEX,pattern = "com.cuit.common.advice.*")
+//        })
 public class GatewayApplication {
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class, args);

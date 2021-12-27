@@ -18,6 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class ShareProjectMsg implements Serializable {
+    private static final long serialVersionUID = -5329013669211242515L;
     /**
      * 被分享者   --- 我分享给了谁-
      */

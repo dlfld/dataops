@@ -3,7 +3,7 @@ package com.cuit.common.utils;
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.model.base.file_manage.DataFile;
-import com.cuit.common.model.base.file_manage.DataSet;
+import com.cuit.common.model.base.file_manage.Folder;
 import com.cuit.common.model.base.file_manage.FileExtra;
 import com.cuit.common.model.base.file_manage.FileFinalValue;
 import lombok.extern.slf4j.Slf4j;
@@ -113,7 +113,7 @@ public class MetaFileUtil {
      */
     public static FileExtra getDataSetInformation(String filePath) {
         //获取该文件的元文件中的对象
-        DataSet df = metaRead(filePath, DataSet.class);
+        Folder df = metaRead(filePath, Folder.class);
         // 判断是否为空
         if (null != df) {
             return new FileExtra()

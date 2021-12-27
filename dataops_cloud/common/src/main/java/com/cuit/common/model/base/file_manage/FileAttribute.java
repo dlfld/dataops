@@ -20,6 +20,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class FileAttribute implements Serializable {
+    private static final long serialVersionUID = 8412178142051620364L;
     /**
      * 文件属性名
      * csv:列

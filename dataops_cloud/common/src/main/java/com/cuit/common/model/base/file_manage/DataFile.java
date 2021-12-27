@@ -22,6 +22,7 @@ import java.util.List;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class DataFile implements Serializable {
+    private static final long serialVersionUID = -3767675891296219019L;
     /**
      * 文件名
      */
