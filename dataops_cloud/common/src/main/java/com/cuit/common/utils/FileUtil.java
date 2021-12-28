@@ -106,4 +106,27 @@ public class FileUtil {
         return files;
     }
 
+    /**
+     * 删除文件夹
+     * @param path
+     * @return
+     */
+    public static boolean deleteLocalDirectory(String path) {
+        File file = new File(path);
+        if (!file.exists()) {
+            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.FILE_NOT_EXIST));
+        } else if (file.isDirectory()) {
+            if (file.delete()) {
+                System.out.println("删除文件夹成功！");
+                return true;
+            }
+            else{
+                ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.FAILED_TO_DELETE_FILE));
+            }
+        } else {
+            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NOT_A_FILE));
+        }
+        return true;
+    }
+
 }

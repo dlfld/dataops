@@ -6,10 +6,7 @@ import com.cuit.file_manage.service.intf.ProjectsHandleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +35,34 @@ public class ProjectsHandleController {
         String userName = RequestUtils.getUserName(request);
         return projectsHandleService.createProject(projectName, userName);
     }
+
+
+    /**
+     * 查询项目
+     * @param projectType 项目的类型 分为projects于share
+     * @param request
+     * @return
+     */
+    @PostMapping("/search_projects")
+    public ResponseData searchProjects(String projectType, HttpServletRequest request){
+        //获取请求头中的用户名
+        String userName = RequestUtils.getUserName(request);
+        return projectsHandleService.searchProjects(projectType, userName);
+    }
+
+    /**
+     *
+     * @param projectName
+     * @param request
+     * @return
+     */
+    @PostMapping("/delete_projects")
+    public ResponseData deleteProject(String projectName, HttpServletRequest request){
+        //获取请求头中的用户名
+        String userName = RequestUtils.getUserName(request);
+        return projectsHandleService.deleteProject(projectName,userName);
+    }
+
 
 
 }
