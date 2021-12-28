@@ -129,7 +129,7 @@ public class MetaFileUtil {
 
     /**
      * 获取当前文件的Mate文件路径
-     * @param path
+     * @param path meta文件路径
      * @return
      */
     public static String getMateFilePath(String path){

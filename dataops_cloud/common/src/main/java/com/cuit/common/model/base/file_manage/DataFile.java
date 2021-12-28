@@ -1,5 +1,6 @@
 package com.cuit.common.model.base.file_manage;
 
+import com.cuit.common.model.base.Meta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class DataFile implements Serializable {
+public class DataFile extends Meta implements Serializable {
     private static final long serialVersionUID = -3767675891296219019L;
     /**
      * 文件名
@@ -38,7 +39,7 @@ public class DataFile implements Serializable {
     /**
      * 文件属性对象列表
      */
-    private List<FileAttribute> fileAttributeList=new ArrayList<>();
+    private List<FileAttribute> fileAttributeList = new ArrayList<>();
     /**
      * 文件分享截止时间
      */
@@ -57,5 +58,14 @@ public class DataFile implements Serializable {
      * 文件是否可下载
      */
     private boolean downloadable = false;
+
+    /**
+     * 读meta文件
+     * @param filePath meta文件的实际位置
+     * @return
+     */
+    public DataFile metaRead(String filePath) {
+        return super.metaRead(filePath, DataFile.class);
+    }
 
 }
