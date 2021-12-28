@@ -2,6 +2,7 @@ package com.cuit.file_manage.utils;
 
 import com.cuit.common.model.base.file_manage.FileFinalValue;
 import com.cuit.common.model.base.file_manage.FileItem;
+import com.cuit.common.utils.FileUtil;
 import com.cuit.common.utils.MetaFileUtil;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -54,6 +55,7 @@ public class ReadDirectory {
      * @param dirPath 文件路径
      */
     public ReadDirectory(String dirPath) {
+//        dirPath = FileUtil.deleteFilePathPrefix(dirPath,);
         topFile = new FileItem()
                 .setTitle(dirPath)
                 .setKey("0-0")

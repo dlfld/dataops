@@ -2,6 +2,8 @@ package com.cuit.common.utils;
 
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.model.base.file_manage.FileFinalValue;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.*;
 
@@ -12,6 +14,7 @@ import java.io.*;
  * @date 2021/11/15
  */
 public class FileUtil {
+
 
     /**
      * 通过字节流实现文件的拷贝
@@ -96,10 +99,11 @@ public class FileUtil {
 
     /**
      * 获取路径下的所有文件
-     * @param path
+     *
+     * @param path 传入的指定路径
      * @return
      */
-    public static File[] getFilesFromPath(String path){
+    public static File[] getFilesFromPath(String path) {
         File file = new File(path);
         // 获取当前文件路径下的所有文件
         File[] files = file.listFiles();
@@ -108,7 +112,8 @@ public class FileUtil {
 
     /**
      * 删除文件夹
-     * @param path
+     *
+     * @param path 删除文件夹的路径
      * @return
      */
     public static boolean deleteLocalDirectory(String path) {
@@ -119,14 +124,37 @@ public class FileUtil {
             if (file.delete()) {
                 System.out.println("删除文件夹成功！");
                 return true;
-            }
-            else{
+            } else {
                 ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.FAILED_TO_DELETE_FILE));
             }
         } else {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.NOT_A_FILE));
         }
         return true;
+    }
+
+
+    /**
+     * 删除（隐藏）全路径下的公共路径
+     *
+     * @param filePath 文件的全路径
+     * @param userName 当前操作用户的用户名
+     * @param pathPrefix 当前文件的前置路径
+     * @return 删除全路径中用户名前面的一部分（包括用户名）
+     */
+    public static String deleteFilePathPrefix(String filePath, String userName, String pathPrefix) {
+        return filePath.replace(pathPrefix + FileUtil.getPathSeparator() + userName, "");
+    }
+
+    /**
+     * 将前端传回来的用户文件路径补充完整
+     * @param filePath 前端传过来的文件路径
+     * @param userName 当前操作用户的用户名
+     * @param pathPrefix 当前文件的前置路径
+     * @return 添加上前置路径之后的全路径
+     */
+    public static String addFilePathSuffix(String filePath, String userName, String pathPrefix) {
+        return pathPrefix + FileUtil.getPathSeparator() + userName + FileUtil.getPathSeparator() + filePath;
     }
 
 }

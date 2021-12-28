@@ -2,6 +2,7 @@ package com.cuit.file_manage.service.impl;
 
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.model.base.file_manage.DataFile;
+import com.cuit.common.model.base.file_manage.FileFinalValue;
 import com.cuit.common.model.base.file_manage.FileItem;
 import com.cuit.common.model.base.file_manage.vo.FileShareInfoVo;
 import com.cuit.common.model.response.ResponseData;
@@ -32,11 +33,6 @@ public class FileInfoServiceImpl implements FileInfoService {
     @Value(value = "${fileSystem.filePath}")
     String userPath;
 
-    /**
-     * 文件后缀
-     */
-    protected final String fileSuffix = ".meta";
-
 
     /**
      * 获取指定文件夹下的文件树
@@ -45,7 +41,7 @@ public class FileInfoServiceImpl implements FileInfoService {
      */
     @Override
     public ResponseData getFileTreeInfo(String userName) {
-        ReadDirectory rd = new ReadDirectory(userPath + "/" + userName);
+        ReadDirectory rd = new ReadDirectory(userPath + FileUtil.getPathSeparator() + userName);
         FileItem fileItem = rd.getFileItem();
         return ResponseDataUtil.buildSuccess(fileItem);
     }
@@ -61,7 +57,7 @@ public class FileInfoServiceImpl implements FileInfoService {
         //判断对象中的参数是否为空 todo
 
         // 被分享者的默认地址
-        String path = userPath + "/" + fileShareInfoVo.getShareName() + "/share/";
+        String path = userPath + FileUtil.getPathSeparator() + fileShareInfoVo.getShareName() + FileUtil.getPathSeparator() + FileFinalValue.sharePath + FileUtil.getPathSeparator();
         //获取分享者分享当前文件的地址 FileFullPath分享者分享文件的全路径
         File file = new File(fileShareInfoVo.getFileFullPath());
         //获取分享者分享当前文件的元文件

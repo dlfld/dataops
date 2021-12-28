@@ -5,6 +5,8 @@ import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @Author dailinfeng
  * @Description TODO
@@ -20,5 +22,5 @@ public interface FileContentOperationApi {
      * @return 添加操作队列结果
      */
     @ApiOperation("文件内容操作")
-    ResponseData contentUpdate(Operation operation);
+    ResponseData contentUpdate(Operation operation, HttpServletRequest request);
 }
