@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -70,6 +72,87 @@ public class ProjectsHandleServiceImpl implements ProjectsHandleService {
         MetaFileUtil.metaWrite(projectPath, project);
         log.info(MetaFileUtil.metaRead(projectPath, Project.class).toString());
 
+        return ResponseDataUtil.buildSuccess();
+    }
+
+    /**
+     * 查询项目
+     * @param projectType 项目类型 包含 projects于share
+     * @param userName 用户名称
+     * @return ResponseData
+     */
+    @Override
+    public ResponseData searchProjects(String projectType, String userName) {
+        //当前用户文件路径
+        String userProjectPath = userPath + userName+FileUtil.getPathSeparator();
+        //定义用户查询项目的路径
+        String path = null;
+        //判断projectType类型
+        if (FileFinalValue.projectPath.equals(projectType)){
+            //当前项目文件夹路径
+            path = userProjectPath+FileFinalValue.projectPath+FileUtil.getPathSeparator();
+        }else if (FileFinalValue.sharePath.equals(projectType)){
+            path = userProjectPath+FileFinalValue.sharePath+FileUtil.getPathSeparator();
+        }
+        //如果当前path为空证明projectType不合法
+        if (Objects.isNull(path)){
+            return ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST);
+        }
+        //创建返回给前端的project集合
+        List<Project> projectList = new ArrayList<>();
+        //获取该目录下的所有文件
+        File[] files = FileUtil.getFilesFromPath(path);
+        for (File file : files) {
+            // 如果该文件为meta文件则读取其中的信息
+            if (file.getName().contains(FileFinalValue.fileSuffix)){
+                // 获取该文件的meta信息
+                Project project = MetaFileUtil.metaRead(file.getPath(),Project.class);
+                // 加入到集合之中
+                projectList.add(project);
+            }
+        }
+        return ResponseDataUtil.buildSuccess(projectList);
+    }
+
+    /**
+     * 删除项目
+     * @param projectName 项目名称
+     * @param userName 删除者
+     * @return ResponseData
+     */
+    @Override
+    public ResponseData deleteProject(String projectName, String userName) {
+
+//        //查询用户分享列表
+//        List<ShareProjectMsg> shareDataMsgList = Objects.requireNonNull(MetaFileUtil.metaRead(userPath+userName, User.class)).getShareProjectMsgs();
+//
+//        //获取当前删除这个项目分享者名称
+//        List<String> sharedNames = shareDataMsgList.stream()
+//                .filter(e->e.projectName.equals(projectName))
+//                .map(ShareProjectMsg::getUserName)
+//                .collect(Collectors.toList());
+//        //todo 假定在同一台机器上
+//
+//        //删除该项目
+//        for (String sharedName : sharedNames) {
+//            String path = userPath+sharedName+FileUtil.getPathSeparator()
+//                    +FileFinalValue.sharePath+FileUtil.getPathSeparator()
+//                    +sharedName;
+//            // 删除当前项目文件夹
+//            FileUtil.deleteLocalDirectory(path);
+//            // 删除当前项目元文件
+//            FileUtil.deleteLocalFile(path.concat(FileFinalValue.fileSuffix));
+//        }
+
+        //要删除项目的路径
+        String filePath = userPath+userName+FileUtil.getPathSeparator()
+                +FileFinalValue.projectPath+FileUtil.getPathSeparator()
+                +projectName;
+        System.out.println(filePath);
+        //删除项目文件夹
+        FileUtil.deleteLocalDirectory(filePath);
+        //删除项目文件夹对应的meta文件
+        FileUtil.deleteLocalFile(filePath.concat(FileFinalValue.fileSuffix));
         return ResponseDataUtil.buildSuccess();
     }
 }

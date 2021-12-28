@@ -15,4 +15,21 @@ public interface ProjectsHandleService {
      * @return
      */
     ResponseData createProject(String projectName, String userName);
+
+    /**
+     * 查询项目
+     * @param projectType 项目类型
+     * @param userName 查询者
+     * @return
+     */
+    ResponseData searchProjects(String projectType, String userName);
+
+    /**
+     * 删除项目
+     * @param projectName 项目名称
+     * @param userName 删除者
+     * @return
+     */
+    ResponseData deleteProject(String projectName, String userName);
+
 }
