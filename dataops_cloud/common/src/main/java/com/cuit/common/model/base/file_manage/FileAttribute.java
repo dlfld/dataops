@@ -1,5 +1,6 @@
 package com.cuit.common.model.base.file_manage;
 
+import com.cuit.common.model.base.Meta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class FileAttribute implements Serializable {
+public class FileAttribute  implements Serializable {
     private static final long serialVersionUID = 8412178142051620364L;
     /**
      * 文件属性名
@@ -31,4 +32,6 @@ public class FileAttribute implements Serializable {
      * 文件属性含义  <可选填>
      */
     private String attributeMean;
+
+
 }

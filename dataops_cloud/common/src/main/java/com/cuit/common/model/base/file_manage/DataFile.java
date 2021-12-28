@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,7 +23,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class DataFile extends Meta implements Serializable {
+public class DataFile implements Serializable {
     private static final long serialVersionUID = -3767675891296219019L;
     /**
      * 文件名
@@ -58,14 +59,4 @@ public class DataFile extends Meta implements Serializable {
      * 文件是否可下载
      */
     private boolean downloadable = false;
-
-    /**
-     * 读meta文件
-     * @param filePath meta文件的实际位置
-     * @return
-     */
-    public DataFile metaRead(String filePath) {
-        return super.metaRead(filePath, DataFile.class);
-    }
-
 }

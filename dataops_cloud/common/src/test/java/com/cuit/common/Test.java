@@ -10,10 +10,5 @@ import com.cuit.common.model.base.file_manage.DataFile;
  */
 
 public class Test {
-    public static void main(String[] args) {
-        DataFile dataFile = new DataFile();
-        dataFile.metaRead("",DataFile.class);
 
-
-    }
 }
