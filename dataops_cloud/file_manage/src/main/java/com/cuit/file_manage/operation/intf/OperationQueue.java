@@ -1,6 +1,6 @@
-package com.cuit.common.model.base.file_manage.operation.intf;
+package com.cuit.file_manage.operation.intf;
 
-import com.cuit.common.model.base.file_manage.operation.Operation;
+import com.cuit.common.model.base.file_manage.Operation;
 
 /**
  * @Author dailinfeng

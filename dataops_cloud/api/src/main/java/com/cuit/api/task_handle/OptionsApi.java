@@ -1,7 +1,7 @@
 package com.cuit.api.task_handle;
 
 
-import com.cuit.common.model.request.SubmitOptionsRequest;
+import com.cuit.common.model.base.ops.vo.SubmitOptionsRequest;
 import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

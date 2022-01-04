@@ -2,7 +2,7 @@ package com.cuit.task_handle.service.impl;
 
 
 import com.cuit.common.model.base.ops.Task;
-import com.cuit.common.model.request.SubmitOptionsRequest;
+import com.cuit.common.model.base.ops.vo.SubmitOptionsRequest;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.rpc.RpcImpl;

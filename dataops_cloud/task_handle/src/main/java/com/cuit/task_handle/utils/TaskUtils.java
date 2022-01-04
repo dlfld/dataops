@@ -2,7 +2,7 @@ package com.cuit.task_handle.utils;
 
 import com.cuit.common.enums.SysEnums;
 import com.cuit.common.model.base.ops.*;
-import com.cuit.common.model.request.SubmitOptionsRequest;
+import com.cuit.common.model.base.ops.vo.SubmitOptionsRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;

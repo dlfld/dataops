@@ -1,4 +1,4 @@
-package com.cuit.common.model.request;
+package com.cuit.common.model.base.ops.vo;
 
 import com.cuit.common.model.base.ops.Connection;
 import com.cuit.common.model.base.ops.Node;

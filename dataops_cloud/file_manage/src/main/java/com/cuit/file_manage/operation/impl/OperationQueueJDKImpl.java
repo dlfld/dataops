@@ -1,7 +1,7 @@
-package com.cuit.common.model.base.file_manage.operation.impl;
+package com.cuit.file_manage.operation.impl;
 
-import com.cuit.common.model.base.file_manage.operation.Operation;
-import com.cuit.common.model.base.file_manage.operation.intf.OperationQueue;
+import com.cuit.common.model.base.file_manage.Operation;
+import com.cuit.file_manage.operation.intf.OperationQueue;
 
 import java.io.Serializable;
 import java.util.LinkedList;

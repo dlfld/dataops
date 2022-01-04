@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
+import java.io.FileFilter;
 
 /**
  * @author dailinfeng
@@ -74,7 +75,13 @@ public class ReadDirectory {
         File file = new File(dirPath);
 
         // 取得代表目录中所有文件的File对象数组
-        File[] list = file.listFiles();
+        File[] list = file.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return false;
+            }
+        });
+
         // 遍历file数组
         for (int i = 0; i < list.length; i++) {
             //如果当前文件对象是文件夹
@@ -95,9 +102,7 @@ public class ReadDirectory {
 
                 //当前文件对象是一个文件 不是文件夹
                 // 判断该文件是否为mate文件,当该文件不为mate文件的时候加入到文件树中 并且判断文件是否有元数据文件，如果有就将元数据内容加入返回内容中，如果没有就不加入Extra
-
                 if (!MetaFileUtil.isMateFile(list[i].getName())) {
-
                     //获取当前文件对应的meta文件的地址
                     String mateFilePath = null;
                     //如果一个文件没有.的话 就会报错，因此需要看这个文件是否有.没有的话就直接返回文件名就行了

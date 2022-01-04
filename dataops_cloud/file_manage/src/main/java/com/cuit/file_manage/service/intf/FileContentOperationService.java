@@ -1,6 +1,7 @@
 package com.cuit.file_manage.service.intf;
 
-import com.cuit.common.model.base.file_manage.operation.Operation;
+import com.cuit.common.model.base.file_manage.Operation;
+import com.cuit.common.model.base.file_manage.vo.OperationVo;
 import com.cuit.common.model.response.ResponseData;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,5 @@ public interface FileContentOperationService {
      * @param operation
      * @return
      */
-    ResponseData addOperation(Operation operation);
+    ResponseData addOperation(OperationVo operationVo);
 }
