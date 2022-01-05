@@ -38,7 +38,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
      * 如果不存在的话就创建一个meta文件，并将操作队列置为空
      *
      * @param operationVo 操作对象
-     * @return
+     * @return  返回的是将当前操作添加到操作队列之后对当前操作生成的操作id
      */
     @Override
     public ResponseData addOperation(OperationVo operationVo) {
