@@ -2,6 +2,7 @@ package com.cuit.api.file_manage;
 
 import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.common.model.base.file_manage.vo.OperationVo;
+import com.cuit.common.model.base.file_manage.vo.StartOperationVo;
 import com.cuit.common.model.response.ResponseData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,14 +27,21 @@ public interface FileContentOperationApi {
     @ApiOperation("文件内容操作,返回的是当前操作对应的ID")
     ResponseData contentUpdate(OperationVo operationVo, HttpServletRequest request);
 
+
     /**
-     * 执行操作后的撤回操作
-     * @param operationId
-     * @return
+     * 执行操作的撤回操作，传过来的是当前操作文件的路径
+     *
+     * @param filePath 当前操作文件的路径
+     * @return 返回操作撤回是否成功
      */
     @ApiOperation("撤回操作")
-    ResponseData recallOperation(String operationId);
+    ResponseData recallOperation(String filePath);
 
+    /**
+     * 执行操作队列的执行操作
+     * @param startOperationVo 提交操作的相关信息
+     * @return
+     */
     @ApiOperation("提交，开始执行所有操作")
-    ResponseData startOperation();
+    ResponseData startOperation(StartOperationVo startOperationVo);
 }

@@ -43,7 +43,8 @@ public enum ResultEnums {
     //
     PROJECT_EXIST("00015","项目已存在"),
     //文件路径已存在
-    FOLDER_EXIST("00016","文件夹已存在");
+    FOLDER_EXIST("00016","文件夹已存在"),
+    FILE_NOT_FOUND("00017","文件不存在"),
     ;
     private String code;
     private String msg;

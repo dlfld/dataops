@@ -2,6 +2,7 @@ package com.cuit.file_manage.service.intf;
 
 import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.common.model.base.file_manage.vo.OperationVo;
+import com.cuit.common.model.base.file_manage.vo.StartOperationVo;
 import com.cuit.common.model.response.ResponseData;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +23,20 @@ public interface FileContentOperationService {
      * @return
      */
     ResponseData addOperation(OperationVo operationVo);
+
+    /**
+     * 执行操作的撤回操作，传过来的是当前操作文件的路径
+     *
+     * @param filePath 当前操作文件的路径
+     * @return 返回操作撤回是否成功
+     */
+    ResponseData recallOperation(String filePath);
+
+
+    /**
+     * 开始执行操作队列的方法
+     * @param startOperationVo 开始的调度
+     * @return 调度成功之后获取返回结果
+     */
+    ResponseData startOperation(StartOperationVo startOperationVo);
 }

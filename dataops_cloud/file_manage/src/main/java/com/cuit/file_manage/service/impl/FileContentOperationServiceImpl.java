@@ -1,8 +1,11 @@
 package com.cuit.file_manage.service.impl;
 
+import com.cuit.common.enums.ResultEnums;
+import com.cuit.common.exception.ExceptionCast;
 import com.cuit.common.model.base.file_manage.FileFinalValue;
 import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.common.model.base.file_manage.vo.OperationVo;
+import com.cuit.common.model.base.file_manage.vo.StartOperationVo;
 import com.cuit.common.utils.IdWorker;
 import com.cuit.file_manage.convert.OperationConvert;
 import com.cuit.file_manage.operation.impl.OperationQueueJDKImpl;
@@ -16,6 +19,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Author dailinfeng
@@ -83,5 +87,43 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
             operationQueue.offer(OperationConvert.voToPojo(operationVo));
         }
         return ResponseDataUtil.buildSuccess(operationVo.getId());
+    }
+
+    /**
+     * 执行操作的撤回操作，传过来的是当前操作文件的路径
+     *  操作步骤
+     *      首先判断当前的所操作的文件是否存在
+     *          如果存在的话判断当前文件对应的操作队列元数据文件是否存在
+     *              如果存在的话判断队列元文件里是否有操作
+     *                  如果有操作的话删除队列尾部的元素
+     *
+     * @param filePath 当前操作文件的路径
+     * @return 返回操作撤回是否成功
+     */
+    @Override
+    public ResponseData recallOperation(String filePath) {
+        File operationFile = new File(filePath);
+        //如果文件不存在的话就返回错误
+        if(!operationFile.exists()){
+            return ResponseDataUtil.buildError(ResultEnums.FILE_NOT_FOUND);
+        }
+        //todo
+
+        return null;
+    }
+
+    /**
+     * 开始执行操作队列的方法
+     *      首先判断操作的文件是否存在
+     *          如果文件存在判断对应的执行队列是否存在
+     *              如果执行队列存在则开始调度
+     *              
+     * @param startOperationVo 开始的调度
+     * @return 调度成功之后获取返回结果
+     */
+    @Override
+    public ResponseData startOperation(StartOperationVo startOperationVo) {
+
+        return null;
     }
 }

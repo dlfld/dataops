@@ -4,6 +4,7 @@ import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.file_manage.operation.intf.OperationQueue;
 
 import java.io.Serializable;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -18,7 +19,7 @@ public class OperationQueueJDKImpl implements Serializable, OperationQueue {
     /**
      * 操作队列
      */
-    Queue<Operation> opeartionQueue = new LinkedList<>();
+    Deque<Operation> operationDeque = new LinkedList<>();
 
 
     /**
@@ -29,7 +30,7 @@ public class OperationQueueJDKImpl implements Serializable, OperationQueue {
      */
     @Override
     public boolean offer(Operation operation) {
-        return opeartionQueue.offer(operation);
+        return operationDeque.offer(operation);
     }
 
     /**
@@ -39,7 +40,7 @@ public class OperationQueueJDKImpl implements Serializable, OperationQueue {
      */
     @Override
     public Operation poll() {
-        return opeartionQueue.poll();
+        return operationDeque.poll();
     }
 
     /**
@@ -49,7 +50,18 @@ public class OperationQueueJDKImpl implements Serializable, OperationQueue {
      */
     @Override
     public Operation peek() {
-        return opeartionQueue.peek();
+        return operationDeque.peek();
+    }
+
+    /**
+     * 删除队列尾部的元素   用于撤回操作
+     *
+     * @return
+     */
+    @Override
+    public boolean pop() {
+        operationDeque.pop();
+        return false;
     }
 
 }

@@ -29,5 +29,10 @@ public interface OperationQueue {
      */
     Operation peek();
 
+    /**
+     *  删除队列尾部的元素   用于撤回操作
+     * @return
+     */
+    boolean pop();
 
 }
