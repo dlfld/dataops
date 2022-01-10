@@ -128,16 +128,28 @@ public class MetaFileUtil {
     }
 
     /**
-     * 获取当前文件的Mate文件路径
-     * @param path meta文件路径
-     * @return
+     * 根据文件目录获取文件的元文件路径
+     * @param filePath 当前文件的绝对路径
+     * @return  当前文件对应的元文件的绝对路径
      */
-    public static String getMateFilePath(String path){
-        return path.substring(0, path.lastIndexOf("."))+FileFinalValue.fileSuffix;
+    public static String getMateFilePath(String filePath){
+        File file = new File(filePath);
+        if(!file.exists()){
+            //如果文件不存在就报错文件找不到
+            ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.FILE_NOT_FOUND));
+        }
+        //如果是没有后缀的文件的话就直接加.meta返回
+        if(!filePath.contains(".")){
+            return filePath+FileFinalValue.fileSuffix;
+        }
+        int lastIndexOf = filePath.lastIndexOf(".");
+        return filePath.substring(0,lastIndexOf+1)+FileFinalValue.fileSuffix;
     }
 
     public static String getMateDirectoryPath(String path){
         return path.concat(FileFinalValue.fileSuffix);
     }
+
+
 
 }

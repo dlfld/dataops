@@ -62,7 +62,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
             // 去掉后缀的
             String fileName = fileFullName.substring(0, lastIndex + 1);
             //元数据文件全名
-            String metaFileFullName = fileName + FileFinalValue.fileSuffix;
+            String metaFileFullName = fileName +"OperationQueue"+ FileFinalValue.fileSuffix;
             metaFilePath = metaFilePath.replace(fileFullName, metaFileFullName);
         } else {
             //如果没有后缀的话就直接加meta的后缀
@@ -123,6 +123,20 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
      */
     @Override
     public ResponseData startOperation(StartOperationVo startOperationVo) {
+        File file = new File(startOperationVo.getFilePath());
+        //如果文件不存在的话就返回文件不存在
+        if(!file.exists()){
+            return ResponseDataUtil.buildError(ResultEnums.FILE_NOT_FOUND);
+        }
+        // 获取meta文件的全路径
+        String metaFilePath = MetaFileUtil.getMateFilePath(startOperationVo.getFilePath());
+        File metaFile = new File(metaFilePath);
+        if(!metaFile.exists()){
+            //如果元数据文件不存在则表示没有操作队列
+            return ResponseDataUtil.buildError(ResultEnums.OPERATION_NOT_FOUND);
+        }
+        //获取操作队列
+        OperationQueue operationQueue = MetaFileUtil.metaRead(metaFilePath,OperationQueue.class);
 
         return null;
     }

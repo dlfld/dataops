@@ -1,6 +1,5 @@
 package com.cuit.common.model.base.file_manage;
 
-import com.cuit.common.model.base.Meta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

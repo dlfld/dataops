@@ -32,18 +32,29 @@ public class Operation implements Serializable {
     private String filePath;
 
     /**
-     * 处理文件的行号列表,
+     * 处理文件的行号列表
+     *  如果为-1的话表示选择所有行
      */
-    private List<Long> rowNum;
+    private Long rowNum;
     /**
      * 处理文件的列号列表
+     *   如果为-1的话表示选择所有列
      */
-    private List<Long> colNum;
+    private Long colNum;
     /**
-     * 处理文件的操作的描述
+     * 处理文件的操作的描述 调度
      */
-    @NotEmpty(message = "当前操作的文件不能为空")
+    @NotEmpty(message = "当前操作不能为空")
     private String operation;
+
+    /**
+     * 操作的新值
+     */
+    private List<String> newValue;
+    /**
+     * 操作的旧值
+     */
+    private List<String> oldValue;
 
     /**
      * 当前操作的ID

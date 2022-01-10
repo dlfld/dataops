@@ -10,5 +10,10 @@ import com.cuit.common.model.base.file_manage.DataFile;
  */
 
 public class Test {
-
+    public static void main(String[] args) {
+        String s = "xxx.csv";
+        int lastIndexOf = s.lastIndexOf(".");
+        String substring = s.substring(0, lastIndexOf);
+        System.out.println(substring);
+    }
 }

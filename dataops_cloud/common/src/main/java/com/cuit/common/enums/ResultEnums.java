@@ -45,6 +45,7 @@ public enum ResultEnums {
     //文件路径已存在
     FOLDER_EXIST("00016","文件夹已存在"),
     FILE_NOT_FOUND("00017","文件不存在"),
+    OPERATION_NOT_FOUND("00018","没有操作队列"),
     ;
     private String code;
     private String msg;
