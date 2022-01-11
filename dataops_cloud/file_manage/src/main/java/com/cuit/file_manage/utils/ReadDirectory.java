@@ -93,7 +93,6 @@ public class ReadDirectory {
 
                 //当前文件对象是一个文件 不是文件夹
                 // 判断该文件是否为mate文件,当该文件不为mate文件的时候加入到文件树中 并且判断文件是否有元数据文件，如果有就将元数据内容加入返回内容中，如果没有就不加入Extra
-
                 if (!MetaFileUtil.isMateFile(list[i].getName())) {
 
                     //获取当前文件对应的meta文件的地址

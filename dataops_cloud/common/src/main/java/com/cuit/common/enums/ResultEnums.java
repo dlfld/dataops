@@ -40,8 +40,10 @@ public enum ResultEnums {
     META_WRITE_FAIL("00013", "系统异常，元文件写入失败"),
     //项目不存在
     PROJECT_NOT_FOUND("00014","项目不存在"),
-    //
-    PROJECT_EXIST("00015","项目已存在")
+    //项目已存在
+    PROJECT_EXIST("00015","项目已存在"),
+    //该文件夹为空
+    PATH_IS_EMPTY("00016","该文件夹为空")
     ;
     private String code;
     private String msg;

@@ -15,7 +15,6 @@ public class FileUtil {
 
     /**
      * 通过字节流实现文件的拷贝
-     *
      * @param sourcePath 源文件路径
      * @param targetPath 目标文件路径
      */
@@ -33,7 +32,6 @@ public class FileUtil {
         if (!target.getParentFile().exists()) {
             target.getParentFile().mkdirs();
         }
-
         try {
             //实现文件的拷贝
             InputStream inputStream = new FileInputStream(source);
