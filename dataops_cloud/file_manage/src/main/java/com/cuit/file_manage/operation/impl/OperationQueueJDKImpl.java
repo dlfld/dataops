@@ -2,6 +2,7 @@ package com.cuit.file_manage.operation.impl;
 
 import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.file_manage.operation.intf.OperationQueue;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.Deque;
@@ -14,6 +15,7 @@ import java.util.Queue;
  * @Date 2021/12/28 1:52 PM
  * @Version 1.0
  */
+@Component
 public class OperationQueueJDKImpl implements Serializable, OperationQueue {
     private static final long serialVersionUID = -4533858678849721095L;
     /**

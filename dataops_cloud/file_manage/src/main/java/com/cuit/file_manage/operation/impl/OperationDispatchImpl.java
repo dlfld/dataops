@@ -2,6 +2,8 @@ package com.cuit.file_manage.operation.impl;
 
 import com.cuit.file_manage.operation.intf.OperationDispatch;
 import com.cuit.file_manage.operation.intf.OperationQueue;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * @Author dailinfeng
@@ -9,6 +11,7 @@ import com.cuit.file_manage.operation.intf.OperationQueue;
  * @Date 2022/1/9 2:43 PM
  * @Version 1.0
  */
+@Service
 public class OperationDispatchImpl implements OperationDispatch {
     /**
      * 调度器的调度方法
