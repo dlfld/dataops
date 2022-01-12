@@ -1,15 +1,14 @@
 package com.cuit.file_manage.service.impl;
 
 import com.cuit.common.enums.ResultEnums;
-import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.model.base.file_manage.DataFile;
 import com.cuit.common.model.base.file_manage.FileFinalValue;
-import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.common.model.base.file_manage.vo.OperationVo;
 import com.cuit.common.model.base.file_manage.vo.StartOperationVo;
 import com.cuit.common.utils.IdWorker;
 import com.cuit.file_manage.convert.OperationConvert;
 import com.cuit.file_manage.operation.impl.OperationQueueJDKImpl;
-import com.cuit.file_manage.operation.intf.OperationQueue;
+import com.cuit.common.model.base.file_manage.bo.OperationQueue;
 import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.FileUtil;
 import com.cuit.common.utils.MetaFileUtil;
@@ -18,8 +17,9 @@ import com.cuit.file_manage.service.intf.FileContentOperationService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.xml.crypto.Data;
 import java.io.File;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Objects;
 
 /**
  * @Author dailinfeng
@@ -62,7 +62,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
             // 去掉后缀的
             String fileName = fileFullName.substring(0, lastIndex + 1);
             //元数据文件全名
-            String metaFileFullName = fileName +"OperationQueue"+ FileFinalValue.fileSuffix;
+            String metaFileFullName = fileName + FileFinalValue.fileSuffix;
             metaFilePath = metaFilePath.replace(fileFullName, metaFileFullName);
         } else {
             //如果没有后缀的话就直接加meta的后缀
@@ -70,14 +70,19 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
         }
 
         OperationQueue operationQueue = null;
-        //operation.getFilePath() 这个文件位置返回的是数据文件的位置，现在要将这个数据文件替换为元文件
         File file = new File(metaFilePath);
+        DataFile dataFile = null;
         //如果元文件不存在的话就创建一个空的操作队列
         if (!file.exists()) {
+            dataFile = new DataFile();
+            dataFile.setFileLocate(operationVo.getFilePath());
             operationQueue = new OperationQueueJDKImpl();
+            dataFile.setBeforeOperationQueue(operationQueue);
+
         } else {
+            dataFile = MetaFileUtil.metaRead(metaFilePath, DataFile.class);
             //如果不为空的话就读取元文件的操作队列
-            operationQueue = MetaFileUtil.metaRead(metaFilePath, OperationQueueJDKImpl.class);
+            operationQueue =dataFile.getBeforeOperationQueue();
         }
 
         //设置当前操作的id
@@ -86,6 +91,8 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
         if (operationQueue != null) {
             operationQueue.offer(OperationConvert.voToPojo(operationVo));
         }
+        dataFile.setBeforeOperationQueue(operationQueue);
+        MetaFileUtil.metaWrite(metaFilePath,dataFile);
         return ResponseDataUtil.buildSuccess(operationVo.getId());
     }
 
@@ -133,10 +140,10 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
         File metaFile = new File(metaFilePath);
         if(!metaFile.exists()){
             //如果元数据文件不存在则表示没有操作队列
-            return ResponseDataUtil.buildError(ResultEnums.OPERATION_NOT_FOUND);
+            return ResponseDataUtil.buildError(ResultEnums.OPERATION_QUEUE_NOT_FOUND);
         }
         //获取操作队列
-        OperationQueue operationQueue = MetaFileUtil.metaRead(metaFilePath,OperationQueue.class);
+        DataFile dataFile = MetaFileUtil.metaRead(metaFilePath,DataFile.class);
         //开始运行
 
         return null;

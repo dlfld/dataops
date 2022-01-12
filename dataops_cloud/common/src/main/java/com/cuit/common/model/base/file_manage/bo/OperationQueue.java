@@ -1,4 +1,4 @@
-package com.cuit.file_manage.operation.intf;
+package com.cuit.common.model.base.file_manage.bo;
 
 import com.cuit.common.model.base.file_manage.Operation;
 
@@ -35,4 +35,12 @@ public interface OperationQueue {
      */
     boolean pop();
 
+    /**
+     * 判断当前队列为空
+     */
+    boolean isEmpty();
+    /**
+     * 判断当前队列不为空
+     */
+    boolean isNotEmpty();
 }

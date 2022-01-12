@@ -2,6 +2,8 @@ package com.cuit.common.exception;
 
 import com.cuit.common.model.response.ResponseData;
 
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * @Author dailinfeng
  * @Description TODO
@@ -11,5 +13,19 @@ import com.cuit.common.model.response.ResponseData;
 public class ExceptionCast {
     public static void cast(ResponseData responseData) {
         throw new CustomException(responseData);
+    }
+
+    public static void fileCast(RuntimeException exception) {
+        try {
+            throw exception.getClass().getConstructor().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
     }
 }

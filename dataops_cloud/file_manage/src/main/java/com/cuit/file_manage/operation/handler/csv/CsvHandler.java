@@ -1,10 +1,11 @@
-package com.cuit.file_manage.handler;
+package com.cuit.file_manage.operation.handler.csv;
 
 import com.cuit.common.enums.ResultEnums;
 import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import com.cuit.common.utils.ResponseDataUtil;
-import com.cuit.file_manage.factory.FileFactory;
-import com.cuit.file_manage.utils.CsvUtils;
+import com.cuit.file_manage.operation.factory.FileFactory;
+import com.cuit.file_manage.operation.handler.AbstractFileHandler;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -23,12 +24,13 @@ public class CsvHandler extends AbstractFileHandler {
 
     /**
      * 获取csv文件中的内容
-     * @param path 文件路径
+     * @param operationBo 业务操作对象
      * @return 文件内容
      * @throws IOException 文件不存在
      */
     @Override
-    public List<Object> getFileContent(String path) throws IOException {
+    public List<Object> getFileContent(OperationBo operationBo) throws IOException {
+        String path = operationBo.getFilePath();
         if (!new File(path).exists()){
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
@@ -95,7 +97,6 @@ public class CsvHandler extends AbstractFileHandler {
     public void afterPropertiesSet() throws Exception {
         FileFactory.register("csv",this);
     }
-
 
 
 }

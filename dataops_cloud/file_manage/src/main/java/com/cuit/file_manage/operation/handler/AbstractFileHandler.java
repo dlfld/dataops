@@ -1,5 +1,6 @@
-package com.cuit.file_manage.handler;
+package com.cuit.file_manage.operation.handler;
 
+import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import org.springframework.beans.factory.InitializingBean;
 
 import java.io.IOException;
@@ -16,11 +17,11 @@ public abstract class AbstractFileHandler implements InitializingBean {
 
     /**
      * 查询文件中的内容
-     * @param path 文件路径
+     * @param operationBo 业务操作对象
      * @return
      * @throws IOException
      */
-    public List<Object> getFileContent(String path) throws IOException {
+    public List<Object> getFileContent(OperationBo operationBo) throws IOException {
         throw new UnsupportedOperationException();
     }
 

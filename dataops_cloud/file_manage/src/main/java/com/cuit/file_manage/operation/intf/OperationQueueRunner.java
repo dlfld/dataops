@@ -1,5 +1,6 @@
 package com.cuit.file_manage.operation.intf;
 
+import com.cuit.common.model.base.file_manage.bo.OperationQueue;
 import org.springframework.stereotype.Service;
 
 /**

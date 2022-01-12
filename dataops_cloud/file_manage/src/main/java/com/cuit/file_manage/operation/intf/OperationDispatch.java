@@ -1,6 +1,9 @@
 package com.cuit.file_manage.operation.intf;
 
+import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import org.springframework.stereotype.Service;
+
+import java.util.Queue;
 
 /**
  * @Author dailinfeng 分发
@@ -15,7 +18,7 @@ public interface OperationDispatch {
      * @param operationQueue 操作队列
      * @return 调度是否成功
      */
-    boolean dispatchOperation(OperationQueue operationQueue);
+    boolean dispatchOperation(Queue<OperationBo> operationQueue);
 
 
 }

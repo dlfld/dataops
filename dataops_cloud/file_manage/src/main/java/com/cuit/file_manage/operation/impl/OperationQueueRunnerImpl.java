@@ -1,12 +1,14 @@
 package com.cuit.file_manage.operation.impl;
 
+import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import com.cuit.file_manage.operation.intf.OperationDispatch;
 import com.cuit.file_manage.operation.intf.OperationParser;
-import com.cuit.file_manage.operation.intf.OperationQueue;
+import com.cuit.common.model.base.file_manage.bo.OperationQueue;
 import com.cuit.file_manage.operation.intf.OperationQueueRunner;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Queue;
 
 /**
  * @Author dailinfeng
@@ -31,7 +33,8 @@ public class OperationQueueRunnerImpl implements OperationQueueRunner {
      */
     @Override
     public boolean runOperationQueue(OperationQueue operationQueue) {
-
+        Queue<OperationBo> operationBos = operationParser.parserOperation(operationQueue);
+        operationDispatch.dispatchOperation(operationBos);
         return false;
     }
 }

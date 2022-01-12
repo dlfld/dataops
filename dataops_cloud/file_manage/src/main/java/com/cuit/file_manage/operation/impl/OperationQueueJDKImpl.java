@@ -1,13 +1,12 @@
 package com.cuit.file_manage.operation.impl;
 
 import com.cuit.common.model.base.file_manage.Operation;
-import com.cuit.file_manage.operation.intf.OperationQueue;
+import com.cuit.common.model.base.file_manage.bo.OperationQueue;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @Author dailinfeng
@@ -64,6 +63,22 @@ public class OperationQueueJDKImpl implements Serializable, OperationQueue {
     public boolean pop() {
         operationDeque.pop();
         return false;
+    }
+
+    /**
+     * 判断当前队列为空
+     */
+    @Override
+    public boolean isEmpty() {
+        return operationDeque.isEmpty();
+    }
+
+    /**
+     * 判断当前队列不为空
+     */
+    @Override
+    public boolean isNotEmpty() {
+        return !isEmpty();
     }
 
 }

@@ -1,6 +1,8 @@
-package com.cuit.file_manage.factory;
+package com.cuit.file_manage.operation.factory;
 
-import com.cuit.file_manage.handler.AbstractFileHandler;
+import com.cuit.file_manage.operation.handler.AbstractFileHandler;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +19,7 @@ public class FileFactory {
         return strategyMap.get(name);
     }
     public static void register(String name, AbstractFileHandler handler){
-        if (Objects.isNull(name)||"".equals(name)){
+        if (StringUtils.isNotEmpty(name)){
             return;
         }
         strategyMap.put(name,handler);

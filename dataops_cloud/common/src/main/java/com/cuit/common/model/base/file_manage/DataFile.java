@@ -1,13 +1,12 @@
 package com.cuit.common.model.base.file_manage;
 
+import com.cuit.common.model.base.file_manage.bo.OperationQueue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -58,4 +57,19 @@ public class DataFile implements Serializable {
      * 文件是否可下载
      */
     private boolean downloadable = false;
+
+    /**
+     * 操作队列，提交之前的队列
+     */
+    private OperationQueue beforeOperationQueue;
+
+    /**
+     * 操作队列，执行之后的队列
+     */
+    private OperationQueue afterOperationQueue;
+
+    /**
+     * 文件位置
+     */
+    String fileLocate;
 }
