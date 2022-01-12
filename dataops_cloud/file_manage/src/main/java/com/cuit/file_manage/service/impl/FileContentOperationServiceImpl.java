@@ -13,6 +13,7 @@ import com.cuit.common.model.response.ResponseData;
 import com.cuit.common.utils.FileUtil;
 import com.cuit.common.utils.MetaFileUtil;
 import com.cuit.common.utils.ResponseDataUtil;
+import com.cuit.file_manage.operation.intf.OperationQueueRunner;
 import com.cuit.file_manage.service.intf.FileContentOperationService;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +32,8 @@ import java.util.Objects;
 public class FileContentOperationServiceImpl implements FileContentOperationService {
     @Resource
     IdWorker idWorker;
+    @Resource
+    OperationQueueRunner operationQueueRunner;
 
     /**
      * 前端传过来一个操作，将这个操作存储到操作队列里面去
@@ -42,7 +45,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
      * 如果不存在的话就创建一个meta文件，并将操作队列置为空
      *
      * @param operationVo 操作对象
-     * @return  返回的是将当前操作添加到操作队列之后对当前操作生成的操作id
+     * @return 返回的是将当前操作添加到操作队列之后对当前操作生成的操作id
      */
     @Override
     public ResponseData addOperation(OperationVo operationVo) {
@@ -82,7 +85,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
         } else {
             dataFile = MetaFileUtil.metaRead(metaFilePath, DataFile.class);
             //如果不为空的话就读取元文件的操作队列
-            operationQueue =dataFile.getBeforeOperationQueue();
+            operationQueue = dataFile.getBeforeOperationQueue();
         }
 
         //设置当前操作的id
@@ -92,17 +95,17 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
             operationQueue.offer(OperationConvert.voToPojo(operationVo));
         }
         dataFile.setBeforeOperationQueue(operationQueue);
-        MetaFileUtil.metaWrite(metaFilePath,dataFile);
+        MetaFileUtil.metaWrite(metaFilePath, dataFile);
         return ResponseDataUtil.buildSuccess(operationVo.getId());
     }
 
     /**
      * 执行操作的撤回操作，传过来的是当前操作文件的路径
-     *  操作步骤
-     *      首先判断当前的所操作的文件是否存在
-     *          如果存在的话判断当前文件对应的操作队列元数据文件是否存在
-     *              如果存在的话判断队列元文件里是否有操作
-     *                  如果有操作的话删除队列尾部的元素
+     * 操作步骤
+     * 首先判断当前的所操作的文件是否存在
+     * 如果存在的话判断当前文件对应的操作队列元数据文件是否存在
+     * 如果存在的话判断队列元文件里是否有操作
+     * 如果有操作的话删除队列尾部的元素
      *
      * @param filePath 当前操作文件的路径
      * @return 返回操作撤回是否成功
@@ -111,7 +114,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
     public ResponseData recallOperation(String filePath) {
         File operationFile = new File(filePath);
         //如果文件不存在的话就返回错误
-        if(!operationFile.exists()){
+        if (!operationFile.exists()) {
             return ResponseDataUtil.buildError(ResultEnums.FILE_NOT_FOUND);
         }
         //todo
@@ -121,10 +124,10 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
 
     /**
      * 开始执行操作队列的方法
-     *      首先判断操作的文件是否存在
-     *          如果文件存在判断对应的执行队列是否存在
-     *              如果执行队列存在则开始调度
-     *              
+     * 首先判断操作的文件是否存在
+     * 如果文件存在判断对应的执行队列是否存在
+     * 如果执行队列存在则开始调度
+     *
      * @param startOperationVo 开始的调度
      * @return 调度成功之后获取返回结果
      */
@@ -132,20 +135,20 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
     public ResponseData startOperation(StartOperationVo startOperationVo) {
         File file = new File(startOperationVo.getFilePath());
         //如果文件不存在的话就返回文件不存在
-        if(!file.exists()){
+        if (!file.exists()) {
             return ResponseDataUtil.buildError(ResultEnums.FILE_NOT_FOUND);
         }
         // 获取meta文件的全路径
         String metaFilePath = MetaFileUtil.getMateFilePath(startOperationVo.getFilePath());
         File metaFile = new File(metaFilePath);
-        if(!metaFile.exists()){
+        if (!metaFile.exists()) {
             //如果元数据文件不存在则表示没有操作队列
             return ResponseDataUtil.buildError(ResultEnums.OPERATION_QUEUE_NOT_FOUND);
         }
         //获取操作队列
-        DataFile dataFile = MetaFileUtil.metaRead(metaFilePath,DataFile.class);
+        DataFile dataFile = MetaFileUtil.metaRead(metaFilePath, DataFile.class);
         //开始运行
-
+        operationQueueRunner.runOperationQueue(dataFile.getBeforeOperationQueue(), startOperationVo.getContact());
         return null;
     }
 }

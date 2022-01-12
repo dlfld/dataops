@@ -24,6 +24,7 @@ public class CsvHandler extends AbstractFileHandler {
 
     /**
      * 获取csv文件中的内容
+     *
      * @param operationBo 业务操作对象
      * @return 文件内容
      * @throws IOException 文件不存在
@@ -31,71 +32,82 @@ public class CsvHandler extends AbstractFileHandler {
     @Override
     public List<Object> getFileContent(OperationBo operationBo) throws IOException {
         String path = operationBo.getFilePath();
-        if (!new File(path).exists()){
+        if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
         return CsvUtils.getCsvContent(path);
     }
 
     /**
-     *  修改文件中的单元格
-     * @param path 文件路径
-     * @param row 修改元素所在行
-     * @param col 修改元素所在列
-     * @param value 修改后的值
-     * @throws IOException 文件不存在
+     * 修改文件单元格内容
+     *
+     * @param operationBo 业务操作对象
+     * @throws IOException
      */
     @Override
-    public void modifyCell(String path, Integer row, Integer col, String value) throws IOException {
-        if (!new File(path).exists()){
+    public void modifyCell(OperationBo operationBo) throws IOException {
+        String path = operationBo.getFilePath();
+        Integer row = Math.toIntExact(operationBo.getRowNum());
+        Integer col = Math.toIntExact(operationBo.getColNum());
+        String value = operationBo.getNewValue().get(0);
+        if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
-        CsvUtils.modifyCell(path,row,col,value);
+        CsvUtils.modifyCell(path, row, col, value);
     }
 
     /**
-     * 删除文件中的一行
-     * @param path 文件路径
-     * @param row  文件所在行
+     * 删除文件中的row行
+     *
+     * @param operationBo 业务操作对象
      * @throws IOException
      */
 
     @Override
-    public void deleteFileLine(String path, Integer row) throws IOException {
-        if (!new File(path).exists()){
+    public void deleteFileLine(OperationBo operationBo) throws IOException {
+        String path = operationBo.getFilePath();
+        Integer row = Math.toIntExact(operationBo.getRowNum());
+        if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
-        CsvUtils.deleteFileLine(path,row);
+        CsvUtils.deleteFileLine(path, row);
     }
 
     /**
      * 删除文件指定行
-     * @param path 文件路径
-     * @param column 文件所在行
+     *
+     * @param operationBo 业务操作对象
      * @throws IOException
      */
     @Override
-    public void  deleteFileColumn(String path, Integer column)throws IOException{
-        if (!new File(path).exists()){
+    public void deleteFileColumn(OperationBo operationBo) throws IOException {
+        String path = operationBo.getFilePath();
+        Integer column = Math.toIntExact(operationBo.getColNum());
+        if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
-        CsvUtils.deleteFileColumn(path,column);
+        CsvUtils.deleteFileColumn(path, column);
     }
 
     @Override
-    public void modifyFileColumn(String path, Integer column, String value)throws IOException{
-        if (!new File(path).exists()){
+    public void modifyFileColumn(OperationBo operationBo) throws IOException {
+        String path = operationBo.getFilePath();
+        Integer column = Math.toIntExact(operationBo.getColNum());
+        String value = operationBo.getNewValue().get(0);
+        if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
-        CsvUtils.modifyFileColumn(path,column,value);
+        CsvUtils.modifyFileColumn(path, column, value);
     }
+
     /**
-     *  注册到工厂中
+     * 注册到工厂中
+     *
      * @throws Exception
      */
     @Override
     public void afterPropertiesSet() throws Exception {
-        FileFactory.register("csv",this);
+        FileFactory.register("csv", this);
     }
 
 

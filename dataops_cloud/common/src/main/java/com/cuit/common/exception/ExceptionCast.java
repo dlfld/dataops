@@ -15,17 +15,7 @@ public class ExceptionCast {
         throw new CustomException(responseData);
     }
 
-    public static void fileCast(RuntimeException exception) {
-        try {
-            throw exception.getClass().getConstructor().newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
+    public static void customDefineCast(RuntimeException exception) {
+        throw exception;
     }
 }

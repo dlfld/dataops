@@ -32,9 +32,10 @@ public class OperationQueueRunnerImpl implements OperationQueueRunner {
      * @return 操作队列是否执行成功
      */
     @Override
-    public boolean runOperationQueue(OperationQueue operationQueue) {
+    public boolean runOperationQueue(OperationQueue operationQueue,String userContact) {
         Queue<OperationBo> operationBos = operationParser.parserOperation(operationQueue);
-        operationDispatch.dispatchOperation(operationBos);
+        operationDispatch.dispatchOperation(operationBos,userContact);
+
         return false;
     }
 }

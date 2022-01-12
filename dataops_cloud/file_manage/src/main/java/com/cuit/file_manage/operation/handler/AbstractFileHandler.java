@@ -27,37 +27,32 @@ public abstract class AbstractFileHandler implements InitializingBean {
 
     /**
      * 修改文件单元格内容
-     * @param path 文件路径
-     * @param row 修改元素所在行
-     * @param col 修改元素所在列
-     * @param value 修改后的值
+     * @param  operationBo 业务操作对象
      * @throws IOException
      */
-    public void modifyCell(String path, Integer row, Integer col, String value) throws IOException {
+    public void modifyCell(OperationBo operationBo) throws IOException {
         throw new UnsupportedOperationException();
     }
 
     /**
      * 删除文件中的row行
-     * @param path 文件路径
-     * @param row 文件所在行
+     * @param operationBo 业务操作对象
      * @throws IOException
      */
-    public void deleteFileLine(String path, Integer row) throws IOException{
+    public void deleteFileLine(OperationBo operationBo) throws IOException{
         throw new UnsupportedOperationException();
     }
 
     /**
      * 删除文件
-     * @param path 文件路径
-     * @param column 文件所在行
+     * @param operationBo 业务操作对象
      * @throws IOException 文件异常
      */
-    public void  deleteFileColumn(String path, Integer column)throws IOException{
+    public void  deleteFileColumn(OperationBo operationBo)throws IOException{
         throw new UnsupportedOperationException();
     }
 
-    public void modifyFileColumn(String path, Integer column,String value) throws IOException {
+    public void modifyFileColumn(OperationBo operationBo) throws IOException {
         throw new UnsupportedOperationException();
     }
 

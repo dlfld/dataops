@@ -16,9 +16,10 @@ public interface OperationDispatch {
     /**
      * 调度器的调度方法
      * @param operationQueue 操作队列
+     * @param userContact  用户的联系方式，向用户通知文件处理结果
      * @return 调度是否成功
      */
-    boolean dispatchOperation(Queue<OperationBo> operationQueue);
+    boolean dispatchOperation(Queue<OperationBo> operationQueue,String userContact);
 
 
 }

@@ -40,6 +40,13 @@ public class ExceptionCatch  {
         return ResponseDataUtil.buildError(customException.getResponseData());
     }
 
+    @ExceptionHandler(OperationRunnerException.class)
+    @ResponseBody
+    public void customDefineException(OperationRunnerException operationRunnerException) {
+        //获取用户的联系方式
+        String userContact = operationRunnerException.getUserContact();
+        //todo 给用户发消息 说当前节点运行失败
+    }
 
     /**
      * 捕获其他的异常

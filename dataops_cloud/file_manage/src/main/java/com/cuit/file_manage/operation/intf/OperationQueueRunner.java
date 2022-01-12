@@ -14,8 +14,9 @@ public interface OperationQueueRunner {
     /**
      * 操作队列的执行器，在Service中调用当前方法传入操作队列
      * 该方法调用调度器和解释器进行操作
-     * @param operationQueue 操作队列0
+     * @param operationQueue 操作队列
+     * @param userContact 用户的联系方式
      * @return 操作队列是否执行成功
      */
-    boolean runOperationQueue(OperationQueue operationQueue);
+    boolean runOperationQueue(OperationQueue operationQueue,String userContact);
 }

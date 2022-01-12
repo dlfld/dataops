@@ -1,15 +1,15 @@
 package com.cuit.file_manage.operation.impl;
 
 import com.cuit.common.exception.ExceptionCast;
+import com.cuit.common.exception.OperationRunnerException;
 import com.cuit.common.model.base.file_manage.DataFile;
 import com.cuit.common.model.base.file_manage.Operation;
 import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import com.cuit.common.utils.MetaFileUtil;
-import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.file_manage.operation.intf.OperationDispatch;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Queue;
@@ -24,12 +24,12 @@ import java.util.Queue;
 public class OperationDispatchImpl implements OperationDispatch {
     /**
      * 调度器的调度方法
-     *
+     * @param userContact 用户联系方式，用来向用户通知处理结果
      * @param operationQueue 操作队列
      * @return 调度是否成功
      */
     @Override
-    public boolean dispatchOperation(Queue<OperationBo> operationQueue) {
+    public boolean dispatchOperation(Queue<OperationBo> operationQueue,String userContact) {
         while (!operationQueue.isEmpty()){
             OperationBo operationBo = operationQueue.poll();
             Method method = operationBo.getMethod();
@@ -50,7 +50,7 @@ public class OperationDispatchImpl implements OperationDispatch {
                     dataFile.getAfterOperationQueue().offer(currRunOperation);
                 }else{
                     //如果是操作失败的话停止当前的运行
-                    ExceptionCast.cast(ResponseDataUtil.buildError());
+                    ExceptionCast.customDefineCast(new OperationRunnerException(userContact));
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
@@ -58,6 +58,6 @@ public class OperationDispatchImpl implements OperationDispatch {
                 e.printStackTrace();
             }
         }
-        return false;
+        return true;
     }
 }
