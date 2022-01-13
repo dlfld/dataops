@@ -56,7 +56,6 @@ public class ReadDirectory {
      * @param dirPath 文件路径
      */
     public ReadDirectory(String dirPath) {
-//        dirPath = FileUtil.deleteFilePathPrefix(dirPath,);
         topFile = new FileItem()
                 .setTitle(dirPath)
                 .setKey("0-0")
@@ -78,7 +77,14 @@ public class ReadDirectory {
         File[] list = file.listFiles(new FileFilter() {
             @Override
             public boolean accept(File pathname) {
-                return false;
+                String fileName = pathname.getName();
+                if(fileName.startsWith(".")){
+                    return false;
+                }
+                if(fileName.endsWith(FileFinalValue.fileSuffix)){
+                    return false;
+                }
+                return true;
             }
         });
 

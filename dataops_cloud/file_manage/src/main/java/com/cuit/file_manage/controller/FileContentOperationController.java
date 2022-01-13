@@ -22,7 +22,7 @@ import java.io.File;
  */
 @CrossOrigin
 @RestController
-@RequestMapping("/content")
+@RequestMapping("/operation")
 public class FileContentOperationController implements FileContentOperationApi {
     @Value(value = "${fileSystem.filePath}")
     String filePathPrefix;
@@ -35,7 +35,7 @@ public class FileContentOperationController implements FileContentOperationApi {
      * @param operationVo 操作描述
      * @return 添加操作队列结果
      */
-    @PostMapping("/operation")
+    @PostMapping("/handle")
     @Override
     public ResponseData contentUpdate(@RequestBody OperationVo operationVo, HttpServletRequest request) {
         return fileContentOperationService.addOperation(operationVo);
@@ -48,6 +48,7 @@ public class FileContentOperationController implements FileContentOperationApi {
      * @return 返回操作撤回是否成功
      */
     @Override
+    @PostMapping("/recall")
     public ResponseData recallOperation(String filePath) {
         return fileContentOperationService.recallOperation(filePath);
     }
@@ -59,6 +60,7 @@ public class FileContentOperationController implements FileContentOperationApi {
      * @return 返回操作结果
      */
     @Override
+    @PostMapping("/submit")
     public ResponseData startOperation(@Validated @RequestBody StartOperationVo startOperationVo) {
         return fileContentOperationService.startOperation(startOperationVo);
     }

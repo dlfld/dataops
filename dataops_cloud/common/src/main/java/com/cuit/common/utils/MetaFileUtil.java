@@ -143,7 +143,7 @@ public class MetaFileUtil {
             return filePath+FileFinalValue.fileSuffix;
         }
         int lastIndexOf = filePath.lastIndexOf(".");
-        return filePath.substring(0,lastIndexOf+1)+FileFinalValue.fileSuffix;
+        return filePath.substring(0,lastIndexOf)+FileFinalValue.fileSuffix;
     }
 
     public static String getMateDirectoryPath(String path){

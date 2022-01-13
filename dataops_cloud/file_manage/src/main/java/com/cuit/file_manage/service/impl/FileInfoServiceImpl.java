@@ -41,7 +41,8 @@ public class FileInfoServiceImpl implements FileInfoService {
      */
     @Override
     public ResponseData getFileTreeInfo(String userName) {
-        ReadDirectory rd = new ReadDirectory(userPath + FileUtil.getPathSeparator() + userName);
+        String userFilePath = userPath + FileUtil.getPathSeparator() + userName+FileUtil.getPathSeparator();
+        ReadDirectory rd = new ReadDirectory(userFilePath);
         FileItem fileItem = rd.getFileItem();
         return ResponseDataUtil.buildSuccess(fileItem);
     }

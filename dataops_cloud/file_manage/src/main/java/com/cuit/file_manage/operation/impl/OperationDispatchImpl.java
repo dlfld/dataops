@@ -34,7 +34,7 @@ public class OperationDispatchImpl implements OperationDispatch {
             OperationBo operationBo = operationQueue.poll();
             Method method = operationBo.getMethod();
             try {
-                boolean achieve = (boolean)method.invoke(operationBo);
+                boolean achieve = (boolean)method.invoke(operationBo.getConstructor().newInstance(),operationBo);
                 operationBo.setAchieve(achieve);
                 //如果当前操作完成了便在操作队列中出队当前元素,并将当前元素添加到执行之后的日志队列中
                 if(achieve){
@@ -54,7 +54,7 @@ public class OperationDispatchImpl implements OperationDispatch {
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
-            } catch (InvocationTargetException e) {
+            } catch (InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();
             }
         }

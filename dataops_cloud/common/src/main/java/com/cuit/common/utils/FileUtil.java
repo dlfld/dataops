@@ -87,12 +87,10 @@ public class FileUtil {
      */
     public static String getPathSeparator() {
         String systemName = System.getProperty("os.name");
-        switch (systemName) {
-            case "Windows 10":
-                return "\\";
-            default:
-                return "/";
+        if ("Windows 10".equals(systemName)) {
+            return "\\";
         }
+        return "/";
     }
 
     /**

@@ -63,7 +63,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
             //如果有后缀的话就把后缀去掉再加上meta的后缀
             int lastIndex = fileFullName.lastIndexOf(".");
             // 去掉后缀的
-            String fileName = fileFullName.substring(0, lastIndex + 1);
+            String fileName = fileFullName.substring(0, lastIndex );
             //元数据文件全名
             String metaFileFullName = fileName + FileFinalValue.fileSuffix;
             metaFilePath = metaFilePath.replace(fileFullName, metaFileFullName);

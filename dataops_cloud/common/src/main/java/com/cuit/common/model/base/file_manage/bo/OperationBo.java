@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 /**
@@ -18,7 +19,7 @@ import java.lang.reflect.Method;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class OperationBo extends Operation {
+public class OperationBo <T> extends Operation {
     private static final long serialVersionUID = 4356222088751642262L;
     /**
      * 文件类型
@@ -32,5 +33,10 @@ public class OperationBo extends Operation {
      * 是否完成当前操作的调用
      */
     boolean achieve;
+
+    /**
+     * 构造方法，在调用方法的时候需要调用 实体类的构造方法
+     */
+    Constructor<T> constructor;
     
 }

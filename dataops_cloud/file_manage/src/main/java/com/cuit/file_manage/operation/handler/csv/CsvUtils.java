@@ -1,6 +1,7 @@
 package com.cuit.file_manage.operation.handler.csv;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Version 1.0
  * @Description
  */
+@Component
 public class CsvUtils {
 
     /**

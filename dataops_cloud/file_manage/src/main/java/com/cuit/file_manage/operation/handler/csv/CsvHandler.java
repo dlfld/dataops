@@ -6,6 +6,7 @@ import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.file_manage.operation.factory.FileFactory;
 import com.cuit.file_manage.operation.handler.AbstractFileHandler;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 
 @Component
-public class CsvHandler extends AbstractFileHandler {
+public class  CsvHandler extends AbstractFileHandler implements InitializingBean {
 
     /**
      * 获取csv文件中的内容
@@ -45,7 +46,7 @@ public class CsvHandler extends AbstractFileHandler {
      * @throws IOException
      */
     @Override
-    public void modifyCell(OperationBo operationBo) throws IOException {
+    public boolean modifyCell(OperationBo operationBo) throws IOException {
         String path = operationBo.getFilePath();
         Integer row = Math.toIntExact(operationBo.getRowNum());
         Integer col = Math.toIntExact(operationBo.getColNum());
@@ -54,6 +55,7 @@ public class CsvHandler extends AbstractFileHandler {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
         CsvUtils.modifyCell(path, row, col, value);
+        return true;
     }
 
     /**
@@ -64,13 +66,14 @@ public class CsvHandler extends AbstractFileHandler {
      */
 
     @Override
-    public void deleteFileLine(OperationBo operationBo) throws IOException {
+    public boolean deleteFileLine(OperationBo operationBo) throws IOException {
         String path = operationBo.getFilePath();
         Integer row = Math.toIntExact(operationBo.getRowNum());
         if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
         CsvUtils.deleteFileLine(path, row);
+        return true;
     }
 
     /**
@@ -80,17 +83,18 @@ public class CsvHandler extends AbstractFileHandler {
      * @throws IOException
      */
     @Override
-    public void deleteFileColumn(OperationBo operationBo) throws IOException {
+    public boolean deleteFileColumn(OperationBo operationBo) throws IOException {
         String path = operationBo.getFilePath();
         Integer column = Math.toIntExact(operationBo.getColNum());
         if (!new File(path).exists()) {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
         CsvUtils.deleteFileColumn(path, column);
+        return true;
     }
 
     @Override
-    public void modifyFileColumn(OperationBo operationBo) throws IOException {
+    public boolean modifyFileColumn(OperationBo operationBo) throws IOException {
         String path = operationBo.getFilePath();
         Integer column = Math.toIntExact(operationBo.getColNum());
         String value = operationBo.getNewValue().get(0);
@@ -98,6 +102,7 @@ public class CsvHandler extends AbstractFileHandler {
             ExceptionCast.cast(ResponseDataUtil.buildError(ResultEnums.PATH_NOT_EXIST));
         }
         CsvUtils.modifyFileColumn(path, column, value);
+        return true;
     }
 
     /**
@@ -107,6 +112,7 @@ public class CsvHandler extends AbstractFileHandler {
      */
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("注册到工厂中");
         FileFactory.register("csv", this);
     }
 

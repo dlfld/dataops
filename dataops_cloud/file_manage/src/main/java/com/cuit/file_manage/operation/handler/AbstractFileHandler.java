@@ -2,6 +2,7 @@ package com.cuit.file_manage.operation.handler;
 
 import com.cuit.common.model.base.file_manage.bo.OperationBo;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Version 1.0
  * @Description
  */
+@Component
 public abstract class AbstractFileHandler implements InitializingBean {
 
     /**
@@ -30,7 +32,7 @@ public abstract class AbstractFileHandler implements InitializingBean {
      * @param  operationBo 业务操作对象
      * @throws IOException
      */
-    public void modifyCell(OperationBo operationBo) throws IOException {
+    public boolean modifyCell(OperationBo operationBo) throws IOException {
         throw new UnsupportedOperationException();
     }
 
@@ -39,7 +41,7 @@ public abstract class AbstractFileHandler implements InitializingBean {
      * @param operationBo 业务操作对象
      * @throws IOException
      */
-    public void deleteFileLine(OperationBo operationBo) throws IOException{
+    public boolean deleteFileLine(OperationBo operationBo) throws IOException{
         throw new UnsupportedOperationException();
     }
 
@@ -48,11 +50,11 @@ public abstract class AbstractFileHandler implements InitializingBean {
      * @param operationBo 业务操作对象
      * @throws IOException 文件异常
      */
-    public void  deleteFileColumn(OperationBo operationBo)throws IOException{
+    public boolean  deleteFileColumn(OperationBo operationBo)throws IOException{
         throw new UnsupportedOperationException();
     }
 
-    public void modifyFileColumn(OperationBo operationBo) throws IOException {
+    public boolean modifyFileColumn(OperationBo operationBo) throws IOException {
         throw new UnsupportedOperationException();
     }
 

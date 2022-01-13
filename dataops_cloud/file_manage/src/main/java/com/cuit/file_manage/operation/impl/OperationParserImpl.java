@@ -10,8 +10,10 @@ import com.cuit.file_manage.operation.factory.FileFactory;
 import com.cuit.file_manage.operation.handler.AbstractFileHandler;
 import com.cuit.file_manage.operation.intf.OperationParser;
 import com.cuit.common.model.base.file_manage.bo.OperationQueue;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -22,8 +24,9 @@ import java.util.Queue;
  * @Date 2022/1/9 2:50 PM
  * @Version 1.0
  */
+@Slf4j
 @Component
-public class OperationParserImpl implements OperationParser {
+public class  OperationParserImpl <T> implements OperationParser {
 
     /**
      * 解析操作，将一个操作解析为可以调用的操作
@@ -42,13 +45,19 @@ public class OperationParserImpl implements OperationParser {
             //获取文件后缀的位置
             int lastIndexOf = operation.getFilePath().lastIndexOf(".");
             //截取文件后缀
-            String fileType = operation.getFilePath().substring(lastIndexOf);
+            String fileType = operation.getFilePath().substring(lastIndexOf+1);
             //获取文件处理的handler
             AbstractFileHandler fileHandler = FileFactory.getInvokeStrategy(fileType);
             OperationBo operationBo = OperationConvert.pojoToBo(operation);
             operationBo.setFileType(fileType);
             //获取到的具体实现类
             Class<? extends AbstractFileHandler> handlerClass = fileHandler.getClass();
+            try {
+                Constructor<T> constructor = (Constructor<T>) fileHandler.getClass().getConstructor();
+                operationBo.setConstructor(constructor);
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
             try {
                 Method method = handlerClass.getMethod(operation.getOperation(), OperationBo.class);
                 operationBo.setMethod(method);

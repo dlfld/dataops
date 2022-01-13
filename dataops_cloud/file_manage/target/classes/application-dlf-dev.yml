@@ -10,5 +10,5 @@ spring:
         #        server-addr: 10.23.71.70:8848
         server-addr: 10.23.71.70:8848
 fileSystem:
-#  filePath: /Users/dailinfeng/Desktop/filemanage
-  filePath: /home/dlf/testCode/filemanage
+  filePath: /Users/dailinfeng/Desktop/filemanage
+#  filePath: /home/dlf/testCode/filemanage

@@ -19,7 +19,7 @@ public class FileFactory {
         return strategyMap.get(name);
     }
     public static void register(String name, AbstractFileHandler handler){
-        if (StringUtils.isNotEmpty(name)){
+        if (StringUtils.isEmpty(name)){
             return;
         }
         strategyMap.put(name,handler);
