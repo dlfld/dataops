@@ -52,9 +52,7 @@ public class OperationDispatchImpl implements OperationDispatch {
                     //如果是操作失败的话停止当前的运行
                     ExceptionCast.customDefineCast(new OperationRunnerException(userContact));
                 }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException | InstantiationException e) {
+            } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();
             }
         }

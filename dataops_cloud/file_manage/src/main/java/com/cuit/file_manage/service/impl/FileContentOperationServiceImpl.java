@@ -63,7 +63,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
             //如果有后缀的话就把后缀去掉再加上meta的后缀
             int lastIndex = fileFullName.lastIndexOf(".");
             // 去掉后缀的
-            String fileName = fileFullName.substring(0, lastIndex );
+            String fileName = fileFullName.substring(0, lastIndex);
             //元数据文件全名
             String metaFileFullName = fileName + FileFinalValue.fileSuffix;
             metaFilePath = metaFilePath.replace(fileFullName, metaFileFullName);
@@ -148,7 +148,10 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
         //获取操作队列
         DataFile dataFile = MetaFileUtil.metaRead(metaFilePath, DataFile.class);
         //开始运行
-        operationQueueRunner.runOperationQueue(dataFile.getBeforeOperationQueue(), startOperationVo.getContact());
-        return null;
+        boolean res = operationQueueRunner.runOperationQueue(dataFile.getBeforeOperationQueue(), startOperationVo.getContact());
+        if (res) {
+            return ResponseDataUtil.buildSuccess();
+        }
+        return ResponseDataUtil.buildError();
     }
 }
