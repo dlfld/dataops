@@ -15,6 +15,7 @@ import com.cuit.common.utils.MetaFileUtil;
 import com.cuit.common.utils.ResponseDataUtil;
 import com.cuit.file_manage.operation.intf.OperationQueueRunner;
 import com.cuit.file_manage.service.intf.FileContentOperationService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -29,6 +30,7 @@ import java.util.Objects;
  * @Version 1.0
  */
 @Component
+@Slf4j
 public class FileContentOperationServiceImpl implements FileContentOperationService {
     @Resource
     IdWorker idWorker;
@@ -149,6 +151,7 @@ public class FileContentOperationServiceImpl implements FileContentOperationServ
         DataFile dataFile = MetaFileUtil.metaRead(metaFilePath, DataFile.class);
         //开始运行
         boolean res = operationQueueRunner.runOperationQueue(dataFile.getBeforeOperationQueue(), startOperationVo.getContact());
+        log.info(res+"");
         if (res) {
             return ResponseDataUtil.buildSuccess();
         }

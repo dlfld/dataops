@@ -34,8 +34,7 @@ public class OperationQueueRunnerImpl implements OperationQueueRunner {
     @Override
     public boolean runOperationQueue(OperationQueue operationQueue,String userContact) {
         Queue<OperationBo> operationBos = operationParser.parserOperation(operationQueue);
-        operationDispatch.dispatchOperation(operationBos,userContact);
+        return operationDispatch.dispatchOperation(operationBos,userContact);
 
-        return false;
     }
 }

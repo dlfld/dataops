@@ -54,6 +54,7 @@ public abstract class AbstractFileHandler implements InitializingBean {
         throw new UnsupportedOperationException();
     }
 
+
     public boolean modifyFileColumn(OperationBo operationBo) throws IOException {
         throw new UnsupportedOperationException();
     }

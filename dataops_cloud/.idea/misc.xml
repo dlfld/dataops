@@ -15,11 +15,6 @@
         <option value="$PROJECT_DIR$/rpc/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/service-center/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="PWA">
     <option name="wasEnabledAtLeastOnce" value="true" />

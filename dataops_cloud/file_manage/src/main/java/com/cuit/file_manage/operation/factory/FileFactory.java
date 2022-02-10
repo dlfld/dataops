@@ -15,9 +15,11 @@ import java.util.Objects;
  */
 public class FileFactory {
     private static Map<String, AbstractFileHandler> strategyMap = new HashMap<>();
+
     public static AbstractFileHandler getInvokeStrategy(String name){
         return strategyMap.get(name);
     }
+
     public static void register(String name, AbstractFileHandler handler){
         if (StringUtils.isEmpty(name)){
             return;
