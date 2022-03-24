@@ -1,0 +1,9 @@
+Return(value=Tuple(
+          elts=[
+            Name( id='xdata',ctx=Load()),
+            Name(id='ydata',ctx=Load())
+            ],
+          ctx=Load()
+          )
+          )
+
